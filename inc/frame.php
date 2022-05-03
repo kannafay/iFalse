@@ -1,0 +1,10 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="<?php bloginfo('name'); ?>">
+<meta name="description" content="<?php bloginfo('description'); ?>">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/theme.min.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/custom/user.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
+<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
