@@ -33,7 +33,7 @@ Tags: 界面清新、轻松上手
     --radius: 6px;
     --radius-sub: 4px;
     --tr2: all .3s cubic-bezier(.3, 0, .2, 1);
-    --tr3: all .5s cubic-bezier(.28,.9,.34,.99);
+    --tr3: all .6s cubic-bezier(.28,.9,.34,.99);
 }
 * {
     margin: 0;
