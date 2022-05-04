@@ -1,9 +1,9 @@
-<?php i_note(); ?>
+<!-- <?php i_doge(); ?> -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <?php i_frame(); ?>
-    <title><?php bloginfo('name') ?> - <?php bloginfo('description'); ?></title>
+    <title><?php the_title(); ?> - <?php bloginfo('name') ?></title>
 </head> 
 <body>
     <?php get_header(); ?>

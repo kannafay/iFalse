@@ -7,7 +7,14 @@
                 <div class="menu-mb-box">
                     <div class="user-info">
                         <a href="<?php bloginfo('url'); ?>/wp-admin">
-                            <?php echo get_user_avatar(); ?>
+                            <?php  
+                                if(is_user_logged_in()) {
+                                    echo get_user_avatar();
+                                } else {
+                                    $i_avatar_v = get_template_directory_uri() . '/static/img/avatar.png';
+                                    if(get_option("i_avatar_v")) {echo '<img src="' . get_option("i_avatar_v") . '" />';} else {echo '<img src="' . $i_avatar_v . '" />';}
+                                }
+                            ?>
                             <p>
                                 <?php 
                                     if ( is_user_logged_in() ) {
@@ -15,7 +22,7 @@
                                         get_currentuserinfo();
                                         echo $current_user -> display_name;
                                     } else {
-                                        if(get_option("i_hello")) {echo get_option("i_hello");} else{echo "{{ hello }}";};
+                                        if(get_option("i_hello")) {echo get_option("i_hello");} else {echo '{{ hello }}';};
                                     } 
                                 ?>
                             </p>

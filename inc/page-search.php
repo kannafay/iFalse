@@ -21,22 +21,23 @@
                 <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?>
                     <li>
-                        <div class="post-pic">
+                        <div class="home-pic">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="mask-pic"><span class="iconfont icon-chakan"></span></div>
                                 <?php if (has_post_thumbnail()) { ?>
                                 <?php the_post_thumbnail(); ?>
                                 <?php } else {?>
-                                    <img src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,999999999) ?>" />
+                                    <img src="<?php echo i_cover_pic(); ?>" data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,999999999) ?>" />
                                 <?php } ?>
                             </a>
                         </div>
-                        <div class="post-detail">
-                            <div class="post-cate"><?php echo the_category(' ') ?></div>
-                            <div class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
-                            <div class="post-msg">
-                                <span class="post-watch">浏览 <?php echo getPostViews(get_the_ID()) ?></span> /
-                                <span class="post-date">发布于 <?php the_time('Y-m-d'); ?></span>
+                        <div class="home-detail">
+                            <div class="home-cate"><?php echo the_category(' ') ?></div>
+                            <div class="home-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
+                            <div class="home-msg">
+                                <span class="home-watch">浏览 <?php echo getPostViews(get_the_ID()) ?></span> · 
+                                <span class="home-date">发布于 <?php the_time('Y/m/d'); ?></span> · 
+                                <span class="home-comments">评论 <?php comments_popup_link('沙发！','1','%') ?></span>
                             </div>
                         </div>
                     </li>
@@ -44,7 +45,7 @@
                 <?php else: ?>
                 <div class="page-result">
                     <div class="page-result-detail">
-                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/404.gif" alt="404">
+                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/404.png" alt="404">
                         <p>这里什么也没有！</p>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<?php i_note(); ?>
+<!-- <?php i_doge(); ?> -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -9,7 +9,7 @@
     <?php get_header(); ?>
     <div class="page-404">
         <div class="page-404-detail">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/404.gif" alt="404">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/404.png" alt="404">
             <p><?php if(get_option("i_404_tip")) {echo get_option("i_404_tip");} else{echo "{{ text_404 }}";} ?></p>
             <a href="<?php bloginfo('url') ?>"><?php if(get_option("i_404_bak")) {echo get_option("i_404_bak");} else{echo "{{ backhome_404 }}";} ?></a>
         </div>

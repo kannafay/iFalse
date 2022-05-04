@@ -4,8 +4,8 @@ Theme URI: https://ifalse.onll.cn
 Author: 神秘布偶猫
 Author URI: https://ifalse.onll.cn
 Description: iFalse主题
-Version: 1.0.0
-Tags: 轻量清新、轻松上手
+Version: 1.1.0
+Tags: 轻量干净、轻松上手
 */
 
 :root {
@@ -29,11 +29,11 @@ Tags: 轻量清新、轻松上手
     --black-1: #0000001a;
     --black-3: #0000004d;
     --black-5: #00000080;
-    --notice: #F2F2FF;
+    --notice: #f2f2ff;
     --radius: 6px;
     --radius-sub: 4px;
     --tr2: all .3s cubic-bezier(.3, 0, .2, 1);
-    --tr3: all .6s cubic-bezier(.28,.9,.34,.99);
+    --tr3: all .5s cubic-bezier(.28,.9,.34,.99);
 }
 * {
     margin: 0;
@@ -44,6 +44,11 @@ Tags: 轻量清新、轻松上手
     /* transition: all .2s; */
     -webkit-tap-highlight-color:rgba(0 0 0 / 0) ;
 }
+html {
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bgc);
     overflow: auto;
@@ -98,3 +103,4 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--theme-sub);
     /* border-radius: 4px; */
 }
+

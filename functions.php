@@ -1,9 +1,16 @@
 <?php
 /**
  * @神秘布偶猫
- * @https://ifalse.cn
+ * @https://www.ifalse.cn
  * @2022.05.02
  */
+
+// ---------------------------------------------------------------------
+// 测试区
+
+
+
+// 测试区end
 
 // ---------------------------------------------------------------------
 // 用户自定义头像
@@ -11,9 +18,9 @@ function get_ssl_avatar($avatar) {
   $i_logo = get_option("i_avatar");
   $i_logo_bak = get_template_directory_uri() . '/static/img/avatar.png';
   if(get_option("i_avatar")) {
-    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="'. $i_logo . '" class="avatar avatar-$2" height="$2" width="$2">',$avatar);
+    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="' . $i_logo . '" class="avatar avatar-$2" height="60" width="60">',$avatar);
   } else{
-    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="'. $i_logo_bak . '" class="avatar avatar-$2" height="$2" width="$2">',$avatar);
+    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="' . $i_logo_bak . '" class="avatar avatar-$2" height="60" width="60">',$avatar);
   }
   return $avatar;
 }
@@ -26,9 +33,134 @@ function i_cover_pic() {
 }
 
 // ---------------------------------------------------------------------
+// 文章目录
+// declare a function and pass the $content as an argument
+function insert_table_of_contents($content) {
+	// used to determine the location of the
+	// table of contents when $fixed_location is set to false
+	$html_comment = "<!--insert-toc-->";
+	// checks if $html_comment exists in $content
+	$comment_found = strpos($content, $html_comment) ? true : false;
+	// set to true to insert the table of contents in a fixed location
+	// set to false to replace $html_comment with $table_of_contents
+	$fixed_location = true;
+ 
+	// return the $content if
+	// $comment_found and $fixed_location are false
+	if (!$fixed_location && !$comment_found) {
+		return $content;
+	}
+ 
+	// 设置排除，默认页面文章不生成目录
+	// exclude the table of contents from all pages
+	// other exclusion options include:
+	// in_category($id)
+	// has_term($term_name)
+	// is_single($array)
+	// is_author($id)
+    if (is_page()) {
+        return $content;
+    }
+		
+	// regex to match all HTML heading elements 2-6
+	$regex = "~(<h([1-6]))(.*?>(.*)<\/h[1-6]>)~";
+ 
+	// preg_match_all() searches the $content using $regex patterns and
+	// returns the results to $heading_results[]
+	//
+	// $heading_results[0][] contains all matches in full
+	// $heading_results[1][] contains '<h2-6'
+	// $heading_results[2][] contains '2-6'
+	// $heading_results[3][] contains '>heading title</h2-6>
+	// $heading_results[4][] contains the title text
+	preg_match_all($regex, $content, $heading_results);
+ 
+	// 默认小于3个段落标题不生成目录
+	// return $content if less than 3 heading exist in the $content
+	$num_match = count($heading_results[0]);
+	if($num_match < 1) {
+		return $content;
+	}
+ 
+	// declare local variable
+	$link_list = "";
+	// loop through $heading_results
+	for ($i = 0; $i < $num_match; ++ $i) {
+ 
+	    // rebuild heading elements to have anchors
+	    $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
+ 
+	    // find original heading elements that don't have anchors
+	    $old_heading = $heading_results[0][$i];
+ 
+	    // search the $content for $old_heading and replace with $new_heading
+		$content = str_replace($old_heading, $new_heading, $content);
+ 
+	    // generate links for each heading element
+	    // each link points to an anchor
+	    $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
+	    	"'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
+	}
+	    
+	// opening nav tag
+	$start_nav = "<div id='article-toc'>";
+	// closing nav tag
+	$end_nav = "</div>";
+	// title
+	$title = "<div id=\"article-toc-title\">文章目录</div>";
+ 
+	// wrap links in '<ul>' element
+	$link_list = "<ul id=\"article-toc-ul\">" . $link_list . "</ul>";
+ 
+	// piece together the table of contents
+	$table_of_contents = $start_nav . $title . $link_list . $end_nav;
+ 
+	// if $fixed_location is true and
+	// $comment_found is false
+	// insert the table of contents at a fixed location
+	if($fixed_location && !$comment_found) {
+		// location of first paragraph
+		$first_paragraph = strpos($content, '</p>', 0) + 4;
+		// location of second paragraph
+		$second_paragraph = strpos($content, '</p>', $first_p_pos);
+		// insert $table_of_contents after $second_paragraph
+		return substr_replace($content, $table_of_contents, $second_paragraph + 4 , 0);
+	}
+	// if $fixed_location is false and
+	// $comment_found is true
+	else {
+		// replace $html_comment with the $table_of_contents
+		return str_replace($html_comment, $table_of_contents, $content);
+	}
+}
+// pass the function to the content add_filter hook
+add_filter('the_content', 'insert_table_of_contents');
+
+// ---------------------------------------------------------------------
+// 文章目录-bak
+// function article_index($content) {
+//   $matches = array();
+//   $ul_li = '';
+//   $r = '/<h([1-6]).*?\>(.*?)<\/h[1-6]>/is';
+//   if(is_single() && preg_match_all($r, $content, $matches)) {
+//   foreach($matches[1] as $key => $value) {
+//   $title = trim(strip_tags($matches[2][$key]));
+//   $content = str_replace($matches[0][$key], '<h' . $value . ' id="title-' . $key . '">'.$title.'</h1>', $content);
+//   $ul_li .= '<li><a href="#title-'.$key.'" title="'.$title.'">'.$title."</a></li>\n";
+//   }
+//   $content = "\n<div id=\"article-toc\">
+//   <div id=\"article-toc-title\">文章目录</div>
+//   <ul id=\"article-toc-ul\">\n" . $ul_li . "</ul>
+//   </div>\n" . $content;
+//   }
+//   return $content;
+//   }
+//   add_filter( 'the_content', 'article_index' );
+
+// ---------------------------------------------------------------------
 // 自定义引入文件
-function i_note() {
-  require ('inc/note.php');
+function i_doge() {
+  require ('inc/doge.php');
 }
 function i_frame() {
   require('inc/frame.php');
@@ -157,7 +289,7 @@ function soi_login_redirect($redirect_to, $request, $user) {
     return (is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();
 }
 add_filter('login_redirect', 'soi_login_redirect', 10, 3);
-//登出后重定向
+// 登出后重定向
 function auto_redirect_after_logout(){
     wp_redirect(home_url());
         exit();
@@ -165,7 +297,7 @@ function auto_redirect_after_logout(){
 add_action('wp_logout','auto_redirect_after_logout');
 
 // ---------------------------------------------------------------------
-//文章页码
+// 文章页码
 function wp_pagenavi() {
     global $wp_query, $wp_rewrite;
     $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;  
@@ -178,8 +310,8 @@ function wp_pagenavi() {
         'type' => 'plain',
         'end_size'=>'1',
         'mid_size'=>'1',
-        'prev_text' => '<',
-        'next_text' => '>'
+        'prev_text' => '<', //♂
+        'next_text' => '>' //♀
     ); 
     if( $wp_rewrite->using_permalinks() )
         $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg('s',get_pagenum_link(1) ) ) . 'page/%#%/', 'paged');
@@ -190,23 +322,23 @@ function wp_pagenavi() {
 
 // ---------------------------------------------------------------------
 // 自定义头像
-// add_filter( 'avatar_defaults', 'newgravatar' );  
-// function newgravatar ($avatar_defaults) {  
-//     $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';  
-//     $avatar_defaults[$myavatar] = "默认头像";  
-//     return $avatar_defaults;  
-// }  
+add_filter( 'avatar_defaults', 'newgravatar' );  
+function newgravatar ($avatar_defaults) {  
+    $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';  
+    $avatar_defaults[$myavatar] = "默认头像";  
+    return $avatar_defaults;  
+}  
 
 // ---------------------------------------------------------------------
 // 自定义icon
-add_action( 'do_faviconico', function() {
-    if ( $icon = get_site_icon_url( 40 ) ) {
-    wp_redirect( $icon );
-    } else {
-    header( 'Content-Type: static/img/icon.png' );
-    }
-    exit;
-    } );
+// add_action( 'do_faviconico', function() {
+//     if ( $icon = get_site_icon_url( 40 ) ) {
+//     wp_redirect( $icon );
+//     } else {
+//     header( 'Content-Type: static/img/icon.png' );
+//     }
+//     exit;
+//     } );
 
 // ---------------------------------------------------------------------
 // 后台友情链接
