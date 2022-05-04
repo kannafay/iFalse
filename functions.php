@@ -159,9 +159,6 @@ add_filter('the_content', 'insert_table_of_contents');
 
 // ---------------------------------------------------------------------
 // 自定义引入文件
-function i_doge() {
-  require ('inc/doge.php');
-}
 function i_frame() {
   require('inc/frame.php');
 }

@@ -1,4 +1,3 @@
-<!-- <?php i_doge(); ?> -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
