@@ -17,7 +17,8 @@ menu_mb_close.onclick = function() {
     menu_mb_mask.className = 'menu-mb-mask';
 }
 
-//文章页
+
+// 文章页
 const remove_comment_h2_href = document.querySelectorAll('.post-comments .post-comments-content h2 a')[0];
 if(remove_comment_h2_href){remove_comment_h2_href.removeAttribute('href')}
 
@@ -52,7 +53,8 @@ const change_comment_email_notes = document.querySelector('.post-comments .post-
 if(change_comment_email_notes){change_comment_email_notes.innerText = '发表评论'}
 
 
-//懒加载
+
+// 懒加载
 ! function(window, document, $, undefined) {
     function lazyScroll() {
         $('img').each(function(index, item) {
@@ -67,3 +69,8 @@ if(change_comment_email_notes){change_comment_email_notes.innerText = '发表评
     lazyScroll()
     $(window).on('scroll', lazyScroll)
 }(window, document, jQuery)
+
+
+// 查询次数，花费时间
+const queries_num = document.querySelector('#queries_num');
+console.log(queries_num.firstChild.data);

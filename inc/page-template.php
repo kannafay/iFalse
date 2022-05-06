@@ -11,19 +11,15 @@
             <?php the_content(); ?>
             <div class="the-end" style="">—— THE END ——</div>
         </div>
+        <?php 
+            if(get_option("i_comments_page") == 1) { ?>
+                <?php comments_template('/comments.php');?>
+            <?php
+            }
+        ?>
     </div>
-    <?php 
-        if(get_option("i_comments_page") == 1) { ?>
-            <div class="post-comments">
-                <div class="post-comments-content">
-                    <h2>评论（<?php comments_popup_link('0','1','%') ?>）</h2>
-                    <?php comments_template(); ?>
-                </div>
-            </div> <?php
-        }
-    ?>
-</div>
-
+    
+    
 <div class="progress-wrap">
 	<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
 		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>

@@ -4,7 +4,7 @@ Theme URI: https://ifalse.onll.cn
 Author: 神秘布偶猫
 Author URI: https://ifalse.onll.cn
 Description: iFalse主题
-Version: 1.1.0
+Version: 1.2.0
 Tags: 界面清新、轻松上手
 */
 
@@ -81,15 +81,12 @@ a:hover {
 }
 ::selection{
     background-color: var(--theme-2);
-    /* color: var(--theme); */
 }
 ::-webkit-selection{
     background-color: var(--theme-2);
-    /* color: var(--theme); */
 }
 ::-moz-selection{
-    background-color: var(--theme-2);
-    /* color: var(--theme); */
+    background-color: var(--theme-2); 
 }
 
 /* scrollbar */
@@ -97,10 +94,10 @@ body::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     background-color: var(--border);
-    /* border-radius: 15px; */
+    /* border-radius: var(--radius); */
 }
 body::-webkit-scrollbar-thumb {
     background-color: var(--theme-sub);
-    /* border-radius: 4px; */
+    /* border-radius: var(--radius); */
 }
 

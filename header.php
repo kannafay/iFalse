@@ -1,6 +1,3 @@
-<script type="text/javascript">
-
-</script>
 <div class="container-full nav-bar header">
     <div class="left">
         <a href="<?php bloginfo('url') ?>" rel="home" class="logo"><img src="<?php site_icon_url(); ?>" alt=""></a>
@@ -32,4 +29,3 @@
     </div>
 </div>
 <?php i_header_mb(); ?>
-

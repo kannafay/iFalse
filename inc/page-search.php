@@ -8,10 +8,14 @@
 </div>
 <div class="container main-content main">
     <div class="content">
-        <div class="notice">
-            <span class="iconfont icon-xiaoxi"></span>
-            <p><?php if(get_option("i_notice")) {echo get_option("i_notice");} else{echo "{{ notice }}";} ?></p>
-        </div>
+        <?php
+            if(get_option("i_notice")) {?>
+                <div class="notice">
+                    <span class="iconfont icon-xiaoxi"></span>
+                    <p><?php echo get_option("i_notice"); ?></p>
+                </div>
+            <?php }
+        ?>
         <div class="title-part">
             <p id="title-part"><?php the_search_query(); ?> 的搜索结果</p>
             <?php get_search_form(); ?>
@@ -27,7 +31,8 @@
                                 <?php if (has_post_thumbnail()) { ?>
                                 <?php the_post_thumbnail(); ?>
                                 <?php } else {?>
-                                    <img src="<?php echo i_cover_pic(); ?>" data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,999999999) ?>" />
+                                    <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>" 
+                                    data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" />
                                 <?php } ?>
                             </a>
                         </div>

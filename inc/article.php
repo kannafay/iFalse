@@ -19,7 +19,8 @@
                 <?php if (has_post_thumbnail()) { ?>
                 <?php the_post_thumbnail(); ?>
                 <?php } else {?>
-                    <img src="<?php echo i_cover_pic(); ?>" data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,999999999) ?>" /> 
+                    <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
+                    data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" /> 
                 <?php } ?>
                 <i>封面图</i>
             </div>
@@ -33,7 +34,8 @@
                     <?php if (has_post_thumbnail()) { ?>
                     <?php the_post_thumbnail(); ?>
                     <?php } else {?>
-                        <img src="<?php echo i_cover_pic(); ?>" data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,999999999) ?>" /> 
+                        <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
+                        data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" /> 
                     <?php } ?>
                     <i>封面图</i>
                 </div>
@@ -54,12 +56,8 @@
         </div>
         <?php 
             if(get_option("i_comments_article") == 1) { ?>
-                <div class="post-comments">
-                    <div class="post-comments-content">
-                        <h2>评论（<?php comments_popup_link('0','1','%') ?>）</h2>
-                        <?php comments_template(); ?>
-                    </div>
-                </div> <?php
+                <?php comments_template('/comments.php');?>
+            <?php
             }
         ?>
     </div>
@@ -84,7 +82,8 @@
                         <?php if (has_post_thumbnail()) { ?>
                         <?php the_post_thumbnail(); ?>
                         <?php } else {?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/static/img/thumbnail.png" data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,999999999) ?>" />
+                            <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>" 
+                            data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" />
                         <?php } ?>
                     </a>
                     <li>

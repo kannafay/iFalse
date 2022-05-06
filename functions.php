@@ -4,20 +4,49 @@
  * @https://www.ifalse.cn
  * @2022.05.02
  */
-
 // ---------------------------------------------------------------------
 // 测试区
-
-
 
 // 测试区end
 
 // ---------------------------------------------------------------------
+// 评论中高亮站长
+function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
+	//遍历用户
+	$blogusers = get_users([ 'role__in' => [ 'administrator' ] ]);
+	foreach ( $blogusers as $user ){
+		if( $author == $user->display_name ){
+			$webMaster = '<span class="master">'.$author.'</span>';
+			return $webMaster;
+		}
+	};
+	return $author;
+};  
+add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
+
+// 留言时过滤站长
+function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
+	//遍历用户
+	$blogusers = get_users([ 'role__in' => [ 'administrator' ] ]);
+	foreach ( $blogusers as $user ){
+		if( $cookie_comment_author_cookiehash == $user->display_name ){
+			return $cookie_comment_author_cookiehash.'的崇拜者';
+		}
+	};
+	return $cookie_comment_author_cookiehash;
+    
+};
+//判断当前用户登录状态
+if( !is_user_logged_in() ){
+	add_filter( 'pre_comment_author_name', 'filter_pre_comment_author_name', 10, 1 ); 
+}
+
+// ---------------------------------------------------------------------
 // 用户自定义头像
 function get_ssl_avatar($avatar) {
-  $i_logo = get_option("i_avatar");
+  $i_logo = get_option("i_avatar_v");
   $i_logo_bak = get_template_directory_uri() . '/static/img/avatar.png';
-  if(get_option("i_avatar")) {
+  if(get_option("i_avatar_v")) {
     $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="' . $i_logo . '" class="avatar avatar-$2" height="60" width="60">',$avatar);
   } else{
     $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="' . $i_logo_bak . '" class="avatar avatar-$2" height="60" width="60">',$avatar);
@@ -26,10 +55,14 @@ function get_ssl_avatar($avatar) {
 }
 add_filter('get_avatar', 'get_ssl_avatar');
 
+include (TEMPLATEPATH . '/admin/i_avatar.php');
 // ---------------------------------------------------------------------
 //默认封面图
 function i_cover_pic() {
   echo get_template_directory_uri() . '/static/img/thumbnail.png';
+}
+function i_loading_pic() {
+  echo get_template_directory_uri() . '/static/img/loading.gif';
 }
 
 // ---------------------------------------------------------------------
@@ -244,7 +277,7 @@ add_filter('get_avatar', 'baolog_get_avatar', 10, 3);
 function get_user_avatar(){
     global $current_user;
     get_currentuserinfo();
-    return get_avatar($current_user -> user_email, 40);
+    return get_avatar($current_user -> user_email, 400);
 }
 
 // ---------------------------------------------------------------------
@@ -327,17 +360,6 @@ function newgravatar ($avatar_defaults) {
 }  
 
 // ---------------------------------------------------------------------
-// 自定义icon
-// add_action( 'do_faviconico', function() {
-//     if ( $icon = get_site_icon_url( 40 ) ) {
-//     wp_redirect( $icon );
-//     } else {
-//     header( 'Content-Type: static/img/icon.png' );
-//     }
-//     exit;
-//     } );
-
-// ---------------------------------------------------------------------
 // 后台友情链接
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
@@ -370,8 +392,8 @@ function uctheme_redirect_blank_search( $query_variables ) {
 add_action('admin_menu', 'ifasle_theme_set');
     function ifasle_theme_set() {
         add_menu_page(
-            'iFalse主题设置',
-            'iFalse主题设置', 
+            '主题设置',
+            '主题设置', 
             'edit_themes',
             'i-opt',
             'i_settings' 
@@ -448,7 +470,7 @@ function no_category_base_request($query_vars) {
 }
 
 // ---------------------------------------------------------------------
-//面包屑
+//面包屑导航
 // WordPress Breadcrumb Function
 // Add this code into your theme function file.
 
@@ -603,4 +625,4 @@ function i_breadcrumb() {
     // End breadcrumb
     echo '</ul>';
   }
-// //////////////////////////////////////////////////////////////////////////////////////////
+
