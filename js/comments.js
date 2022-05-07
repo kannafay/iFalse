@@ -14,8 +14,8 @@ function insertAfter(newElement, targetElement){
 
 
 //添加博主标签
-const comment_author_name_a = document.querySelectorAll('.post-comments .post-comments-content .comment-author-admin .fn a');
-const comment_author_card = document.querySelectorAll('.post-comments .post-comments-content .comment-author-admin .fn .master');
+const comment_author_name_a = document.querySelectorAll('.post-comments .post-comments-content .fn a');
+const comment_author_card = document.querySelectorAll('.post-comments .post-comments-content .fn .master');
 const comment_author_i = [];
 const comment_author_title = [];
 for(let i=0; i<comment_author_card.length; i++) {

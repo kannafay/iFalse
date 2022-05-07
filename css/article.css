@@ -563,7 +563,7 @@
 .post-comments .post-comments-content .master {
     color: var(--theme);
 }
-.post-comments .post-comments-content .comment-author-admin .comment-author .fn i {
+.post-comments .post-comments-content .comment-author .fn i {
     margin-left: 10px;
     font-size: 13px;
     font-style: normal;
