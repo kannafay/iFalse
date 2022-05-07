@@ -1,0 +1,102 @@
+.progress-wrap {
+	position: fixed;
+	right: 40px;
+	bottom: 40px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	border-radius: 50%;
+	/* box-shadow: inset 0 0 0 2px var(--theme-2); */
+	background-color: rgba(255 255 255 / 1);
+	/* backdrop-filter: blur(20px); */
+	/* -webkit-backdrop-filter: blur(20px); */
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	-webkit-transition: var(--tr3) ;
+	z-index: 5;
+	box-shadow: 0 0 5px 1px var(--black-1);
+	transition: var(--tr3);
+}
+.progress-wrap.active-progress {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.progress-wrap::after {
+	position: absolute;
+	content: '➤';
+	transform: rotate(-90deg);
+	text-align: center;
+	line-height: 46px;
+	font-size: 20px;
+	color: var(--theme);
+	left: -1px;
+	top: -1px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 1;
+	-webkit-transition: var(--tr3);
+    transition: var(--tr3);
+}
+.progress-wrap:hover::after {
+	opacity: 1;
+}
+.progress-wrap::before {
+	position: absolute;
+	content: '➤';
+	transform: rotate(-90deg);
+	text-align: center;
+	line-height: 46px;
+	font-size: 20px;
+	opacity: 0;
+	background-color: var(--theme);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	left: -1px;
+	top: -1px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 2;
+	-webkit-transition: var(--tr3);
+    transition: var(--tr3) ;
+}
+.progress-wrap:hover::before {
+	opacity: 1;
+}
+.progress-wrap svg path { 
+	fill: none; 
+}
+.progress-wrap svg.progress-circle path {
+	stroke: var(--theme);
+	stroke-width: 4;
+	box-sizing: border-box;
+	-webkit-transition: var(--tr3);
+    transition: var(--tr3);
+}
+
+@media screen and (max-width: 640px) {
+	.progress-wrap {
+		right: 20px;
+		bottom: 40px;
+		height: 40px;
+		width: 40px;
+	}
+	.progress-wrap::after {
+		height: 40px;
+		width: 40px;
+		line-height: 40px;
+		font-size: 18px;
+	}
+	.progress-wrap::before {
+		height: 40px;
+		width: 40px;
+		line-height: 40px;
+		font-size: 18px;
+	}
+}
