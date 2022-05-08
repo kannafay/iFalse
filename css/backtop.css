@@ -2,8 +2,8 @@
 	position: fixed;
 	right: 40px;
 	bottom: 40px;
-	height: 46px;
-	width: 46px;
+	height: 45px;
+	width: 45px;
 	cursor: pointer;
 	display: block;
 	border-radius: 50%;
@@ -29,13 +29,13 @@
 	content: '➤';
 	transform: rotate(-90deg);
 	text-align: center;
-	line-height: 46px;
+	line-height: 45px;
 	font-size: 20px;
 	color: var(--theme);
-	left: -1px;
-	top: -1px;
-	height: 46px;
-	width: 46px;
+	left: 0;
+	top: 0;
+	height: 45px;
+	width: 45px;
 	cursor: pointer;
 	display: block;
 	z-index: 1;
@@ -50,16 +50,16 @@
 	content: '➤';
 	transform: rotate(-90deg);
 	text-align: center;
-	line-height: 46px;
+	line-height: 45px;
 	font-size: 20px;
 	opacity: 0;
 	background-color: var(--theme);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	left: -1px;
-	top: -1px;
-	height: 46px;
-	width: 46px;
+	left: 0;
+	top: 0;
+	height: 45px;
+	width: 45px;
 	cursor: pointer;
 	display: block;
 	z-index: 2;
@@ -84,23 +84,19 @@
 	.progress-wrap {
 		right: 20px;
 		bottom: 40px;
-		height: 40px;
-		width: 40px;
+		height: 41px;
+		width: 41px;
 	}
 	.progress-wrap::after {
-		height: 40px;
-		width: 40px;
-		line-height: 40px;
+		height: 41px;
+		width: 41px;
+		line-height: 41px;
 		font-size: 18px;
-		left: 0;
-		top: 0;
 	}
 	.progress-wrap::before {
-		height: 40px;
-		width: 40px;
-		line-height: 40px;
+		height: 41px;
+		width: 41px;
+		line-height: 41px;
 		font-size: 18px;
-		left: 0;
-		top: 0;
 	}
 }
