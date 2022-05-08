@@ -87,6 +87,16 @@ if(post_menu_mb) {
     }
 }
 
+// 最新回复删除 发表在
+const comments_meta = document.querySelectorAll('.wp-block-latest-comments__comment-meta');
+const comments_meta_fabiao = [];
+if(comments_meta) {
+    for(let i=0; i<comments_meta.length; i++) {
+        comments_meta[i].removeChild(comments_meta[i].childNodes[1]);
+    }    
+}
+
+
 
 // 查询次数，花费时间
 const queries_num = document.querySelector('#queries_num');

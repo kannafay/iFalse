@@ -5,10 +5,20 @@
  * @2022.05.02
  */
 // ---------------------------------------------------------------------
-// 测试区
+//修改登录注册logo
+function custom_loginlogo_url($url) {
+  return home_url();
+  }
+  add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 
-// 测试区end
-
+function custom_loginlogo() {
+  echo '<style type="text/css">
+  h1 a {background-image: url('.get_bloginfo('template_directory').'/static/img/avatar.png) !important;background-size: 91px !important;}
+  .login form {border-radius:8px;}
+  </style>';
+  }
+  add_action('login_head', 'custom_loginlogo');
+  
 // ---------------------------------------------------------------------
 // 评论中高亮站长
 function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
@@ -295,10 +305,21 @@ register_nav_menus( array(
 // ---------------------------------------------------------------------
 //侧边栏
 register_sidebar( array(
-  'name'          => __( '文章侧边栏'),
+  'name'          => __( '首页侧边栏'),
   'id'            => 'sidebar-1',
-  'description'   => '将在网页中显示的侧边栏',
-      'class'         => '',
+  'description'   => '将显示在首页',
+  'class'         => '',
+  'before_widget' => '<li id="%1$s" class="widget %2$s">',
+  'after_widget'  => '</li>',
+  'before_title'  => '<h2 class="widgettitle">',
+  'after_title'   => '</h2>' 
+) );
+
+register_sidebar( array(
+  'name'          => __( '文章侧边栏'),
+  'id'            => 'sidebar-2',
+  'description'   => '将显示在文章页',
+  'class'         => '',
   'before_widget' => '<li id="%1$s" class="widget %2$s">',
   'after_widget'  => '</li>',
   'before_title'  => '<h2 class="widgettitle">',
@@ -314,7 +335,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 // ---------------------------------------------------------------------
 // 设定摘要的长度
 function new_excerpt_length($length) {
-    return 30;
+    return 100;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
@@ -370,6 +391,18 @@ function setPostViews($postID) {
 }
 
 // ---------------------------------------------------------------------
+//登录页面
+// function redirect_login_page() {
+//   $login_page  = home_url( '/login/' );
+//   $page_viewed = basename($_SERVER['REQUEST_URI']);
+ 
+//   if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
+//     wp_redirect($login_page);
+//     exit;
+//   }
+// }
+// add_action('init','redirect_login_page');
+
 // 登录后重定向
 function soi_login_redirect($redirect_to, $request, $user) {
     return (is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();

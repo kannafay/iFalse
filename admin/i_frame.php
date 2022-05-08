@@ -28,7 +28,12 @@
             <li>
                 <label for="">首页公告</label>
                 <input type="text" name="i_notice" value="<?php echo get_option("i_notice"); ?>">
-                <span>用于首页发布公告</span>
+                <span>用于首页发布公告，留空则不显示</span>
+            </li>
+            <li>
+                <label for="">博客模式</label>
+                <input type="text" name="i_blog_or_card" value="<?php echo get_option("i_blog_or_card"); ?>">
+                <span>数字1为开启，首页切换成两栏模式。默认：卡片模式</span>
             </li>
             <li>
                 <label for="">文章封面</label>
@@ -48,7 +53,7 @@
             <li>
                 <label for="">显示封面</label>
                 <input type="text" name="i_post_cover" value="<?php echo get_option("i_post_cover"); ?>">
-                <span>数字1为关闭。文章详情页左侧显示文章封面，默认：开启</span>
+                <span>数字1为关闭。文章详情页左侧显示文章封面。默认：开启</span>
             </li>
             <li>
                 <label for="">网站版权</label>
@@ -75,7 +80,7 @@
                 <input type="text" name="i_404_bak" value="<?php echo get_option("i_404_bak"); ?>">
                 <span>按钮文字。默认：返回首页</span>
             </li>
-            <h2>评论设置</h2>
+            <h2>其他设置</h2>
             <li>
                 <label for="">文章评论</label>
                 <input type="text" name="i_comments_article" value="<?php echo get_option("i_comments_article"); ?>">
@@ -89,7 +94,7 @@
             <li>
                 <label for="">游客评论</label>
                 <input type="text" name="i_comments_turn" value="<?php echo get_option("i_comments_turn"); ?>">
-                <span>数字1为关闭。是否支持游客评论。留空为开启。默认：开启</span>
+                <span>数字1为关闭。是否支持游客评论，留空为开启。默认：开启</span>
             </li>
         </ul>
 

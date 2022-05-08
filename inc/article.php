@@ -46,7 +46,8 @@
                         document.querySelector('.single-main .left').appendChild(document.querySelector('#article-toc'))
                     }
                 </script>
-            <div class="the-end" style="">—— THE END ——</div>
+            <div class="the-end">—— THE END ——</div>
+            <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
         </div>
         <div class="post-context">
             <div class="post-prev-next">
@@ -62,7 +63,7 @@
         ?>
     </div>
     <div class="right">
-        <?php get_sidebar(); ?>
+        <?php get_template_part('template/sidebar-article')?>
 
         <!-- 相关文章 -->
         <!-- <div class="post-about-card">

@@ -10,6 +10,7 @@ if($_POST['i_opt']){
     update_option("i_wrapper_text",$_POST["i_wrapper_text"]);
     update_option("i_wrapper_name",$_POST["i_wrapper_name"]);
     update_option("i_notice",$_POST["i_notice"]);
+    update_option("i_blog_or_card",$_POST["i_blog_or_card"]);
     update_option("i_random_pic",$_POST["i_random_pic"]);
     update_option("i_loading_pic",$_POST["i_loading_pic"]);
     update_option("i_hello",$_POST["i_hello"]);

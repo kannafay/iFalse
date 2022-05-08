@@ -15,10 +15,10 @@ var banner = new Vue({
     },
 })
 
-var main = new Vue({
-    el: '.main, .search-result',
+var sidebar = new Vue({
+    el: '.post-author-description',
     data: {
-        notice: '暂无公告', // 公告栏
+        description: '这家伙很懒，什么都没写', // 作者描述
 
     },
 })

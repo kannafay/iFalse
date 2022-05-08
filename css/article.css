@@ -163,7 +163,7 @@
 #article-toc #article-toc-ul .heading-level-4 a,
 #article-toc #article-toc-ul .heading-level-5 a,
 #article-toc #article-toc-ul .heading-level-6 a {
-    font-size: 12px;
+    font-size: 13px;
 }
 #article-toc #article-toc-ul .heading-level-1 a::before,
 #article-toc #article-toc-ul .heading-level-2 a::before,
@@ -222,6 +222,27 @@
 }
 .single-main .center .post-content .post-tip {
     display: none;
+}
+.single-main .center .post-content .the-tag {
+
+}
+.single-main .center .post-content .the-tag span a {
+    line-height: 25px;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: var(--radius-sub);
+    color: var(--text-info);
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.single-main .center .post-content .the-tag span a::before {
+    content: '#';
+    left: 0;
+}
+.single-main .center .post-content .the-tag span a:hover {
+    background: var(--theme-1);
+    background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
+    color: var(--bgc);
 }
 .single-main .center .post-content .the-end {
     color: var(--text-info);
@@ -383,7 +404,8 @@
     
 }
 .post-comments .post-comments-content .comment-author img {
-    border-radius: var(--radius-sub);
+    /* border-radius: var(--radius-sub); */
+    border-radius: 50%;
     height: 40px;
     width: 40px;
     margin-right: 10px;
@@ -517,7 +539,7 @@
 .post-comments .post-comments-content .comment-respond .comment-form-cookies-consent {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin: 5px 0;
 }
 .post-comments .post-comments-content .comment-respond .comment-form-cookies-consent input {
     width: 15px;
@@ -555,7 +577,8 @@
 /* 已登录用户高亮 */
 .post-comments .post-comments-content .byuser .fn,
 .post-comments .post-comments-content .byuser .fn a {
-    /* color: var(--theme); */
+    display: flex;
+    align-items: center;
 }
 /* 博主高亮 */
 .post-comments .post-comments-content .master {
@@ -646,102 +669,8 @@
 
 /* 评论区-end-------------------------------------------- */
 
-
 .single-main .right {
     padding-left: 20px;
-}
-
-.author-info-box {
-    border-radius: var(--radius);
-    padding: 20px;
-    background-color: var(--bgc-sub);
-    /* border: 1px solid var(--theme); */
-    margin-bottom: 20px;
-}
-
-.author-info-box .author-info .post-author-logo {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    border: 2px solid var(--theme-sub);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
-.author-info-box .author-info img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-.author-info-box .author-info .post-author-name {
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--text);
-    text-align: center;
-}
-.author-info-box .author-info .post-author-description {
-    font-size: 13px;
-    color: var(--text-info);
-    text-align: center;
-    margin-top: 5px;
-}
-#primary-sidebar li {
-    width: 100%;
-    height: auto;
-}
-#primary-sidebar li img {
-    width: 100%;
-    height: 100%;
-    border-radius: var(--radius);
-}
-#primary-sidebar .widget_block {
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-#primary-sidebar .widget_block h2 {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text);
-    position: relative;
-    padding-left: 20px;
-    line-height: 1.5;
-}
-#primary-sidebar .widget_block h2::before {
-    content: '';
-    width: 4px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    border-radius: var(--radius);
-    background-color: var(--theme);
-    box-shadow: 1px 1px 3px -1px var(--theme-sub);
-}
-#primary-sidebar .widget_recent_entries {
-    background-color: var(--bgc-sub);
-    border-radius: var(--radius);
-    padding: 15px;
-    padding-left: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-#primary-sidebar .widget_recent_entries li a {
-    display: inline-block;
-    width: 100%;
-    padding: 4px;
-    padding-left: 6px;
-    border-radius: var(--radius-sub);
-    font-size: 14px;
-    color: var(--text-sub);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-#primary-sidebar .widget_recent_entries li a:hover {
-    background: var(--theme-1);
-    background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
-    color: var(--bgc);
 }
 
 @media screen and (max-width: 1280px) {
@@ -1008,6 +937,7 @@
     }
     .post-comments .post-comments-content .comment-respond .comment-form-url {
         padding-left: 0;
-        margin-bottom: 0;
+        margin-top: 3px;
+        margin-bottom: 5px;
     }
 }

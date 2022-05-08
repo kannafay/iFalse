@@ -68,6 +68,9 @@
     }
 }
 @media screen and (max-width: 640px) {
+    .footer {
+        padding-bottom: 0;
+    }
     .footer .footer-top {
         grid-template-columns: 1fr;
         text-align: center;

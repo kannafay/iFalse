@@ -117,8 +117,8 @@
     text-align: left;
 }
 .single-main .center .post-content th {
-    background-color: var(--theme-3);
-    color: var(--text);
+    background-color: var(--theme-sub);
+    color: var(--bgc);
 }
 
 /* a标签hover效果//////////////////////////////////////////////////////////// */
