@@ -92,11 +92,15 @@
 		width: 40px;
 		line-height: 40px;
 		font-size: 18px;
+		left: 0;
+		top: 0;
 	}
 	.progress-wrap::before {
 		height: 40px;
 		width: 40px;
 		line-height: 40px;
 		font-size: 18px;
+		left: 0;
+		top: 0;
 	}
 }
