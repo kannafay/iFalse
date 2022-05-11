@@ -23,6 +23,7 @@ if($_POST['i_opt']){
     update_option("i_comments_article",$_POST["i_comments_article"]);
     update_option("i_comments_page",$_POST["i_comments_page"]);
     update_option("i_comments_turn",$_POST["i_comments_turn"]);
+    update_option("i_login",$_POST["i_login"]);
 }
 $logo_img = get_option("logo_img");
 ?>

@@ -37,6 +37,12 @@
     line-height: 1.8;
     word-break : break-all;
 }
+
+/* 附件 */
+.single-main .center .post-content .attachment a {
+    background: none;   
+}
+/* 附件end */
 .single-main .center .post-content blockquote {
     background-color: var(--bgc-sub);
     border-left: 4px solid var(--theme-sub);

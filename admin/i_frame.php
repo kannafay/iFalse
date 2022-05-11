@@ -94,7 +94,12 @@
             <li>
                 <label for="">游客评论</label>
                 <input type="text" name="i_comments_turn" value="<?php echo get_option("i_comments_turn"); ?>">
-                <span>数字1为关闭。是否支持游客评论，留空为开启。默认：开启</span>
+                <span>数字1为关闭。是否允许游客评论，留空为开启。默认：开启</span>
+            </li>
+            <li>
+                <label for="">登录模板</label>
+                <input type="text" name="i_login" value="<?php echo get_option("i_login"); ?>">
+                <span>数字1为开启。使用主题登录模板代替系统自带登录页面。默认：关闭</span>
             </li>
         </ul>
 

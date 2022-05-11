@@ -2,22 +2,108 @@
 /**
  * @神秘布偶猫
  * @https://www.ifalse.cn
- * @2022.05.02
  */
 // ---------------------------------------------------------------------
-//修改登录注册logo
-function custom_loginlogo_url($url) {
-  return home_url();
-  }
-  add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+// 测试区
 
-function custom_loginlogo() {
-  echo '<style type="text/css">
-  h1 a {background-image: url('.get_bloginfo('template_directory').'/static/img/avatar.png) !important;background-size: 91px !important;}
-  .login form {border-radius:8px;}
-  </style>';
+// 测试区end
+
+// ---------------------------------------------------------------------
+// 首页page1回到首页
+$current_url = home_url(add_query_arg(array()));
+$home_page_1 = home_url() . '/page/1';
+if($current_url == $home_page_1) {
+  wp_redirect(home_url(), 302);
+}
+
+// ---------------------------------------------------------------------
+//代替系统登录注册找回密码
+if(get_option("i_login") == 1) {
+  function redirect_login_page() {
+    $login_page  = home_url( '/login/' );
+    $page_viewed = basename($_SERVER['REQUEST_URI']);
+   
+    if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
+      wp_redirect($login_page);
+      exit;
+    }
   }
-  add_action('login_head', 'custom_loginlogo');
+  function login_failed() {
+    $login_page  = home_url( '/login/' );
+    wp_redirect( $login_page . '?login=failed' );
+    exit;
+  }
+  add_action( 'wp_login_failed', 'login_failed' );
+  
+  function verify_username_password( $user, $username, $password ) {
+    $login_page  = home_url( '/login/' );
+      if( $username == "" || $password == "" ) {
+          wp_redirect( $login_page . "?login=empty" );
+          exit;
+      }
+  }
+  add_filter( 'authenticate', 'verify_username_password', 1, 3);
+  add_action('init','redirect_login_page');
+}
+
+// ---------------------------------------------------------------------
+//启用主题并生成登录注册找回密码页面
+function ashu_add_page($title,$slug,$page_template=''){   
+  $allPages = get_pages();//获取所有页面   
+  $exists = false;   
+  foreach( $allPages as $page ){   
+      //通过页面别名来判断页面是否已经存在   
+      if( strtolower( $page->post_name ) == strtolower( $slug ) ){   
+          $exists = true;   
+      }   
+  }   
+  if( $exists == false ) {   
+      $new_page_id = wp_insert_post(   
+          array(   
+              'post_title' => $title,   
+              'post_type'     => 'page',   
+              'post_name'  => $slug,   
+              'comment_status' => 'closed',   
+              'ping_status' => 'closed',   
+              'post_content' => '',   
+              'post_status' => 'publish',   
+              'post_author' => 1,   
+              'menu_order' => 0   
+          )   
+      );   
+      //如果插入成功 且设置了模板   
+      if($new_page_id && $page_template!=''){   
+          //保存页面模板信息   
+          update_post_meta($new_page_id, '_wp_page_template',  $page_template);   
+      }   
+  }   
+}
+
+// 使用
+function ashu_add_pages() {   
+	global $pagenow;   
+	//判断是否为激活主题页面   
+	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ){   
+		ashu_add_page('登录','login','template/login.php'); //页面标题"登录页面",别名login,页面模板page-login.php   
+		ashu_add_page('注册','register','template/register.php');   
+		ashu_add_page('找回密码','forget','template/forget.php');   
+	}   
+}   
+add_action( 'load-themes.php', 'ashu_add_pages' );  
+// ---------------------------------------------------------------------
+//修改登录注册logo
+// function custom_loginlogo_url($url) {
+//   return home_url();
+//   }
+//   add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+
+// function custom_loginlogo() {
+//   echo '<style type="text/css">
+//   h1 a {background-image: url('.get_bloginfo('template_directory').'/static/img/avatar.png) !important;background-size: 91px !important;}
+//   .login form {border-radius:8px;}
+//   </style>';
+//   }
+//   add_action('login_head', 'custom_loginlogo');
   
 // ---------------------------------------------------------------------
 // 评论中高亮站长
@@ -180,7 +266,7 @@ function insert_table_of_contents($content) {
 add_filter('the_content', 'insert_table_of_contents');
 
 // ---------------------------------------------------------------------
-// 移动端菜单
+// 移动端目录
 function insert_table_of_contents_mb($content) {
 
 	$html_comment = "<!--insert-toc-->";
@@ -296,6 +382,15 @@ function i_searchform_mb() {
 //     exit;
 // }
 
+
+// 主题自动/一键升级
+require 'admin/update/update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://ifalse.onll.cn/themes/info.json',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'iFalse'
+);
+
 // ---------------------------------------------------------------------
 // 菜单
 register_nav_menus( array(        
@@ -402,7 +497,7 @@ function setPostViews($postID) {
 //   }
 // }
 // add_action('init','redirect_login_page');
-
+// ---------------------------------------------------------------------
 // 登录后重定向
 function soi_login_redirect($redirect_to, $request, $user) {
     return (is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();
@@ -464,6 +559,10 @@ function exclude_page() {
 }
 
 // ---------------------------------------------------------------------
+//禁用多语言
+add_filter( 'login_display_language_dropdown', '__return_false' );
+
+// ---------------------------------------------------------------------
 //禁止空搜索
 add_filter( 'request', 'uctheme_redirect_blank_search' );
 function uctheme_redirect_blank_search( $query_variables ) {
@@ -481,8 +580,8 @@ function uctheme_redirect_blank_search( $query_variables ) {
 add_action('admin_menu', 'ifasle_theme_set');
     function ifasle_theme_set() {
         add_menu_page(
-            '主题设置',
-            '主题设置', 
+            'iFalse主题设置',
+            'iFalse主题设置', 
             'edit_themes',
             'i-opt',
             'i_settings' 

@@ -35,9 +35,13 @@
 .single-banner .single-detail span a {
     font-size: 14px;
     color: var(--text-info) !important;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .single-banner .single-detail span a:hover {
+    color: var(--theme) !important;
+}
+.single-banner .single-detail span .post-edit-link {
     color: var(--theme) !important;
 }
 .single-banner .breadcrumb {
@@ -58,6 +62,7 @@
 }
 .single-banner .breadcrumb ul li a {
     color: var(--text-info);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .single-banner .breadcrumb ul li a:hover {
@@ -139,7 +144,7 @@
 }
 #article-toc ul li a:hover {
     color: var(--bgc);
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
 }
 #article-toc #article-toc-ul .heading-level-1,
@@ -240,7 +245,7 @@
     left: 0;
 }
 .single-main .center .post-content .the-tag span a:hover {
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     color: var(--bgc);
 }
@@ -279,6 +284,7 @@
 .single-main .center .post-context .post-prev-next a {
     color: var(--text-sub);
     padding: 10px 0;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .single-main .center .post-context .post-prev-next span {
@@ -322,12 +328,14 @@
     padding-top: 20px;
 }
 .post-comments .post-comments-content h3 > a {
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content h3 #cancel-comment-reply-link {
     color: var(--text-info);
     font-weight: 400;
     font-size: 14px;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content h3 #cancel-comment-reply-link:hover {
@@ -384,6 +392,7 @@
 .post-comments .post-comments-content #respond #reply-title > a {
     color: var(--text);
     margin-right: 5px;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content #respond #reply-title a:hover {
@@ -395,6 +404,7 @@
 }
 .post-comments .post-comments-content .comment-body .reply a:hover {
     color: var(--theme);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content .comment-author {
@@ -432,6 +442,7 @@
 
 .post-comments .post-comments-content .comment-meta a {
     color: var(--text-info);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content .comment-meta .comment-edit-link:hover {
@@ -465,6 +476,7 @@
     border-radius: var(--radius);
     outline: none;
     margin-bottom: 10px;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content .comment-respond textarea:hover {
@@ -522,6 +534,7 @@
     padding: 5px;
     border: 1px solid var(--black-1);
     border-radius: var(--radius);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content .comment-respond .comment-form-author input:hover,
@@ -568,6 +581,7 @@
     border: 0;
     margin-top: 10px;
     cursor: pointer;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .post-comments .post-comments-content .comment-respond .form-submit input:hover {
@@ -589,7 +603,7 @@
     font-size: 13px;
     font-style: normal;
     color: var(--bgc);
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     padding: 2px 8px;
     border-radius: var(--radius-sub);
@@ -617,10 +631,11 @@
 .is-logined .is-logined-box a {
     margin: 0 5px;
     color: var(--bgc);
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     padding: 2px 8px;
     border-radius: var(--radius-sub);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .is-logined .is-logined-box a:hover {
@@ -727,8 +742,8 @@
         right: 40px;
         bottom: 100px;
         background-color: var(--bgc);
-        width: 46px;
-        height: 46px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         /* border: 1px solid var(--theme); */
         box-shadow: 0 0 10px 1px var(--black-1);
@@ -743,6 +758,7 @@
         visibility: visible;
         opacity: 1;
     }
+    
     .post-menu-mb-btn div {
         width: 100%;
         height: 100%;
@@ -809,7 +825,7 @@
     }
     #article-toc-mb ul li a:hover {
         color: var(--bgc);
-        background: var(--theme-1);
+        background: var(--theme-sub);
         background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     }
     #article-toc-mb #article-toc-ul-mb .heading-level-1,
@@ -833,7 +849,7 @@
     #article-toc-mb #article-toc-ul-mb .heading-level-4 a,
     #article-toc-mb #article-toc-ul-mb .heading-level-5 a,
     #article-toc-mb #article-toc-ul-mb .heading-level-6 a {
-        font-size: 12px;
+        font-size: 13px;
     }
     #article-toc-mb #article-toc-ul-mb .heading-level-1 a::before,
     #article-toc-mb #article-toc-ul-mb .heading-level-2 a::before,
@@ -903,8 +919,8 @@
     .post-menu-mb-btn {
         right: 20px;
         bottom: 95px;
-        width: 40px;
-        height: 40px;
+        width: 41px;
+        height: 41px;
         -webkit-transition: var(--tr2);
         transition: var(--tr2);
     }

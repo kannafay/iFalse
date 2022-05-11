@@ -85,7 +85,7 @@
     white-space: nowrap;
 }
 #primary-sidebar .widget_recent_entries li a:hover {
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     color: var(--bgc);
 }
@@ -181,7 +181,7 @@
     left: 0;
 }
 #primary-sidebar .widget_tag_cloud a:hover {
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     color: var(--bgc);
 }
@@ -218,6 +218,6 @@
 #primary-sidebar .wp-block-categories li a:hover,
 #primary-sidebar .widget_archive li a:hover {
     color: var(--bgc);
-    background: var(--theme-1);
+    background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
 }

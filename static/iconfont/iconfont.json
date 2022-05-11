@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "670208",
+      "name": "YDUI-正确(实心)",
+      "font_class": "yduizhengqueshixin",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "11487985",
+      "name": "atm",
+      "font_class": "atm",
+      "unicode": "e744",
+      "unicode_decimal": 59204
+    },
+    {
+      "icon_id": "11487988",
+      "name": "browse",
+      "font_class": "browse",
+      "unicode": "e745",
+      "unicode_decimal": 59205
+    },
+    {
+      "icon_id": "11488038",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e74f",
+      "unicode_decimal": 59215
+    },
+    {
+      "icon_id": "11488087",
+      "name": "password",
+      "font_class": "password",
+      "unicode": "e75b",
+      "unicode_decimal": 59227
+    },
+    {
+      "icon_id": "11488088",
+      "name": "Not visible",
+      "font_class": "Notvisible",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    },
+    {
       "icon_id": "201552",
       "name": "列表模式",
       "font_class": "liebiaomoshi",

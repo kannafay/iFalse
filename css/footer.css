@@ -18,6 +18,7 @@
 .footer .footer-top span a {
     font-size: 14px;
     color: var(--text-info);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .footer .footer-top span a:hover {
@@ -46,6 +47,7 @@
 }
 .footer .footer-bottom li a {
     color: var(--text-info);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .footer .footer-bottom li a:hover {

@@ -87,7 +87,7 @@ if(post_menu_mb) {
     }
 }
 
-// 最新回复删除 发表在
+// 删除 "发表在"
 const comments_meta = document.querySelectorAll('.wp-block-latest-comments__comment-meta');
 const comments_meta_fabiao = [];
 if(comments_meta) {
@@ -96,7 +96,8 @@ if(comments_meta) {
     }    
 }
 
-
+//关于iFalse
+console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
 
 // 查询次数，花费时间
 const queries_num = document.querySelector('#queries_num');

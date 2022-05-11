@@ -1,7 +1,7 @@
 <div class="post-comments">
     <div class="post-comments-content">
     <?php comment_form() ?>
-    <h2>评论（<?php comments_popup_link('沙发！','1','%') ?>）</h2>
+    <h2>评论（<?php comments_popup_link('沙发','1','%') ?>）</h2>
     <?php wp_list_comments( array(
         'avatar_size' => '400',
         'type' => 'comment')); 
@@ -26,7 +26,7 @@
             if(is_user_logged_in() == false) {?>
                 <div class="is-logined">
                     <div class="is-logined-box"> 
-                        发现您未登录，请先<a href="<?php bloginfo('url'); ?>/wp-admin">登录</a>后再发表评论！
+                        发现您未登录，请先<a href="<?php bloginfo('url'); ?>/wp-login.php">登录</a>后再发表评论！
                     </div>
                 </div>
                 <script>

@@ -17,6 +17,7 @@
 	-webkit-transition: var(--tr3) ;
 	z-index: 5;
 	box-shadow: 0 0 5px 1px var(--black-1);
+	-webkit-transition: var(--tr3);
 	transition: var(--tr3);
 }
 .progress-wrap.active-progress {

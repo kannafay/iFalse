@@ -22,9 +22,9 @@
         </div>
         <?php 
             if(get_option("i_blog_or_card") == 1) {
-                get_template_part('template/home-2');
+                get_template_part('template/home-blog');
             } else{
-                get_template_part('template/home-1');
+                get_template_part('template/home-card');
             } 
         ?>
     </div>

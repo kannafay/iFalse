@@ -7,7 +7,14 @@
             </div>
         </div>
         <div class="single-title"><h1><?php the_title(); ?></h1></div>
-        <div class="single-detail"><span>浏览 <?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?> / 发布于 <?php the_time('Y-m-d'); ?> / 评论 <?php comments_popup_link('沙发！','1','%') ?> <?php edit_post_link('编辑文章') ?></span></div>
+        <div class="single-detail">
+            <span>
+                <?php the_time('Y-m-d'); ?> / 
+                浏览 <?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?> / 
+                评论 <?php comments_popup_link('沙发','1','%') ?>
+                <?php edit_post_link('编辑文章') ?>
+            </span>
+        </div>
         <div class="breadcrumb"><span class="iconfont icon-home"></span><?php if ( function_exists('i_breadcrumb') ) i_breadcrumb();?></div>
     </div>
 </div>

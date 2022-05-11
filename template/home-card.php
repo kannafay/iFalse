@@ -19,9 +19,9 @@
                     <div class="home-title"><?php if ( is_sticky() ) {echo '<span class="iconfont icon-zhiding3"></span>';} ?><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
                     <div class="home-msg">
                         <?php echo get_avatar( get_the_author_email(), '100' );?>
-                        <div class="home-watch">浏览 <?php echo getPostViews(get_the_ID()) ?></div><span>/</span>
                         <div class="home-date"><?php the_time('Y-m-d'); ?></div><span>/</span>
-                        <div class="home-comments">评论 <?php comments_popup_link('沙发！','1','%') ?></div>
+                        <div class="home-watch">浏览 <?php echo getPostViews(get_the_ID()) ?></div><span>/</span>
+                        <div class="home-comments">评论 <?php comments_popup_link('沙发','1','%') ?></div>
                     </div>
                 </div>
             </li>

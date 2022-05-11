@@ -15,6 +15,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 0 32px 0 10px;
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .searchform input:hover {
@@ -65,6 +66,7 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         padding: 0 32px 0 10px;
+        -webkit-transition: var(--tr2);
         transition: var(--tr2);
     }
     .searchform-mb input:hover {

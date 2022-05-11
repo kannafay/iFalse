@@ -14,6 +14,7 @@
 .page-banner .page-detail span a {
     font-size: 14px;
     color: var(--text-info);
+    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .page-banner .page-detail span a:hover {

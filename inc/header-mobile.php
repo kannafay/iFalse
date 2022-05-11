@@ -6,7 +6,7 @@
             <div class="menu-mb-top">
                 <div class="menu-mb-box">
                     <div class="user-info">
-                        <a href="<?php bloginfo('url'); ?>/wp-admin">
+                        <a href="<?php bloginfo('url'); ?>/wp-login.php">
                             <?php  
                                 if(is_user_logged_in()) {
                                     echo get_user_avatar();
