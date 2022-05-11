@@ -18,7 +18,6 @@
     </style>
 </head> 
 <body>
-    <?php get_header(); ?>
     <?php
     if(is_user_logged_in()) {
         if(current_user_can('level_10')) {
@@ -82,8 +81,10 @@
                     <?php 
                         if(!empty($error)) {
                             echo '<p class="ludou-error">'.$error.'</p>';
+                        } elseif (is_user_logged_in()) {
+                            echo '<p style="color:#32CD32"><span class="iconfont icon-yduizhengqueshixin" style="color:#1AAD19;"></span> 注册成功！</p>';
                         }
-                        if (!is_user_logged_in()) { ?>
+                    ?>
                             <form name="registerform" method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                                 <div class="form-item form-username">
                                     <span class="iconfont icon-atm"></span>
@@ -110,19 +111,12 @@
                                     <button type="submit" name="wp-submit">注册</button>
                                 </div>
                                 <div class="form-other">
-                                    <span><span class="iconfont icon-yduizhengqueshixin" style="color:#1AAD19;"> </span>注册即代表同意<a href="<?php home_url(); ?>/privacy-policy">《用户协议》</a></span>
+                                    <span>注册即代表同意<a href="<?php home_url(); ?>/privacy-policy">《用户协议》</a></span>
                                 </div>
                             </form>
-                        <?php } else {
-                            echo '<p style="color:#32CD32">您已注册成功，并已登录！<a class="register-back-home" href="/">返回首页</a></p>';
-                        } 
-                    ?>
                 </div>
             </div>
         </div>
     </div>
-
-    <?php i_frame_js(); ?>
-    
 </body>
 </html>

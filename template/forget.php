@@ -18,7 +18,6 @@
     </style>
 </head> 
 <body>
-    <?php get_header(); ?>
     <?php
     if(is_user_logged_in()) {        
         if(current_user_can('level_10')) {
@@ -52,8 +51,5 @@
             </div>
         </div>
     </div>
-
-    <?php i_frame_js(); ?>
-    
 </body>
 </html>
