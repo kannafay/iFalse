@@ -4,10 +4,6 @@
  * @https://www.ifalse.cn
  */
 // ---------------------------------------------------------------------
-// 测试区
-
-// 测试区end
-
 // ---------------------------------------------------------------------
 // 首页page1回到首页
 $current_url = home_url(add_query_arg(array()));
@@ -386,7 +382,7 @@ function i_searchform_mb() {
 // 主题自动/一键升级
 require 'admin/update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://ifalse.onll.cn/themes/info.json',
+	'https://www.ifalse.cn/themes/info.json',
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'iFalse'
 );
