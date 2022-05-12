@@ -8,6 +8,9 @@
         </div>
         <div class="single-title"><h1><?php the_title(); ?></h1></div>
         <div class="single-detail">
+            <?php the_post(); echo get_avatar( get_the_author_email(), '100' );//60代表头像的大小
+                rewind_posts(); 
+            ?>
             <span>
                 <?php the_time('Y-m-d'); ?> / 
                 浏览 <?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?> / 

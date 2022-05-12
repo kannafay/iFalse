@@ -15,7 +15,7 @@
                         </a>
                    </div>
                    <div class="home-2-detail">
-                        <div class="home-2-detail-top-title"><h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
+                        <div class="home-2-detail-top-title"><h2><?php if ( is_sticky() ) {echo '<span class="zhiding iconfont icon-zhiding3"></span>';} ?><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2></div>
                         <div class="home-2-detail-top-abstract"><?php the_excerpt(); ?></div>
                         <div class="home-2-detail-bottom">
                             <div class="home-2-detail-bottom-cate"></span><?php echo the_category(' ') ?></div>

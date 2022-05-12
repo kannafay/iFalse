@@ -2,7 +2,6 @@
     border-radius: var(--radius);
     padding: 20px;
     background-color: var(--bgc-sub);
-    /* border: 1px solid var(--theme); */
     margin-bottom: 20px;
 }
 .author-info-box .author-info .post-author-logo {
@@ -122,7 +121,9 @@
     color: var(--text-info);
 }
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-meta {
-    /* height: 40px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* name */
@@ -131,31 +132,25 @@
     width: 100%;
     color: var(--theme);
     font-size: 15px;
-    /* word-break: break-all;
-    word-wrap: break-word; */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 /* title */
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-link {
-    margin: 0 5px;
-    display: none;
+    color: var(--text-info);
+    margin-right: 5px;
+    transition: var(--tr2);
 }
 /* time */
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-date {
-    /* display: block; */
+    display: block;
     font-size: 13px;
 }
 /* content */
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt {
-    color: var(--text-sub);
+    color: var(--text);
     font-size: 14px;
-}
-#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt p {
-    /* overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; */
 }
 
 /* 标签云 */
@@ -213,7 +208,7 @@
     font-size: 15px;
     padding: 4px 6px;
     border-radius: var(--radius-sub);
-    transition: var(--tr-2);
+    transition: var(--tr2);
 }
 #primary-sidebar .wp-block-categories li a:hover,
 #primary-sidebar .widget_archive li a:hover {

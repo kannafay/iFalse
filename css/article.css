@@ -31,6 +31,10 @@
     color: var(--text);
     margin-bottom: 15px;
 }
+.single-banner .single-detail {
+    display: flex;
+    align-items: center;
+}
 .single-banner .single-detail span,
 .single-banner .single-detail span a {
     font-size: 14px;
@@ -40,6 +44,12 @@
 }
 .single-banner .single-detail span a:hover {
     color: var(--theme) !important;
+}
+.single-banner .single-detail img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 .single-banner .single-detail span .post-edit-link {
     color: var(--theme) !important;
@@ -217,7 +227,6 @@
 #article-toc-mb {
     display: none;
 }
-
 /* 目录树end------------------------------------------------------------- */
 
 .single-main .center {
@@ -450,7 +459,6 @@
 }
 
 /* 回复区 */
-
 .post-comments .post-comments-content .comment-respond {
     border-radius: var(--radius);
 }
@@ -588,12 +596,14 @@
     opacity: .8;
 }
 
-/* 已登录用户高亮 */
+/* 登录用户高亮 */
 .post-comments .post-comments-content .byuser .fn,
 .post-comments .post-comments-content .byuser .fn a {
     display: flex;
     align-items: center;
 }
+/* 登录用户高亮end */
+
 /* 博主高亮 */
 .post-comments .post-comments-content .master {
     color: var(--theme);
@@ -609,6 +619,7 @@
     border-radius: var(--radius-sub);
 }
 
+/* 博主高亮end */
 .is-logined {
     width: 100%;
     height: 100px;
@@ -680,8 +691,6 @@
     background-color: var(--theme);
     overflow: hidden;
 }
-
-
 /* 评论区-end-------------------------------------------- */
 
 .single-main .right {
@@ -745,7 +754,6 @@
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        /* border: 1px solid var(--theme); */
         box-shadow: 0 0 10px 1px var(--black-1);
         cursor: pointer;
         visibility: hidden;
@@ -768,7 +776,6 @@
     }
     .post-menu-mb-btn span {
         font-size: 24px;
-        /* font-weight: 700; */
         color: var(--theme);
     }
 
@@ -915,6 +922,7 @@
         padding-right: 10px;
         font-size: 15px;
     }
+    
     /* 移动端菜单按钮 */
     .post-menu-mb-btn {
         right: 20px;
@@ -933,6 +941,7 @@
     .article-toc-mb {
         right: 20px !important;
     }
+
     /* 评论区 */
     .post-comments .post-comments-content .fn,
     .post-comments .post-comments-content .fn a,

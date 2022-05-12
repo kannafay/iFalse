@@ -1,5 +1,5 @@
-<div class="banner"></div>
 <div class="wrapper">
+    <div class="banner"></div>
     <div class="content-wrapper">
         <div class="text-wrapper">
             <h2><?php if(get_option("i_wrapper_text")) {echo get_option("i_wrapper_text");} else{echo "{{ text }}";} ?></h2>
@@ -7,6 +7,7 @@
         </div>
     </div>
 </div>
+
 <div class="container main-content main">
     <div class="content">
         <?php

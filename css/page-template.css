@@ -10,6 +10,10 @@
     margin-bottom: 15px;
     margin-top: 20px;
 }
+.page-banner .page-detail {
+    display: flex;
+    align-items: center;
+}
 .page-banner .page-detail span,
 .page-banner .page-detail span a {
     font-size: 14px;
@@ -19,6 +23,15 @@
 }
 .page-banner .page-detail span a:hover {
     color: var(--theme);
+}
+.page-banner .page-detail img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.page-banner .page-detail span .post-edit-link {
+    color: var(--theme) !important;
 }
 
 .page-main {
@@ -32,7 +45,6 @@
     border-left: 0;
     border-right: 0;
     padding: 0;
-    /* padding-bottom: 20px; */
 }
 .page-main .center .post-content .the-end {
     color: var(--text-info);

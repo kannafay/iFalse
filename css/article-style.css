@@ -28,7 +28,6 @@
 .single-main .center .post-content h3 a:hover,
 .single-main .center .post-content h2 a:hover,
 .single-main .center .post-content h1 a:hover {
-    /* background: linear-gradient(90deg, var(--theme) 100%, transparent 0) repeat-x; */
     background-size: 0.5em 1px;
     background-position: 0 1.5em;
 }
@@ -146,7 +145,7 @@
     bottom: 0;
     background-color: var(--theme-3);
 } */
-/* a标签hover效果/end/////////////////////////////////////////////////////////// */
+/* a标签hover效果end/////////////////////////////////////////////////////////// */
 
 .single-main .center .post-content .wp-block-image a:before {
     display: none;
@@ -248,8 +247,8 @@
 .single-main .center .post-content .wp-block-button__link::before {
     display: none;
 }
-/* 高亮代码///////////////////////////////////////////////////////// */
 
+/* 文字高亮///////////////////////////////////////////////////////// */
 .single-main .center .post-content .has-black-color {
     color: #000;
 }
@@ -286,7 +285,7 @@
 .single-main .center .post-content .has-vivid-purple-color {
     color: #9b51e0;
 }
-/* 高亮代码/end//////////////////////////////////////////////////////// */
+/* 文字代码end//////////////////////////////////////////////////////// */
 
 /* h标签样式1/////////////////////////////////////////////////////////*/
 .single-main .center .post-content h4,
@@ -377,9 +376,9 @@
     width: 68px;
     background-color: var(--theme-sub);
 } */
-/* 动画-结束 */
+/* 动画end */
 
-/* h标签样式1/end///////////////////////////////////////////////////////////*/
+/* h标签样式1end///////////////////////////////////////////////////////////*/
 
 /* h标签样式2//////////////////////////////////////////////////////////////*/
 /* .single-main .center .post-content h6 {
@@ -440,7 +439,7 @@
     background-color: var(--theme);
     box-shadow: 1px 1px 3px -1px var(--theme-sub);
 }  */
-/* h标签样式2/end/////////////////////////////////////////////////////////////*/
+/* h标签样式2end/////////////////////////////////////////////////////////////*/
 
 @media screen and (max-width: 640px) {
     .single-main .center .post-content {

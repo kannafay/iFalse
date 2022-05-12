@@ -196,7 +196,6 @@
 }
 .home-detail .home-title span {
     font-size: 20px;
-    /* color: var(--theme); */
     color: red;
     margin-right: 2px;
 }
@@ -204,8 +203,6 @@
     width: 100%;
     height: 42px;
     font-size: 14px;
-    /* line-height: 1.8; */
-    /* font-weight: 700; */
     color: var(--text);
     word-break: break-all;
     text-overflow: ellipsis;
@@ -253,7 +250,6 @@
 }
 .home-2 .home-2-mian {
     width: calc(100% - 330px);
-    /* background-color: aquamarine; */
 }
 .home-2 .home-2-mian ul {
     border: 1px solid var(--border);
@@ -266,7 +262,6 @@
     height: auto;
     padding: 15px;
     background-color: var(--bgc);
-    /* border-bottom: 1px dashed var(--border); */
     -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
@@ -300,6 +295,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.home-2 .home-2-mian ul li .home-2-detail h2 {
+    display: flex;
+    align-items: center;
+}
+.home-2 .home-2-mian ul li .home-2-detail h2 span {
+    font-size: 20px;
+    font-weight: 400;
+    color: red;
 }
 .home-2 .home-2-mian ul li .home-2-detail h2 a {
     font-weight: 400;
@@ -349,7 +353,6 @@
     font-size: 14px;
     display: flex;
     align-items: center;
-    /* justify-content: flex-start; */
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-msg span {
     margin: 0 5px;
@@ -374,7 +377,6 @@
     padding-left: 20px;
     border-left: 1px solid var(--border);
 }
-
 /* 博客模式end */
 
 .page-nav-bar {
