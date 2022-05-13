@@ -9,4 +9,3 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/custom/iconfont/iconfont.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/custom/user.css">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_3363448_8l5jiiq36wl.css">
