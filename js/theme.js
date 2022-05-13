@@ -70,7 +70,7 @@ if(change_comment_email_notes){change_comment_email_notes.innerText = '发表评
     $(window).on('scroll', lazyScroll)
 }(window, document, jQuery)
 
-//移动端菜单按钮
+// 移动端菜单按钮
 const post_menu_mb_btn = document.querySelector('.post-menu-mb-btn');
 const post_menu_mb = document.querySelector('#article-toc-mb');
 if(post_menu_mb) {
@@ -96,9 +96,10 @@ if(comments_meta) {
     }    
 }
 
-//关于iFalse
+// 关于
 console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
 
 // 查询次数，花费时间
 const queries_num = document.querySelector('#queries_num');
 console.log(queries_num.firstChild.data);
+

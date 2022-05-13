@@ -125,7 +125,11 @@
     background-color: var(--theme-sub);
     color: var(--bgc);
 }
-
+.single-main .center .post-content td a {
+    text-decoration: underline;
+    -webkit-transition: var(--tr2);
+    transition: var(--tr2); 
+}
 /* a标签hover效果//////////////////////////////////////////////////////////// */
 /* .single-main .center .post-content a::before {
     content: '';

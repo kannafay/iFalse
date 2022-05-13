@@ -10,7 +10,7 @@
                     浏览 <?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?> / 
                     评论 <?php comments_popup_link('沙发','1','%') ?>
                     <?php edit_post_link('编辑页面') ?>
-                </span>
+            </span>
         </div>
     </div>
 </div>
