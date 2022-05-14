@@ -61,8 +61,7 @@
     border-radius: var(--radius-sub);
     padding: 10px;
     margin-right: 10px;
-    -webkit-transition: var(--tr2);
-    transition: var(--tr2);
+
 }
 .i_opt ul li input:hover {
     border: 1px solid var(--theme);
@@ -94,6 +93,34 @@
 .submit input:hover {
     opacity: .8;
 }
+.i_opt ul li textarea {
+    width: 300px;
+    margin-right: 10px;
+    outline: none;
+    background-color: var(--bgc);
+    color: var(--text);
+    border: 1px solid var(--black-3);
+    border-radius: var(--radius-sub);
+}
+.i_opt ul li textarea:hover {
+    border: 1px solid var(--theme);
+}
+.i_opt ul li textarea:focus {
+    background-color: var(--bgc);
+    border: 1px solid var(--theme);
+    box-shadow: 0 0 0 0px var(--theme)
+}
+.i_opt ul li textarea::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: var(--border);
+    border-radius: var(--radius);
+}
+.i_opt ul li textarea::-webkit-scrollbar-thumb {
+    background-color: var(--theme-sub);
+    border-radius: var(--radius);
+}
+
 @media screen and (max-width: 960px) {
     .i_opt ul li {
         display: flex;
@@ -115,5 +142,9 @@
     .submit input {
         width: calc(100% - 12px);
         padding: 10px 0;
+    }
+    .i_opt ul li textarea {
+        width: calc(100% - 12px);
+        margin-bottom: 5px;
     }
 }

@@ -24,6 +24,11 @@
 .footer .footer-top span a:hover {
     color: var(--theme);
 }
+.footer .custom {
+    color: var(--text-info);
+    font-size: 14px;
+}
+
 .footer .footer-bottom {
     border-top: 1px solid var(--border);
 }

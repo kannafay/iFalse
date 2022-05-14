@@ -33,11 +33,12 @@
 .content-wrapper .text-wrapper h2 {
     color: var(--text);
     line-height: 1.5;
+    margin-bottom: 5px;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     overflow: hidden;
 }
 .content-wrapper .text-wrapper i {
@@ -188,7 +189,6 @@
 }
 .home-detail .home-cate a {
     font-size: 14px;
-    /* font-weight: 700; */
     color: var(--theme);
 }
 .home-detail .home-title {
@@ -198,7 +198,7 @@
 }
 .home-detail .home-title span {
     font-size: 20px;
-    color: red;
+    color: var(--theme);
     margin-right: 2px;
 }
 .home-detail .home-title a {
@@ -305,7 +305,7 @@
 .home-2 .home-2-mian ul li .home-2-detail h2 span {
     font-size: 20px;
     font-weight: 400;
-    color: red;
+    color: var(--theme);
 }
 .home-2 .home-2-mian ul li .home-2-detail h2 a {
     font-weight: 400;
@@ -362,7 +362,8 @@
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-msg a {
     color: var(--text-info);
     font-size: 14px;
-    transition: var(--theme);
+    -webkit-transition: var(--tr2);
+    transition: var(--tr2);
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-msg a:hover {
     color: var(--theme);
@@ -477,6 +478,10 @@
     }
 }
 @media screen and (max-width: 640px) {
+    .banner,
+    .wrapper {
+        height: 150px;
+    }
     .content-wrapper .text-wrapper h2 {
         font-size: 20px;
     }

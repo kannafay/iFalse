@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/i_frame.css">
 
 <div class="i_opt">
-    
     <form action="" method="post" enctype="multipart/form-data">
         <ul>
             <!-- <li>
@@ -102,7 +101,6 @@
                 <span>数字1为开启。使用主题登录模板代替系统自带登录页面。默认：关闭</span>
             </li>
         </ul>
-
         <div class="submit">
             <input type="submit" name="i_opt" value="保存">
         </div>        

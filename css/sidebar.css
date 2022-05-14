@@ -208,7 +208,6 @@
     font-size: 15px;
     padding: 4px 6px;
     border-radius: var(--radius-sub);
-    transition: var(--tr2);
 }
 #primary-sidebar .wp-block-categories li a:hover,
 #primary-sidebar .widget_archive li a:hover {
