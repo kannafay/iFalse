@@ -1,4 +1,4 @@
-.banner {
+.wrapper .banner {
     width: 1200px;
     height: 200px;
     position: absolute;
@@ -430,7 +430,7 @@
 
 /* mobile */
 @media screen and (max-width: 1280px) {
-    .banner {
+    .wrapper .banner {
         max-width: calc(100% - 60px);
     }
     .main {
@@ -450,7 +450,7 @@
     }
 }
 @media screen and (max-width: 960px) {
-    .banner {
+    .wrapper .banner {
         width: calc(100% - 40px);
         padding: 0 20px;
     }
@@ -478,7 +478,7 @@
     }
 }
 @media screen and (max-width: 640px) {
-    .banner,
+    .wrapper .banner,
     .wrapper {
         height: 150px;
     }

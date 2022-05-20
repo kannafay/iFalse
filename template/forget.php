@@ -19,6 +19,7 @@
 </head> 
 <body>
     <?php
+    if(get_option("i_forget_turn") == 1) {
     if(is_user_logged_in()) {        
         if(current_user_can('level_10')) {
             wp_redirect(home_url() . '/wp-admin', 302);
@@ -40,7 +41,7 @@
                             <input type="email" name="user_login" placeholder="邮箱" size="20" required="required">
                         </div>
                         <div class="form-other">
-                            <span>还没有账户？<a href="<?php home_url(); ?>/register">立即注册</a></span>
+                        <?php if(get_option("i_register_turn") == 1) {echo '<span>还没有账户？<a href="' . home_url(). '/register">立即注册</a></span>';} else{} ?>
                             <span><a href="<?php home_url(); ?>/login">返回登录</a></span>
                         </div>
                         <div class="form-item">
@@ -51,5 +52,10 @@
             </div>
         </div>
     </div>
+    <?php 
+        } else {
+            wp_redirect(home_url() . '/404', 302);
+        }
+    ?>
 </body>
 </html>

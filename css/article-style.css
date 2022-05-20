@@ -1,35 +1,19 @@
 .single-main .center .post-content {
     font-size: 16px;
-    color: var(--text);
+    color: var(--text-sub);
 }
 .single-main .center .post-content > * {
     margin-bottom: 20px;
     width: 100%;
     position: relative;
 }
-.single-main .center .post-content p a,
-.single-main .center .post-content h6 a,
-.single-main .center .post-content h5 a,
-.single-main .center .post-content h4 a,
-.single-main .center .post-content h3 a,
-.single-main .center .post-content h2 a,
-.single-main .center .post-content h1 a {
-    position: relative;
+.single-main .center .post-content a {
     color: var(--theme);
-    display: inline-block;
-    background: linear-gradient(90deg, var(--theme) 66%, transparent 0) repeat-x;
-    background-size: 0.5em 1px;
-    background-position: 0 1.5em;
+    -webkit-transition: var(--tr2);
+    transition: var(--tr2);
 }
-.single-main .center .post-content p a:hover,
-.single-main .center .post-content h6 a:hover,
-.single-main .center .post-content h5 a:hover,
-.single-main .center .post-content h4 a:hover,
-.single-main .center .post-content h3 a:hover,
-.single-main .center .post-content h2 a:hover,
-.single-main .center .post-content h1 a:hover {
-    background-size: 0.5em 1px;
-    background-position: 0 1.5em;
+.single-main .center .post-content a:hover {
+    color: var(--theme-sub);
 }
 .single-main .center .post-content p {
     text-align: justify;
@@ -40,6 +24,9 @@
 /* 附件 */
 .single-main .center .post-content .attachment a {
     background: none;   
+}
+.single-main .center .post-content .attachment a img {
+    margin: 0;
 }
 /* 附件end */
 .single-main .center .post-content blockquote {
@@ -59,7 +46,7 @@
 }
 .single-main .center .post-content img {
     max-width: 100%;
-    max-height: 100%;
+    height: 100%;
     border-radius: var(--radius);
     vertical-align: bottom;
 }
@@ -70,16 +57,34 @@
     text-align: center;
     margin-top: 10px;
 }
-.single-main .center .post-content .wp-block-image,
+.single-main .center .post-content > .wp-block-image,
 .single-main .center .post-content .wp-block-video {
     text-align: center;
 }
-.single-main .center .post-content a img {
-    -webkit-transition: var(--tr2);
-    transition: var(--tr2);
+.single-main .center .post-content > .wp-block-image {
+    cursor: pointer;
 }
-.single-main .center .post-content a img:hover {
-    opacity: .8;
+.single-main .center .post-content .wp-block-gallery {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.single-main .center .post-content .wp-block-gallery .wp-block-image {
+    cursor: pointer;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+.single-main .center .post-content .wp-block-gallery .wp-block-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    vertical-align: middle;
+    position: absolute;
 }
 .single-main .center .post-content video {
     max-width: 100%;
@@ -150,8 +155,10 @@
     background-color: var(--theme-3);
 } */
 /* a标签hover效果end/////////////////////////////////////////////////////////// */
-
-.single-main .center .post-content .wp-block-image a:before {
+.single-main .center .post-content > .wp-block-image a {
+    display: inline-block;
+}
+.single-main .center .post-content > .wp-block-image a:before {
     display: none;
 }
 .single-main .center .post-content ul,
@@ -231,9 +238,10 @@
     margin: 0 5px;
 }
 .single-main .center .post-content .wp-block-button {
-    margin: 15px 0;
+    margin-bottom: 15px;
 }
 .single-main .center .post-content .wp-block-button__link {
+    text-decoration: none;
     cursor: pointer;
     line-height: 3;
     padding: 6px 15px;
@@ -300,37 +308,37 @@
 }
 .single-main .center .post-content h6 {
     font-size: 15px;
-    color: var(--text-sub);
+    color: var(--text);
     font-weight: 400;
     position: relative;
 
 }
 .single-main .center .post-content h5 {
     font-size: 15px;
-    color: var(--text-sub);
+    color: var(--text);
     position: relative;
  
 }
 .single-main .center .post-content h4 {
     font-size: 15px;
-    color: var(--text-sub);
+    color: var(--text);
     position: relative;
  
 }
 .single-main .center .post-content h3 {
     font-size: 16px;
-    color: var(--text-sub);
+    color: var(--text);
     position: relative;
 }
 .single-main .center .post-content h2 {
     font-size: 18px;
-    color: var(--text-sub);
+    color: var(--text);
     position: relative;
 
 }
 .single-main .center .post-content h1 {
     font-size: 20px;
-    color: var(--text-sub);
+    color: var(--text);
     position: relative;
 
 }

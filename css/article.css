@@ -381,7 +381,7 @@
 .post-comments .post-comments-content .depth-5 {
     padding: 15px 0 0 20px;
     margin-top: 10px;
-    border-top: 1px dashed var(--black-1);
+    border-top: 1px solid var(--border);
     border-radius: 0;
 }
 .post-comments .post-comments-content .comment-body {

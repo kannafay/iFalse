@@ -19,6 +19,7 @@
     transition: var(--tr2);
 }
 .searchform input:hover {
+    background-color: var(--bgc);
     border: 1px solid var(--theme);
 }
 .searchform input:focus {
@@ -69,6 +70,7 @@
         transition: var(--tr2);
     }
     .searchform-mb input:hover {
+        background-color: var(--bgc);
         border: 1px solid var(--theme);
     }
     .searchform-mb input:focus {

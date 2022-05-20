@@ -8,7 +8,7 @@
         </div>
         <div class="single-title"><h1><?php the_title(); ?></h1></div>
         <div class="single-detail">
-            <?php the_post(); echo get_avatar( get_the_author_email(), '100' );//60代表头像的大小
+            <?php the_post(); echo get_avatar( get_the_author_email(), '100' );
                 rewind_posts(); 
             ?>
             <span>
@@ -74,40 +74,6 @@
     </div>
     <div class="right">
         <?php get_template_part('template/sidebar-article')?>
-
-        <!-- 相关文章 -->
-        <!-- <div class="post-about-card">
-            <div class="post-about-title">相关文章</div>
-            <div class="post-about-content">
-                <?php
-                    if ( is_single() ) :
-                    global $post;
-                    $categories = get_the_category();
-                    foreach ($categories as $category) :
-                ?>
-                <?php
-                    $posts = get_posts('numberposts=3&category='. $category->term_id.'&exclude='.get_the_ID());
-                    foreach($posts as $post) :
-                ?>
-                <div class="post-about-content-detail">
-                
-                    <a href="<?php the_permalink(); ?>">
-                        <div class="mask-pic"><span class="iconfont icon-chakan"></span></div>
-                        <?php if (has_post_thumbnail()) { ?>
-                        <?php the_post_thumbnail(); ?>
-                        <?php } else {?>
-                            <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>" 
-                            data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" />
-                        <?php } ?>
-                    </a>
-                    <li>
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </li>
-                </div>
-                <?php endforeach; ?>  
-                <?php endforeach; endif; ?>
-            </div>
-        </div> -->
     </div>
 </div>
 

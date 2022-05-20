@@ -91,17 +91,19 @@
     background-color: var(--bgc);
 }
 .login-page .login-msg .form-other {
-    font-size: 14px;
-    color: var(--text-info);
-    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 }
-.login-page .login-msg .form-other a {
+.login-page .login-msg .form-other span {
+    font-size: 14px;
+    color: var(--text-info);
+    margin-bottom: 20px;
+}
+.login-page .login-msg .form-other span a {
     cursor: pointer;
     color: var(--theme);
 }
-.login-page .login-msg .form-other a:hover {
+.login-page .login-msg .form-other span a:hover {
     text-decoration: underline;
 }
 .login-page .login-msg .form-item button {

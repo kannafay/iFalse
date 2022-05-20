@@ -51,8 +51,8 @@
                             <input type="password" name="pwd" placeholder="密码" size="20" required="required">
                         </div>
                         <div class="form-other">
-                            <span>还没有账户？<a href="<?php home_url(); ?>/register">立即注册</a></span>
-                            <span><a href="<?php home_url(); ?>/forget">找回密码</a></span>
+                            <?php if(get_option("i_register_turn") == 1) {echo '<span>还没有账户？<a href="' . home_url(). '/register">立即注册</a></span>';} ?>
+                            <?php if(get_option("i_forget_turn") == 1) {echo '<span><a href="' . home_url() . '/forget">找回密码</a></span>';} ?>
                         </div>
                         <div class="form-item">
                             <button type="submit" name="wp-submit">登录</button>

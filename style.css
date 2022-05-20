@@ -3,9 +3,9 @@ Theme Name: iFalse
 Theme URI: https://www.ifalse.cn
 Author: 神秘布偶猫
 Author URI: https://www.ifalse.cn
-Description: iFalse主题
-Version: 1.2.6
-Tags: 界面清新、轻松上手
+Description: 一款界面清新、轻松上手的WordPress开源主题
+Version: 1.2.7
+Tags: iFalse主题
 */
 
 :root {
@@ -39,7 +39,6 @@ Tags: 界面清新、轻松上手
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'PingFang SC', 'Microsoft YaHei', 'Arial';
     -webkit-tap-highlight-color:rgba(0 0 0 / 0) ;
 }
 html {
@@ -64,17 +63,14 @@ a:hover {
 .container-small {
     width: 680px;
     margin: 0 auto;
-    background-color: var(--bgc);
 }
 .container {
     width: 1200px;
     margin: 0 auto;
-    background-color: var(--bgc);
 }
 .container-full {
     width: 100%;
     padding: 0 30px;
-    background-color: var(--bgc);
 }
 ::selection{
     background-color: var(--theme-2);
@@ -91,10 +87,10 @@ body::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     background-color: var(--border);
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
 }
 body::-webkit-scrollbar-thumb {
     background-color: var(--theme-sub);
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
 }
 
