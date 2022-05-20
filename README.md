@@ -10,6 +10,9 @@
 
 主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787/)
 
+周边主题：
+- 动态素主题：[https://gitee.com/kannafay/su](https://gitee.com/kannafay/su)
+
 ## 更新日志
 
 V1.2.6（2022.5.13）：
