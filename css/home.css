@@ -19,7 +19,6 @@
     border-bottom: 1px solid var(--border);
 }
 .content-wrapper {
-    width: 1200px;
     height: 100%;
     margin: 0 auto;
     display: flex;
