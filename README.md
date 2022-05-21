@@ -6,6 +6,8 @@
 
 市面上花里胡哨的主题太多了，想找到一款界面清爽，干净轻量，轻松上手的主题又很难。所以自己开发了一套，还在不断更新中。如有更多需求及建议或者BUG欢迎大家积极提出，营造一个更完善、更完美的WordPress主题。如果有喜欢的可以多多支持！
 
+小提示：主题更新较频繁，所以主题支持一键/自动更新！！！
+
 主题演示：[https://www.ifalse.cn/](https://www.ifalse.cn/)
 
 主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787/)
