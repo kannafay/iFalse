@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <?php i_frame(); ?>
-    <title>404 Not Found</title>
-</head> 
+<?php i_frame(); ?> 
 <body>
     <?php get_header(); ?>
     <div class="page-404">

@@ -18,7 +18,7 @@
                 <?php edit_post_link('编辑文章') ?>
             </span>
         </div>
-        <div class="breadcrumb"><span class="iconfont icon-home"></span><?php if ( function_exists('i_breadcrumb') ) i_breadcrumb();?></div>
+        <div class="breadcrumb"><?php if ( function_exists('i_breadcrumb') ) i_breadcrumb();?></div>
     </div>
 </div>
 <div class="container single-main article-main">

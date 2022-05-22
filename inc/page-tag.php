@@ -2,7 +2,7 @@
     <div class="banner"></div>
     <div class="content-wrapper">
         <div class="text-wrapper">
-            <h2 class="h2-title"><?php the_search_query(); ?></h2>
+            <h2 class="h2-title"><?php single_cat_title(); ?></h2>
         </div>
     </div>
 </div>
@@ -17,7 +17,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p><span><?php the_search_query(); ?></span> 的搜索结果</p>
+            <p><span><?php single_cat_title(); ?></span> 标签下的内容</p>
             <?php get_search_form(); ?>
         </div>
         <?php 

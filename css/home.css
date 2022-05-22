@@ -93,10 +93,14 @@
     line-height: 50px;
     border-bottom: 3px solid var(--theme);
     font-size: 15px;
-    font-weight: 700;
+    /* font-weight: 700; */
+    color: var(--text-sub);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.content .title-part p span {
+    color: var(--theme);
 }
 
 .page-result {
@@ -115,6 +119,7 @@
 }
 .page-result .page-result-detail p {
     color: var(--text-info);
+    font-size: 14px;
 }
 
 /* 卡片模式 */

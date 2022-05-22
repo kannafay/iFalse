@@ -364,6 +364,9 @@ function i_search() {
 function i_archive() {
   require('inc/page-archive.php');
 }
+function i_tag() {
+  require('inc/page-tag.php');
+}
 function i_header_mb() {
   require('inc/header-mobile.php');
 }

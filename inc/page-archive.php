@@ -1,5 +1,5 @@
-<div class="banner"></div>
 <div class="wrapper">
+    <div class="banner"></div>
     <div class="content-wrapper">
         <div class="text-wrapper">
             <h2 class="h2-title"><?php single_cat_title(); ?></h2>
@@ -17,7 +17,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p id="title-part"><?php single_cat_title(); ?> 分类下的文章</p>
+            <p><span><?php single_cat_title(); ?></span> 分类下的内容</p>
             <?php get_search_form(); ?>
         </div>
         <?php 

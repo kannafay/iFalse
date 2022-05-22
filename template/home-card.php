@@ -26,6 +26,13 @@
                 </div>
             </li>
         <?php endwhile; ?>
+        <?php else: ?>
+        <div class="page-result">
+            <div class="page-result-detail">
+                <img src="<?php echo get_template_directory_uri(); ?>/static/img/404.png" alt="">
+                <p>这里什么也没有！</p>
+            </div>
+        </div>
         <?php endif; ?>
     </ul>
     <div class="page-nav-bar">
