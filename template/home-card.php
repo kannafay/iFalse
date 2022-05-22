@@ -4,6 +4,7 @@
         <?php while(have_posts()) : the_post(); ?>
             <li>
                 <div class="home-pic">
+                    <?php if ( is_sticky() ) {echo '<span class="post-top">置顶</span>';} ?>
                     <a href="<?php the_permalink(); ?>">
                         <div class="mask-pic"><span class="iconfont icon-chakan"></span></div>
                         <?php if (has_post_thumbnail()) { ?>
@@ -16,7 +17,7 @@
                 </div>
                 <div class="home-detail">
                     <div class="home-cate"><?php echo the_category(' ') ?></div>
-                    <div class="home-title"><?php if ( is_sticky() ) {echo '<span class="iconfont icon-zhiding3"></span>';} ?><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
+                    <div class="home-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
                     <div class="home-msg">
                         <?php echo get_avatar( get_the_author_email(), '100' );?>
                         <div class="home-date"><?php the_time('Y-m-d'); ?></div><span>/</span>

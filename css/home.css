@@ -8,7 +8,7 @@
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: var(--bgc);
+    /* background-color: var(--bgc); */
     z-index: -10;
     padding: 0 30px;
 }
@@ -49,7 +49,7 @@
 }
 
 .main-content {
-    background-color: var(--bgc);
+    /* background-color: var(--bgc); */
 }
 .main-content .notice {
     width: 100%;
@@ -143,7 +143,7 @@
     transition: var(--tr2);
 }
 .content .main-part > ul > li:hover {
-    box-shadow: 0 0 10px 1px var(--black-1);
+    /* box-shadow: 0 0 10px 1px var(--black-1); */
 }
 .content .main-part ul li .home-pic {
     width: 100%;
@@ -151,6 +151,17 @@
     overflow: hidden;
     border-radius: var(--radius);
     position: relative;
+}
+.content .main-part ul li .home-pic .post-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    color: var(--bgc);
+    padding: 2px 6px;
+    background: var(--theme-sub);
+    background: linear-gradient(to right, var(--theme), var(--theme-sub));
+    border-radius: var(--radius) 0 var(--radius) 0;
 }
 .content .main-part ul li .home-pic > a {
     display: block;
@@ -196,18 +207,13 @@
     color: var(--theme);
 }
 .home-detail .home-title {
+    width: 100%;
+    height: 42px;
     display: flex;
     align-items: flex-start;
     margin-bottom: 2px;
 }
-.home-detail .home-title span {
-    font-size: 20px;
-    color: var(--theme);
-    margin-right: 2px;
-}
 .home-detail .home-title a {
-    width: 100%;
-    height: 42px;
     font-size: 14px;
     color: var(--text);
     word-break: break-all;
@@ -276,13 +282,47 @@
     margin-bottom: 0;
 }
 .home-2 .home-2-mian ul li .home-2-pic {
+    position: relative;
     border-radius: var(--radius);
     overflow: hidden;
+}
+.home-2 .home-2-mian ul li .home-2-pic .post-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    color: var(--bgc);
+    padding: 2px 6px;
+    background: var(--theme-sub);
+    background: linear-gradient(to right, var(--theme), var(--theme-sub));
+    border-radius: var(--radius) 0 var(--radius) 0;
 }
 .home-2 .home-2-mian ul li .home-2-pic a {
     display: block;
     width: 214px;
     height: 140px;
+}
+.home-2 .home-2-mian ul li .home-2-pic .mask-pic {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bgc-0);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: var(--tr2);
+    transition: var(--tr2);
+}
+.home-2 .home-2-mian ul li .home-2-pic:hover .mask-pic {
+    background-color: var(--black-3);
+    opacity: 1;
+}
+.home-2 .home-2-mian ul li .home-2-pic .mask-pic span {
+    color: var(--bgc);
+    font-size: 42px;
 }
 .home-2 .home-2-mian ul li .home-2-pic img {
     width: 100%;
@@ -290,9 +330,6 @@
     object-fit: cover;
     -webkit-transition: var(--tr2);
     transition: var(--tr2);
-}
-.home-2 .home-2-mian ul li .home-2-pic img:hover {
-    transform: scale(1.05);
 }
 .home-2 .home-2-mian ul li .home-2-detail {
     width: calc(100% - 214px);
@@ -342,17 +379,16 @@
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-cate a {
     font-size: 13px;
-    color: var(--bgc);
+    color: var(--theme);
     margin-right: 5px;
     padding: 1px 6px;
     border-radius: var(--radius-sub);
-    background: var(--theme-sub);
-    background: linear-gradient(to right, var(--theme), var(--theme-sub));
-    -webkit-transition: var(--tr2);
-    transition: var(--tr2);
+    background: var(--theme-1);
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-cate a:hover {
-    opacity: .8;
+    color: var(--bgc);
+    background-color: var(--theme);
+    background: linear-gradient(to right, var(--theme), var(--theme-sub));
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-msg {
     color: var(--text-info);
@@ -389,7 +425,7 @@
 .page-nav-bar {
     width: 100%;
     height: 80px;
-    background-color: var(--bgc);
+    /* background-color: var(--bgc); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -503,13 +539,16 @@
         width: 130px;
         height: 100px;
     }
+    .home-2 .home-2-mian ul li .home-2-pic .mask-pic span {
+        font-size: 32px;
+    }
     .home-2 .home-2-mian ul li .home-2-detail {
         width: calc(100% - 130px);
         padding-left: 10px;
         padding-right: 0;
     }
     .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-cate {
-        margin-bottom: 5px;
+        /* margin-bottom: 5px; */
     }
     .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-cate a {
         margin-right: 2px;

@@ -7,41 +7,41 @@
 // 说说
 function shuoshuo_init()
 { 
-    $labels = [ 
-        'name' => '说说',
-        'singular_name' => '说说', 
-        'all_items' => '所有说说',
-        'add_new' => '发表说说', 
-        'add_new_item' => '撰写新说说',
-        'edit_item' => '编辑说说', 
-        'new_item' => '新说说', 
-        'view_item' => '查看说说', 
-        'search_items' => '搜索说说', 
-        'not_found' => '暂无说说', 
-        'not_found_in_trash' => '没有已遗弃的说说', 
-        'parent_item_colon' => '',
-        'menu_name' => '说说'
-    ]; 
-    $args = [ 
-        'labels' => $labels, 
-        'public' => true, 
-        'publicly_queryable' => true, 
-        'show_ui' => true, 
-        'show_in_menu' => true, 
-        'query_var' => true, 
-        'rewrite' => true, 
-        'capability_type' => 'post', 
-        'has_archive' => true, 
-        'hierarchical' => false, 
-        'menu_position' => null, 
-        'supports' => array('title','editor','author') 
-    ]; 
-    register_post_type('shuoshuo', $args); 
+  $labels = [ 
+      'name' => '说说',
+      'singular_name' => '说说', 
+      'all_items' => '所有说说',
+      'add_new' => '发表说说', 
+      'add_new_item' => '撰写新说说',
+      'edit_item' => '编辑说说', 
+      'new_item' => '新说说', 
+      'view_item' => '查看说说', 
+      'search_items' => '搜索说说', 
+      'not_found' => '暂无说说', 
+      'not_found_in_trash' => '没有已遗弃的说说', 
+      'parent_item_colon' => '',
+      'menu_name' => '说说'
+  ]; 
+  $args = [ 
+      'labels' => $labels, 
+      'public' => true, 
+      'publicly_queryable' => true, 
+      'show_ui' => true, 
+      'show_in_menu' => true, 
+      'query_var' => true, 
+      'rewrite' => true, 
+      'capability_type' => 'post', 
+      'has_archive' => true, 
+      'hierarchical' => false, 
+      'menu_position' => null, 
+      'supports' => array('title','editor','author') 
+  ]; 
+  register_post_type('shuoshuo', $args); 
 }
 add_action('init', 'shuoshuo_init');
 
 // ---------------------------------------------------------------------
-// 首页page1回到首页
+// 分页返回首页
 $current_url = home_url(add_query_arg(array()));
 $home_page_1 = home_url() . '/page/1';
 if($current_url == $home_page_1) {
@@ -49,24 +49,25 @@ if($current_url == $home_page_1) {
 }
 
 // ---------------------------------------------------------------------
-//代替系统登录注册找回密码
+// 使用主题登录/注册/找回密码页面模板
 if(get_option("i_login") == 1) {
+
   function redirect_login_page() {
     $login_page  = home_url( '/login/' );
     $page_viewed = basename($_SERVER['REQUEST_URI']);
-   
     if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
       wp_redirect($login_page);
       exit;
     }
   }
+
   function login_failed() {
     $login_page  = home_url( '/login/' );
     wp_redirect( $login_page . '?login=failed' );
     exit;
   }
   add_action( 'wp_login_failed', 'login_failed' );
-  
+
   function verify_username_password( $user, $username, $password ) {
     $login_page  = home_url( '/login/' );
       if( $username == "" || $password == "" ) {
@@ -81,36 +82,32 @@ if(get_option("i_login") == 1) {
 // ---------------------------------------------------------------------
 // 自动添加页面模板
 function ashu_add_page($title,$slug,$page_template=''){   
-  $allPages = get_pages();//获取所有页面   
+  $allPages = get_pages();
   $exists = false;   
   foreach( $allPages as $page ){   
-      //通过页面别名来判断页面是否已经存在   
       if( strtolower( $page->post_name ) == strtolower( $slug ) ){   
           $exists = true;   
       }   
   }   
   if( $exists == false ) {   
-      $new_page_id = wp_insert_post(   
-          array(   
-              'post_title' => $title,   
-              'post_type'     => 'page',   
-              'post_name'  => $slug,   
-              'comment_status' => 'closed',   
-              'ping_status' => 'closed',   
-              'post_content' => '',   
-              'post_status' => 'publish',   
-              'post_author' => 1,   
-              'menu_order' => 0   
-          )   
-      );   
-      //如果插入成功 且设置了模板   
-      if($new_page_id && $page_template!=''){   
-          //保存页面模板信息   
-          update_post_meta($new_page_id, '_wp_page_template',  $page_template);   
-      }   
+    $new_page_id = wp_insert_post(   
+        array(   
+            'post_title' => $title,   
+            'post_type'     => 'page',   
+            'post_name'  => $slug,   
+            'comment_status' => 'closed',   
+            'ping_status' => 'closed',   
+            'post_content' => '',   
+            'post_status' => 'publish',   
+            'post_author' => 1,   
+            'menu_order' => 0   
+        )   
+    );   
+    if($new_page_id && $page_template!=''){   
+        update_post_meta($new_page_id, '_wp_page_template',  $page_template);   
+    }   
   }   
 }
-
 // 使用
 function ashu_add_pages() {   
 	global $pagenow;   
@@ -120,6 +117,7 @@ function ashu_add_pages() {
 		ashu_add_page('注册','register','template/register.php');   
 		ashu_add_page('找回密码','forget','template/forget.php');   
     ashu_add_page('说说','say','template/say.php'); 
+    ashu_add_page('友情链接','links','template/links.php'); 
 	}   
 }   
 add_action( 'load-themes.php', 'ashu_add_pages' );  
@@ -141,7 +139,6 @@ add_action( 'load-themes.php', 'ashu_add_pages' );
 // ---------------------------------------------------------------------
 // 评论中高亮站长
 function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
-	//遍历用户
 	$blogusers = get_users([ 'role__in' => [ 'administrator' ] ]);
 	foreach ( $blogusers as $user ){
 		if( $author == $user->display_name ){
@@ -152,10 +149,7 @@ function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
 	return $author;
 };  
 add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
-
-// 留言时过滤站长
 function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
-	//遍历用户
 	$blogusers = get_users([ 'role__in' => [ 'administrator' ] ]);
 	foreach ( $blogusers as $user ){
 		if( $cookie_comment_author_cookiehash == $user->display_name ){
@@ -163,15 +157,13 @@ function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
 		}
 	};
 	return $cookie_comment_author_cookiehash;
-    
 };
-//判断当前用户登录状态
 if( !is_user_logged_in() ){
 	add_filter( 'pre_comment_author_name', 'filter_pre_comment_author_name', 10, 1 ); 
 }
 
 // ---------------------------------------------------------------------
-// 用户自定义头像
+// 自定义头像
 function get_ssl_avatar($avatar) {
   $i_logo = get_option("i_avatar_v");
   $i_logo_bak = get_template_directory_uri() . '/static/img/avatar.png';
@@ -185,6 +177,7 @@ function get_ssl_avatar($avatar) {
 add_filter('get_avatar', 'get_ssl_avatar');
 
 include (TEMPLATEPATH . '/admin/i_avatar.php');
+
 // ---------------------------------------------------------------------
 //默认封面图
 function i_cover_pic() {
@@ -196,106 +189,49 @@ function i_loading_pic() {
 
 // ---------------------------------------------------------------------
 // 文章目录
-// declare a function and pass the $content as an argument
 function insert_table_of_contents($content) {
-	// used to determine the location of the
-	// table of contents when $fixed_location is set to false
 	$html_comment = "<!--insert-toc-->";
-	// checks if $html_comment exists in $content
 	$comment_found = strpos($content, $html_comment) ? true : false;
-	// set to true to insert the table of contents in a fixed location
-	// set to false to replace $html_comment with $table_of_contents
 	$fixed_location = true;
- 
-	// return the $content if
-	// $comment_found and $fixed_location are false
 	if (!$fixed_location && !$comment_found) {
 		return $content;
 	}
  
 	// 设置排除，默认页面文章不生成目录
-	// exclude the table of contents from all pages
-	// other exclusion options include:
-	// in_category($id)
-	// has_term($term_name)
-	// is_single($array)
-	// is_author($id)
     if (is_page()) {
         return $content;
     }
-		
-	// regex to match all HTML heading elements 2-6
 	$regex = "~(<h([1-6]))(.*?>(.*)<\/h[1-6]>)~";
- 
-	// preg_match_all() searches the $content using $regex patterns and
-	// returns the results to $heading_results[]
-	//
-	// $heading_results[0][] contains all matches in full
-	// $heading_results[1][] contains '<h2-6'
-	// $heading_results[2][] contains '2-6'
-	// $heading_results[3][] contains '>heading title</h2-6>
-	// $heading_results[4][] contains the title text
 	preg_match_all($regex, $content, $heading_results);
  
 	// 默认小于3个段落标题不生成目录
-	// return $content if less than 3 heading exist in the $content
 	$num_match = count($heading_results[0]);
 	if($num_match < 1) {
 		return $content;
 	}
- 
-	// declare local variable
 	$link_list = "";
-	// loop through $heading_results
 	for ($i = 0; $i < $num_match; ++ $i) {
- 
-	    // rebuild heading elements to have anchors
 	    $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
- 
-	    // find original heading elements that don't have anchors
 	    $old_heading = $heading_results[0][$i];
- 
-	    // search the $content for $old_heading and replace with $new_heading
 		$content = str_replace($old_heading, $new_heading, $content);
- 
-	    // generate links for each heading element
-	    // each link points to an anchor
 	    $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
 	    	"'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
 	}
-	    
-	// opening nav tag
 	$start_nav = "<div id='article-toc'>";
-	// closing nav tag
 	$end_nav = "</div>";
-	// title
 	$title = "<div id=\"article-toc-title\">文章目录</div>";
  
-	// wrap links in '<ul>' element
 	$link_list = "<ul id=\"article-toc-ul\">" . $link_list . "</ul>";
- 
-	// piece together the table of contents
 	$table_of_contents = $start_nav . $title . $link_list . $end_nav;
- 
-	// if $fixed_location is true and
-	// $comment_found is false
-	// insert the table of contents at a fixed location
 	if($fixed_location && !$comment_found) {
-		// location of first paragraph
 		$first_paragraph = strpos($content, '</p>', 0) + 4;
-		// location of second paragraph
 		$second_paragraph = strpos($content, '</p>', $first_p_pos);
-		// insert $table_of_contents after $second_paragraph
 		return substr_replace($content, $table_of_contents, $second_paragraph + 4 , 0);
 	}
-	// if $fixed_location is false and
-	// $comment_found is true
 	else {
-		// replace $html_comment with the $table_of_contents
 		return str_replace($html_comment, $table_of_contents, $content);
 	}
 }
-// pass the function to the content add_filter hook
 add_filter('the_content', 'insert_table_of_contents');
 
 // ---------------------------------------------------------------------
@@ -367,6 +303,9 @@ function i_archive() {
 function i_tag() {
   require('inc/page-tag.php');
 }
+function i_date() {
+  require('inc/page-date.php');
+}
 function i_header_mb() {
   require('inc/header-mobile.php');
 }
@@ -428,7 +367,7 @@ function new_excerpt_length($length) {
 add_filter('excerpt_length', 'new_excerpt_length');
 
 // ---------------------------------------------------------------------
-// Gravatar缓存头像 blog.guluqiu.cc
+// Gravatar国内头像
 function baolog_get_avatar($avatar)
 {
     $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com","secure.gravatar.com"),
@@ -525,7 +464,7 @@ function newgravatar ($avatar_defaults) {
 }  
 
 // ---------------------------------------------------------------------
-// 后台友情链接
+// 添加后台链接
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 // ---------------------------------------------------------------------
@@ -573,7 +512,7 @@ function i_settings() {
 }
 
 // ---------------------------------------------------------------------
-// 去除分类标志代码
+// 去除分类
 add_action( 'load-themes.php',  'no_category_base_refresh_rules');
 add_action('created_category', 'no_category_base_refresh_rules');
 add_action('edited_category', 'no_category_base_refresh_rules');
@@ -582,26 +521,22 @@ function no_category_base_refresh_rules() {
     global $wp_rewrite;
     $wp_rewrite -> flush_rules();
 }
-// Remove category base
 add_action('init', 'no_category_base_permastruct');
 function no_category_base_permastruct() {
     global $wp_rewrite, $wp_version;
     if (version_compare($wp_version, '3.4', '<')) {
-        // For pre-3.4 support
         $wp_rewrite -> extra_permastructs['category'][0] = '%category%';
     } else {
         $wp_rewrite -> extra_permastructs['category']['struct'] = '%category%';
     }
 }
-// Add our custom category rewrite rules
 add_filter('category_rewrite_rules', 'no_category_base_rewrite_rules');
 function no_category_base_rewrite_rules($category_rewrite) {
-    //var_dump($category_rewrite); // For Debugging
     $category_rewrite = array();
     $categories = get_categories(array('hide_empty' => false));
     foreach ($categories as $category) {
         $category_nicename = $category -> slug;
-        if ($category -> parent == $category -> cat_ID)// recursive recursion
+        if ($category -> parent == $category -> cat_ID)
             $category -> parent = 0;
         elseif ($category -> parent != 0)
             $category_nicename = get_category_parents($category -> parent, false, '/', true) . $category_nicename;
@@ -609,24 +544,19 @@ function no_category_base_rewrite_rules($category_rewrite) {
         $category_rewrite['(' . $category_nicename . ')/page/?([0-9]{1,})/?$'] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
         $category_rewrite['(' . $category_nicename . ')/?$'] = 'index.php?category_name=$matches[1]';
     }
-    // Redirect support from Old Category Base
     global $wp_rewrite;
     $old_category_base = get_option('category_base') ? get_option('category_base') : 'category';
     $old_category_base = trim($old_category_base, '/');
     $category_rewrite[$old_category_base . '/(.*)$'] = 'index.php?category_redirect=$matches[1]';
-    //var_dump($category_rewrite); // For Debugging
     return $category_rewrite;
 }
-// Add 'category_redirect' query variable
 add_filter('query_vars', 'no_category_base_query_vars');
 function no_category_base_query_vars($public_query_vars) {
     $public_query_vars[] = 'category_redirect';
     return $public_query_vars;
 }
-// Redirect if 'category_redirect' is set
 add_filter('request', 'no_category_base_request');
 function no_category_base_request($query_vars) {
-    //print_r($query_vars); // For Debugging
     if (isset($query_vars['category_redirect'])) {
         $catlink = trailingslashit(get_option('home')) . user_trailingslashit($query_vars['category_redirect'], 'category');
         status_header(301);
@@ -639,15 +569,11 @@ function no_category_base_request($query_vars) {
 // ---------------------------------------------------------------------
 //面包屑导航
 function i_breadcrumb() {
-
-  // Check if is front/home page, return
   if ( is_front_page() ) {
     return;
   }
-
-  // Define
   global $post;
-  $custom_taxonomy  = ''; // If you have custom taxonomy place it here
+  $custom_taxonomy  = '';
 
   $defaults = array(
     'seperator'   =>  '/',
@@ -656,36 +582,26 @@ function i_breadcrumb() {
     'home_title'  =>  esc_html__( '首页', '' )
   );
   $sep  = '<li class="seperator">'. esc_html( $defaults['seperator'] ) .'</li>';
-  // Start the breadcrumb with a link to your homepage
   echo '<ul id="'. esc_attr( $defaults['id'] ) .'" class="'. esc_attr( $defaults['classes'] ) .'">';
-  // Creating home link
   echo '<li class="item"><a href="'. get_home_url() .'">'. esc_html( $defaults['home_title'] ) .'</a></li>' . $sep;
   if ( is_single() ) {
-    // Get posts type
     $post_type = get_post_type();
-    // If post type is not post
     if( $post_type != 'post' ) {
       $post_type_object   = get_post_type_object( $post_type );
       $post_type_link     = get_post_type_archive_link( $post_type );
       echo '<li class="item item-cat"><a href="'. $post_type_link .'">'. $post_type_object->labels->name .'</a></li>'. $sep;
     }
-    // Get categories
     $category = get_the_category( $post->ID );
-    // If category not empty
     if( !empty( $category ) ) {
-      // Arrange category parent to child
       $category_values      = array_values( $category );
       $get_last_category    = end( $category_values );
-      // $get_last_category    = $category[count($category) - 1];
       $get_parent_category  = rtrim( get_category_parents( $get_last_category->term_id, true, ',' ), ',' );
       $cat_parent           = explode( ',', $get_parent_category );
-      // Store category in $display_category
       $display_category = '';
       foreach( $cat_parent as $p ) {
         $display_category .=  '<li class="item item-cat">'. $p .'</li>' . $sep;
       }
     }
-    // If it's a custom post type within a custom taxonomy
     $taxonomy_exists = taxonomy_exists( $custom_taxonomy );
     if( empty( $get_last_category ) && !empty( $custom_taxonomy ) && $taxonomy_exists ) {
       $taxonomy_terms = get_the_terms( $post->ID, $custom_taxonomy );
@@ -693,7 +609,6 @@ function i_breadcrumb() {
       $cat_link       = get_term_link($taxonomy_terms[0]->term_id, $custom_taxonomy);
       $cat_name       = $taxonomy_terms[0]->name;
     }
-    // Check if the post is in a category
     if( !empty( $get_last_category ) ) {
       echo $display_category;
       echo '<li class="item item-current">'. '正文' .'</li>';
@@ -705,9 +620,7 @@ function i_breadcrumb() {
     }
   } else if( is_archive() ) {
     if( is_tax() ) {
-      // Get posts type
       $post_type = get_post_type();
-      // If post type is not post
       if( $post_type != 'post' ) {
         $post_type_object   = get_post_type_object( $post_type );
         $post_type_link     = get_post_type_archive_link( $post_type );
@@ -724,69 +637,46 @@ function i_breadcrumb() {
       }
       echo '<li class="item item-current">'. single_cat_title( '', false ) .'</li>';
     } else if ( is_tag() ) {
-      // Get tag information
       $term_id        = get_query_var('tag_id');
       $taxonomy       = 'post_tag';
       $args           = 'include=' . $term_id;
       $terms          = get_terms( $taxonomy, $args );
       $get_term_name  = $terms[0]->name;
-      // Display the tag name
       echo '<li class="item-current item">'. $get_term_name .'</li>';
     } else if( is_day() ) {
-      // Day archive
-      // Year link
       echo '<li class="item-year item"><a href="'. get_year_link( get_the_time('Y') ) .'">'. get_the_time('Y') . ' Archives</a></li>' . $sep;
-      // Month link
       echo '<li class="item-month item"><a href="'. get_month_link( get_the_time('Y'), get_the_time('m') ) .'">'. get_the_time('M') .' Archives</a></li>' . $sep;
-      // Day display
       echo '<li class="item-current item">'. get_the_time('jS') .' '. get_the_time('M'). ' Archives</li>';
     } else if( is_month() ) {
-      // Month archive
-      // Year link
       echo '<li class="item-year item"><a href="'. get_year_link( get_the_time('Y') ) .'">'. get_the_time('Y') . ' Archives</a></li>' . $sep;
-      // Month Display
       echo '<li class="item-month item-current item">'. get_the_time('M') .' Archives</li>';
     } else if ( is_year() ) {
-      // Year Display
       echo '<li class="item-year item-current item">'. get_the_time('Y') .' Archives</li>';
     } else if ( is_author() ) {
-      // Auhor archive
-      // Get the author information
       global $author;
       $userdata = get_userdata( $author );
-      // Display author name
       echo '<li class="item-current item">'. 'Author: '. $userdata->display_name . '</li>';
     } else {
       echo '<li class="item item-current">'. post_type_archive_title() .'</li>';
     }
   } else if ( is_page() ) {
-    // Standard page
     if( $post->post_parent ) {
-      // If child page, get parents
       $anc = get_post_ancestors( $post->ID );
-      // Get parents in the right order
       $anc = array_reverse( $anc );
-      // Parent page loop
       if ( !isset( $parents ) ) $parents = null;
       foreach ( $anc as $ancestor ) {
         $parents .= '<li class="item-parent item"><a href="'. get_permalink( $ancestor ) .'">'. get_the_title( $ancestor ) .'</a></li>' . $sep;
       }
-      // Display parent pages
       echo $parents;
-      // Current page
       echo '<li class="item-current item">'. '正文' .'</li>';
     } else {
-      // Just display current page if not parents
       echo '<li class="item-current item">'. '正文' .'</li>';
     }
   } else if ( is_search() ) {
-    // Search results page
     echo '<li class="item-current item">Search results for: '. get_search_query() .'</li>';
   } else if ( is_404() ) {
-    // 404 page
     echo '<li class="item-current item">' . 'Error 404' . '</li>';
   }
-  // End breadcrumb
   echo '</ul>';
 }
 

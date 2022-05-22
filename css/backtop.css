@@ -25,8 +25,8 @@
 }
 .progress-wrap::after {
 	position: absolute;
-	content: '➤';
-	transform: rotate(-90deg);
+	content: '↑';
+	/* transform: rotate(-90deg); */
 	text-align: center;
 	line-height: 45px;
 	font-size: 20px;
@@ -46,8 +46,8 @@
 }
 .progress-wrap::before {
 	position: absolute;
-	content: '➤';
-	transform: rotate(-90deg);
+	content: '↑';
+	/* transform: rotate(-90deg); */
 	text-align: center;
 	line-height: 45px;
 	font-size: 20px;

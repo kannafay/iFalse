@@ -1,8 +1,9 @@
 .author-info-box {
     border-radius: var(--radius);
     padding: 20px;
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
     margin-bottom: 20px;
+    border: 1px solid var(--border);
 }
 .author-info-box .author-info .post-author-logo {
     width: 72px;
@@ -64,12 +65,13 @@
     box-shadow: 1px 1px 3px -1px var(--theme-sub);
 }
 #primary-sidebar .widget_recent_entries {
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
     padding: 15px;
     padding-left: 15px;
     padding-bottom: 15px;
     margin-bottom: 20px;
+    border: 1px solid var(--border);
 }
 #primary-sidebar .widget_recent_entries li a {
     display: inline-block;
@@ -99,8 +101,9 @@
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 15px;
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
+    border: 1px solid var(--border);
 }
 #primary-sidebar .widget_recent_comments li:last-child {
     margin-bottom: 0;
@@ -131,7 +134,7 @@
     display: block;
     width: 100%;
     color: var(--theme);
-    font-size: 15px;
+    font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -141,16 +144,28 @@
     color: var(--text-info);
     margin-right: 5px;
     transition: var(--tr2);
+    display: none;
 }
 /* time */
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-date {
     display: block;
-    font-size: 13px;
+    font-size: 12px;
 }
 /* content */
-#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt {
+#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt a {
     color: var(--text);
     font-size: 14px;
+    -webkit-transition: var(--tr2);
+    transition: var(--tr2);
+}
+#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt a:hover {
+    color: var(--theme);
+}
+#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt p {
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* 标签云 */
@@ -159,8 +174,9 @@
     max-height: 400px;
     padding: 13px 15px;
     margin-bottom: 20px;
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
+    border: 1px solid var(--border);
 }
 #primary-sidebar .widget_tag_cloud a {
     line-height: 25px;
@@ -183,10 +199,11 @@
 
 #primary-sidebar .widget_categories,
 #primary-sidebar .widget_archive {
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
     padding-left: 0;
     margin-bottom: 20px;
+    border: 1px solid var(--border);
 }
 #primary-sidebar .wp-block-categories,
 #primary-sidebar .widget_archive {

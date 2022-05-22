@@ -112,6 +112,16 @@
     right: 80px;
 }
 .nav-bar .admin img {
+    -webkit-transition: var(--tr2);
+    transition: var(--tr2);
+}
+.nav-bar .admin:hover {
+    color: var(--theme);
+}
+.nav-bar .admin:hover img {
+    opacity: .8;
+}
+.nav-bar .admin img {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -122,9 +132,6 @@
     line-height: 40px;
     -webkit-transition: var(--tr2);
     transition: var(--tr2);
-}
-.nav-bar .admin p:hover{
-    color: var(--theme);
 }
 .nav-bar .login {
     color: var(--text-sub);

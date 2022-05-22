@@ -169,12 +169,9 @@
 }
 .say-post-content a {
     color: var(--theme);
-    text-decoration: none;
-    -webkit-transition: var(--tr2);
-    transition: var(--tr2);
 }
 .say-post-content a:hover {
-    color: var(--theme-sub);
+    text-decoration: underline;
 }
 .say-post-content ul,
 .say-post-content ol {
