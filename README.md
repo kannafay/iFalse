@@ -12,9 +12,9 @@
 
 主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787/)
 
-Gitee站点：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
+Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
 
-GitHub站点：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse)
+GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse)
 
 ## 更新日志
 
