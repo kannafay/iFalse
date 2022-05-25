@@ -2,7 +2,7 @@
     <div class="banner"></div>
     <div class="content-wrapper">
         <div class="text-wrapper">
-            <h2><?php if(get_option("i_wrapper_text")) {echo get_option("i_wrapper_text");} else{echo '<p id="hitokoto"><span id="hitokoto_text">:D 获取中...</span></p>';} ?></h2>
+            <h2><?php if(get_option("i_wrapper_text")) {echo get_option("i_wrapper_text");} else{echo '<p id="hitokoto"><span id="hitokoto_text"></span></p>';} ?></h2>
             <i><?php if(get_option("i_wrapper_name")) {echo get_option("i_wrapper_name");} else{echo '<p id="hitokoto_author"></p>';} ?></i>
         </div>
     </div>
@@ -24,9 +24,9 @@
         </div>
         <?php 
             if(get_option("i_blog_or_card") == 1) {
-                get_template_part('template/home-blog');
+                get_template_part('inc/home-blog');
             } else{
-                get_template_part('template/home-card');
+                get_template_part('inc/home-card');
             } 
         ?>
     </div>

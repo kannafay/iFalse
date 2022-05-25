@@ -18,7 +18,6 @@
 .page-banner .page-detail span a {
     font-size: 14px;
     color: var(--text-info);
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .page-banner .page-detail span a:hover {
@@ -35,16 +34,15 @@
 }
 
 .page-main {
-    display: block;
-    justify-content: center;
-    grid-template-columns: 100%;
-    margin-bottom: 20px;
-    
+    display: block !important;
+    justify-content: center !important;
+    grid-template-columns: 100% !important;
+    margin-bottom: 20px !important;
 }
 .page-main .center {
-    border-left: 0;
-    border-right: 0;
-    padding: 0;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    padding: 0 !important;
 }
 .page-main .center .post-content .the-end {
     color: var(--text-info);

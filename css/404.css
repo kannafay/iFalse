@@ -26,7 +26,6 @@
     color: var(--bgc);
     border-radius: var(--radius);
     font-size: 14px;
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .page-404-detail a:hover {

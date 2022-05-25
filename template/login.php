@@ -2,21 +2,18 @@
 /*Template Name: 会员登录*/
 ?>
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <?php i_frame(); ?>
-    <title><?php the_title(); ?> - <?php bloginfo('name') ?></title>
-    <style>
-        body {
-            overflow: hidden;
-        }
-        .progress-wrap,
-        .active-progress {
-            display: none !important;
-        }
-    </style>
-</head> 
+<?php i_frame(); ?>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+    .progress-wrap,
+    .active-progress {
+        display: none !important;
+    }
+</style>
+
 <body>
     <?php
     if(is_user_logged_in()) {        
@@ -26,6 +23,7 @@
             wp_redirect(home_url(), 302);
         }
     } else ?>
+    <?php get_header(); ?>
     <div class="login-page">
         <div class="login-main">
             <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/static/img/login.svg" alt="login">
@@ -66,5 +64,6 @@
             </div>
         </div>
     </div>    
+    <?php i_frame_js(); ?>
 </body>
 </html>

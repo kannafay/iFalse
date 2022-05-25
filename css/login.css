@@ -77,12 +77,12 @@
 .login-page .login-msg .form-item input {
     width: 100%;
     height: 100%;
+    font-size: 14px;
     background-color: var(--bgc-sub);
     outline: 0;
     border: 1px solid var(--bgc-sub);
     border-radius: var(--radius);
     padding: 0 10px 0 35px;
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .login-page .login-msg .form-item input:hover,
@@ -117,7 +117,6 @@
     color: var(--bgc);
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .login-page .login-msg .form-item button:hover {

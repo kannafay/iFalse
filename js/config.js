@@ -2,7 +2,7 @@
  * 该文件为主题参数默认值
  */
  var header = new Vue({
-    el: '.nav-bar-mb',
+    el: '.user-info',
     data: {
         hello: 'Hi, 请登录!', // 未登录时显示
     },

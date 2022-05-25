@@ -30,7 +30,7 @@
                 <?php the_post_thumbnail(); ?>
                 <?php } else {?>
                     <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
-                    data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" /> 
+                    data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
                 <?php } ?>
                 <!-- <i>封面图</i> -->
             </div>
@@ -45,7 +45,7 @@
                     <?php the_post_thumbnail(); ?>
                     <?php } else {?>
                         <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
-                        data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php echo $randNum = mt_rand(1,9999) ?>" /> 
+                        data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
                     <?php } ?>
                     <!-- <i>封面图</i> -->
                 </div>
@@ -73,7 +73,7 @@
         ?>
     </div>
     <div class="right">
-        <?php get_template_part('template/sidebar-article')?>
+        <?php get_template_part('inc/sidebar-article')?>
     </div>
 </div>
 

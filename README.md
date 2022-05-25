@@ -18,7 +18,11 @@ GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse
 
 ## 更新日志
 
-V1.2.8（2022.5.21）：
+V1.3.0（2022.5.25）：
+
+- 修改整体样式
+
+V1.2.9（2022.5.23）：
 
 - 修改置顶标志
 - 修改侧边栏样式

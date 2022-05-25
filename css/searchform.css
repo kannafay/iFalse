@@ -12,10 +12,9 @@
     outline: none;
     background-color: var(--bgc-sub);
     color: var(--text);
-    border: 1px solid var(--border);
+    border: 1px solid var(--bgc-sub);
     border-radius: var(--radius);
     padding: 0 32px 0 10px;
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .searchform input:hover {
@@ -63,10 +62,10 @@
         outline: none;
         background-color: var(--bgc-sub);
         color: var(--text);
-        border: 1px solid var(--border);
+        border: 1px solid var(--bgc-sub);
         border-radius: var(--radius);
         padding: 0 32px 0 10px;
-        -webkit-transition: var(--tr2);
+        
         transition: var(--tr2);
     }
     .searchform-mb input:hover {

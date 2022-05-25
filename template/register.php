@@ -2,21 +2,18 @@
 /*Template Name: 会员注册*/
 ?>
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <?php i_frame(); ?>
-    <title><?php the_title(); ?> - <?php bloginfo('name') ?></title>
-    <style>
-        body {
-            overflow: hidden;
-        }
-        .progress-wrap,
-        .active-progress {
-            display: none !important;
-        }
-    </style>
-</head> 
+<?php i_frame(); ?>
+
+<style>
+    body {
+        overflow: hidden;
+    }
+    .progress-wrap,
+    .active-progress {
+        display: none !important;
+    }
+</style>
+
 <body>
     <?php
     if(get_option("i_register_turn") == 1) {
@@ -119,6 +116,8 @@
             </div>
         </div>
     </div>
+    <?php get_header(); ?>
+    <?php i_frame_js(); ?>
     <?php 
         } else {
             wp_redirect(home_url() . '/404', 302);

@@ -29,15 +29,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .linkcat ul li:hover {
-    border: 1px solid var(--border);
-    box-shadow: 0 0 10px 1px var(--black-1);
+    border: 1px solid var(--theme);
 }
 .linkcat ul li a {
+    color: var(--text) !important;
     display: flex;
+    text-decoration: none !important;
     align-items: center;
     margin-bottom: 10px;
     font-size: 16px;
@@ -45,14 +45,20 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
+}
+.linkcat ul li a:hover {
+    color: var(--theme) !important;
 }
 .linkcat ul li a img {
     width: 50px !important;
     height: 50px !important;
     border-radius: 50% !important;
     margin-right: 10px;
+    transition: var(--tr2);
+}
+.linkcat ul li a:hover img {
+    opacity: .8;
 }
 @media screen and (max-width: 960px) {
     .linkcat ul {

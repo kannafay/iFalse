@@ -131,7 +131,6 @@
 }
 .single-main .center .post-content td a {
     text-decoration: underline;
-    -webkit-transition: var(--tr2);
     transition: var(--tr2); 
 }
 /* a标签hover效果//////////////////////////////////////////////////////////// */
@@ -142,7 +141,6 @@
     position: absolute;
     bottom: 0;
     background-color: var(--theme);
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .single-main .center .post-content a:hover::before {
@@ -249,7 +247,6 @@
     font-size: 14px;
     background: var(--theme-sub); 
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);  
 }
 .single-main .center .post-content .wp-block-button__link:hover {
@@ -356,7 +353,6 @@
     border-radius: var(--radius);
     background-color: var(--theme);
     box-shadow: 1px 1px 3px -1px var(--theme-sub);
-    -webkit-transition: var(--tr2);
     transition: var(--tr2);
 }
 .single-main .center .post-content h4::after {
