@@ -35,10 +35,10 @@
     border: 0;
     border-radius: var(--radius-sub);
     background-color: rgba(0 0 0 / 0);
-    color: var(--text-info);
     cursor: pointer;
 }
 .searchform button span {
+    color: var(--text-info);
     font-size: 18px;
 }
 .searchform-mb {
@@ -90,5 +90,6 @@
     }
     .searchform-mb button span {
         font-size: 18px !important;
+        color: var(--text-info) !important;
     }
 }
