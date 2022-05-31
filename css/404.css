@@ -20,7 +20,7 @@
     margin-bottom: 30px;
 }
 .page-404-detail a {
-    padding: 8px 24px;
+    padding: 6px 12px;
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
     color: var(--bgc);

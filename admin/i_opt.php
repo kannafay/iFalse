@@ -27,6 +27,7 @@ if($_POST['i_opt']){
     update_option("i_say_img",$_POST["i_say_img"]);
     update_option("i_register_turn",$_POST["i_register_turn"]);
     update_option("i_forget_turn",$_POST["i_forget_turn"]);
+    update_option("i_header_hidden",$_POST["i_header_hidden"]);
 }
 $logo_img = get_option("logo_img");
 ?>
@@ -40,7 +41,7 @@ $logo_img = get_option("logo_img");
                     <th scope="row"><label for="i_avatar_v">游客头像</label></th>
                     <td>
                         <input name="i_avatar_v" type="text" value="<?php echo get_option("i_avatar_v"); ?>" class="regular-text">
-                        <p class="description">显示游客的头像。填写图片链接即可。默认：主题自带</p>
+                        <p class="description">显示游客的头像。填写图片链接即可。默认：主题logo</p>
                     </td>
                 </tr>
                 <tr>
@@ -75,28 +76,28 @@ $logo_img = get_option("logo_img");
                     <th scope="row"><label for="i_random_pic">文章封面</label></th>
                     <td>
                         <input name="i_random_pic" type="text" value="<?php echo get_option("i_random_pic"); ?>" class="regular-text">
-                        <p class="description">用于文章没有封面时代替（支持随机图）。默认：主题海报</p>
+                        <p class="description">用于文章没有封面时代替。默认：主题海报</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_post_cover">文章页封面</label></th>
+                    <td>
+                        <input name="i_post_cover" type="text" value="<?php echo get_option("i_post_cover"); ?>" class="regular-text">
+                        <p class="description">数字1为关闭。文章页左侧文章封面。默认：开启</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_loading_pic">懒加载图</label></th>
                     <td>
                         <input name="i_loading_pic" type="text" value="<?php echo get_option("i_loading_pic"); ?>" class="regular-text">
-                        <p class="description">用于网络不好，图片未加载出时显示。默认：主题自带GIF加载图</p>
+                        <p class="description">图片未加载出时显示。默认：主题自带GIF加载图</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_hello">登录提示</label></th>
                     <td>
                         <input name="i_hello" type="text" value="<?php echo get_option("i_hello"); ?>" class="regular-text">
-                        <p class="description">未登录提示。默认：Hi, 请登录!</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="i_post_cover">显示封面</label></th>
-                    <td>
-                        <input name="i_post_cover" type="text" value="<?php echo get_option("i_post_cover"); ?>" class="regular-text">
-                        <p class="description">数字1为关闭。文章详情页左侧显示文章封面。默认：开启</p>
+                        <p class="description">移动端未登录提示。默认：Hi, 请登录!</p>
                     </td>
                 </tr>
                 <tr>
@@ -138,28 +139,28 @@ $logo_img = get_option("logo_img");
                     <th scope="row"><label for="i_comments_article">文章评论</label></th>
                     <td>
                         <input name="i_comments_article" type="text" value="<?php echo get_option("i_comments_article"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。文章页评论区，留空为关闭。默认：关闭</p>
+                        <p class="description">数字1为开启。文章页评论区。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_comments_page">页面评论</label></th>
                     <td>
                         <input name="i_comments_page" type="text" value="<?php echo get_option("i_comments_page"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。页面评论区，留空为关闭。默认：关闭</p>
+                        <p class="description">数字1为开启。页面评论区。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_comments_turn">游客评论</label></th>
                     <td>
                         <input name="i_comments_turn" type="text" value="<?php echo get_option("i_comments_turn"); ?>" class="regular-text">
-                        <p class="description">数字1为关闭。是否允许游客评论，留空为开启。默认：开启</p>
+                        <p class="description">数字1为关闭。是否开启游客评论。默认：开启</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_login">登录/注册/找回密码模板</label></th>
                     <td>
                         <input name="i_login" type="text" value="<?php echo get_option("i_login"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。使用主题登录模板代替系统登录页面。默认：关闭</p>
+                        <p class="description">数字1为开启。使用主题模板。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>
@@ -181,6 +182,13 @@ $logo_img = get_option("logo_img");
                     <td>
                         <input name="i_say_img" type="text" value="<?php echo get_option("i_say_img"); ?>" class="regular-text">
                         <p class="description">说说页面顶部背景图。填写图片地址即可。默认：随机图</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_header_hidden">隐藏导航栏</label></th>
+                    <td>
+                        <input name="i_header_hidden" type="text" value="<?php echo get_option("i_header_hidden"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。向下滚动页面时隐藏导航栏。默认：关闭</p>
                     </td>
                 </tr>
             </tbody>

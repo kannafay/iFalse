@@ -1,4 +1,4 @@
-<div class="container-full nav-bar header">
+<div class="container-full nav-bar header <?php if(get_option("i_header_hidden") == 1) {echo 'header-hidden';} ?>">
     <div class="left">
         <a href="<?php bloginfo('url') ?>" rel="home" class="logo"><img src="<?php site_icon_url(); ?>" alt=""></a>
         <?php 
@@ -12,17 +12,15 @@
     </div>
     <div class="right">
         <?php if (is_user_logged_in()) { ?>
-            <a href="<?php bloginfo('url') ?>/wp-admin" class="admin">
+            <div class="admin">
                 <?php echo get_user_avatar(); ?>
-                <p>
-                    <?php 
-                        global $current_user, $display_name, $user_email;
-                        get_currentuserinfo();
-                        echo $current_user -> display_name;
-                    ?>
-                </p>
-            </a>
-            <a href="<?php echo wp_logout_url(); ?>" class="login"><span class="iconfont icon-tuichu"></span></a> 
+            </div>
+            <div class="user-set">
+                <a href="<?php bloginfo('url') ?>/wp-admin"><span class="iconfont icon-shezhi"></span> 后台管理</a>
+                <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php"><span class="iconfont icon-tianxieziliao"></span> 撰写文章</a>
+                <a href="<?php bloginfo('url') ?>/wp-admin/profile.php"><span class="iconfont icon-gerenziliao"></span> 个人资料</a>
+                <a href="<?php echo wp_logout_url(); ?>"><span class="iconfont icon-tuichu"></span> 退出登录</a>
+            </div>
         <?php ;} else { ?>
             <a href="<?php echo wp_login_url(); ?>" class="login"><span class="iconfont icon-User"></span></a>
         <?php ;} ?>

@@ -1,4 +1,4 @@
-<div class="container-full nav-bar-mb header">
+<div class="container-full nav-bar-mb header <?php if(get_option("i_header_hidden") == 1) {echo 'header-hidden';} ?>">
     <div class="left">
         <span id="menu-mb-open" class="iconfont icon-caidan"></span>
     </div>
@@ -7,7 +7,15 @@
     </div>
     <div class="right">
         <?php if (is_user_logged_in()) { ?>
-            <a href="<?php echo wp_logout_url(); ?>" class="login"><span class="iconfont icon-tuichu"></span></a> 
+            <div class="admin">
+                <?php echo get_user_avatar(); ?>
+            </div>
+            <div class="user-set">
+                <a href="<?php bloginfo('url') ?>/wp-admin"><span class="iconfont icon-shezhi"></span> 后台管理</a>
+                <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php"><span class="iconfont icon-tianxieziliao"></span> 撰写文章</a>
+                <a href="<?php bloginfo('url') ?>/wp-admin/profile.php"><span class="iconfont icon-gerenziliao"></span> 个人资料</a>
+                <a href="<?php echo wp_logout_url(); ?>"><span class="iconfont icon-tuichu"></span> 退出登录</a>
+            </div>
         <?php ;} else { ?>
             <a href="<?php echo wp_login_url(); ?>" class="login"><span class="iconfont icon-User"></span></a>
         <?php ;} ?>    

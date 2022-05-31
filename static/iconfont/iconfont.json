@@ -6,11 +6,46 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "670208",
-      "name": "YDUI-正确(实心)",
-      "font_class": "yduizhengqueshixin",
-      "unicode": "e6a9",
-      "unicode_decimal": 59049
+      "icon_id": "5825790",
+      "name": "填写资料",
+      "font_class": "tianxieziliao",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
+      "icon_id": "7473689",
+      "name": "个人资料",
+      "font_class": "gerenziliao",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "122305",
+      "name": "提示",
+      "font_class": "tishi1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "4033836",
+      "name": "资料",
+      "font_class": "ziliao",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "13401002",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "15726759",
+      "name": "发布",
+      "font_class": "fabu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
     },
     {
       "icon_id": "11487985",
@@ -53,13 +88,6 @@
       "font_class": "liebiaomoshi",
       "unicode": "e601",
       "unicode_decimal": 58881
-    },
-    {
-      "icon_id": "26827155",
-      "name": "置顶",
-      "font_class": "zhiding3",
-      "unicode": "e628",
-      "unicode_decimal": 58920
     },
     {
       "icon_id": "278286",

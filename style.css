@@ -4,7 +4,7 @@ Theme URI: https://www.ifalse.cn
 Author: 神秘布偶猫
 Author URI: https://www.ifalse.cn
 Description: 一款界面清新、轻松上手的WordPress开源主题！
-Version: 1.3.0
+Version: 1.3.1
 Tags: iFalse主题
 */
 
@@ -60,6 +60,9 @@ a {
 a:hover {
     color: var(--theme);
 }
+img {
+    object-fit: cover;
+}
 .container-small {
     width: 680px;
     margin: 0 auto;
@@ -86,11 +89,10 @@ a:hover {
 body::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: var(--border);
+    background-color: var(--bgc-sub);
     /* border-radius: var(--radius); */
 }
 body::-webkit-scrollbar-thumb {
-    background-color: var(--theme-sub);
+    background-color: var(--theme);
     /* border-radius: var(--radius); */
 }
-

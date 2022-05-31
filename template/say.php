@@ -13,7 +13,8 @@
      
     <div class="say container-small">
         <div class="say-banner">
-            <img src="<?php if(get_option("i_say_img")) {echo get_option("i_say_img");} else{echo 'https://api.ixiaowai.cn/mcapi/mcapi.php'; } ?>" alt="">
+            <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else {echo i_loading_pic(); } ?>" 
+                data-original="<?php if(get_option("i_say_img")) {echo get_option("i_say_img");} else {echo i_cover_pic(); } ?>" alt="">
         </div>
         <div class="say-author">
             <div class="say-author-box">
@@ -46,7 +47,7 @@
                                     </div>
                                     <div class="say-post-msg">
                                         <div class="say-author-name"><?php echo get_the_author_meta('nickname',$post->post_author); ?></div>
-                                        <div class="say-post-time"><?php the_time('Y年m月d日 G:i'); ?></div>
+                                        <div class="say-post-time"><?php the_date(); ?> <?php the_time(); ?></div>
                                     </div>
                                 </div>
                                 <div class="say-post-content-box">

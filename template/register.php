@@ -26,7 +26,7 @@
     } else ?>
     <div class="login-page">
         <div class="login-main">
-            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/static/img/login.svg" alt="login">
+            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/static/img/login.png" alt="login">
             <div class="login-msg">
                 <div class="login-box">
                 <!-- 注册 -->
@@ -109,7 +109,7 @@
                             <button type="submit" name="wp-submit">注册</button>
                         </div>
                         <div class="form-other">
-                            <span>注册即代表同意<a href="<?php home_url(); ?>/privacy-policy">《用户协议》</a></span>
+                            <span><span class="iconfont icon-tishi1"> </span>注册即代表同意<a href="<?php home_url(); ?>/privacy-policy">《用户协议》</a></span>
                         </div>
                     </form>
                 </div>

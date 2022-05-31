@@ -12,7 +12,7 @@
                 rewind_posts(); 
             ?>
             <span>
-                <?php the_time('Y-m-d'); ?> / 
+                <?php the_date(); ?> / 
                 浏览 <?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?> / 
                 评论 <?php comments_popup_link('沙发','1','%') ?>
                 <?php edit_post_link('编辑文章') ?>
@@ -30,7 +30,7 @@
                 <?php the_post_thumbnail(); ?>
                 <?php } else {?>
                     <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
-                    data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
+                    data-original="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
                 <?php } ?>
                 <!-- <i>封面图</i> -->
             </div>
@@ -45,7 +45,7 @@
                     <?php the_post_thumbnail(); ?>
                     <?php } else {?>
                         <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
-                        data-src="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
+                        data-original="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
                     <?php } ?>
                     <!-- <i>封面图</i> -->
                 </div>

@@ -3,40 +3,114 @@
  * @神秘布偶猫
  * @https://www.ifalse.cn
  */
+
+// ---------------------------------------------------------------------
+// 自定义引入文件
+function i_frame() {
+  require('inc/frame.php');
+}
+function i_frame_js() {
+  require('inc/frame-js.php');
+}
+function i_home() {
+  require('inc/home.php');
+}
+function i_article() {
+  require('inc/article.php');
+}
+function i_page() {
+  require('inc/page-template.php');
+}
+function i_search() {
+  require('inc/page-search.php');
+}
+function i_archive() {
+  require('inc/page-archive.php');
+}
+function i_tag() {
+  require('inc/page-tag.php');
+}
+function i_date() {
+  require('inc/page-date.php');
+}
+function i_header_mb() {
+  require('inc/header-mobile.php');
+}
+function i_searchform_mb() {
+  require('inc/searchform-mobile.php');
+}
+
+// ---------------------------------------------------------------------
+// 网站标题
+function show_wp_title(){
+  global $page, $paged;
+  wp_title( '-', true, 'right' );
+  bloginfo( 'name' );
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) )
+    echo ' - ' . $site_description;
+  if ( $paged >= 2 || $page >= 2 )
+    echo ' - ' . sprintf( '第%s页', max( $paged, $page ) );
+}
+
+// ---------------------------------------------------------------------
+// 延迟加载
+function add_image_placeholders( $content ) {
+  if( is_feed() || is_preview() || ( function_exists( 'is_mobile' ) && is_mobile() ) )
+  return $content;
+  if ( false !== strpos( $content, 'data-original' ) )
+  return $content;
+  $placeholder_image = apply_filters( 'lazyload_images_placeholder_image', get_template_directory_uri() . '/static/img/loading.gif' );
+  $content = preg_replace( '#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', sprintf( '<img${1}src="%s" data-original="${2}"${3}><noscript><img${1}src="${2}"${3}></noscript>', $placeholder_image ), $content );
+  return $content;
+}
+add_filter( 'the_content', 'add_image_placeholders', 99 );
+// add_filter( 'get_avatar', 'add_image_placeholders', 11 );
+add_filter( 'post_thumbnail_html', 'add_image_placeholders', 11 );
+
+// ---------------------------------------------------------------------
+// 默认封面图
+function i_cover_pic() {
+  echo get_template_directory_uri() . '/static/img/thumbnail.png';
+}
+// 加载图
+function i_loading_pic() {
+  echo get_template_directory_uri() . '/static/img/loading.gif';
+}
+
 // ---------------------------------------------------------------------
 // 说说
-function shuoshuo_init()
-{ 
-  $labels = [ 
-      'name' => '说说',
-      'singular_name' => '说说', 
-      'all_items' => '所有说说',
-      'add_new' => '发表说说', 
-      'add_new_item' => '撰写新说说',
-      'edit_item' => '编辑说说', 
-      'new_item' => '新说说', 
-      'view_item' => '查看说说', 
-      'search_items' => '搜索说说', 
-      'not_found' => '暂无说说', 
-      'not_found_in_trash' => '没有已遗弃的说说', 
-      'parent_item_colon' => '',
-      'menu_name' => '说说'
-  ]; 
-  $args = [ 
-      'labels' => $labels, 
-      'public' => true, 
-      'publicly_queryable' => true, 
-      'show_ui' => true, 
-      'show_in_menu' => true, 
-      'query_var' => true, 
-      'rewrite' => true, 
-      'capability_type' => 'post', 
-      'has_archive' => true, 
-      'hierarchical' => false, 
-      'menu_position' => null, 
-      'supports' => array('title','editor','author') 
-  ]; 
-  register_post_type('shuoshuo', $args); 
+function shuoshuo_init() { 
+$labels = [ 
+  'name' => '说说',
+  'singular_name' => '说说', 
+  'all_items' => '所有说说',
+  'add_new' => '发表说说', 
+  'add_new_item' => '撰写新说说',
+  'edit_item' => '编辑说说', 
+  'new_item' => '新说说', 
+  'view_item' => '查看说说', 
+  'search_items' => '搜索说说', 
+  'not_found' => '暂无说说', 
+  'not_found_in_trash' => '没有已遗弃的说说', 
+  'parent_item_colon' => '',
+  'menu_name' => '说说'
+]; 
+$args = [ 
+  'labels' => $labels, 
+  'public' => true, 
+  'publicly_queryable' => true, 
+  'show_ui' => true, 
+  'show_in_menu' => true, 
+  'query_var' => true, 
+  'rewrite' => true, 
+  'capability_type' => 'post', 
+  'has_archive' => true, 
+  'hierarchical' => false, 
+  'menu_position' => null, 
+  'supports' => array('title','editor','author') 
+]; 
+register_post_type('shuoshuo', $args); 
 }
 add_action('init', 'shuoshuo_init');
 
@@ -51,7 +125,6 @@ if($current_url == $home_page_1) {
 // ---------------------------------------------------------------------
 // 使用主题登录/注册/找回密码页面模板
 if(get_option("i_login") == 1) {
-
   function redirect_login_page() {
     $login_page  = home_url( '/login/' );
     $page_viewed = basename($_SERVER['REQUEST_URI']);
@@ -60,14 +133,12 @@ if(get_option("i_login") == 1) {
       exit;
     }
   }
-
   function login_failed() {
     $login_page  = home_url( '/login/' );
     wp_redirect( $login_page . '?login=failed' );
     exit;
   }
   add_action( 'wp_login_failed', 'login_failed' );
-
   function verify_username_password( $user, $username, $password ) {
     $login_page  = home_url( '/login/' );
       if( $username == "" || $password == "" ) {
@@ -113,10 +184,10 @@ function ashu_add_pages() {
 	global $pagenow;   
 	//判断是否为激活主题页面   
 	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ){   
-		ashu_add_page('登录','login','template/login.php');
-		ashu_add_page('注册','register','template/register.php');   
+		ashu_add_page('会员登录','login','template/login.php');
+		ashu_add_page('会员注册','register','template/register.php');   
 		ashu_add_page('找回密码','forget','template/forget.php');   
-    ashu_add_page('说说','say','template/say.php'); 
+    ashu_add_page('动态说说','say','template/say.php'); 
     ashu_add_page('友情链接','links','template/links.php'); 
 	}   
 }   
@@ -179,15 +250,6 @@ add_filter('get_avatar', 'get_ssl_avatar');
 include (TEMPLATEPATH . '/admin/i_avatar.php');
 
 // ---------------------------------------------------------------------
-//默认封面图
-function i_cover_pic() {
-  echo get_template_directory_uri() . '/static/img/thumbnail.png';
-}
-function i_loading_pic() {
-  echo get_template_directory_uri() . '/static/img/loading.gif';
-}
-
-// ---------------------------------------------------------------------
 // 文章目录
 function insert_table_of_contents($content) {
 	$html_comment = "<!--insert-toc-->";
@@ -196,31 +258,29 @@ function insert_table_of_contents($content) {
 	if (!$fixed_location && !$comment_found) {
 		return $content;
 	}
- 
 	// 设置排除，默认页面文章不生成目录
-    if (is_page()) {
-        return $content;
-    }
+  if (is_page()) {
+    return $content;
+  }
 	$regex = "~(<h([1-6]))(.*?>(.*)<\/h[1-6]>)~";
 	preg_match_all($regex, $content, $heading_results);
  
-	// 默认小于3个段落标题不生成目录
+	// 默认小于1个段落标题不生成目录
 	$num_match = count($heading_results[0]);
 	if($num_match < 1) {
 		return $content;
 	}
 	$link_list = "";
 	for ($i = 0; $i < $num_match; ++ $i) {
-	    $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
-	    $old_heading = $heading_results[0][$i];
-		$content = str_replace($old_heading, $new_heading, $content);
-	    $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
-	    	"'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
+	  $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
+	  $old_heading = $heading_results[0][$i];
+	  $content = str_replace($old_heading, $new_heading, $content);
+	  $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
+	  "'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
 	}
 	$start_nav = "<div id='article-toc'>";
 	$end_nav = "</div>";
 	$title = "<div id=\"article-toc-title\">文章目录</div>";
- 
 	$link_list = "<ul id=\"article-toc-ul\">" . $link_list . "</ul>";
 	$table_of_contents = $start_nav . $title . $link_list . $end_nav;
 	if($fixed_location && !$comment_found) {
@@ -237,7 +297,6 @@ add_filter('the_content', 'insert_table_of_contents');
 // ---------------------------------------------------------------------
 // 移动端目录
 function insert_table_of_contents_mb($content) {
-
 	$html_comment = "<!--insert-toc-->";
 	$comment_found = strpos($content, $html_comment) ? true : false;
 	$fixed_location = true;
@@ -245,7 +304,7 @@ function insert_table_of_contents_mb($content) {
 		return $content;
 	}
     if (is_page()) {
-        return $content;
+      return $content;
     }
 	$regex = "~(<h([1-6]))(.*?>(.*)<\/h[1-6]>)~";
 	preg_match_all($regex, $content, $heading_results);
@@ -255,11 +314,11 @@ function insert_table_of_contents_mb($content) {
 	}
 	$link_list = "";
 	for ($i = 0; $i < $num_match; ++ $i) {
-	    $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
-	    $old_heading = $heading_results[0][$i];
-		$content = str_replace($old_heading, $new_heading, $content);
-	    $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
-	    	"'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
+	  $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
+	  $old_heading = $heading_results[0][$i];
+	  $content = str_replace($old_heading, $new_heading, $content);
+	  $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
+	  "'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
 	}
 	$start_nav = "<div id='article-toc-mb'>";
 	$end_nav = "</div>";
@@ -276,42 +335,6 @@ function insert_table_of_contents_mb($content) {
 	}
 }
 add_filter('the_content', 'insert_table_of_contents_mb');
-
-// ---------------------------------------------------------------------
-// 自定义引入文件
-function i_frame() {
-  require('inc/frame.php');
-}
-function i_frame_js() {
-  require('inc/frame-js.php');
-}
-function i_home() {
-  require('inc/home.php');
-}
-function i_article() {
-  require('inc/article.php');
-}
-function i_page() {
-  require('inc/page-template.php');
-}
-function i_search() {
-  require('inc/page-search.php');
-}
-function i_archive() {
-  require('inc/page-archive.php');
-}
-function i_tag() {
-  require('inc/page-tag.php');
-}
-function i_date() {
-  require('inc/page-date.php');
-}
-function i_header_mb() {
-  require('inc/header-mobile.php');
-}
-function i_searchform_mb() {
-  require('inc/searchform-mobile.php');
-}
 
 // ---------------------------------------------------------------------
 // 主题自动/一键升级
@@ -355,14 +378,14 @@ register_sidebar( array(
 // ---------------------------------------------------------------------
 // 特色图
 if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
-    set_post_thumbnail_size( 1920, 1080, true );
+  add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+  set_post_thumbnail_size( 1920, 1080, true );
 }
 
 // ---------------------------------------------------------------------
 // 设定摘要的长度
 function new_excerpt_length($length) {
-    return 100;
+  return 100;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
@@ -370,97 +393,96 @@ add_filter('excerpt_length', 'new_excerpt_length');
 // Gravatar国内头像
 function baolog_get_avatar($avatar)
 {
-    $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com","secure.gravatar.com"),
-        "gravatar.wp-china-yes.net", $avatar);
-    return $avatar;
+  $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com","secure.gravatar.com"),
+    "gravatar.wp-china-yes.net", $avatar);
+  return $avatar;
 }
 add_filter('get_avatar', 'baolog_get_avatar', 10, 3);
 
 // ---------------------------------------------------------------------
 // 获取用户头像
 function get_user_avatar(){
-    global $current_user;
-    get_currentuserinfo();
-    return get_avatar($current_user -> user_email, 400);
+  global $current_user;
+  get_currentuserinfo();
+  return get_avatar($current_user -> user_email, 400);
 }
 
 // ---------------------------------------------------------------------
 // 获取用户信息
-function get_user_role($id)
-{
-$user = new WP_User($id);
-return $user -> data;
+function get_user_role($id) {
+  $user = new WP_User($id);
+  return $user -> data;
 }
 
 // ---------------------------------------------------------------------
 // 显示文章浏览次数
 function getPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta ( $postID, $count_key, true );
-    if ($count == '') {
-        delete_post_meta ( $postID, $count_key );
-        add_post_meta ( $postID, $count_key, '0' );
-        return "0";
-    }
-    return $count . '';
+  $count_key = 'post_views_count';
+  $count = get_post_meta ( $postID, $count_key, true );
+  if ($count == '') {
+    delete_post_meta ( $postID, $count_key );
+    add_post_meta ( $postID, $count_key, '0' );
+    return "0";
+  }
+  return $count . '';
 }
 function setPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta ( $postID, $count_key, true );
-    if ($count == '') {
-        $count = 0;
-        delete_post_meta ( $postID, $count_key );
-        add_post_meta ( $postID, $count_key, '0' );
-    } else {
-        $count ++;
-        update_post_meta ( $postID, $count_key, $count );
-    }
+  $count_key = 'post_views_count';
+  $count = get_post_meta ( $postID, $count_key, true );
+  if ($count == '') {
+    $count = 0;
+    delete_post_meta ( $postID, $count_key );
+    add_post_meta ( $postID, $count_key, '0' );
+  } else {
+    $count ++;
+    update_post_meta ( $postID, $count_key, $count );
+  }
 }
 
 // ---------------------------------------------------------------------
 // 登录后重定向
 function soi_login_redirect($redirect_to, $request, $user) {
-    return (is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();
+  return (is_array($user->roles) && in_array('administrator', $user->roles)) ? site_url() : site_url(); // 跳转后台: admin_site()
 }
 add_filter('login_redirect', 'soi_login_redirect', 10, 3);
 // 登出后重定向
 function auto_redirect_after_logout(){
-    wp_redirect(home_url());
-        exit();
+  wp_redirect(home_url());
+  exit();
 }
 add_action('wp_logout','auto_redirect_after_logout');
 
 // ---------------------------------------------------------------------
 // 文章页码
 function wp_pagenavi() {
-    global $wp_query, $wp_rewrite;
-    $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;  
-    $pagination = array(
-        'base' => @add_query_arg('paged','%#%'),
-        'format' => '',
-        'total' => $wp_query->max_num_pages,
-        'current' => $current,
-        'show_all' => false,
-        'type' => 'plain',
-        'end_size'=>'1',
-        'mid_size'=>'1',
-        'prev_text' => '<', //♂
-        'next_text' => '>' //♀
-    ); 
-    if( $wp_rewrite->using_permalinks() )
-        $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg('s',get_pagenum_link(1) ) ) . 'page/%#%/', 'paged');
-    if( !empty($wp_query->query_vars['s']) )
-        $pagination['add_args'] = array('s'=>get_query_var('s'));
-    echo paginate_links($pagination);
+  global $wp_query, $wp_rewrite;
+  $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;  
+  $pagination = array(
+    'base' => @add_query_arg('paged','%#%'),
+    'format' => '',
+    'total' => $wp_query->max_num_pages,
+    'current' => $current,
+    'show_all' => false,
+    'type' => 'plain',
+    'end_size'=>'1',
+    'mid_size'=>'1',
+    'prev_text' => '<', //♂
+    'next_text' => '>' //♀
+  ); 
+  if( $wp_rewrite->using_permalinks() )
+    $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg('s',get_pagenum_link(1) ) ) . 'page/%#%/', 'paged');
+  if( !empty($wp_query->query_vars['s']) )
+    $pagination['add_args'] = array('s'=>get_query_var('s'));
+  echo paginate_links($pagination);
 }
 
 // ---------------------------------------------------------------------
 // 自定义头像
 add_filter( 'avatar_defaults', 'newgravatar' );  
 function newgravatar ($avatar_defaults) {  
-    $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';  
-    $avatar_defaults[$myavatar] = "默认头像";  
-    return $avatar_defaults;  
+  $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';  
+  $avatar_defaults[$myavatar] = "默认头像";  
+  return $avatar_defaults;  
 }  
 
 // ---------------------------------------------------------------------
@@ -486,29 +508,29 @@ add_filter( 'login_display_language_dropdown', '__return_false' );
 //禁止空搜索
 add_filter( 'request', 'uctheme_redirect_blank_search' );
 function uctheme_redirect_blank_search( $query_variables ) {
- if (isset($_GET['s']) && !is_admin()) {
- if (empty($_GET['s']) || ctype_space($_GET['s'])) {
- wp_redirect( home_url() );
- exit;
- }
- }
- return $query_variables;
+if(isset($_GET['s']) && !is_admin()) {
+if(empty($_GET['s']) || ctype_space($_GET['s'])) {
+wp_redirect( home_url() );
+exit;
+}
+}
+return $query_variables;
 }
 
 // ---------------------------------------------------------------------
 //主题设置
 add_action('admin_menu', 'ifasle_theme_set');
-    function ifasle_theme_set() {
-        add_menu_page(
-            'iFalse主题设置',
-            'iFalse主题设置', 
-            'edit_themes',
-            'i-opt',
-            'i_settings' 
-        );
+  function ifasle_theme_set() {
+    add_menu_page(
+      'iFalse主题设置',
+      'iFalse主题设置', 
+      'edit_themes',
+      'i-opt',
+      'i_settings' 
+    );
 }
 function i_settings() {
-    require get_template_directory()."/admin/i_opt.php";
+  require get_template_directory()."/admin/i_opt.php";
 }
 
 // ---------------------------------------------------------------------
@@ -518,52 +540,52 @@ add_action('created_category', 'no_category_base_refresh_rules');
 add_action('edited_category', 'no_category_base_refresh_rules');
 add_action('delete_category', 'no_category_base_refresh_rules');
 function no_category_base_refresh_rules() {
-    global $wp_rewrite;
-    $wp_rewrite -> flush_rules();
+  global $wp_rewrite;
+  $wp_rewrite -> flush_rules();
 }
 add_action('init', 'no_category_base_permastruct');
 function no_category_base_permastruct() {
-    global $wp_rewrite, $wp_version;
-    if (version_compare($wp_version, '3.4', '<')) {
-        $wp_rewrite -> extra_permastructs['category'][0] = '%category%';
-    } else {
-        $wp_rewrite -> extra_permastructs['category']['struct'] = '%category%';
-    }
+  global $wp_rewrite, $wp_version;
+  if (version_compare($wp_version, '3.4', '<')) {
+    $wp_rewrite -> extra_permastructs['category'][0] = '%category%';
+  } else {
+    $wp_rewrite -> extra_permastructs['category']['struct'] = '%category%';
+  }
 }
 add_filter('category_rewrite_rules', 'no_category_base_rewrite_rules');
 function no_category_base_rewrite_rules($category_rewrite) {
-    $category_rewrite = array();
-    $categories = get_categories(array('hide_empty' => false));
-    foreach ($categories as $category) {
-        $category_nicename = $category -> slug;
-        if ($category -> parent == $category -> cat_ID)
-            $category -> parent = 0;
-        elseif ($category -> parent != 0)
-            $category_nicename = get_category_parents($category -> parent, false, '/', true) . $category_nicename;
-        $category_rewrite['(' . $category_nicename . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?category_name=$matches[1]&feed=$matches[2]';
-        $category_rewrite['(' . $category_nicename . ')/page/?([0-9]{1,})/?$'] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
-        $category_rewrite['(' . $category_nicename . ')/?$'] = 'index.php?category_name=$matches[1]';
-    }
-    global $wp_rewrite;
-    $old_category_base = get_option('category_base') ? get_option('category_base') : 'category';
-    $old_category_base = trim($old_category_base, '/');
-    $category_rewrite[$old_category_base . '/(.*)$'] = 'index.php?category_redirect=$matches[1]';
-    return $category_rewrite;
+  $category_rewrite = array();
+  $categories = get_categories(array('hide_empty' => false));
+  foreach ($categories as $category) {
+    $category_nicename = $category -> slug;
+    if ($category -> parent == $category -> cat_ID)
+      $category -> parent = 0;
+    elseif ($category -> parent != 0)
+      $category_nicename = get_category_parents($category -> parent, false, '/', true) . $category_nicename;
+    $category_rewrite['(' . $category_nicename . ')/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?category_name=$matches[1]&feed=$matches[2]';
+    $category_rewrite['(' . $category_nicename . ')/page/?([0-9]{1,})/?$'] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
+    $category_rewrite['(' . $category_nicename . ')/?$'] = 'index.php?category_name=$matches[1]';
+  }
+  global $wp_rewrite;
+  $old_category_base = get_option('category_base') ? get_option('category_base') : 'category';
+  $old_category_base = trim($old_category_base, '/');
+  $category_rewrite[$old_category_base . '/(.*)$'] = 'index.php?category_redirect=$matches[1]';
+  return $category_rewrite;
 }
 add_filter('query_vars', 'no_category_base_query_vars');
 function no_category_base_query_vars($public_query_vars) {
-    $public_query_vars[] = 'category_redirect';
-    return $public_query_vars;
+  $public_query_vars[] = 'category_redirect';
+  return $public_query_vars;
 }
 add_filter('request', 'no_category_base_request');
 function no_category_base_request($query_vars) {
-    if (isset($query_vars['category_redirect'])) {
-        $catlink = trailingslashit(get_option('home')) . user_trailingslashit($query_vars['category_redirect'], 'category');
-        status_header(301);
-        header("Location: $catlink");
-        exit();
-    }
-    return $query_vars;
+  if (isset($query_vars['category_redirect'])) {
+    $catlink = trailingslashit(get_option('home')) . user_trailingslashit($query_vars['category_redirect'], 'category');
+    status_header(301);
+    header("Location: $catlink");
+    exit();
+  }
+  return $query_vars;
 }
 
 // ---------------------------------------------------------------------

@@ -1,7 +1,7 @@
 const respond_box = document.querySelector('.post-comments-content #respond');
 const comments_content_box = document.querySelector('.post-comments-content');
 
-//在targetElement之后插入新节点newElement
+// 在targetElement之后插入新节点newElement
 function insertAfter(newElement, targetElement){
     let parent = targetElement.parentNode;
     if(parent.lastChild == targetElement){
@@ -11,8 +11,7 @@ function insertAfter(newElement, targetElement){
     }
 }
 
-
-//添加博主标签
+// 添加博主标签
 const comment_author_name_a = document.querySelectorAll('.post-comments .post-comments-content .fn a');
 const comment_author_card = document.querySelectorAll('.post-comments .post-comments-content .fn .master');
 const comment_author_i = [];
@@ -22,10 +21,9 @@ for(let i=0; i<comment_author_card.length; i++) {
     comment_author_title[i] = document.createTextNode('博主');
     comment_author_i[i].appendChild(comment_author_title[i]);
     insertAfter(comment_author_i[i],comment_author_card[i]);
-    // function SlyarErrors(){return true;}window.onerror=SlyarErrors;
 }
 
-//删除评论a链接
+// 删除评论链接
 const remove_author_a = document.querySelectorAll('.post-comments .post-comments-content .fn a');
 for(let i=0; i<remove_author_a.length; i++) {
     remove_author_a[i].removeAttribute('href');
@@ -35,7 +33,13 @@ for(let i=0; i<remove_time_a.length; i++) {
     remove_time_a[i].removeAttribute('href');
 }
 
-//改变上下页名称
+// 删除文章页评论数量的超链接
+const comment_num_a = document.querySelector('.single-detail span a');
+if(comment_num_a) {
+    comment_num_a.removeAttribute('href');
+}
+
+// 改变上下页名称
 const comment_page_up = document.querySelector('#post-comments-nav .prev');
 if(comment_page_up){comment_page_up.innerText = '<';}
 const comment_page_down = document.querySelector('#post-comments-nav .next');
@@ -58,16 +62,20 @@ const change_comment_respond_textarea_text = document.querySelector('.post-comme
 if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','一起热爱这个世界！')}
 
 const change_comment_respond_author = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author input');
-if(change_comment_respond_author){change_comment_respond_author.setAttribute('placeholder','昵称*')}
+const change_comment_respond_author_label = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author label');
+
+if(change_comment_respond_author){change_comment_respond_author.setAttribute('placeholder',change_comment_respond_author_label.innerText)}
 
 const change_comment_respond_email = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-email input');
 if(change_comment_respond_email){change_comment_respond_email.type = 'email'}
 
 const change_comment_respond_email_tip = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-email input');
-if(change_comment_respond_email_tip){change_comment_respond_email_tip.setAttribute('placeholder','邮箱*')}
+const change_comment_respond_email_tip_label = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-email label');
+if(change_comment_respond_email_tip){change_comment_respond_email_tip.setAttribute('placeholder',change_comment_respond_email_tip_label.innerText)}
 
 const change_comment_respond_url = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-url input');
-if(change_comment_respond_url){change_comment_respond_url.setAttribute('placeholder','网址(非必填)')}
+const change_comment_respond_url_label = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-url laebl');
+if(change_comment_respond_url){change_comment_respond_url.setAttribute('placeholder','您的站点（非必填）')}
 
 const change_comment_respond_cookie = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-cookies-consent label');
 if(change_comment_respond_cookie){change_comment_respond_cookie.innerText = '保留我的信息，方便下次评论'}
