@@ -339,7 +339,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--tr2);
 }
 .home-2 .home-2-mian ul li .home-2-detail {
     width: calc(100% - 214px);
