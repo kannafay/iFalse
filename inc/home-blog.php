@@ -24,7 +24,7 @@
                             <div class="home-2-detail-bottom-cate"></span><?php echo the_category(' ') ?></div>
                             <div class="home-2-detail-bottom-msg">
                                 <?php echo get_avatar( get_the_author_email(), '100' );?>
-                                <div class="home-2-detail-time"><?php the_date(); ?></div><span>/</span>
+                                <div class="home-2-detail-time"><?php echo get_the_date(); ?></div><span>/</span>
                                 <div class="home-2-detail-views">浏览 <?php echo getPostViews(get_the_ID()) ?></div><span>/</span>
                                 <div class="home-2-detail-comments">评论 <?php comments_popup_link('沙发','1','%') ?></div>
                             </div>

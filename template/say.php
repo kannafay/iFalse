@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="say-post-msg">
                                         <div class="say-author-name"><?php echo get_the_author_meta('nickname',$post->post_author); ?></div>
-                                        <div class="say-post-time"><?php the_date(); ?> <?php the_time(); ?></div>
+                                        <div class="say-post-time"><?php echo get_the_date(); ?> <?php the_time(); ?></div>
                                     </div>
                                 </div>
                                 <div class="say-post-content-box">
