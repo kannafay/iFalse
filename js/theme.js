@@ -34,7 +34,7 @@ menu_mb_close.onclick = function() {
     menu_mb_mask.className = 'menu-mb-mask';
 }
 
-// 移动端菜单按钮
+// 目录树菜单按钮
 const post_menu_mb_btn = document.querySelector('.post-menu-mb-btn');
 const post_menu_mb = document.querySelector('#article-toc-mb');
 if(post_menu_mb && post_menu_mb_btn) {

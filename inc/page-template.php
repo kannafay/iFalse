@@ -16,7 +16,7 @@
 </div>
 
 <div class="container single-main page-main ">
-    <div class="center">
+    <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
             <div class="the-end" style="">—— THE END ——</div>

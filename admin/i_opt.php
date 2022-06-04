@@ -14,7 +14,6 @@ if($_POST['i_opt']){
     update_option("i_random_pic",$_POST["i_random_pic"]);
     update_option("i_loading_pic",$_POST["i_loading_pic"]);
     update_option("i_hello",$_POST["i_hello"]);
-    update_option("i_post_cover",$_POST["i_post_cover"]);
     update_option("i_copyright",$_POST["i_copyright"]);
     update_option("i_icp",$_POST["i_icp"]);
     update_option("i_statement",$_POST["i_statement"]);
@@ -77,13 +76,6 @@ $logo_img = get_option("logo_img");
                     <td>
                         <input name="i_random_pic" type="text" value="<?php echo get_option("i_random_pic"); ?>" class="regular-text">
                         <p class="description">用于文章没有封面时代替。默认：主题海报</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="i_post_cover">文章页封面</label></th>
-                    <td>
-                        <input name="i_post_cover" type="text" value="<?php echo get_option("i_post_cover"); ?>" class="regular-text">
-                        <p class="description">数字1为关闭。文章页左侧文章封面。默认：开启</p>
                     </td>
                 </tr>
                 <tr>

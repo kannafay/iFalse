@@ -3,7 +3,6 @@
  * @神秘布偶猫
  * @https://www.ifalse.cn
  */
-
 // ---------------------------------------------------------------------
 // 自定义引入文件
 function i_frame() {
@@ -278,48 +277,6 @@ function insert_table_of_contents($content) {
 	  $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
 	  "'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
 	}
-	$start_nav = "<div id='article-toc'>";
-	$end_nav = "</div>";
-	$title = "<div id=\"article-toc-title\">文章目录</div>";
-	$link_list = "<ul id=\"article-toc-ul\">" . $link_list . "</ul>";
-	$table_of_contents = $start_nav . $title . $link_list . $end_nav;
-	if($fixed_location && !$comment_found) {
-		$first_paragraph = strpos($content, '</p>', 0) + 4;
-		$second_paragraph = strpos($content, '</p>', $first_p_pos);
-		return substr_replace($content, $table_of_contents, $second_paragraph + 4 , 0);
-	}
-	else {
-		return str_replace($html_comment, $table_of_contents, $content);
-	}
-}
-add_filter('the_content', 'insert_table_of_contents');
-
-// ---------------------------------------------------------------------
-// 移动端目录
-function insert_table_of_contents_mb($content) {
-	$html_comment = "<!--insert-toc-->";
-	$comment_found = strpos($content, $html_comment) ? true : false;
-	$fixed_location = true;
-	if (!$fixed_location && !$comment_found) {
-		return $content;
-	}
-    if (is_page()) {
-      return $content;
-    }
-	$regex = "~(<h([1-6]))(.*?>(.*)<\/h[1-6]>)~";
-	preg_match_all($regex, $content, $heading_results);
-	$num_match = count($heading_results[0]);
-	if($num_match < 1) {
-		return $content;
-	}
-	$link_list = "";
-	for ($i = 0; $i < $num_match; ++ $i) {
-	  $new_heading = $heading_results[1][$i] . " id='$i' " . $heading_results[3][$i];
-	  $old_heading = $heading_results[0][$i];
-	  $content = str_replace($old_heading, $new_heading, $content);
-	  $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
-	  "'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
-	}
 	$start_nav = "<div id='article-toc-mb'>";
 	$end_nav = "</div>";
 	$title = "<div id=\"article-toc-title-mb\">文章目录</div>";
@@ -334,7 +291,7 @@ function insert_table_of_contents_mb($content) {
 		return str_replace($html_comment, $table_of_contents, $content);
 	}
 }
-add_filter('the_content', 'insert_table_of_contents_mb');
+add_filter('the_content', 'insert_table_of_contents');
 
 // ---------------------------------------------------------------------
 // 主题自动/一键升级
@@ -486,7 +443,7 @@ function newgravatar ($avatar_defaults) {
 }  
 
 // ---------------------------------------------------------------------
-// 添加后台链接
+// 后台添加链接
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 // ---------------------------------------------------------------------

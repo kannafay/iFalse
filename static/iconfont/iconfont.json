@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "24797064",
+      "name": "目录树",
+      "font_class": "mulushu",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "29657618",
+      "name": "消息",
+      "font_class": "xiaoxi1",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
       "icon_id": "5825790",
       "name": "填写资料",
       "font_class": "tianxieziliao",
@@ -25,13 +39,6 @@
       "font_class": "tishi1",
       "unicode": "e602",
       "unicode_decimal": 58882
-    },
-    {
-      "icon_id": "4033836",
-      "name": "资料",
-      "font_class": "ziliao",
-      "unicode": "e631",
-      "unicode_decimal": 58929
     },
     {
       "icon_id": "13401002",
@@ -74,13 +81,6 @@
       "font_class": "password",
       "unicode": "e75b",
       "unicode_decimal": 59227
-    },
-    {
-      "icon_id": "11488088",
-      "name": "Not visible",
-      "font_class": "Notvisible",
-      "unicode": "e75a",
-      "unicode_decimal": 59226
     },
     {
       "icon_id": "201552",

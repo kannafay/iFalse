@@ -23,39 +23,13 @@
 </div>
 <div class="container single-main article-main">
     <div class="left">
-        <?php if(get_option("i_post_cover") == 1) {?>
-        <?php } else {?>
-            <div class="post-tip">
-                <?php if (has_post_thumbnail()) { ?>
-                <?php the_post_thumbnail(); ?>
-                <?php } else {?>
-                    <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
-                    data-original="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
-                <?php } ?>
-                <!-- <i>封面图</i> -->
-            </div>
-        <?php } ?>
-    </div>
-    <div class="center">
         <div class="post-content">
-            <?php if(get_option("i_post_cover") == 1) {?>
-            <?php } else {?>
-                <div class="post-tip">
-                    <?php if (has_post_thumbnail()) { ?>
-                    <?php the_post_thumbnail(); ?>
-                    <?php } else {?>
-                        <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
-                        data-original="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>" /> 
-                    <?php } ?>
-                    <!-- <i>封面图</i> -->
-                </div>
-            <?php } ?>
-                <?php the_content(); ?>
-                <script> 
-                    if(document.querySelector('#article-toc')) {
-                        document.querySelector('.single-main .left').appendChild(document.querySelector('#article-toc'))
-                    }
-                </script>
+            <?php the_content(); ?>
+            <script> 
+                if(document.querySelector('#article-toc')) {
+                    document.querySelector('.single-main .left').appendChild(document.querySelector('#article-toc'))
+                }
+            </script>
             <div class="the-end">—— THE END ——</div>
             <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
         </div>
@@ -79,6 +53,6 @@
 
 <div class="post-menu-mb-btn">
     <div>
-        <span class="iconfont icon-liebiaomoshi"></span>
+        <span class="iconfont icon-mulushu"></span>
     </div>
 </div>

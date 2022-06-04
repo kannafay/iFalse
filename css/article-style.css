@@ -1,101 +1,101 @@
-.single-main .center .post-content {
+.single-main .left .post-content {
     font-size: 16px;
     color: var(--text);
 }
-.single-main .center .post-content > * {
+.single-main .left .post-content > * {
     margin-bottom: 20px;
     width: 100%;
     position: relative;
 }
-.single-main .center .post-content a {
+.single-main .left .post-content a {
     color: var(--theme);
 }
-.single-main .center .post-content a:hover {
+.single-main .left .post-content a:hover {
     text-decoration: underline;
 }
-.single-main .center .post-content p {
+.single-main .left .post-content p {
     text-align: justify;
     line-height: 1.8;
-    word-break : break-all;
-    word-wrap: break-word;
+    /* word-break : break-all; */
+    /* word-wrap: break-word; */
 }
 
 /* 附件 */
-.single-main .center .post-content .attachment a {
+.single-main .left .post-content .attachment a {
     background: none;   
 }
-.single-main .center .post-content .attachment a img {
+.single-main .left .post-content .attachment a img {
     margin: 0;
 }
 /* 附件end */
-.single-main .center .post-content blockquote {
+.single-main .left .post-content blockquote {
     background-color: var(--bgc-sub);
     border-left: 4px solid var(--theme-sub);
     padding: 10px;
     color: var(--text-sub);
 }
-.single-main .center .post-content blockquote p {
+.single-main .left .post-content blockquote p {
     color: var(--text-info);
 }
-.single-main .center .post-content blockquote cite {
+.single-main .left .post-content blockquote cite {
     display: inline-block;
     font-size: 14px;
     color: var(--text-info);
     margin-top: 10px;
 }
-.single-main .center .post-content img {
+.single-main .left .post-content img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: var(--radius);
     vertical-align: bottom;
 }
-.single-main .center .post-content figcaption {
+.single-main .left .post-content figcaption {
     font-size: 14px;
     font-style: italic;
     color: var(--text-info);
     margin-top: 5px;
 }
-.single-main .center .post-content .wp-block-video {
+.single-main .left .post-content .wp-block-video {
     width: 100%;
     padding-bottom: 60%;
     position: relative;
     background-color: #000;
     border-radius: var(--radius);
 }
-.single-main .center .post-content .wp-block-video video {
+.single-main .left .post-content .wp-block-video video {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.single-main .center .post-content .wp-block-video figcaption {
+.single-main .left .post-content .wp-block-video figcaption {
     position: absolute;
     display: block;
     width: 100%;
     text-align: center;
 }
-.single-main .center .post-content > .wp-block-image {
+.single-main .left .post-content > .wp-block-image {
     width: 100%;
     height: 100%;
 }
-.single-main .center .post-content > .wp-block-image img {
+.single-main .left .post-content > .wp-block-image img {
     cursor: pointer;
 }
-.single-main .center .post-content .wp-block-gallery {
+.single-main .left .post-content .wp-block-gallery {
     display: grid;
     width: 100%;
     height: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
-.single-main .center .post-content .wp-block-gallery .wp-block-image {
+.single-main .left .post-content .wp-block-gallery .wp-block-image {
     cursor: pointer;
     width: 100%;
     height: 0;
     padding-bottom: 100%;
     position: relative;
 }
-.single-main .center .post-content .wp-block-gallery .wp-block-image img {
+.single-main .left .post-content .wp-block-gallery .wp-block-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -103,56 +103,56 @@
     vertical-align: middle;
     position: absolute;
 }
-.single-main .center .post-content video {
+.single-main .left .post-content video {
     width: 100%;
     height: 100%;
     border-radius: var(--radius);
     vertical-align: bottom;
 }
-.single-main .center .post-content .wp-block-table {
+.single-main .left .post-content .wp-block-table {
     overflow-x: auto;
 }
-.single-main .center .post-content .wp-block-table::-webkit-scrollbar {
+.single-main .left .post-content .wp-block-table::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     background-color: var(--border);
     border-radius: var(--radius);
 }
-.single-main .center .post-content .wp-block-table::-webkit-scrollbar-thumb {
+.single-main .left .post-content .wp-block-table::-webkit-scrollbar-thumb {
     background-color: var(--theme-3);
     border-radius: var(--radius);
 }
-.single-main .center .post-content .wp-block-table::-webkit-scrollbar-thumb:hover {
+.single-main .left .post-content .wp-block-table::-webkit-scrollbar-thumb:hover {
     background-color: var(--theme-sub);
 }
-.single-main .center .post-content table {
+.single-main .left .post-content table {
     width: 100%;
     border-collapse: collapse;
 }
-.single-main .center .post-content tr:nth-child(odd) {
+.single-main .left .post-content tr:nth-child(odd) {
     background-color: var(--bgc-sub);
 }
-.single-main .center .post-content table, 
-.single-main .center .post-content th, 
-.single-main .center .post-content td {
+.single-main .left .post-content table, 
+.single-main .left .post-content th, 
+.single-main .left .post-content td {
     font-size: 15px;
     border: 1px solid var(--border);
 }
-.single-main .center .post-content th, 
-.single-main .center .post-content td {
+.single-main .left .post-content th, 
+.single-main .left .post-content td {
     padding: 10px;
     text-align: left;
 }
-.single-main .center .post-content th {
+.single-main .left .post-content th {
     background-color: var(--theme-sub);
     color: var(--bgc);
 }
-.single-main .center .post-content td a {
+.single-main .left .post-content td a {
     text-decoration: underline;
     transition: var(--tr2); 
 }
 /* a标签hover效果//////////////////////////////////////////////////////////// */
-/* .single-main .center .post-content a::before {
+/* .single-main .left .post-content a::before {
     content: '';
     width: 100%;
     height: 1px;
@@ -161,7 +161,7 @@
     background-color: var(--theme);
     transition: var(--tr2);
 }
-.single-main .center .post-content a:hover::before {
+.single-main .left .post-content a:hover::before {
     content: '';
     width: 100%;
     height: 50%;
@@ -170,35 +170,35 @@
     background-color: var(--theme-3);
 } */
 /* a标签hover效果end/////////////////////////////////////////////////////////// */
-.single-main .center .post-content > .wp-block-image a {
+.single-main .left .post-content > .wp-block-image a {
     display: inline-block;
 }
-.single-main .center .post-content > .wp-block-image a:before {
+.single-main .left .post-content > .wp-block-image a:before {
     display: none;
 }
-.single-main .center .post-content ul,
-.single-main .center .post-content ol {
+.single-main .left .post-content ul,
+.single-main .left .post-content ol {
     margin-left: 20px;
 }
-.single-main .center .post-content ul {
+.single-main .left .post-content ul {
     display: flex;
     flex-direction: column;
 }
-.single-main .center .post-content ul li{
+.single-main .left .post-content ul li{
     list-style: disc;
 }
-.single-main .center .post-content ol li {
+.single-main .left .post-content ol li {
     list-style: lower-greek;
 }
-.single-main .center .post-content ul li,
-.single-main .center .post-content ol li {
+.single-main .left .post-content ul li,
+.single-main .left .post-content ol li {
     line-height: 1.8;
     margin-left: 20px;
     width: calc(100% - 40px);
-    word-break : break-all;
-    word-wrap: break-word;
+    /* word-break : break-all; */
+    /* word-wrap: break-word; */
 }
-.single-main .center .post-content pre {
+.single-main .left .post-content pre {
     height: auto;
     max-height: 500px;
     border: 18px solid var(--bgc-sub);
@@ -206,28 +206,28 @@
     border-radius: var(--radius);
     overflow: auto;
 }
-.single-main .center .post-content pre::-webkit-scrollbar {
+.single-main .left .post-content pre::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     background-color: var(--border);
     border-radius: var(--radius);
 }
-.single-main .center .post-content pre::-webkit-scrollbar-thumb {
+.single-main .left .post-content pre::-webkit-scrollbar-thumb {
     background-color: var(--theme-3);
     border-radius: var(--radius);
 }
-.single-main .center .post-content pre::-webkit-scrollbar-thumb:hover {
+.single-main .left .post-content pre::-webkit-scrollbar-thumb:hover {
     background-color: var(--theme-sub);
 }
-.single-main .center .post-content .wp-block-preformatted {
+.single-main .left .post-content .wp-block-preformatted {
     font-size: 15px;
     color: var(--text-sub);
 }
-.single-main .center .post-content pre code {
+.single-main .left .post-content pre code {
     font-size: 13px;
     color: var(--text-sub);
 }
-.single-main .center .post-content p code {
+.single-main .left .post-content p code {
     border-radius: var(--radius-sub);
     background-color: var(--theme-1);
     color: var(--theme);
@@ -235,7 +235,7 @@
     margin: 0 4px;
     padding: 2px 4px;
 }
-.single-main .center .post-content li code {
+.single-main .left .post-content li code {
     border-radius: var(--radius-sub);
     background-color: var(--theme-1);
     color: var(--theme);
@@ -243,19 +243,19 @@
     margin: 0 4px;
     padding: 2px 4px;
 }
-.single-main .center .post-content code {
+.single-main .left .post-content code {
     font-family: 'PingFang SC','Consolas', 'Courier New';
 }
-.single-main .center .post-content p img {
+.single-main .left .post-content p img {
     width: 100%;
     height: 100%;
     vertical-align: sub;
     margin: 0 5px;
 }
-.single-main .center .post-content .wp-block-button {
+.single-main .left .post-content .wp-block-button {
     margin-bottom: 15px;
 }
-.single-main .center .post-content .wp-block-button__link {
+.single-main .left .post-content .wp-block-button__link {
     text-decoration: none;
     cursor: pointer;
     line-height: 3;
@@ -267,101 +267,100 @@
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
     transition: var(--tr2);  
 }
-.single-main .center .post-content .wp-block-button__link:hover {
+.single-main .left .post-content .wp-block-button__link:hover {
     color: var(--bgc);
     opacity: .8;
     text-decoration: none;
 }
-.single-main .center .post-content .wp-block-button__link::before {
+.single-main .left .post-content .wp-block-button__link::before {
     display: none;
 }
 
 /* 文字高亮///////////////////////////////////////////////////////// */
-.single-main .center .post-content .has-black-color {
+.single-main .left .post-content .has-black-color {
     color: #000;
 }
-.single-main .center .post-content .has-cyan-bluish-gray-color {
+.single-main .left .post-content .has-cyan-bluish-gray-color {
     color: #abb8c3;
 }
-.single-main .center .post-content .has-white-color {
+.single-main .left .post-content .has-white-color {
     color: #fff;
 }
-.single-main .center .post-content .has-pale-pink-color {
+.single-main .left .post-content .has-pale-pink-color {
     color: #f78da7;
 }
-.single-main .center .post-content .has-vivid-red-color {
+.single-main .left .post-content .has-vivid-red-color {
     color: #cf2e2e;
 }
-.single-main .center .post-content .has-luminous-vivid-orange-color {
+.single-main .left .post-content .has-luminous-vivid-orange-color {
     color: #ff6900;
 }
-.single-main .center .post-content .has-luminous-vivid-amber-color {
+.single-main .left .post-content .has-luminous-vivid-amber-color {
     color: #fcb900;
 }
-.single-main .center .post-content .has-light-green-cyan-color {
+.single-main .left .post-content .has-light-green-cyan-color {
     color: #7bdcb5;
 }
-.single-main .center .post-content .has-vivid-green-cyan-color {
+.single-main .left .post-content .has-vivid-green-cyan-color {
     color: #00d084;
 }
-.single-main .center .post-content .has-pale-cyan-blue-color {
+.single-main .left .post-content .has-pale-cyan-blue-color {
     color: #8ed1fc;
 }
-.single-main .center .post-content .has-vivid-cyan-blue-color {
+.single-main .left .post-content .has-vivid-cyan-blue-color {
     color: #0693e3;
 }
-.single-main .center .post-content .has-vivid-purple-color {
+.single-main .left .post-content .has-vivid-purple-color {
     color: #9b51e0;
 }
 /* 文字代码end//////////////////////////////////////////////////////// */
 
 /* h标签样式1/////////////////////////////////////////////////////////*/
-.single-main .center .post-content h4,
-.single-main .center .post-content h3,
-.single-main .center .post-content h2,
-.single-main .center .post-content h1 {
-    line-height: 1.8;
+.single-main .left .post-content h4,
+.single-main .left .post-content h3,
+.single-main .left .post-content h2,
+.single-main .left .post-content h1 {
+    line-height: 1.5;
+    margin-bottom: 25px;
 }
-.single-main .center .post-content h6 {
+.single-main .left .post-content h6 {
     font-size: 15px;
     color: var(--text);
     font-weight: 400;
     position: relative;
-
 }
-.single-main .center .post-content h5 {
+.single-main .left .post-content h5 {
+    font-size: 15px;
+    color: var(--text);
+    position: relative;
+}
+.single-main .left .post-content h4 {
     font-size: 15px;
     color: var(--text);
     position: relative;
  
 }
-.single-main .center .post-content h4 {
-    font-size: 15px;
-    color: var(--text);
-    position: relative;
- 
-}
-.single-main .center .post-content h3 {
+.single-main .left .post-content h3 {
     font-size: 16px;
     color: var(--text);
     position: relative;
 }
-.single-main .center .post-content h2 {
+.single-main .left .post-content h2 {
     font-size: 18px;
     color: var(--text);
     position: relative;
 
 }
-.single-main .center .post-content h1 {
+.single-main .left .post-content h1 {
     font-size: 20px;
     color: var(--text);
     position: relative;
 
 }
-.single-main .center .post-content h4::after,
-.single-main .center .post-content h3::after,
-.single-main .center .post-content h2::after,
-.single-main .center .post-content h1::after {
+.single-main .left .post-content h4::after,
+.single-main .left .post-content h3::after,
+.single-main .left .post-content h2::after,
+.single-main .left .post-content h1::after {
     content: '';
     width: 10%;
     height: 4px;
@@ -373,33 +372,33 @@
     box-shadow: 1px 1px 3px -1px var(--theme-sub);
     transition: var(--tr2);
 }
-.single-main .center .post-content h4::after {
+.single-main .left .post-content h4::after {
     width: 30px;
 }
-.single-main .center .post-content h3::after{
+.single-main .left .post-content h3::after{
     width: 40px;
 }
-.single-main .center .post-content h2::after{
+.single-main .left .post-content h2::after{
     width: 50px;
 }
-.single-main .center .post-content h1::after{
+.single-main .left .post-content h1::after{
     width: 60px;
 }
 
 /* 动画 */
-/* .single-main .center .post-content h4:hover::after {
+/* .single-main .left .post-content h4:hover::after {
     width: 38px;
     background-color: var(--theme-sub);
 }
-.single-main .center .post-content h3:hover::after {
+.single-main .left .post-content h3:hover::after {
     width: 48px;
     background-color: var(--theme-sub);
 }
-.single-main .center .post-content h2:hover::after {
+.single-main .left .post-content h2:hover::after {
     width: 58px;
     background-color: var(--theme-sub);
 }
-.single-main .center .post-content h1:hover::after {
+.single-main .left .post-content h1:hover::after {
     width: 68px;
     background-color: var(--theme-sub);
 } */
@@ -408,55 +407,55 @@
 /* h标签样式1end///////////////////////////////////////////////////////////*/
 
 /* h标签样式2//////////////////////////////////////////////////////////////*/
-/* .single-main .center .post-content h6 {
+/* .single-main .left .post-content h6 {
     font-size: 15px;
     color: var(--text-sub);
     font-weight: 400;
     position: relative;
     padding-left: 20px;
 }
-.single-main .center .post-content h5 {
+.single-main .left .post-content h5 {
     font-size: 15px;
     color: var(--text-sub);
     position: relative;
     padding-left: 20px;
 }
-.single-main .center .post-content h4 {
+.single-main .left .post-content h4 {
     font-size: 15px;
     color: var(--text-sub);
     position: relative;
     padding-left: 20px;
 }
-.single-main .center .post-content h3 {
+.single-main .left .post-content h3 {
     font-size: 16px;
     color: var(--text-sub);
     position: relative;
     padding-left: 20px;
 }
-.single-main .center .post-content h2 {
+.single-main .left .post-content h2 {
     font-size: 18px;
     color: var(--text-sub);
     position: relative;
     padding-left: 20px;
 }
-.single-main .center .post-content h1 {
+.single-main .left .post-content h1 {
     font-size: 20px;
     color: var(--text-sub);
     position: relative;
     padding-left: 20px;
 }
-.single-main .center .post-content h4,
-.single-main .center .post-content h3,
-.single-main .center .post-content h2,
-.single-main .center .post-content h1 {
+.single-main .left .post-content h4,
+.single-main .left .post-content h3,
+.single-main .left .post-content h2,
+.single-main .left .post-content h1 {
     line-height: 1.8;
 }
-.single-main .center .post-content h6::after,
-.single-main .center .post-content h5::after,
-.single-main .center .post-content h4::after,
-.single-main .center .post-content h3::after,
-.single-main .center .post-content h2::after,
-.single-main .center .post-content h1::after {
+.single-main .left .post-content h6::after,
+.single-main .left .post-content h5::after,
+.single-main .left .post-content h4::after,
+.single-main .left .post-content h3::after,
+.single-main .left .post-content h2::after,
+.single-main .left .post-content h1::after {
     content: '';
     width: 4px;
     height: 100%;
@@ -469,7 +468,7 @@
 /* h标签样式2end/////////////////////////////////////////////////////////////*/
 
 @media screen and (max-width: 640px) {
-    .single-main .center .post-content {
+    .single-main .left .post-content {
         font-size: 15px;
     }
 }

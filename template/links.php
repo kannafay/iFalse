@@ -11,7 +11,7 @@
 <body>
     <?php get_header(); ?>
     <div class="container single-main page-main page-link">
-        <div class="center">
+        <div class="left">
             <div class="post-content">
                 <?php the_content(); ?>
                 <?php wp_list_bookmarks('orderby=id&show_description=1&show_name=1'); ?>

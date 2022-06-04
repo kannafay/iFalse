@@ -17,6 +17,7 @@
             </div>
             <div class="user-set">
                 <a href="<?php bloginfo('url') ?>/wp-admin"><span class="iconfont icon-shezhi"></span> 后台管理</a>
+                <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php?post_type=shuoshuo"><span class="iconfont icon-xiaoxi1"></span> 发布动态</a>
                 <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php"><span class="iconfont icon-tianxieziliao"></span> 撰写文章</a>
                 <a href="<?php bloginfo('url') ?>/wp-admin/profile.php"><span class="iconfont icon-gerenziliao"></span> 个人资料</a>
                 <a href="<?php echo wp_logout_url(); ?>"><span class="iconfont icon-tuichu"></span> 退出登录</a>

@@ -18,6 +18,13 @@ GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse
 
 ## 更新日志
 
+V1.3.1（2022.6.4）：
+
+- 导航栏用户菜单添加发布动态入口
+- 移除文章页左侧内容
+- 修改首页博客模式和文章页布局
+- 将文章目录树置于右下角
+
 V1.3.1（2022.5.31）：
 
 - 新增滚动时自动隐藏导航栏

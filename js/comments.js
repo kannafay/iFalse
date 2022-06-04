@@ -59,7 +59,7 @@ if(change_comment_respond_textarea){change_comment_respond_textarea.rows = '6'}
 // if(change_comment_respond_title){change_comment_respond_title.firstChild.data = '说点什么？';}
 
 const change_comment_respond_textarea_text = document.querySelector('.post-comments .post-comments-content .comment-respond textarea');
-if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','一起热爱这个世界！')}
+if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','一起热爱这个世界')}
 
 const change_comment_respond_author = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author input');
 const change_comment_respond_author_label = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author label');
