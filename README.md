@@ -18,7 +18,7 @@ GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse
 
 ## 更新日志
 
-V1.3.1（2022.6.4）：
+V1.3.2（2022.6.4）：
 
 - 导航栏用户菜单添加发布动态入口
 - 移除文章页左侧内容
