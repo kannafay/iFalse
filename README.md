@@ -18,6 +18,12 @@ GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse
 
 ## 更新日志
 
+V1.3.3（2022.6.5）：
+
+- 紧急修复评论区媒体文件样式
+- 紧急修复文章内容样式
+- 修复其他一些小bug
+
 V1.3.2（2022.6.4）：
 
 - 导航栏用户菜单添加发布动态入口

@@ -1,6 +1,3 @@
-const respond_box = document.querySelector('.post-comments-content #respond');
-const comments_content_box = document.querySelector('.post-comments-content');
-
 // 在targetElement之后插入新节点newElement
 function insertAfter(newElement, targetElement){
     let parent = targetElement.parentNode;
@@ -46,7 +43,7 @@ const comment_page_down = document.querySelector('#post-comments-nav .next');
 if(comment_page_down){comment_page_down.innerText = '>';}
 
 // 评论区
-const remove_comment_h2_href = document.querySelectorAll('.post-comments .post-comments-content h2 a')[0];
+const remove_comment_h2_href = document.querySelectorAll('.post-comments .post-comments-content .post-comments-title a')[0];
 if(remove_comment_h2_href){remove_comment_h2_href.removeAttribute('href')}
 
 const change_comment_submit_text = document.querySelector('.post-comments .post-comments-content #commentform #submit');
@@ -82,3 +79,8 @@ if(change_comment_respond_cookie){change_comment_respond_cookie.innerText = '保
 
 const change_comment_email_notes = document.querySelector('.post-comments .post-comments-content .comment-respond #email-notes');
 if(change_comment_email_notes){change_comment_email_notes.innerText = '发表评论'}
+
+const change_comment_edit = document.querySelectorAll('.post-comments .comment-meta .comment-edit-link');
+$(change_comment_edit).each(function(i) {
+    change_comment_edit[i].innerText = '编辑评论';
+})

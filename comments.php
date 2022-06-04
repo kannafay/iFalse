@@ -1,7 +1,7 @@
 <div class="post-comments">
     <div class="post-comments-content">
     <?php comment_form() ?>
-    <h2>评论（<?php comments_popup_link('沙发','1','%') ?>）</h2>
+    <h2 class="post-comments-title">评论（<?php comments_popup_link('沙发','1','%') ?>）</h2>
     <?php wp_list_comments( array(
         'avatar_size' => '400',
         'type' => 'comment')); 
@@ -19,7 +19,7 @@
     ?>
     </div>
 </div> 
-<script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
+
 <?php 
     if(get_option("i_comments_article") == 1) {
         if(get_option("i_comments_turn" ) == 1) {
@@ -30,6 +30,8 @@
                     </div>
                 </div>
                 <script>
+                    const respond_box = document.querySelector('.post-comments-content #respond');
+                    const comments_content_box = document.querySelector('.post-comments-content');
                     comments_content_box.removeChild(respond_box);
                     comments_content_box.insertBefore(document.querySelector('.is-logined'),comments_content_box.childNodes[0]);
                 </script>

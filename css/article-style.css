@@ -14,10 +14,22 @@
     text-decoration: underline;
 }
 .single-main .left .post-content p {
-    text-align: justify;
     line-height: 1.8;
-    /* word-break : break-all; */
-    /* word-wrap: break-word; */
+    text-align: justify;
+    white-space: normal;
+    word-break : break-all;
+    word-wrap: break-word;
+}
+.single-main .left .post-content h6,
+.single-main .left .post-content h5,
+.single-main .left .post-content h4,
+.single-main .left .post-content h3,
+.single-main .left .post-content h2,
+.single-main .left .post-content h1 {
+    text-align: justify;
+    white-space: normal;
+    word-break : break-all;
+    word-wrap: break-word;
 }
 
 /* 附件 */
@@ -195,8 +207,8 @@
     line-height: 1.8;
     margin-left: 20px;
     width: calc(100% - 40px);
-    /* word-break : break-all; */
-    /* word-wrap: break-word; */
+    word-break : break-all;
+    word-wrap: break-word;
 }
 .single-main .left .post-content pre {
     height: auto;
@@ -224,7 +236,7 @@
     color: var(--text-sub);
 }
 .single-main .left .post-content pre code {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-sub);
 }
 .single-main .left .post-content p code {
@@ -322,6 +334,7 @@
 .single-main .left .post-content h1 {
     line-height: 1.5;
     margin-bottom: 25px;
+
 }
 .single-main .left .post-content h6 {
     font-size: 15px;

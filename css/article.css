@@ -220,7 +220,7 @@
 #article-toc-mb #article-toc-ul-mb .heading-level-6 a:hover {
     color: var(--bgc);
     text-decoration: none;
-    padding-left: 20px;
+    padding-left: 24px;
 }
 #article-toc-mb #article-toc-ul-mb .heading-level-1 a::before,
 #article-toc-mb #article-toc-ul-mb .heading-level-2 a::before,
@@ -241,15 +241,8 @@
 #article-toc-mb #article-toc-ul-mb .heading-level-4 a:hover::before,
 #article-toc-mb #article-toc-ul-mb .heading-level-5 a:hover::before,
 #article-toc-mb #article-toc-ul-mb .heading-level-6 a:hover::before {
-    left: 5px;
+    left: 8px;
     font-weight: 400;
-}
-#article-toc-mb #article-toc-ul-mb .heading-level-1 a:hover::before,
-#article-toc-mb #article-toc-ul-mb .heading-level-2 a:hover::before,
-#article-toc-mb #article-toc-ul-mb .heading-level-3 a:hover::before,
-#article-toc-mb #article-toc-ul-mb .heading-level-4 a:hover::before,
-#article-toc-mb #article-toc-ul-mb .heading-level-5 a:hover::before,
-#article-toc-mb #article-toc-ul-mb .heading-level-6 a:hover::before {
     color: var(--bgc);
 }
 /* 目录树end------------------------------------------------------------- */
@@ -344,27 +337,30 @@
 
 /* 评论区--------------------------------------------- */
 .post-comments {
-    /* border-top: 1px solid var(--border); */
-    padding-top: 20px;
-    /* margin-top: 20px; */
-}
-.post-comments .post-comments-content {
     width: 100%;
-    height: auto;
-    /* background-color: var(--bgc-sub); */
+    padding-top: 20px;
 }
-.post-comments .post-comments-content .navigation {
+.post-comments img,
+.post-comments video {
+    max-width: 100%;
+    vertical-align: bottom;
+    border-radius: var(--radius);
+}
+.post-comments .navigation {
     display: none;
 }
-
-.post-comments .post-comments-content .nocomments {
+.post-comments .reply {
+    text-align: right;
+    margin-top: 5px;
+}
+.post-comments .nocomments {
     text-align: center;
     color: var(--text-info);
 }
-.post-comments .post-comments-content #comments {
+.post-comments #comments {
     display: none;
 }
-.post-comments .post-comments-content h3 {
+.post-comments .comment-reply-title {
     color: var(--text-sub);
     font-size: 16px;
     font-weight: 400;
@@ -373,19 +369,19 @@
     border-top: 1px solid var(--border);
     padding-top: 20px;
 }
-.post-comments .post-comments-content h3 > a {
+.post-comments .comment-reply-title > a {
     transition: var(--tr2);
 }
-.post-comments .post-comments-content h3 #cancel-comment-reply-link {
+.post-comments .comment-reply-title #cancel-comment-reply-link {
     color: var(--text-info);
     font-weight: 400;
     font-size: 12px;
     transition: var(--tr2);
 }
-.post-comments .post-comments-content h3 #cancel-comment-reply-link:hover {
+.post-comments .comment-reply-title #cancel-comment-reply-link:hover {
     color: var(--theme);
 }
-.post-comments .post-comments-content h2 {
+.post-comments .post-comments-title {
     text-align: center;
     font-size: 16px;
     font-weight: 400;
@@ -394,121 +390,126 @@
     padding-top: 20px;
     border-top: 1px solid var(--border);
 }
-.post-comments .post-comments-content h2 a {
+.post-comments .post-comments-title a {
     color: var(--text-sub);
 }
-.post-comments .post-comments-content ol li {
+.post-comments ol li {
     width: 100%;
     background-color: var(--bgc-sub);
     word-break: break-all;
     word-wrap: break-word;
     border-radius: var(--radius);
 }
-.post-comments .post-comments-content .depth-1 {
+.post-comments .depth-1 {
     padding: 15px;
     margin-top: 20px;
     background-color: var(--bgc-sub);
     border-radius: var(--radius);
 }
-.post-comments .post-comments-content .depth-2,
-.post-comments .post-comments-content .depth-3,
-.post-comments .post-comments-content .depth-4,
-.post-comments .post-comments-content .depth-5 {
+.post-comments .depth-2,
+.post-comments .depth-3,
+.post-comments .depth-4,
+.post-comments .depth-5 {
     padding: 15px 0 0 20px;
     margin-top: 10px;
     border-top: 1px solid var(--border);
     border-radius: 0;
 }
-.post-comments .post-comments-content .comment-body {
+.post-comments .comment-body {
     width: 100%;
 }
-.post-comments .post-comments-content .comment-body .comment-awaiting-moderation {
+.post-comments .comment-body .comment-awaiting-moderation {
     font-size: 14px;
     color: var(--text-sub);
 }
-.post-comments .post-comments-content .comment-body p {
+.post-comments .comment-body p {
     width: 100%;
     font-size: 15px;
-    color: var(--text);
-    margin-bottom: 5px;
+    color: var(--text-sub);
     word-break: break-all;
     word-wrap: break-word;
 }
-.post-comments .post-comments-content #respond #reply-title > a {
+.post-comments .comment-body p a {
+    color: var(--theme);
+}
+.post-comments .comment-body p a:hover {
+    text-decoration: underline;
+}
+.post-comments #respond #reply-title > a {
     color: var(--theme);
     margin: 0 5px;
     transition: var(--tr2);
 }
-.post-comments .post-comments-content #respond #reply-title a:hover {
+.post-comments #respond #reply-title a:hover {
     color: var(--theme);
 }
-.post-comments .post-comments-content .comment-body .reply a {
+.post-comments .comment-body .reply a {
     font-size: 12px;
     color: var(--text-info);
 }
-.post-comments .post-comments-content .comment-body .reply a:hover {
+.post-comments .comment-body .reply a:hover {
     color: var(--theme);
     transition: var(--tr2);
 }
-.post-comments .post-comments-content .comment-author {
+.post-comments .comment-author {
     display: flex;
     align-items: center;
     margin-bottom: 4px;
     
 }
-.post-comments .post-comments-content .comment-author img {
+.post-comments .comment-author img {
     /* border-radius: var(--radius-sub); */
     border-radius: 50%;
     height: 40px;
     width: 40px;
     margin-right: 10px;
 }
-.post-comments .post-comments-content .fn,
-.post-comments .post-comments-content .fn a {
-    color: var(--text-sub);
+.post-comments .fn,
+.post-comments .fn a {
+    color: var(--text);
     font-size: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.post-comments .post-comments-content .comment-author .fn {
+.post-comments .comment-author .fn {
     font-style: normal;
 }
-.post-comments .post-comments-content .comment-author .says {
+.post-comments .comment-author .says {
     display: none;
 }
 
-.post-comments .post-comments-content .comment-meta {
+.post-comments .comment-meta {
     font-size: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
-.post-comments .post-comments-content .comment-meta a {
+.post-comments .comment-meta a {
     color: var(--text-info);
     transition: var(--tr2);
 }
-.post-comments .post-comments-content .comment-meta .comment-edit-link:hover {
+.post-comments .comment-meta .comment-edit-link:hover {
     color: var(--theme);
 }
 
 /* 回复区 */
-.post-comments .post-comments-content .comment-respond {
+.post-comments .comment-respond {
     border-radius: var(--radius);
 }
-.post-comments .post-comments-content .comment-respond .comment-form .comment-notes {
+.post-comments .comment-respond .comment-form .comment-notes {
     font-size: 16px;
     color: var(--text-sub);
     margin-bottom: 15px;
     text-align: center;
     display: none;
 }
-.post-comments .post-comments-content .comment-respond .comment-form .comment-notes .required-field-message {
+.post-comments .comment-respond .comment-form .comment-notes .required-field-message {
     display: none;
 }
-.post-comments .post-comments-content .comment-respond .comment-form .comment-form-comment label {
+.post-comments .comment-respond .comment-form .comment-form-comment label {
     display: none;
 }
-.post-comments .post-comments-content .comment-respond textarea {
+.post-comments .comment-respond textarea {
     font-size: 14px;
     width: 100%;
     resize: none;
@@ -519,49 +520,49 @@
     margin-bottom: 10px;
     transition: var(--tr2);
 }
-.post-comments .post-comments-content .comment-respond textarea:hover,
-.post-comments .post-comments-content .comment-respond textarea:focus {
+.post-comments .comment-respond textarea:hover,
+.post-comments .comment-respond textarea:focus {
     border: 1px solid var(--theme);
 }
-.post-comments .post-comments-content .comment-respond textarea::-webkit-scrollbar {
+.post-comments .comment-respond textarea::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     border-radius: var(--radius);
 }
-.post-comments .post-comments-content .comment-respond textarea::-webkit-scrollbar-thumb {
+.post-comments .comment-respond textarea::-webkit-scrollbar-thumb {
     background-color: var(--theme);
     border-radius: var(--radius);
 }
-.post-comments .post-comments-content .comment-respond textarea::-webkit-scrollbar:hover {
+.post-comments .comment-respond textarea::-webkit-scrollbar:hover {
     cursor: default;
 }
-.post-comments .post-comments-content .comment-respond .comment-form {
+.post-comments .comment-respond .comment-form {
     font-size: 0;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-author,
-.post-comments .post-comments-content .comment-respond .comment-form-email,
-.post-comments .post-comments-content .comment-respond .comment-form-url {
+.post-comments .comment-respond .comment-form-author,
+.post-comments .comment-respond .comment-form-email,
+.post-comments .comment-respond .comment-form-url {
     display: inline-block;
     width: 33.33%;
     height: auto;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-author {
+.post-comments .comment-respond .comment-form-author {
     padding-right: 5px;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-email {
+.post-comments .comment-respond .comment-form-email {
     padding: 5px;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-url {
+.post-comments .comment-respond .comment-form-url {
     padding-left: 5px;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-author label,
-.post-comments .post-comments-content .comment-respond .comment-form-email label,
-.post-comments .post-comments-content .comment-respond .comment-form-url label {
+.post-comments .comment-respond .comment-form-author label,
+.post-comments .comment-respond .comment-form-email label,
+.post-comments .comment-respond .comment-form-url label {
     display: none;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-author input,
-.post-comments .post-comments-content .comment-respond .comment-form-email input,
-.post-comments .post-comments-content .comment-respond .comment-form-url input {
+.post-comments .comment-respond .comment-form-author input,
+.post-comments .comment-respond .comment-form-email input,
+.post-comments .comment-respond .comment-form-url input {
     outline: none;
     font-size: 14px;
     width: 100%;
@@ -571,34 +572,34 @@
     border-radius: var(--radius);
     transition: var(--tr2);
 }
-.post-comments .post-comments-content .comment-respond .comment-form-author input:hover,
-.post-comments .post-comments-content .comment-respond .comment-form-email input:hover,
-.post-comments .post-comments-content .comment-respond .comment-form-url input:hover,
-.post-comments .post-comments-content .comment-respond .comment-form-author input:focus,
-.post-comments .post-comments-content .comment-respond .comment-form-email input:focus,
-.post-comments .post-comments-content .comment-respond .comment-form-url input:focus {
+.post-comments .comment-respond .comment-form-author input:hover,
+.post-comments .comment-respond .comment-form-email input:hover,
+.post-comments .comment-respond .comment-form-url input:hover,
+.post-comments .comment-respond .comment-form-author input:focus,
+.post-comments .comment-respond .comment-form-email input:focus,
+.post-comments .comment-respond .comment-form-url input:focus {
     border: 1px solid var(--theme);
 }
-.post-comments .post-comments-content .comment-respond .comment-form-cookies-consent {
+.post-comments .comment-respond .comment-form-cookies-consent {
     display: flex;
     align-items: center;
     margin: 5px 0;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-cookies-consent input {
+.post-comments .comment-respond .comment-form-cookies-consent input {
     width: 15px;
     height: 15px;
     margin-right: 5px;
 }
-.post-comments .post-comments-content .comment-respond .comment-form-cookies-consent label {
+.post-comments .comment-respond .comment-form-cookies-consent label {
     font-size: 14px;
     color: var(--text-sub);
 }
-.post-comments .post-comments-content .comment-respond .form-submit {
+.post-comments .comment-respond .form-submit {
     display: block;
     width: 100%;
     height: auto;
 }
-.post-comments .post-comments-content .comment-respond .form-submit input {
+.post-comments .comment-respond .form-submit input {
     font-size: 14px;
     font-weight: 400;
     padding: 4px 0;
@@ -614,23 +615,23 @@
     cursor: pointer;
     transition: var(--tr2);
 }
-.post-comments .post-comments-content .comment-respond .form-submit input:hover {
+.post-comments .comment-respond .form-submit input:hover {
     opacity: .8;
 }
 
 /* 登录用户高亮 */
-.post-comments .post-comments-content .byuser .fn,
-.post-comments .post-comments-content .byuser .fn a {
+.post-comments .byuser .fn,
+.post-comments .byuser .fn a {
     display: flex;
     align-items: center;
 }
 /* 登录用户高亮end */
 
 /* 博主高亮 */
-.post-comments .post-comments-content .master {
+.post-comments .master {
     color: var(--theme);
 }
-.post-comments .post-comments-content .comment-author .fn i {
+.post-comments .comment-author .fn i {
     margin-left: 10px;
     font-size: 12px;
     font-style: normal;
@@ -676,15 +677,15 @@
 }
 
 /* 翻页 */
-.post-comments .post-comments-content #post-comments-nav {
+.post-comments #post-comments-nav {
     width: 100%;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.post-comments .post-comments-content #post-comments-nav a,
-.post-comments .post-comments-content #post-comments-nav span {
+.post-comments #post-comments-nav a,
+.post-comments #post-comments-nav span {
     display: block;
     width: 30px;
     height: 30px;
@@ -698,15 +699,15 @@
     overflow: hidden;
     transition: var(--tr2);
 }
-.post-comments .post-comments-content #post-comments-nav a:hover {
+.post-comments #post-comments-nav a:hover {
     background-color: var(--theme);
     color: var(--bgc);
 }
-.post-comments .post-comments-content #post-comments-nav .dots {
+.post-comments #post-comments-nav .dots {
     background-color: rgba(0 0 0 / 0);
     cursor: default;
 }
-.post-comments .post-comments-content #post-comments-nav .current {
+.post-comments #post-comments-nav .current {
     cursor: default;
     color: var(--bgc);
     background-color: var(--theme);
@@ -767,23 +768,23 @@
     }
 
     /* 评论区 */
-    .post-comments .post-comments-content .fn,
-    .post-comments .post-comments-content .fn a {
+    .post-comments .fn,
+    .post-comments .fn a {
         font-size: 15px;
     }
-    .post-comments .post-comments-content .comment-respond .comment-form-author,
-    .post-comments .post-comments-content .comment-respond .comment-form-email,
-    .post-comments .post-comments-content .comment-respond .comment-form-url {
+    .post-comments .comment-respond .comment-form-author,
+    .post-comments .comment-respond .comment-form-email,
+    .post-comments .comment-respond .comment-form-url {
         width: 100%;
         margin-bottom: 10px;
     }
-    .post-comments .post-comments-content .comment-respond .comment-form-author {
+    .post-comments .comment-respond .comment-form-author {
         padding-right: 0;
     }
-    .post-comments .post-comments-content .comment-respond .comment-form-email {
+    .post-comments .comment-respond .comment-form-email {
         padding: 0;
     }
-    .post-comments .post-comments-content .comment-respond .comment-form-url {
+    .post-comments .comment-respond .comment-form-url {
         padding-left: 0;
         /* margin-top: 3px; */
         margin-bottom: 5px;

@@ -25,11 +25,6 @@
     <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
-            <script> 
-                if(document.querySelector('#article-toc')) {
-                    document.querySelector('.single-main .left').appendChild(document.querySelector('#article-toc'))
-                }
-            </script>
             <div class="the-end">—— THE END ——</div>
             <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
         </div>
