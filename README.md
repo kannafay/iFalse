@@ -8,8 +8,6 @@
 
 小提示：主题更新较频繁，所以主题支持一键/自动更新！！！
 
-QQ交流群：736017906
-
 主题演示：[https://www.ifalse.cn/](https://www.ifalse.cn/)
 
 主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787/)
@@ -17,6 +15,8 @@ QQ交流群：736017906
 Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
 
 GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse)
+
+QQ交流群：736017906
 
 ## 使用说明
 
