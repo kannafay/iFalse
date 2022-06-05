@@ -16,6 +16,12 @@ Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
 
 GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse)
 
+## 使用说明
+
+请下载右侧发行版最新版。
+
+如果你从标签里下载或者master克隆，请在安装主题时，将文件夹名改为iFalse，以保证一键/自动更新程序的正常运行。
+
 ## 更新日志
 
 V1.3.3（2022.6.5）：
