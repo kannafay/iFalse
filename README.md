@@ -8,9 +8,9 @@
 
 小提示：主题更新较频繁，所以主题支持一键/自动更新！！！
 
-主题演示：[https://www.ifalse.cn/](https://www.ifalse.cn)
+主题演示：[https://www.ifalse.cn](https://www.ifalse.cn)
 
-主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787)
+主题反馈：[https://support.qq.com/products/404787](https://support.qq.com/products/404787)
 
 Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
 
