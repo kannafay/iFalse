@@ -8,9 +8,9 @@
 
 小提示：主题更新较频繁，所以主题支持一键/自动更新！！！
 
-主题演示：[https://www.ifalse.cn/](https://www.ifalse.cn/)
+主题演示：[https://www.ifalse.cn/](https://www.ifalse.cn)
 
-主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787/)
+主题反馈：[https://support.qq.com/products/404787/](https://support.qq.com/products/404787)
 
 Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
 
@@ -20,7 +20,7 @@ QQ交流群：736017906
 
 ## 使用说明
 
-请从发行版里下载。（如果没事的话）
+请从发行版里下载。（如果没事的话，否则不能一键/自动更新！！！）
 
 如果你从标签下载或者master下载/克隆，请在安装主题后，将主题文件夹名改为iFalse再启用。以保证一键/自动更新程序的正常运行。
 
