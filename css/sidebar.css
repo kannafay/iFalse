@@ -31,11 +31,19 @@
     color: var(--text);
     text-align: center;
 }
+
 .author-info-box .author-info .post-author-description {
     font-size: 13px;
     color: var(--text-info);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 7px;
+}
+.author-info-box .author-info .post-author-description::before {
+    content: '\e6f6';
+    font-family: 'iconfont';
+    font-size: 18px;
 }
 #primary-sidebar li {
     width: 100%;

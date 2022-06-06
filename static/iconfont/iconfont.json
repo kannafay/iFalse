@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11474272",
+      "name": "editor",
+      "font_class": "editor",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "11488138",
+      "name": "suggest",
+      "font_class": "suggest",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "11488020",
+      "name": "clock",
+      "font_class": "clock",
+      "unicode": "e74b",
+      "unicode_decimal": 59211
+    },
+    {
+      "icon_id": "12011693",
+      "name": "comments",
+      "font_class": "comments",
+      "unicode": "e7b2",
+      "unicode_decimal": 59314
+    },
+    {
+      "icon_id": "7708032",
+      "name": "菜单",
+      "font_class": "caidan2",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "1175111",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "7594875",
+      "name": "24gf-folderOpen",
+      "font_class": "24gf-folderOpen",
+      "unicode": "eac5",
+      "unicode_decimal": 60101
+    },
+    {
       "icon_id": "24797064",
       "name": "目录树",
       "font_class": "mulushu",
@@ -90,13 +139,6 @@
       "unicode_decimal": 58881
     },
     {
-      "icon_id": "278286",
-      "name": "home",
-      "font_class": "home",
-      "unicode": "e626",
-      "unicode_decimal": 58918
-    },
-    {
       "icon_id": "557041",
       "name": "xiaoxi",
       "font_class": "xiaoxi",
@@ -151,6 +193,13 @@
       "font_class": "caidan",
       "unicode": "e652",
       "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "1304947",
+      "name": "菜单",
+      "font_class": "caidan1",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
     },
     {
       "icon_id": "577365",

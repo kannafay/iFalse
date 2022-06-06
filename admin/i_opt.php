@@ -1,11 +1,12 @@
 <?php
-
-if($_POST['i_opt']){
+error_reporting(0);
+if($_POST["i_opt"]){
     $attachment_id = media_handle_upload( 'logo', 0 ); //上传图片，返回的是 附件的ID
     $logo_url = wp_get_attachment_url($attachment_id); //获取 图片的地址
     if($logo_url){
         update_option("logo_img",$logo_url); //如果图片地址在在，就将图片的地址写入到数据库
     }
+    update_option("i_logo_hidden",$_POST["i_logo_hidden"]);
     update_option("i_avatar_v",$_POST["i_avatar_v"]);
     update_option("i_wrapper_text",$_POST["i_wrapper_text"]);
     update_option("i_wrapper_name",$_POST["i_wrapper_name"]);
@@ -16,7 +17,7 @@ if($_POST['i_opt']){
     update_option("i_hello",$_POST["i_hello"]);
     update_option("i_copyright",$_POST["i_copyright"]);
     update_option("i_icp",$_POST["i_icp"]);
-    update_option("i_statement",$_POST["i_statement"]);
+    update_option("i_upyun",$_POST["i_upyun"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
     update_option("i_404_bak",$_POST["i_404_bak"]);
     update_option("i_comments_article",$_POST["i_comments_article"]);
@@ -36,6 +37,13 @@ $logo_img = get_option("logo_img");
     <form method="post" action="" novalidate="novalidate">
         <table class="form-table">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="i_logo_hidden">显示logo</label></th>
+                    <td>
+                        <input name="i_logo_hidden" type="text" value="<?php echo get_option("i_logo_hidden"); ?>" class="regular-text">
+                        <p class="description">数字1为关闭。显示在导航栏的logo图标。默认：开启</p>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="i_avatar_v">游客头像</label></th>
                     <td>
@@ -100,17 +108,17 @@ $logo_img = get_option("logo_img");
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_statement">内容版权</label></th>
-                    <td>
-                        <input name="i_statement" type="text" value="<?php echo get_option("i_statement"); ?>" class="regular-text">
-                        <p class="description">页脚显示网站内容声明。留空则使用默认值</p>
-                    </td>
-                </tr>
-                <tr>
                     <th scope="row"><label for="i_icp">备案号</label></th>
                     <td>
                         <input name="i_icp" type="text" value="<?php echo get_option("i_icp"); ?>" class="regular-text">
                         <p class="description">页脚备案号，没有备案号请留空</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_upyun">又拍云联盟</label></th>
+                    <td>
+                        <input name="i_upyun" type="text" value="<?php echo get_option("i_upyun"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。页脚启用又拍云联盟链接。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>

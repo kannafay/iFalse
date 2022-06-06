@@ -17,7 +17,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p><span><?php the_search_query(); ?></span> 的搜索结果</p>
+            <p class="search">搜索关键词：<span><?php the_search_query(); ?></span></p>
             <?php get_search_form(); ?>
         </div>
         <?php 

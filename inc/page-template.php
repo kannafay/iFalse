@@ -2,15 +2,11 @@
     <div class="page-banner">
         <div class="page-title"><h1><?php the_title(); ?></h1></div>
         <div class="page-detail">
-            <?php the_post(); echo get_avatar( get_the_author_email(), '100' );
-                rewind_posts(); 
-            ?>
-            <span>
-                <?php echo get_the_date(); ?> / 
-                    浏览 <?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?> / 
-                    评论 <?php comments_popup_link('沙发','1','%') ?>
-                    <?php edit_post_link('编辑页面') ?>
-            </span>
+            <?php the_post(); echo get_avatar( get_the_author_email(), '100' ); rewind_posts(); ?>
+                <span class="date"><?php echo get_the_date(); ?></span>
+                <span class="views"><?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?></span>
+                <span class="comments"><?php comments_popup_link('沙发','1','%') ?></span>
+                <?php edit_post_link('编辑页面') ?>
         </div>
     </div>
 </div>

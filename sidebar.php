@@ -10,7 +10,7 @@
                     if(get_the_author_meta('description',$post->post_author)) {
                         echo get_the_author_meta('description',$post->post_author); 
                     } else {
-                        echo '{{ description }}';
+                        echo '这家伙很懒，什么都没写';
                     }
                 ?>    
             </div>

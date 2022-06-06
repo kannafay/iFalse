@@ -1,10 +1,12 @@
 <div class="container-full nav-bar-mb header <?php if(get_option("i_header_hidden") == 1) {echo 'header-hidden';} ?>">
     <div class="left">
-        <span id="menu-mb-open" class="iconfont icon-caidan"></span>
+        <span id="menu-mb-open" class="iconfont icon-caidan2"></span>
     </div>
-    <div class="center">
-        <a href="<?php bloginfo('url') ?>" rel="home" class="logo-mb"><img src="<?php site_icon_url(); ?>" alt=""></a>
-    </div>
+    <?php if(get_option("i_logo_hidden") == 1) {} else { ?>
+        <div class="center">
+            <a href="<?php bloginfo('url') ?>" rel="home" class="logo-mb"><img src="<?php site_icon_url(); ?>" alt=""></a>
+        </div>
+    <?php } ?>
     <div class="right">
         <?php if (is_user_logged_in()) { ?>
             <div class="admin">
@@ -44,7 +46,7 @@
                                 get_currentuserinfo();
                                 echo $current_user -> display_name;
                             } else {
-                                if(get_option("i_hello")) {echo get_option("i_hello");} else {echo '{{ hello }}';};
+                                if(get_option("i_hello")) {echo get_option("i_hello");} else {echo 'Hi, 请登录!';};
                             } 
                         ?>
                     </p>

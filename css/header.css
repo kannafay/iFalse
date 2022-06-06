@@ -57,7 +57,7 @@
     /* font-size: 14px; */
 }
 .nav-bar .nav-menu > li > a {
-    padding: 9px 12px;
+    padding: 10px;
     transition: var(--tr2);
 }
 .nav-bar .nav-menu .sub-menu {
@@ -183,7 +183,6 @@
     cursor: pointer;
     right: 30px;
     position: absolute;
-    margin-top: 3px;
 }
 
 .nav-bar .login span {
@@ -228,12 +227,9 @@
         cursor: pointer;
         transition: var(--tr2);
     }
-    .nav-bar-mb .left span {
-        margin-right: 8px;
-    }
-    .nav-bar-mb .login {
+    .nav-bar-mb .login span{
         font-size: 22px;
-        margin-left: 10px;
+        margin-left: 2px;
     }
     .nav-bar-mb .left span:hover,
     .nav-bar-mb .login span:hover {
@@ -337,7 +333,7 @@
         height: 70px;
         position: fixed;
         border-bottom: 1px solid var(--border);
-        padding: 0 20px;
+        padding: 0 10px;
         background-color: var(--bgc);
         z-index: 10;
     }
@@ -353,6 +349,7 @@
     }
     .menu-mb-top .menu-mb-box .user-info > a {
         display: flex;
+        align-items: center;
         transition: var(--tr2);
     }
     .menu-mb-top .menu-mb-box .user-info > a img {
@@ -365,8 +362,8 @@
         line-height: 40px;
     }
     .menu-mb-top .menu-mb-box .user-info img {
-        width:40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         margin-right: 8px;
     }
@@ -377,6 +374,10 @@
         font-size: 22px;
         color: var(--text);
         cursor: pointer;
+        transition: var(--tr2);
+    }
+    .menu-mb-top .menu-mb-box > span:hover {
+        color: var(--theme);
     }
     .nav-mb-content{
         padding: 70px 0 80px;

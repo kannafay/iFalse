@@ -17,7 +17,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p><span><?php single_cat_title(); ?></span> 标签下的内容</p>
+            <p class="tag"><span><?php single_cat_title(); ?></span> 标签下的内容</p>
             <?php get_search_form(); ?>
         </div>
         <?php 

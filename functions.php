@@ -64,7 +64,6 @@ function add_image_placeholders( $content ) {
   return $content;
 }
 add_filter( 'the_content', 'add_image_placeholders', 99 );
-// add_filter( 'get_avatar', 'add_image_placeholders', 11 );
 add_filter( 'post_thumbnail_html', 'add_image_placeholders', 11 );
 
 // ---------------------------------------------------------------------
@@ -191,20 +190,6 @@ function ashu_add_pages() {
 	}   
 }   
 add_action( 'load-themes.php', 'ashu_add_pages' );  
-// ---------------------------------------------------------------------
-//修改登录注册logo
-// function custom_loginlogo_url($url) {
-//   return home_url();
-//   }
-//   add_filter( 'login_headerurl', 'custom_loginlogo_url' );
-
-// function custom_loginlogo() {
-//   echo '<style type="text/css">
-//   h1 a {background-image: url('.get_bloginfo('template_directory').'/static/img/avatar.png) !important;background-size: 91px !important;}
-//   .login form {border-radius:8px;}
-//   </style>';
-//   }
-//   add_action('login_head', 'custom_loginlogo');
   
 // ---------------------------------------------------------------------
 // 评论中高亮站长
@@ -336,7 +321,6 @@ register_sidebar( array(
 // 特色图
 if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
-  set_post_thumbnail_size( 1920, 1080, true );
 }
 
 // ---------------------------------------------------------------------
@@ -555,7 +539,7 @@ function i_breadcrumb() {
   $custom_taxonomy  = '';
 
   $defaults = array(
-    'seperator'   =>  '/',
+    'seperator'   =>  '>',
     'id'          =>  'i-breadcrumb',
     'classes'     =>  'i-breadcrumb',
     'home_title'  =>  esc_html__( '首页', '' )

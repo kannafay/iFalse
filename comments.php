@@ -1,7 +1,7 @@
 <div class="post-comments">
     <div class="post-comments-content">
     <?php comment_form() ?>
-    <h2 class="post-comments-title">评论（<?php comments_popup_link('沙发','1','%') ?>）</h2>
+    <h2 class="post-comments-title">评论 (<?php comments_popup_link('沙发','1','%') ?>)</h2>
     <?php wp_list_comments( array(
         'avatar_size' => '400',
         'type' => 'comment')); 

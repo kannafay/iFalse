@@ -1,23 +1,20 @@
 <div class="container-full footer">
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-power">
-                <span><?php if(get_option("i_copyright")) {echo get_option("i_copyright");} else{echo "{{ copyright }}";} ?>
-                    <a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
-                    <a href="https://beian.miit.gov.cn/"><?php if(get_option("i_icp")) {echo get_option("i_icp");} ?></a>
-                </span>
-            </div>
-            <div class="author">
-                <span class="iconfont icon-zhiwen"></span>
-                <span >{{ power }} <a :href="url">{{ author }}</a></span>
-            </div>
+    <div class="container footer-box">
+        <div class="copyright">
+                <?php if(get_option("i_copyright")) {echo get_option("i_copyright");} else{echo "Copyright © 2022";} ?>
+                <a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
+                <a href="https://beian.miit.gov.cn/"><?php if(get_option("i_icp")) {echo get_option("i_icp");} ?></a>      
         </div>
+        <div class="author">
+            <span class="iconfont icon-zhiwen"></span>
+            <span>Theme by <a href="https://www.onll.cn">神秘布偶猫</a></span>
+        </div>
+        <?php if(get_option("i_upyun") == 1) {?>
+            <div class="upyun">
+                本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="<?php echo get_template_directory_uri(); ?>/static/img/upyun.png"></a>提供CDN加速/云存储服务</div>
+        <?php } ?>
         <div class="custom">
-            <?php require('custom/user.html'); ?>
-        </div>
-        <div class="footer-bottom">
-            <img src="<?php site_icon_url(); ?>" alt="">
-            <p><?php if(get_option("i_statement")) {echo get_option("i_statement");} else{echo "{{ statement }}";} ?></p>
+            <?php require('user/user.html'); ?>
         </div>
     </div>
 </div>

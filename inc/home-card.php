@@ -9,7 +9,7 @@
                     <a href="<?php the_permalink(); ?>">
                         <div class="mask-pic"><span class="iconfont icon-chakan"></span></div>
                         <?php if (has_post_thumbnail()) { ?>
-                        <?php the_post_thumbnail(); ?>
+                        <?php the_post_thumbnail('large'); ?>
                         <?php } else {?>
                             <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else{echo i_loading_pic(); } ?>"
                             data-original="<?php if(get_option("i_random_pic")) {echo get_option("i_random_pic");} else{echo i_cover_pic(); } ?>?<?php $i++; echo $i; ?>" />
@@ -21,9 +21,9 @@
                     <div class="home-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
                     <div class="home-msg">
                         <?php echo get_avatar( get_the_author_email(), '100' );?>
-                        <div class="home-date"><?php echo get_the_date(); ?></div><span>/</span>
-                        <div class="home-watch">浏览 <?php echo getPostViews(get_the_ID()) ?></div><span>/</span>
-                        <div class="home-comments">评论 <?php comments_popup_link('沙发','1','%') ?></div>
+                        <div class="home-date"><?php echo get_the_date(); ?></div>
+                        <div class="home-watch"><?php echo getPostViews(get_the_ID()) ?></div>
+                        <div class="home-comments"><?php if(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></div>
                     </div>
                 </div>
             </li>

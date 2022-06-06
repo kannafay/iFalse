@@ -30,10 +30,14 @@ for(let i=0; i<remove_time_a.length; i++) {
     remove_time_a[i].removeAttribute('href');
 }
 
-// 删除文章页评论数量的超链接
-const comment_num_a = document.querySelector('.single-detail span a');
-if(comment_num_a) {
-    comment_num_a.removeAttribute('href');
+// 删除文章页/页面评论数量的超链接
+const article_comment_num_a = document.querySelector('.single-detail span a');
+const page_comment_num_a = document.querySelector('.page-detail span a');
+if(article_comment_num_a) {
+    article_comment_num_a.removeAttribute('href');
+}
+if(page_comment_num_a) {
+    page_comment_num_a.removeAttribute('href');
 }
 
 // 改变上下页名称

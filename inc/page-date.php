@@ -17,7 +17,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p><span><?php the_time('Y年m月'); ?></span> 发布的内容</p>
+            <p class="date"><span><?php the_time('Y年m月'); ?></span>发布的内容</p>
             <?php get_search_form(); ?>
         </div>
         <?php 

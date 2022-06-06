@@ -3,17 +3,15 @@
 <script src="<?php echo get_template_directory_uri(); ?>/static/lightgallery/lightgallery-all.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/headroom.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/backtop.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/vue.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/config.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/theme.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/custom/iconfont/iconfont.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/custom/user.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/user/user.js"></script>
 <script type="text/javascript">
     jQuery(function() {        
         jQuery("img").lazyload({
             effect : "fadeIn",
-            failure_limit : 10,
+            failure_limit : 50,
             threshold : 200,
         });
     });

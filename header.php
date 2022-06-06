@@ -1,6 +1,8 @@
 <div class="container-full nav-bar header <?php if(get_option("i_header_hidden") == 1) {echo 'header-hidden';} ?>">
     <div class="left">
-        <a href="<?php bloginfo('url') ?>" rel="home" class="logo"><img src="<?php site_icon_url(); ?>" alt=""></a>
+        <?php if(get_option("i_logo_hidden") == 1) {} else { ?>
+            <a href="<?php bloginfo('url') ?>" rel="home" class="logo"><img src="<?php site_icon_url(); ?>" alt=""></a>
+        <?php } ?>
         <?php 
             wp_nav_menu( array( 
                 'container_id' => 'nav',
