@@ -4,15 +4,18 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.footer .footer-box,
+.footer .footer-box a {
+    font-size: 14px;
+}
 .footer .footer-box {
     display: flex;
     flex-direction: column;
-    font-size: 14px;
     line-height: 2;
     color: var(--text-info);
+    text-align: center;
 }
 .footer .footer-box a {
-    font-size: 14px;
     color: var(--text-info);
     transition: var(--tr2);
 }
@@ -35,7 +38,8 @@
     .footer {
         padding: 20px;
     }
-    .footer .footer-box {
-        text-align: center;
+    .footer .footer-box,
+    .footer .footer-box a {
+        font-size: 12px;
     }
 }

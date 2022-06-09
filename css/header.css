@@ -123,11 +123,6 @@
     cursor: pointer;
     transition: var(--tr2);
 }
-.nav-bar .admin:hover {
-    color: var(--theme);
-    margin-top: 19px;
-    padding-bottom: 19px;
-}
 .nav-bar .admin:hover img {
     opacity: .8;
 }
@@ -171,8 +166,7 @@
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
 }
-.nav-bar .admin:hover + .user-set,
-.nav-bar .user-set:hover {
+.nav-bar .user-set-open {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
@@ -267,7 +261,7 @@
         transition: var(--tr2);
         z-index: 2;
     }
-    .nav-bar-mb .user-set-open {
+    .nav-bar-mb .user-set-open-mb {
         transform: translateY(0);
         visibility: visible;
         opacity: 1;
@@ -347,19 +341,15 @@
         display: flex;
         align-items: center;
     }
-    .menu-mb-top .menu-mb-box .user-info > a {
+    .menu-mb-top .menu-mb-box .user-info > .visitor {
         display: flex;
         align-items: center;
         transition: var(--tr2);
     }
-    .menu-mb-top .menu-mb-box .user-info > a img {
-        transition: var(--tr2);
-    }
-    .menu-mb-top .menu-mb-box .user-info > a:hover img {
-        opacity: .8;
-    }
-    .menu-mb-top .menu-mb-box .user-info > a p {
+    .menu-mb-top .menu-mb-box .user-info > .visitor p {
         line-height: 40px;
+        color: var(--text-sub);
+        font-size: 15px;
     }
     .menu-mb-top .menu-mb-box .user-info img {
         width: 32px;

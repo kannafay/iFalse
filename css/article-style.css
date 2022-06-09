@@ -3,7 +3,7 @@
     color: var(--text);
 }
 .single-main .left .post-content > * {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     width: 100%;
     position: relative;
 }
@@ -19,6 +19,12 @@
     white-space: normal;
     word-break : break-all;
     word-wrap: break-word;
+}
+.single-main .left .post-content .has-text-align-center {
+    text-align: center;
+}
+.single-main .left .post-content .has-text-align-right {
+    text-align: right;
 }
 .single-main .left .post-content h6,
 .single-main .left .post-content h5,
@@ -332,7 +338,7 @@
 .single-main .left .post-content h2,
 .single-main .left .post-content h1 {
     line-height: 1.5;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
 }
 .single-main .left .post-content h6 {

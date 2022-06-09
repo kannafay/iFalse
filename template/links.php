@@ -2,12 +2,8 @@
 /*Template Name: 友情链接*/
 ?>
 
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <?php i_frame(); ?>
-    <title><?php the_title(); ?> - <?php bloginfo('name') ?></title>
-</head> 
+<?php i_frame(); ?>
+ 
 <body>
     <?php get_header(); ?>
     <div class="container single-main page-main page-link">

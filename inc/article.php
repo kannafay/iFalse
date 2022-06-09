@@ -8,11 +8,16 @@
         </div>
         <div class="single-title"><h1><?php the_title(); ?></h1></div>
         <div class="single-detail">
-            <?php the_post(); echo get_avatar( get_the_author_email(), '100' ); rewind_posts(); ?>
-            <span class="date"><?php echo get_the_date(); ?></span>
-            <span class="views"><?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?></span>
-            <span class="comments"><?php if(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></span>
-            <?php edit_post_link('编辑文章') ?>
+            <div class="author">
+                <?php the_post(); echo get_avatar( get_the_author_email(), '100' ); rewind_posts(); ?>
+                <span ><?php echo get_the_author_meta('nickname',$post->post_author); ?></span>
+            </div>
+            <div class="other">
+                <span class="date"><?php echo get_the_date(); ?> <?php the_time(); ?></span>
+                <span class="views"><?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?></span>
+                <span class="comments"><?php if(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></span>
+                <?php edit_post_link('编辑文章') ?>
+            </div>
         </div>
         <div class="breadcrumb"><?php if ( function_exists('i_breadcrumb') ) i_breadcrumb();?></div>
     </div>

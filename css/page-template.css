@@ -9,9 +9,13 @@
     margin-bottom: 15px;
     margin-top: 20px;
 }
-.page-banner .page-detail {
+.page-banner .page-detail .author,
+.page-banner .page-detail .other {
     display: flex;
     align-items: center;
+}
+.page-banner .page-detail .author {
+    margin-bottom: 10px;
 }
 .page-banner .page-detail .date::before {
     content: '\e74b';
@@ -31,7 +35,7 @@
 .page-banner .page-detail .date,
 .page-banner .page-detail .views,
 .page-banner .page-detail .comments {
-    margin-left: 5px;
+    margin-right: 5px;
     display: flex;
     align-items: center;
 }
@@ -45,6 +49,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    margin-right: 5px;
 }
 .page-banner .page-detail .post-edit-link {
     color: var(--theme);

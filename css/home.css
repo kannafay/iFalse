@@ -33,7 +33,7 @@
 .content-wrapper .text-wrapper h2 {
     color: var(--text);
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -228,6 +228,11 @@
     margin-bottom: 3px;
     overflow-x: auto;
     white-space: nowrap;
+    cursor: default;
+}
+.home-detail .home-cate::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 .home-detail .home-cate a {
     margin-right: 5px;
@@ -617,9 +622,6 @@
     }
     .content-wrapper .text-wrapper i {
         font-size: 15px;
-    }
-    .main-content .title-part {
-        height: 50px;
     }
     .main-content .notice {
         height: 42px;

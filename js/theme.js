@@ -1,6 +1,6 @@
 // 导航栏用户菜单
-const user_set_btn = document.querySelector('.nav-bar-mb .admin img');
-const user_set_menu = document.querySelector('.nav-bar-mb .user-set');
+const user_set_btn = document.querySelector('.nav-bar .admin img');
+const user_set_menu = document.querySelector('.nav-bar .user-set');
 if(user_set_btn) {
     function remove_set_menu(e) {
         user_set_menu.classList.remove('user-set-open');
@@ -13,6 +13,22 @@ if(user_set_btn) {
         }
     })
     user_set_menu.addEventListener("click",(e)=>e.stopPropagation());
+}
+
+const user_set_btn_mb = document.querySelector('.nav-bar-mb .admin img');
+const user_set_menu_mb = document.querySelector('.nav-bar-mb .user-set');
+if(user_set_btn_mb) {
+    function remove_set_menu(e) {
+        user_set_menu_mb.classList.remove('user-set-open-mb');
+        document.removeEventListener("click",remove_set_menu);
+    }
+    user_set_btn_mb.addEventListener("click",(e)=>{
+        e.stopPropagation()
+        if(user_set_menu_mb.classList.toggle('user-set-open-mb')) {
+            document.addEventListener("click",remove_set_menu);
+        }
+    })
+    user_set_menu_mb.addEventListener("click",(e)=>e.stopPropagation());
 }
 
 // 菜单
@@ -93,6 +109,12 @@ if(header_element) {
           });
         headroom[i].init(); 
     })
+}
+
+// 侧边栏搜索
+const sidebar_search_btn = document.querySelector('#primary-sidebar .widget_search button');
+if(sidebar_search_btn) {
+    sidebar_search_btn.innerHTML = '<span class="iconfont icon-sousuo">';
 }
 
 // 关于

@@ -194,7 +194,7 @@ add_action( 'load-themes.php', 'ashu_add_pages' );
 // ---------------------------------------------------------------------
 // 评论中高亮站长
 function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
-	$blogusers = get_users([ 'role__in' => [ 'administrator' ] ]);
+	$blogusers = get_user_by('id', 1);
 	foreach ( $blogusers as $user ){
 		if( $author == $user->display_name ){
 			$webMaster = '<span class="master">'.$author.'</span>';
@@ -205,7 +205,7 @@ function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
 };  
 add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
 function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
-	$blogusers = get_users([ 'role__in' => [ 'administrator' ] ]);
+	$blogusers = get_user_by('id', 1);
 	foreach ( $blogusers as $user ){
 		if( $cookie_comment_author_cookiehash == $user->display_name ){
 			return $cookie_comment_author_cookiehash.'的崇拜者';

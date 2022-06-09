@@ -294,3 +294,46 @@
     content: '▸ ';
     left: 8px;
 }
+
+#primary-sidebar .widget_search {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+#primary-sidebar .widget_search label {
+    display: none;
+}
+#primary-sidebar .widget_search .wp-block-search__inside-wrapper {
+    position: relative;
+}
+#primary-sidebar .widget_search input {
+    width: 100%;
+    height: 36px;
+    padding: 0 20px 0 10px;
+    outline: none;
+    color: var(--text);
+    background-color: var(--bgc);
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: var(--tr2);
+}
+#primary-sidebar .widget_search input:hover,
+#primary-sidebar .widget_search input:focus {
+    border: 1px solid var(--theme);
+}
+#primary-sidebar .widget_search button {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--bgc);
+    cursor: pointer;
+    z-index: 10;
+}
+#primary-sidebar .widget_search button span {
+    font-size: 18px;
+    color: var(--text-info);
+}
