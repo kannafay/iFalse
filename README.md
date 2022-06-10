@@ -1,6 +1,6 @@
 # iFalse主题
 
-![](https://pic.rmb.bdstatic.com/bjh/dbc94000ceff4e6536766527c7619530.png)
+![](https://pic.rmb.bdstatic.com/bjh/2702f0dd7c78e89b2163ce047f48d9ac.png)
 
 ## 主题介绍
 
