@@ -215,7 +215,9 @@
     font-weight: 400;
 }
 .say-post-content pre {
-    
+    padding: 10px;
+    background-color: var(--bgc-sub);
+    border-radius: var(--radius);
 }
 .say-post-content a {
     color: var(--theme);

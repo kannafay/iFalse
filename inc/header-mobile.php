@@ -46,7 +46,7 @@
                     <p>
                         <?php 
                             if ( is_user_logged_in() ) {
-                                global $current_user, $display_name, $user_email;
+                                global $current_user, $display_name;
                                 get_currentuserinfo();
                                 echo $current_user -> display_name;
                             } else {

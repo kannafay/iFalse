@@ -6,7 +6,7 @@
                     <?php echo get_avatar( get_the_author_email(), '300' );?>
                 <?php endif; ?>
             </div>
-            <div class="post-author-name"><?php echo get_the_author_meta('nickname',$post->post_author); ?></div>
+            <div class="post-author-name"><?php the_author_posts_link(); ?></div>
             <div class="post-author-description">
                 <?php 
                     if(get_the_author_meta('description',$post->post_author)) {

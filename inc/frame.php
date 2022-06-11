@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/theme.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/lightgallery/lightgallery.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/highlight/styles/vs2015.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/user.css">

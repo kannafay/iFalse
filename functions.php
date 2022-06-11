@@ -32,6 +32,9 @@ function i_tag() {
 function i_date() {
   require('inc/page-date.php');
 }
+function i_author() {
+  require('inc/page-author.php');
+}
 function i_header_mb() {
   require('inc/header-mobile.php');
 }

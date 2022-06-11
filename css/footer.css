@@ -27,6 +27,14 @@
     height: 28px;
     margin-top: -3px;
 }
+.footer .footer-box .author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .footer-box .author span {
+    margin-right: 5px;
+}
 
 
 @media screen and (max-width: 1280px) {
@@ -41,5 +49,8 @@
     .footer .footer-box,
     .footer .footer-box a {
         font-size: 12px;
+    }
+    .footer .footer-box .author span {
+        font-size: 14px;
     }
 }

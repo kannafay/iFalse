@@ -4,7 +4,7 @@
             <div class="post-author-logo">
                 <?php echo get_avatar(1, 300); ?>
             </div>
-            <div class="post-author-name"><?php echo get_the_author_meta('nickname', 1); ?></div>
+            <div class="post-author-name"><?php the_author_posts_link(); ?></div>
             <div class="post-author-description">
                 <?php 
                     if(get_the_author_meta('description',$post->post_author)) {

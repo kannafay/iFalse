@@ -10,7 +10,7 @@
         <div class="single-detail">
             <div class="author">
                 <?php the_post(); echo get_avatar( get_the_author_email(), '100' ); rewind_posts(); ?>
-                <span ><?php echo get_the_author_meta('nickname',$post->post_author); ?></span>
+                <span><?php the_author_posts_link(); ?></span>
             </div>
             <div class="other">
                 <span class="date"><?php echo get_the_date(); ?> <?php the_time(); ?></span>
@@ -29,12 +29,14 @@
             <div class="the-end">—— THE END ——</div>
             <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
         </div>
-        <div class="post-context">
-            <div class="post-prev-next">
-                <div class="post-prev"><span>上一篇：</span><?php previous_post_link('%link'); ?></div>
-                <div class="post-next"><span>下一篇：</span><?php next_post_link('%link'); ?></div>
+        <?php if(get_option("i_next_post") == 1) { ?>
+            <div class="post-context">
+                <div class="post-prev-next">
+                    <div class="post-prev"><span>上一篇：</span><?php previous_post_link('%link'); ?></div>
+                    <div class="post-next"><span>下一篇：</span><?php next_post_link('%link'); ?></div>
+                </div>
             </div>
-        </div>
+        <?php } ?>
         <?php 
             if(get_option("i_comments_article") == 1) { ?>
                 <?php comments_template('/comments.php');?>

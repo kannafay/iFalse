@@ -20,6 +20,7 @@ if($_POST["i_opt"]){
     update_option("i_upyun",$_POST["i_upyun"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
     update_option("i_404_bak",$_POST["i_404_bak"]);
+    update_option("i_next_post",$_POST["i_next_post"]);
     update_option("i_comments_article",$_POST["i_comments_article"]);
     update_option("i_comments_page",$_POST["i_comments_page"]);
     update_option("i_comments_turn",$_POST["i_comments_turn"]);
@@ -133,6 +134,13 @@ $logo_img = get_option("logo_img");
                     <td>
                         <input name="i_404_bak" type="text" value="<?php echo get_option("i_404_bak"); ?>" class="regular-text">
                         <p class="description">按钮文字。默认：返回首页</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_next_post">文章上下篇</label></th>
+                    <td>
+                        <input name="i_next_post" type="text" value="<?php echo get_option("i_next_post"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。文章页开启上一篇下一篇。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>

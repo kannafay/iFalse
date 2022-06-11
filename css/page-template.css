@@ -45,6 +45,9 @@
     color: var(--text-info);
     transition: var(--tr2);
 }
+.page-banner .page-detail .author a:hover {
+    color: var(--theme);
+}
 .page-banner .page-detail img {
     width: 25px;
     height: 25px;

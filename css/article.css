@@ -72,6 +72,9 @@
     color: var(--text-info);
     transition: var(--tr2);
 }
+.single-banner .single-detail .author a:hover {
+    color: var(--theme);
+}
 .single-banner .single-detail img {
     width: 25px;
     height: 25px;
@@ -84,8 +87,6 @@
     margin-left: 5px;
 }
 .single-banner .breadcrumb {
-    display: flex;
-    align-items: center;
     margin-top: 10px;
     color: var(--text-sub);
 }
@@ -95,6 +96,7 @@
 }
 .single-banner .breadcrumb ul {
     display: flex;
+    align-items: center;
 }
 .single-banner .breadcrumb ul li {
     margin-right: 5px;
@@ -108,15 +110,19 @@
 .single-banner .breadcrumb ul li a:hover {
     color: var(--theme);
 }
+.single-banner .breadcrumb ul li:first-child a {
+    display: flex;
+    align-items: center;
+}
 .single-banner .breadcrumb ul li:first-child a::before {
     content: '\e67a';
     font-family: 'iconfont';
-    font-size: 16px;
+    font-size: 18px;
 }
+
 .single-main {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
 /* 目录树------------------------------------------------------------- */
@@ -332,7 +338,7 @@
 .single-main .left .post-context {
     border-top: 1px solid var(--border);
     padding-top: 20px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 .single-main .left .post-context .post-prev-next {
     width: 100%;
@@ -378,7 +384,6 @@
 /* 评论区--------------------------------------------- */
 .post-comments {
     width: 100%;
-    padding-top: 20px;
 }
 .post-comments img,
 .post-comments video {
@@ -432,7 +437,7 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--text-sub);
-    margin-top: 20px;
+    margin: 20px 0;
     padding-top: 20px;
     border-top: 1px solid var(--border);
     display: flex;
@@ -456,7 +461,7 @@
 }
 .post-comments .depth-1 {
     padding: 15px;
-    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: var(--bgc-sub);
     border-radius: var(--radius);
 }
@@ -552,13 +557,30 @@
 .post-comments .comment-meta {
     font-size: 12px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 .post-comments .comment-meta a {
     color: var(--text-info);
     transition: var(--tr2);
 }
+.post-comments .comment-meta a:first-child::before {
+    content: '\e74b';
+    font-family: 'iconfont';
+    font-size: 16px;
+}
+.post-comments .comment-meta .comment-edit-link::before {
+    content: '\e6f6';
+    font-family: 'iconfont';
+    font-size: 16px;
+}
 .post-comments .comment-meta .comment-edit-link:hover {
     color: var(--theme);
+}
+.post-comments .comment-meta a:first-child,
+.post-comments .comment-meta .comment-edit-link {
+    display: flex;
+    align-items: center;
 }
 
 /* 回复区 */

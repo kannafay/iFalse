@@ -3,7 +3,7 @@
     color: var(--text);
 }
 .single-main .left .post-content > * {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 100%;
     position: relative;
 }
@@ -217,33 +217,20 @@
     word-wrap: break-word;
 }
 .single-main .left .post-content pre {
-    height: auto;
     max-height: 500px;
-    border: 18px solid var(--bgc-sub);
-    background-color: var(--bgc-sub);
+    font-family: 'Consolas', 'Courier New', 'monospace';
     border-radius: var(--radius);
     overflow: auto;
 }
-.single-main .left .post-content pre::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-    background-color: var(--border);
-    border-radius: var(--radius);
-}
-.single-main .left .post-content pre::-webkit-scrollbar-thumb {
-    background-color: var(--theme-3);
-    border-radius: var(--radius);
-}
-.single-main .left .post-content pre::-webkit-scrollbar-thumb:hover {
-    background-color: var(--theme-sub);
-}
-.single-main .left .post-content .wp-block-preformatted {
-    font-size: 15px;
-    color: var(--text-sub);
-}
 .single-main .left .post-content pre code {
     font-size: 14px;
+    line-height: 1.5;
+}
+.single-main .left .post-content .wp-block-preformatted {
+    font-size: 14px;
     color: var(--text-sub);
+    background-color: var(--bgc-sub);
+    padding: 10px;
 }
 .single-main .left .post-content p code {
     border-radius: var(--radius-sub);
@@ -333,13 +320,14 @@
 /* 文字代码end//////////////////////////////////////////////////////// */
 
 /* h标签样式1/////////////////////////////////////////////////////////*/
+.single-main .left .post-content h6,
+.single-main .left .post-content h5,
 .single-main .left .post-content h4,
 .single-main .left .post-content h3,
 .single-main .left .post-content h2,
 .single-main .left .post-content h1 {
-    line-height: 1.5;
-    margin-bottom: 20px;
-
+    margin-bottom: 25px;
+    line-height: 1.8;
 }
 .single-main .left .post-content h6 {
     font-size: 15px;

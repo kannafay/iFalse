@@ -7,7 +7,7 @@
         </div>
         <div class="author">
             <span class="iconfont icon-zhiwen"></span>
-            <span>Powered by <a href="https://wordpress.org/">WordPress</a> | Theme by <a href="https://www.ifalse.cn">神秘布偶猫</a></span>
+            <div>Powered by <a href="https://wordpress.org/">WordPress</a> Theme by <a href="https://www.ifalse.cn">神秘布偶猫</a></div>
         </div>
         <?php if(get_option("i_upyun") == 1) {?>
             <div class="upyun">

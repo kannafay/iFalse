@@ -31,6 +31,9 @@
     color: var(--text);
     text-align: center;
 }
+.author-info-box .author-info .post-author-name a {
+    transition: var(--tr2);
+}
 
 .author-info-box .author-info .post-author-description {
     font-size: 13px;
@@ -55,7 +58,6 @@
     border-radius: var(--radius);
 }
 #primary-sidebar .widget_block {
-    padding-left: 20px;
     margin-bottom: 10px;
 }
 #primary-sidebar .widget_block h2 {
@@ -64,6 +66,7 @@
     color: var(--text);
     position: relative;
     padding-left: 15px;
+    margin-left: 20px;
     line-height: 1.5;
 }
 #primary-sidebar .widget_block h2::before {
@@ -124,7 +127,7 @@
 }
 #primary-sidebar .widget_recent_comments li {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
     padding: 10px;
     /* background-color: var(--bgc-sub); */
@@ -147,22 +150,24 @@
     color: var(--theme);
 }
 #primary-sidebar .widget_recent_comments li article {
-    width: calc(100% - 40px);
-    overflow: hidden;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding-left: 10px;
     font-size: 14px;
     color: var(--text-info);
+    overflow: hidden;
 }
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-meta {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
 
 /* name */
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-author {
     display: block;
-    width: 100%;
+    max-width: 52%;
     color: var(--theme);
     font-size: 14px;
     overflow: hidden;
@@ -180,6 +185,11 @@
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-date {
     display: block;
     font-size: 12px;
+    margin-left: 5px;
+}
+#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-date::before {
+    content: '\e74b';
+    font-family: 'iconfont';
 }
 /* content */
 #primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-excerpt {
@@ -307,8 +317,8 @@
 }
 #primary-sidebar .widget_search input {
     width: 100%;
-    height: 36px;
-    padding: 0 20px 0 10px;
+    height: 40px;
+    padding: 0 25px 0 10px;
     outline: none;
     color: var(--text);
     background-color: var(--bgc);
@@ -325,8 +335,8 @@
     position: absolute;
     right: 1px;
     top: 1px;
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     border: 0;
     border-radius: var(--radius);
     background-color: var(--bgc);

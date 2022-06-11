@@ -14,19 +14,42 @@
         </div>
         <div class="say-author">
             <div class="say-author-box">
-                <div class="say-author-logo">
-                    <?php echo get_avatar(1, 400); ?>
-                </div>
-                <div class="say-author-name"><?php echo get_the_author_meta('nickname', 1); ?></div>
-                <div class="say-author-des">
-                    <?php 
-                        if(get_the_author_meta('description',$post->post_author)) {
-                            echo get_the_author_meta('description',$post->post_author); 
-                        } else {
-                            echo '这家伙很懒，什么都没写';
-                        }
-                    ?>
-                </div>
+                <?php if(current_user_can('level_1')) { ?>
+                    <div class="say-author-logo">
+                        <?php echo get_user_avatar(); ?>
+                    </div>
+                    <div class="say-author-name">
+                        <?php global $current_user, $display_name;
+                            get_currentuserinfo();
+                            echo $current_user -> display_name; 
+                        ?>
+                    </div>
+                    <div class="say-author-des">
+                        <?php 
+                            if (current_user_can('level_10')) {
+                                global $current_user, $user_description;
+                                get_currentuserinfo();
+                                echo $current_user -> user_description;
+                            } else {
+                                echo '这家伙很懒，什么都没写';
+                            } 
+                        ?>
+                    </div>
+                <?php } else { ?>
+                    <div class="say-author-logo">
+                        <?php echo get_avatar(1, 400); ?>
+                    </div>
+                    <div class="say-author-name"><?php echo get_the_author_meta('nickname', 1); ?></div>
+                    <div class="say-author-des">
+                        <?php 
+                            if(get_the_author_meta('description',$post->post_author)) {
+                                echo get_the_author_meta('description',$post->post_author); 
+                            } else {
+                                echo '这家伙很懒，什么都没写';
+                            }
+                        ?>
+                    </div>
+                <?php } ?>
             </div>
         </div>
         <div class="say-content">

@@ -4,7 +4,7 @@
         <div class="page-detail">
             <div class="author">
                 <?php the_post(); echo get_avatar( get_the_author_email(), '100' ); rewind_posts(); ?>
-                <span ><?php echo get_the_author_meta('nickname',$post->post_author); ?></span>
+                <span><?php the_author_posts_link(); ?></span>
             </div>
             <div class="other">
                 <span class="date"><?php echo get_the_date(); ?> <?php the_time(); ?></span>

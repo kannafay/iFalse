@@ -15,7 +15,7 @@ const comment_author_i = [];
 const comment_author_title = [];
 for(let i=0; i<comment_author_card.length; i++) {
     comment_author_i[i] = document.createElement('i');
-    comment_author_title[i] = document.createTextNode('博主');
+    comment_author_title[i] = document.createTextNode('站长');
     comment_author_i[i].appendChild(comment_author_title[i]);
     insertAfter(comment_author_i[i],comment_author_card[i]);
 }
@@ -31,8 +31,8 @@ for(let i=0; i<remove_time_a.length; i++) {
 }
 
 // 删除文章页/页面评论数量的超链接
-const article_comment_num_a = document.querySelector('.single-detail span a');
-const page_comment_num_a = document.querySelector('.page-detail span a');
+const article_comment_num_a = document.querySelector('.single-detail .other .comments a');
+const page_comment_num_a = document.querySelector('.page-detail .other .comments a');
 if(article_comment_num_a) {
     article_comment_num_a.removeAttribute('href');
 }

@@ -2,6 +2,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.lazyload.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/static/lightgallery/lightgallery-all.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/headroom.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/static/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/backtop.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/theme.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
