@@ -53,9 +53,6 @@
 .nav-bar .nav-menu .menu-item-has-children > a::after {
     content: '▾';
 }
-.nav-bar .nav-menu .menu-item-has-children .sub-menu a {
-    /* font-size: 14px; */
-}
 .nav-bar .nav-menu > li > a {
     padding: 10px;
     transition: var(--tr2);

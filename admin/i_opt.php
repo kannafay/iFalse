@@ -29,6 +29,7 @@ if($_POST["i_opt"]){
     update_option("i_register_turn",$_POST["i_register_turn"]);
     update_option("i_forget_turn",$_POST["i_forget_turn"]);
     update_option("i_header_hidden",$_POST["i_header_hidden"]);
+    update_option("i_defend",$_POST["i_defend"]);
 }
 $logo_img = get_option("logo_img");
 ?>
@@ -197,6 +198,13 @@ $logo_img = get_option("logo_img");
                     <td>
                         <input name="i_header_hidden" type="text" value="<?php echo get_option("i_header_hidden"); ?>" class="regular-text">
                         <p class="description">数字1为开启。向下滚动页面时隐藏导航栏。默认：关闭</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_defend">维护模式</label></th>
+                    <td>
+                        <input name="i_defend" type="text" value="<?php echo get_option("i_defend"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。用于网站维护时使用，仅管理员可查看。默认：关闭</p>
                     </td>
                 </tr>
             </tbody>

@@ -117,6 +117,65 @@ if(sidebar_search_btn) {
     sidebar_search_btn.innerHTML = '<span class="iconfont icon-sousuo">';
 }
 
+const buttons = document.querySelectorAll('.ripple');
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        const buttonTop = e.target.offsetTop;
+        const buttonLeft = e.target.offsetLeft;
+
+        const xInside = x - buttonLeft;
+        const yInside = y - buttonTop;
+
+        const circle = document.createElement('span');
+        circle.classList.add('circle');
+        circle.style.top = yInside + 'px';
+        circle.style.left = xInside + 'px';
+
+        this.appendChild(circle);
+
+        setTimeout(() => circle.remove(), 500);
+    })
+})
+
+// 图片预览
+const content_p_img = document.querySelectorAll('.post-content .wp-block-image img');
+if(content_p_img) {
+	const content_p_a = [];
+	for(let i=0; i<content_p_img.length; i++) {
+		content_p_a[i] = document.createElement('a');
+		content_p_img[i].parentNode.replaceChild(content_p_a[i],content_p_img[i]);
+		content_p_a[i].appendChild(content_p_img[i]);
+        content_p_a[i].setAttribute('href',content_p_img[i].getAttribute('data-original'));
+        content_p_a[i].setAttribute('data-fancybox','gallery');
+	}
+}
+
+const say_p_img = document.querySelectorAll('.say-post-content p img');
+if(say_p_img) {
+	const say_p_a = [];
+	for(let i=0; i<say_p_img.length; i++) {
+		say_p_a[i] = document.createElement('a');
+		say_p_img[i].parentNode.replaceChild(say_p_a[i],say_p_img[i]);
+		say_p_a[i].appendChild(say_p_img[i]);
+        say_p_a[i].setAttribute('href',say_p_img[i].getAttribute('data-original'));
+        say_p_a[i].setAttribute('data-fancybox','gallery');
+        say_p_a[i].className = 'say-img';
+	}
+}
+
+const say_dt = document.querySelectorAll('.say-post-content .gallery .gallery-item dt');
+const say_dt_img = document.querySelectorAll('.say-post-content .gallery .gallery-item dt img');
+if(say_dt_img) {
+	const say_dt_img_src = []; 
+	for(let i=0; i<say_dt_img.length; i++) {
+		say_dt[i].setAttribute('href',say_dt_img[i].getAttribute('data-original'));
+        say_dt[i].setAttribute('data-fancybox','gallery');
+	}
+}
+
 // 关于
 console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
 

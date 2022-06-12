@@ -217,7 +217,7 @@
     word-wrap: break-word;
 }
 .single-main .left .post-content pre {
-    max-height: 500px;
+    max-height: 512px;
     font-family: 'Consolas', 'Courier New', 'monospace';
     border-radius: var(--radius);
     overflow: auto;
