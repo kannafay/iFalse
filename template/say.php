@@ -1,5 +1,5 @@
 <?php
-/*Template Name: 说说*/
+/*Template Name: 动态说说*/
 ?>
 
 <?php i_frame(); ?>
@@ -26,13 +26,12 @@
                     </div>
                     <div class="say-author-des">
                         <?php 
-                            if (current_user_can('level_10')) {
-                                global $current_user, $user_description;
-                                get_currentuserinfo();
-                                echo $current_user -> user_description;
-                            } else {
+                            global $current_user, $user_description;
+                            get_currentuserinfo();
+                            echo $current_user -> user_description;
+                            if($current_user -> user_description == null) {
                                 echo '这家伙很懒，什么都没写';
-                            } 
+                            }
                         ?>
                     </div>
                 <?php } else { ?>
@@ -42,8 +41,8 @@
                     <div class="say-author-name"><?php echo get_the_author_meta('nickname', 1); ?></div>
                     <div class="say-author-des">
                         <?php 
-                            if(get_the_author_meta('description',$post->post_author)) {
-                                echo get_the_author_meta('description',$post->post_author); 
+                            if(get_the_author_meta('description',1)) {
+                                echo get_the_author_meta('description',1); 
                             } else {
                                 echo '这家伙很懒，什么都没写';
                             }
@@ -59,39 +58,46 @@
                     if (have_posts()) : 
                         while (have_posts()) : the_post(); 
                 ?>
-                            <li class="say-post-item">
-                                <div class="say-post-box">
-                                    <div class="say-author-logo">
-                                        <?php echo get_avatar( get_the_author_email(), '400' );?>
-                                    </div>
-                                    <div class="say-post-msg">
-                                        <div class="say-author-name"><?php echo get_the_author_meta('nickname',$post->post_author); ?></div>
-                                        <div class="say-post-time"><?php echo get_the_date(); ?> <?php the_time(); ?></div>
-                                    </div>
-                                </div>
-                                <div class="say-post-content-box">
-                                    <div class="say-post-content">
-                                        <?php the_content(); ?>
-                                    </div>
-                                </div>
-                            </li>
+                    <li class="say-post-item">
+                        <div class="say-post-box">
+                            <div class="say-author-logo">
+                                <?php echo get_avatar( get_the_author_email(), '400' );?>
+                            </div>
+                            <div class="say-post-msg">
+                                <div class="say-author-name"><?php the_author_posts_link(); ?><?php if(wp_get_current_user()->ID == get_the_author_ID()){echo '<span>自己</span>';} ?></div>
+                                <div class="say-post-time"><?php echo get_the_date(); ?> <?php the_time(); ?></div>
+                            </div>
+                        </div>
+                        <div class="say-post-content-box">
+                            <div class="say-post-content">
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                    </li>
                 <?php 
                         endwhile;
                     endif; 
                 ?>
             </ul>
-            <div class="say-page-nav">
-                <div class="say-page-nav-bar">
-                    <?php wp_pagenavi(); ?>
+            <?php if(get_next_posts_link()) { ?>
+                <div class="say-page-nav">
+                    <div class="say-page-nav-bar">
+                        <?php wp_pagenavi(); ?>
+                    </div>
                 </div>
-            </div>
+            <?php } else { ?>
+                <p class="haveNoMore-say"><span class="iconfont icon-tishi1"> 没有更多内容了</span></p>
+                <?php if(get_previous_posts_link()) { ?>
+                    <div class="say-page-nav">
+                        <div class="say-page-nav-bar">
+                            <?php wp_pagenavi(); ?>
+                        </div>
+                    </div>
+                <?php } ?>
+            <?php } ?>
         </div>
     </div>
     <?php get_footer(); ?>
-
-    <script>
-
-    </script>
     <?php i_frame_js(); ?>
 </body>
 </html>

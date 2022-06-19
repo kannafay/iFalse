@@ -36,7 +36,7 @@
                     <form name="lostpasswordform" method="POST" action="<?php home_url(); ?>/wp-login.php?action=lostpassword">
                         <div class="form-item form-email">
                             <span class="iconfont icon-email"></span>
-                            <input type="email" name="user_login" placeholder="邮箱" size="20" required="required">
+                            <input type="email" name="user_login" placeholder="邮箱" size="20" required="required" autofocus />
                         </div>
                         <div class="form-other">
                         <?php if(get_option("i_register_turn") == 1) {echo '<span>还没有账户？<a href="' . home_url(). '/register">立即注册</a></span>';} else{} ?>

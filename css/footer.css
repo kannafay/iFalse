@@ -17,7 +17,7 @@
 }
 .footer .footer-box a {
     color: var(--text-info);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .footer .footer-box a:hover {
     color: var(--theme);
@@ -45,12 +45,5 @@
 @media screen and (max-width: 960px) {
     .footer {
         padding: 20px;
-    }
-    .footer .footer-box,
-    .footer .footer-box a {
-        font-size: 12px;
-    }
-    .footer .footer-box .author span {
-        font-size: 14px;
     }
 }

@@ -43,6 +43,34 @@ function i_searchform_mb() {
 }
 
 // ---------------------------------------------------------------------
+// 主题设置
+add_action('admin_menu', 'ifalse_set');
+function ifalse_set(){add_menu_page('iFalse主题', 'iFalse主题', 'edit_themes', 'i_opt', 'i_opt');}
+function i_opt(){require get_template_directory()."/admin/i_opt.php";}
+
+// 子菜单
+add_action('admin_menu', 'ifalse_set_base'); 
+add_action('admin_menu', 'ifalse_set_nav'); 
+add_action('admin_menu', 'ifalse_set_index'); 
+add_action('admin_menu', 'ifalse_set_post');
+add_action('admin_menu', 'ifalse_set_footer');
+add_action('admin_menu', 'ifalse_set_other');
+
+function ifalse_set_base(){add_submenu_page('i_opt', '基本设置', '基本设置', 'edit_themes', 'i_base', 'i_base' );}  
+function ifalse_set_nav(){add_submenu_page('i_opt', '导航设置', '导航设置', 'edit_themes', 'i_nav', 'i_nav' );}  
+function ifalse_set_index(){add_submenu_page('i_opt', '首页设置', '首页设置', 'edit_themes', 'i_index', 'i_index' );}  
+function ifalse_set_post(){add_submenu_page('i_opt', '文章设置', '文章设置', 'edit_themes', 'i_post', 'i_post' );}   
+function ifalse_set_footer(){add_submenu_page('i_opt', '底部设置', '底部设置', 'edit_themes', 'i_footer', 'i_footer' );}  
+function ifalse_set_other(){add_submenu_page('i_opt', '其他设置', '其他设置', 'edit_themes', 'i_other', 'i_other' );}  
+
+function i_base(){require get_template_directory()."/admin/opt-sub/i_base.php";}
+function i_nav(){require get_template_directory()."/admin/opt-sub/i_nav.php";}
+function i_index(){require get_template_directory()."/admin/opt-sub/i_index.php";} 
+function i_post(){require get_template_directory()."/admin/opt-sub/i_post.php";}
+function i_footer(){require get_template_directory()."/admin/opt-sub/i_footer.php";}
+function i_other(){require get_template_directory()."/admin/opt-sub/i_other.php";}
+
+// ---------------------------------------------------------------------
 // 网站标题
 function show_wp_title(){
   global $page, $paged;
@@ -82,41 +110,41 @@ function i_loading_pic() {
 // ---------------------------------------------------------------------
 // 说说
 function shuoshuo_init() { 
-$labels = [ 
-  'name' => '说说',
-  'singular_name' => '说说', 
-  'all_items' => '所有说说',
-  'add_new' => '发表说说', 
-  'add_new_item' => '撰写新说说',
-  'edit_item' => '编辑说说', 
-  'new_item' => '新说说', 
-  'view_item' => '查看说说', 
-  'search_items' => '搜索说说', 
-  'not_found' => '暂无说说', 
-  'not_found_in_trash' => '没有已遗弃的说说', 
-  'parent_item_colon' => '',
-  'menu_name' => '说说'
-]; 
-$args = [ 
-  'labels' => $labels, 
-  'public' => true, 
-  'publicly_queryable' => true, 
-  'show_ui' => true, 
-  'show_in_menu' => true, 
-  'query_var' => true, 
-  'rewrite' => true, 
-  'capability_type' => 'post', 
-  'has_archive' => true, 
-  'hierarchical' => false, 
-  'menu_position' => null, 
-  'supports' => array('title','editor','author') 
-]; 
-register_post_type('shuoshuo', $args); 
+  $labels = [ 
+    'name' => '说说',
+    'singular_name' => '说说', 
+    'all_items' => '所有说说',
+    'add_new' => '发表说说', 
+    'add_new_item' => '撰写新说说',
+    'edit_item' => '编辑说说', 
+    'new_item' => '新说说', 
+    'view_item' => '查看说说', 
+    'search_items' => '搜索说说', 
+    'not_found' => '暂无说说', 
+    'not_found_in_trash' => '没有已遗弃的说说', 
+    'parent_item_colon' => '',
+    'menu_name' => '说说'
+  ]; 
+  $args = [ 
+    'labels' => $labels, 
+    'public' => true, 
+    'publicly_queryable' => true, 
+    'show_ui' => true, 
+    'show_in_menu' => true, 
+    'query_var' => true, 
+    'rewrite' => true, 
+    'capability_type' => 'post', 
+    'has_archive' => true, 
+    'hierarchical' => false, 
+    'menu_position' => null, 
+    'supports' => array('title','editor','author') 
+  ]; 
+  register_post_type('shuoshuo', $args); 
 }
 add_action('init', 'shuoshuo_init');
 
 // ---------------------------------------------------------------------
-// 分页返回首页
+// 分页第一页返回首页
 $current_url = home_url(add_query_arg(array()));
 $home_page_1 = home_url() . '/page/1';
 if($current_url == $home_page_1) {
@@ -195,9 +223,10 @@ function ashu_add_pages() {
 add_action( 'load-themes.php', 'ashu_add_pages' );  
   
 // ---------------------------------------------------------------------
-// 评论中高亮站长
+// 评论博主高亮
 function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
-	$blogusers = get_user_by('id', 1);
+  error_reporting(0);
+	$blogusers = get_user_by('id', get_the_author_ID());
 	foreach ( $blogusers as $user ){
 		if( $author == $user->display_name ){
 			$webMaster = '<span class="master">'.$author.'</span>';
@@ -207,6 +236,7 @@ function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
 	return $author;
 };  
 add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
+
 function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
 	$blogusers = get_user_by('id', 1);
 	foreach ( $blogusers as $user ){
@@ -352,13 +382,6 @@ function get_user_avatar(){
 }
 
 // ---------------------------------------------------------------------
-// 获取用户信息
-function get_user_role($id) {
-  $user = new WP_User($id);
-  return $user -> data;
-}
-
-// ---------------------------------------------------------------------
 // 显示文章浏览次数
 function getPostViews($postID) {
   $count_key = 'post_views_count';
@@ -424,7 +447,11 @@ function wp_pagenavi() {
 // 自定义头像
 add_filter( 'avatar_defaults', 'newgravatar' );  
 function newgravatar ($avatar_defaults) {  
-  $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';  
+  if(get_option("i_avatar_v")) {
+    $myavatar = get_option("i_avatar_v");
+  } else {
+    $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';
+  }
   $avatar_defaults[$myavatar] = "默认头像";  
   return $avatar_defaults;  
 }  
@@ -459,22 +486,6 @@ exit;
 }
 }
 return $query_variables;
-}
-
-// ---------------------------------------------------------------------
-//主题设置
-add_action('admin_menu', 'ifasle_theme_set');
-  function ifasle_theme_set() {
-    add_menu_page(
-      'iFalse主题设置',
-      'iFalse主题设置', 
-      'edit_themes',
-      'i-opt',
-      'i_settings' 
-    );
-}
-function i_settings() {
-  require get_template_directory()."/admin/i_opt.php";
 }
 
 // ---------------------------------------------------------------------
@@ -645,4 +656,3 @@ function i_breadcrumb() {
   }
   echo '</ul>';
 }
-

@@ -2,7 +2,7 @@
 <div class="post-comments">
     <div class="post-comments-content">
     <?php comment_form() ?>
-    <h2 class="post-comments-title">评论 (<?php if(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?>)</h2>
+    <h2 class="post-comments-title">评论 (<?php if(post_password_required()){echo '已加密';}elseif(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?>)</h2>
     <?php wp_list_comments( array(
         'avatar_size' => '400',
         'type' => 'comment')); 
@@ -27,7 +27,7 @@
             if(is_user_logged_in() == false) {?>
                 <div class="is-logined">
                     <div class="is-logined-box"> 
-                        发现您未登录，请先<a href="<?php bloginfo('url'); ?>/wp-login.php">登录</a>后再发表评论！
+                        发现您未登录，请先<a href="<?php echo wp_login_url(); ?>">登录</a>后再发表评论！
                     </div>
                 </div>
                 <script>
@@ -37,7 +37,7 @@
                     comments_content_box.insertBefore(document.querySelector('.is-logined'),comments_content_box.childNodes[0]);
                 </script>
             <?php }
+            }
         }
-    }
+    } 
 ?>
-<?php } ?>

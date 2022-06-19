@@ -27,7 +27,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .linkcat ul li:hover {
     border: 1px solid var(--theme);
@@ -43,7 +43,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .linkcat ul li a:hover {
     color: var(--theme) !important;
@@ -53,7 +53,7 @@
     height: 50px !important;
     border-radius: 50% !important;
     margin-right: 10px;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .linkcat ul li a:hover img {
     opacity: .8;

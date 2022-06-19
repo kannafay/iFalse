@@ -43,7 +43,7 @@
 .page-banner .page-detail a {
     font-size: 14px;
     color: var(--text-info);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .page-banner .page-detail .author a:hover {
     color: var(--theme);

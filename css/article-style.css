@@ -167,7 +167,7 @@
 }
 .single-main .left .post-content td a {
     text-decoration: underline;
-    transition: var(--tr2); 
+    transition: var(--tr3); 
 }
 /* a标签hover效果//////////////////////////////////////////////////////////// */
 /* .single-main .left .post-content a::before {
@@ -177,7 +177,7 @@
     position: absolute;
     bottom: 0;
     background-color: var(--theme);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-main .left .post-content a:hover::before {
     content: '';
@@ -190,6 +190,7 @@
 /* a标签hover效果end/////////////////////////////////////////////////////////// */
 .single-main .left .post-content > .wp-block-image a {
     display: inline-block;
+    outline: 0;
 }
 .single-main .left .post-content > .wp-block-image a:before {
     display: none;
@@ -269,7 +270,7 @@
     font-size: 14px;
     background: var(--theme-sub); 
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
-    transition: var(--tr2);  
+    transition: var(--tr3);  
 }
 .single-main .left .post-content .wp-block-button__link:hover {
     color: var(--bgc);
@@ -376,7 +377,7 @@
     border-radius: var(--radius);
     background-color: var(--theme);
     box-shadow: 1px 1px 3px -1px var(--theme-sub);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-main .left .post-content h4::after {
     width: 30px;

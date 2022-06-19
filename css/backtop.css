@@ -11,10 +11,10 @@
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(15px);
-	-webkit-transition: var(--tr3) ;
+	-webkit-transition: var(--tr6) ;
 	z-index: 5;
 	box-shadow: 0 2px 8px rgb(28 31 35 / 3%), 0 16px 48px 8px rgb(28 31 35 / 8%);
-	transition: var(--tr3);
+	transition: var(--tr6);
 }
 .progress-wrap.active-progress {
 	opacity: 1;
@@ -36,7 +36,7 @@
 	cursor: pointer;
 	display: block;
 	z-index: 1;
-	transition: var(--tr3);
+	transition: var(--tr6);
 }
 .progress-wrap:hover::after {
 	opacity: 1;
@@ -60,7 +60,7 @@
 	display: block;
 	z-index: 2;
 	
-    transition: var(--tr3) ;
+    transition: var(--tr6) ;
 }
 .progress-wrap:hover::before {
 	opacity: 1;
@@ -72,7 +72,7 @@
 	stroke: var(--theme);
 	stroke-width: 4;
 	box-sizing: border-box;
-	transition: var(--tr3);
+	transition: var(--tr6);
 }
 
 @media screen and (max-width: 960px) {

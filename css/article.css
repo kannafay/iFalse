@@ -70,7 +70,7 @@
 .single-banner .single-detail a {
     font-size: 14px;
     color: var(--text-info);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-banner .single-detail .author a:hover {
     color: var(--theme);
@@ -105,7 +105,7 @@
 }
 .single-banner .breadcrumb ul li a {
     color: var(--text-info);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-banner .breadcrumb ul li a:hover {
     color: var(--theme);
@@ -141,7 +141,7 @@
     visibility: hidden;
     opacity: 0;
     z-index: 5;
-    transition: var(--tr3);
+    transition: var(--tr6);
 }
 .post-menu-mb-btn-on {
     visibility: visible;
@@ -176,7 +176,7 @@
     border-radius: var(--radius);
     overflow: auto;
     z-index: 5;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 #article-toc-mb::-webkit-scrollbar {
     width: 6px;
@@ -224,7 +224,7 @@
     padding: 2px 6px;
     padding-left: 6px;
     border-radius: var(--radius-sub);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 #article-toc-mb ul li a:hover {
     color: var(--bgc);
@@ -263,7 +263,7 @@
     color: var(--text-sub);
     position: relative;
     overflow: hidden;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 #article-toc-mb #article-toc-ul-mb .heading-level-1 a:hover,
 #article-toc-mb #article-toc-ul-mb .heading-level-2 a:hover,
@@ -286,7 +286,7 @@
     color: var(--bgc);
     position: absolute;
     left: -10px;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 #article-toc-mb #article-toc-ul-mb .heading-level-1 a:hover::before,
 #article-toc-mb #article-toc-ul-mb .heading-level-2 a:hover::before,
@@ -316,7 +316,7 @@
     background: var(--theme-1);
     border-radius: var(--radius-sub);
     white-space: nowrap;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-main .left .post-content .the-tag span a::before {
     content: '#';
@@ -345,7 +345,7 @@
     height: auto;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-main .left .post-context .post-prev-next:hover {
     border: 1px solid var(--theme);
@@ -368,7 +368,7 @@
 .single-main .left .post-context .post-prev-next a {
     color: var(--text-sub);
     padding: 10px 0;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .single-main .left .post-context .post-prev-next span {
     color: var(--text-info);
@@ -422,13 +422,14 @@
     font-size: 22px;
 }
 .post-comments .comment-reply-title > a {
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments .comment-reply-title #cancel-comment-reply-link {
     color: var(--text-info);
     font-weight: 400;
     font-size: 12px;
-    transition: var(--tr2);
+    margin-left: 5px;
+    transition: var(--tr3);
 }
 .post-comments .comment-reply-title #cancel-comment-reply-link:hover {
     color: var(--theme);
@@ -484,8 +485,9 @@
     padding-top: 0;
 }
 .post-comments .comment-body .comment-awaiting-moderation {
-    font-size: 14px;
-    color: var(--text-sub);
+    font-size: 12px;
+    font-style: normal;
+    color: var(--theme);
 }
 .post-comments .comment-body p {
     width: 100%;
@@ -503,7 +505,7 @@
 .post-comments #respond #reply-title > a {
     color: var(--theme);
     margin: 0 5px;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments #respond #reply-title a:hover {
     color: var(--theme);
@@ -514,13 +516,13 @@
 }
 .post-comments .comment-body .reply a:hover {
     color: var(--theme);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 
 .post-comments .comment-body .reply a {
     visibility: hidden;
     opacity: 0;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments .comment-body:hover .reply a {
     visibility: visible;
@@ -562,7 +564,7 @@
 }
 .post-comments .comment-meta a {
     color: var(--text-info);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments .comment-meta a:first-child::before {
     content: '\e74b';
@@ -603,13 +605,14 @@
 .post-comments .comment-respond textarea {
     font-size: 14px;
     width: 100%;
+    color: var(--text-sub);
     resize: none;
     padding: 10px;
     border: 1px solid var(--black-1);
     border-radius: var(--radius);
     outline: none;
     margin-bottom: 10px;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments .comment-respond textarea:hover,
 .post-comments .comment-respond textarea:focus {
@@ -661,7 +664,7 @@
     padding: 0 10px;
     border: 1px solid var(--black-1);
     border-radius: var(--radius);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments .comment-respond .comment-form-author input:hover,
 .post-comments .comment-respond .comment-form-email input:hover,
@@ -704,7 +707,7 @@
     border: 0;
     margin-top: 10px;
     cursor: pointer;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments .comment-respond .form-submit input:hover {
     opacity: .8;
@@ -729,12 +732,11 @@
     color: var(--bgc);
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
-    padding: 2px 6px;
+    padding: 1px 6px;
     border-radius: var(--radius) 0 var(--radius) 0;
-    cursor: default;
 }
-
 /* 博主高亮end */
+
 .is-logined {
     width: 100%;
     height: 100px;
@@ -761,7 +763,7 @@
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     padding: 2px 8px;
     border-radius: var(--radius-sub);
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .is-logined .is-logined-box a:hover {
     opacity: .8;
@@ -788,7 +790,7 @@
     margin: 0 3px;
     border-radius: var(--radius-sub);
     overflow: hidden;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .post-comments #post-comments-nav a:hover {
     background-color: var(--theme);
@@ -842,7 +844,7 @@
         bottom: 95px;
         width: 41px;
         height: 41px;
-        transition: var(--tr2);
+        transition: var(--tr3);
     }
     .post-menu-mb-btn span {
         font-size: 22px;

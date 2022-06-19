@@ -15,7 +15,7 @@ const comment_author_i = [];
 const comment_author_title = [];
 for(let i=0; i<comment_author_card.length; i++) {
     comment_author_i[i] = document.createElement('i');
-    comment_author_title[i] = document.createTextNode('站长');
+    comment_author_title[i] = document.createTextNode('博主');
     comment_author_i[i].appendChild(comment_author_title[i]);
     insertAfter(comment_author_i[i],comment_author_card[i]);
 }

@@ -9,7 +9,7 @@
             <div class="other">
                 <span class="date"><?php echo get_the_date(); ?> <?php the_time(); ?></span>
                 <span class="views"><?php setPostViews(get_the_ID()) ?><?php echo getPostViews(get_the_ID()) ?></span>
-                <span class="comments"><?php if(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></span>
+                <span class="comments"><?php if(post_password_required()){echo '已加密';}elseif(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></span>
                 <?php edit_post_link('编辑页面') ?>
             </div>
                 
@@ -21,7 +21,7 @@
     <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
-            <div class="the-end" style="">—— THE END ——</div>
+            <!-- <div class="the-end">—— THE END ——</div> -->
         </div>
         <?php 
             if(get_option("i_comments_page") == 1) { ?>

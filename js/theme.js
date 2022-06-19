@@ -1,3 +1,9 @@
+// 关于
+console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
+
+// 查询次数，花费时间
+console.log(document.querySelector('#queries_num').firstChild.data);
+
 // 导航栏用户菜单
 const user_set_btn = document.querySelector('.nav-bar .admin img');
 const user_set_menu = document.querySelector('.nav-bar .user-set');
@@ -117,29 +123,6 @@ if(sidebar_search_btn) {
     sidebar_search_btn.innerHTML = '<span class="iconfont icon-sousuo">';
 }
 
-const buttons = document.querySelectorAll('.ripple');
-buttons.forEach(button => {
-    button.addEventListener('click', function (e) {
-        const x = e.clientX;
-        const y = e.clientY;
-
-        const buttonTop = e.target.offsetTop;
-        const buttonLeft = e.target.offsetLeft;
-
-        const xInside = x - buttonLeft;
-        const yInside = y - buttonTop;
-
-        const circle = document.createElement('span');
-        circle.classList.add('circle');
-        circle.style.top = yInside + 'px';
-        circle.style.left = xInside + 'px';
-
-        this.appendChild(circle);
-
-        setTimeout(() => circle.remove(), 500);
-    })
-})
-
 // 图片预览
 const content_p_img = document.querySelectorAll('.post-content .wp-block-image img');
 if(content_p_img) {
@@ -176,9 +159,11 @@ if(say_dt_img) {
 	}
 }
 
-// 关于
-console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
+// 缩略图删除延迟加载
+const swiper_img = document.querySelectorAll('.swiper .swiper-slide img');
+$(swiper_img).each(function(i){
+    swiper_img[i].setAttribute('src',swiper_img[i].getAttribute('data-original'));
+    swiper_img[i].removeAttribute('data-original');
+})
 
-// 查询次数，花费时间
-console.log(document.querySelector('#queries_num').firstChild.data);
 

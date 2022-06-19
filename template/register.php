@@ -86,19 +86,19 @@
                     <form name="registerform" method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                         <div class="form-item form-username">
                             <span class="iconfont icon-atm"></span>
-                            <input type="text" name="user_login" placeholder="用户名" size="20" required="required" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>">
+                            <input type="text" name="user_login" placeholder="用户名" size="20" required="required" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" autofocus />
                         </div>
                         <div class="form-item form-email">
                             <span class="iconfont icon-email"></span>
-                            <input type="email" name="user_email" placeholder="邮箱" size="20" required="required" value="<?php if(!empty($user_email)) echo $user_email; ?>">
+                            <input type="email" name="user_email" placeholder="邮箱" size="20" required="required" value="<?php if(!empty($user_email)) echo $user_email; ?>" />
                         </div>
                         <div class="form-item form-password">
                             <span class="iconfont icon-password"></span>
-                            <input type="password" name="user_pass" placeholder="密码" size="20" required="required">
+                            <input type="password" name="user_pass" placeholder="密码" size="20" required="required" />
                         </div>
                         <div class="form-item form-password">
                             <span class="iconfont icon-password"></span>
-                            <input type="password" name="user_pass2" placeholder="确认密码" size="20" required="required">
+                            <input type="password" name="user_pass2" placeholder="确认密码" size="20" required="required" />
                         </div>
                         <div class="form-other">
                             <span>已有账户？<a href="<?php home_url(); ?>/login">立即登录</a></span>

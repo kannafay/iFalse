@@ -17,7 +17,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p class="name"><span><?php the_author_nickname(); ?></span>作者发布的内容</p>
+            <p class="name"><span><?php the_author_nickname(); ?></span>用户发布的内容</p>
             <?php get_search_form(); ?>
         </div>
         <?php 

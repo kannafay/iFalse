@@ -9,6 +9,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.login-page .login-main::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 .login-page .login-main .login-img {
     width: 700px;
@@ -83,7 +92,7 @@
     border: 1px solid var(--bgc-sub);
     border-radius: var(--radius);
     padding: 0 10px 0 35px;
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .login-page .login-msg .form-item input:hover,
 .login-page .login-msg .form-item input:focus {
@@ -110,14 +119,15 @@
     width: 100%;
     height: 100%;
     font-size: 15px;
+    font-weight: 400;
     outline: 0;
     border: 0;
     border-radius: var(--radius);
     cursor: pointer;
     color: var(--bgc);
-    background: var(--theme-sub);
+    background: var(--theme);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
-    transition: var(--tr2);
+    transition: var(--tr3);
 }
 .login-page .login-msg .form-item button:hover {
     opacity: .8;

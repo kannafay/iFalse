@@ -13,9 +13,11 @@
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/theme.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/highlight/styles/vs2015.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/user.css">
+    <style><?php if(get_option("i_mourn") == 1){ ?>html{filter:grayscale(1);}body::-webkit-scrollbar-thumb{background-color: gray !important;}<?php }; ?></style>
 </head>
