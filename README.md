@@ -12,7 +12,6 @@
 
 主题反馈：[https://support.qq.com/products/404787](https://support.qq.com/products/404787)
 
-
 Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
 
 GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse)
@@ -21,11 +20,11 @@ QQ交流群：544740608
 
 ## 使用说明
 
+使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
+
 请从发行版里下载。（如果没事的话，否则不支持一键/自动更新！！！）
 
 如果你从标签下载或者master下载/克隆，请在安装主题后，将主题文件夹名改为iFalse再启用。以保证一键/自动更新程序的正常运行。
-
-使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
 
 ## 更新日志
 
