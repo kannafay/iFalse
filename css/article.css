@@ -7,6 +7,7 @@
     flex-direction: column;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
+    transition: var(--tr3);
 }
 .single-banner .single-cate {
     margin: 20px 0 10px 0;
@@ -34,7 +35,7 @@
     white-space: normal;
     word-break: break-all;
     word-wrap: break-word;
-
+    transition: var(--tr3);
 }
 .single-banner .single-detail .author,
 .single-banner .single-detail .other {
@@ -119,33 +120,33 @@
     font-family: 'iconfont';
     font-size: 18px;
 }
-
 .single-main {
     display: flex;
     justify-content: space-between;
 }
 
-/* 目录树------------------------------------------------------------- */
+/* 目录树*/
+
 /* 按钮 */
 .post-menu-mb-btn {
     display: block;
     position: fixed;
     right: 30px;
-    bottom: 100px;
+    bottom: 150px;
     background-color: var(--bgc);
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgb(28 31 35 / 3%), 0 16px 48px 8px rgb(28 31 35 / 8%);
+    box-shadow: var(--box-s);
     cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
     z-index: 5;
-    transition: var(--tr6);
+    -webkit-animation: open .5s;
+    animation: open .5s;
+    transition: var(--tr3);
 }
 .post-menu-mb-btn-on {
-    visibility: visible;
-    opacity: 1;
+    display: block;
 }
 
 .post-menu-mb-btn div {
@@ -156,22 +157,24 @@
     align-items: center;
 }
 .post-menu-mb-btn span {
-    font-size: 24px;
+    font-size: 26px;
     color: var(--theme);
 }
-/* 按钮-结束 */
+/* 按钮-end */
 
+
+/* 目录树 */
 #article-toc-mb {
     display: block;
     position: fixed;
     width: 285px;
     height: auto;
     max-height: 50%;
-    bottom: 160px;
+    bottom: 205px;
     right: -310px;
     margin-bottom: 0;
     background-color: var(--bgc);
-    box-shadow: 0 0 10px rgb(28 31 35 / 10%);
+    box-shadow: var(--box);
     padding: 10px;
     border-radius: var(--radius);
     overflow: auto;
@@ -203,6 +206,7 @@
     border-bottom: 1px solid var(--border);
     padding-bottom: 8px;
     text-align: center;
+    transition: var(--tr3);
 }
 #article-toc-mb #article-toc-ul-mb {
     margin-top: 10px;
@@ -229,7 +233,6 @@
 #article-toc-mb ul li a:hover {
     color: var(--bgc);
     background: var(--theme);
-    /* background: linear-gradient(to right, var(--theme), var(--theme-sub));  */
 }
 #article-toc-mb #article-toc-ul-mb .heading-level-1,
 #article-toc-mb #article-toc-ul-mb .heading-level-2 {
@@ -271,7 +274,7 @@
 #article-toc-mb #article-toc-ul-mb .heading-level-4 a:hover,
 #article-toc-mb #article-toc-ul-mb .heading-level-5 a:hover,
 #article-toc-mb #article-toc-ul-mb .heading-level-6 a:hover {
-    color: var(--bgc);
+    color: var(--text-keep);
     text-decoration: none;
     padding-left: 24px;
 }
@@ -283,7 +286,7 @@
 #article-toc-mb #article-toc-ul-mb .heading-level-6 a::before {
     content: '▸ ';
     font-weight: 400;
-    color: var(--bgc);
+    color: var(--text-keep);
     position: absolute;
     left: -10px;
     transition: var(--tr3);
@@ -296,9 +299,9 @@
 #article-toc-mb #article-toc-ul-mb .heading-level-6 a:hover::before {
     left: 8px;
     font-weight: 400;
-    color: var(--bgc);
+    color: var(--text-keep);
 }
-/* 目录树end------------------------------------------------------------- */
+/* 目录树-end */
 
 .single-main .left {
     border-radius: var(--radius);
@@ -324,21 +327,25 @@
 }
 .single-main .left .post-content .the-tag span a:hover {
     background: var(--theme);
-    /* background: linear-gradient(to right, var(--theme), var(--theme-sub));  */
     color: var(--bgc);
     text-decoration: none;
 }
-.single-main .left .post-content .the-end {
-    color: var(--text-info);
+.single-main .left .post-content .post-copyright {
+    width: 100%;
     font-size: 14px;
-    text-align: center;
-    padding: 10px 0;
-    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: var(--radius);
+    color: var(--text-info);
+    background-color: var(--bgc-sub);
+}
+.single-main .left .post-content .post-copyright div {
+    line-height: 1.8;
 }
 .single-main .left .post-context {
     border-top: 1px solid var(--border);
     padding-top: 20px;
     margin: 20px 0;
+    transition: var(--tr3);
 }
 .single-main .left .post-context .post-prev-next {
     width: 100%;
@@ -363,6 +370,7 @@
 }
 .single-main .left .post-context .post-prev-next .post-prev {
     border-bottom: 1px solid var(--border);
+    transition: var(--tr3);
 }
 .single-main .left .post-context .post-prev-next span,
 .single-main .left .post-context .post-prev-next a {
@@ -380,8 +388,7 @@
     width: 285px;
 }
 
-
-/* 评论区--------------------------------------------- */
+/* 评论区 */
 .post-comments {
     width: 100%;
 }
@@ -415,6 +422,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--tr3);
 }
 .post-comments .comment-reply-title::before {
     content: '\e767';
@@ -444,6 +452,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--tr3);
 }
 .post-comments .post-comments-title::before {
     content: '\e7b2';
@@ -465,29 +474,34 @@
     margin-bottom: 20px;
     background-color: var(--bgc-sub);
     border-radius: var(--radius);
+    transition: var(--tr3);
 }
 .post-comments .depth-2,
 .post-comments .depth-3,
 .post-comments .depth-4,
 .post-comments .depth-5 {
-    padding-left: 40px;
-    margin-top: 10px;
-    /* border-top: 1px solid var(--border); */
+    padding: 10px 0 0 40px;
     border-radius: 0;
 }
 .post-comments .comment-body {
+    font-size: 15px;
+    color: var(--text-sub);
     width: 100%;
     border-top: 1px solid var(--border);
     padding-top: 10px;
+    transition: var(--tr3);
 }
 .post-comments .depth-1 > .comment-body {
     border-top: 0;
     padding-top: 0;
 }
 .post-comments .comment-body .comment-awaiting-moderation {
+    display: inline-block;
     font-size: 12px;
     font-style: normal;
     color: var(--theme);
+    line-height: 1.5;
+    margin-bottom: 5px;
 }
 .post-comments .comment-body p {
     width: 100%;
@@ -495,6 +509,7 @@
     color: var(--text-sub);
     word-break: break-all;
     word-wrap: break-word;
+    transition: var(--tr3);
 }
 .post-comments .comment-body p a {
     color: var(--theme);
@@ -534,7 +549,6 @@
     margin-bottom: 4px;
 }
 .post-comments .comment-author img {
-    /* border-radius: var(--radius-sub); */
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -547,6 +561,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: var(--tr3);
 }
 
 .post-comments .comment-author .fn {
@@ -558,7 +573,7 @@
 
 .post-comments .comment-meta {
     font-size: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
 }
@@ -606,9 +621,10 @@
     font-size: 14px;
     width: 100%;
     color: var(--text-sub);
+    background-color: var(--bgc);
     resize: none;
     padding: 10px;
-    border: 1px solid var(--black-1);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     outline: none;
     margin-bottom: 10px;
@@ -662,7 +678,9 @@
     width: 100%;
     height: 35px;
     padding: 0 10px;
-    border: 1px solid var(--black-1);
+    background-color: var(--bgc);
+    color: var(--text-sub);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     transition: var(--tr3);
 }
@@ -687,6 +705,7 @@
 .post-comments .comment-respond .comment-form-cookies-consent label {
     font-size: 14px;
     color: var(--text-sub);
+    transition: var(--tr3);
 }
 .post-comments .comment-respond .form-submit {
     display: block;
@@ -700,7 +719,7 @@
     outline: none;
     width: 100%;
     height: 35px;
-    color: var(--bgc);
+    color: var(--text-keep);
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
     border-radius: var(--radius);
@@ -729,7 +748,7 @@
     margin-left: 10px;
     font-size: 12px;
     font-style: normal;
-    color: var(--bgc);
+    color: var(--text-keep);
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     padding: 1px 6px;
@@ -742,6 +761,7 @@
     height: 100px;
     padding-top: 20px;
     border-top: 1px solid var(--border);
+    transition: var(--tr3);
 }
 .is-logined .is-logined-box {
     width: 100%;
@@ -753,12 +773,11 @@
     border-radius: var(--radius);
     font-size: 14px;
     color: var(--text-info);
-
-
+    transition: var(--tr3);
 }
 .is-logined .is-logined-box a {
     margin: 0 5px;
-    color: var(--bgc);
+    color: var(--text-keep);
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     padding: 2px 8px;
@@ -797,7 +816,7 @@
     color: var(--bgc);
 }
 .post-comments #post-comments-nav .dots {
-    background-color: rgba(0 0 0 / 0);
+    background-color: var(--bgc-0);
     cursor: default;
 }
 .post-comments #post-comments-nav .current {
@@ -807,6 +826,30 @@
     overflow: hidden;
 }
 /* 评论区-end-------------------------------------------- */
+
+.change-night {
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    right: 30px;
+    bottom: 95px;
+    border-radius: 50%;
+    background-color: var(--bgc);
+    box-shadow: var(--box-s);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    -webkit-animation: open .5s;
+    animation: open .5s;
+    transition: var(--tr3);
+}
+
+.change-night span {
+    font-size: 26px;
+    color: var(--theme);
+}
 
 @media screen and (max-width: 1280px) {
     .single-top,
@@ -835,25 +878,30 @@
     .post-comments .depth-3,
     .post-comments .depth-4,
     .post-comments .depth-5 {
-        padding: 15px 0 0 20px;
+        padding: 10px 0 0 20px;
     }
 
     /* 目录树菜单按钮 */
     .post-menu-mb-btn {
         right: 20px;
-        bottom: 95px;
+        bottom: 142px;
         width: 41px;
         height: 41px;
         transition: var(--tr3);
     }
-    .post-menu-mb-btn span {
-        font-size: 22px;
-    }
     #article-toc-mb {
-        bottom: 150px;
+        bottom: 193px;
     }
+
+    /* 夜间模式按钮 */
     .article-toc-mb {
         right: 20px !important;
+    }
+    .change-night {
+        width: 41px;
+        height: 41px;
+        right: 20px;
+        bottom: 91px;
     }
 }
 
@@ -889,7 +937,17 @@
     }
     .post-comments .comment-respond .comment-form-url {
         padding-left: 0;
-        /* margin-top: 3px; */
         margin-bottom: 5px;
+    }
+}
+
+@keyframes open {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
     }
 }

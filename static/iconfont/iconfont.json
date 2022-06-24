@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11488199",
+      "name": "Daytime mode",
+      "font_class": "Daytimemode",
+      "unicode": "e771",
+      "unicode_decimal": 59249
+    },
+    {
+      "icon_id": "11488205",
+      "name": "night mode",
+      "font_class": "nightmode",
+      "unicode": "e773",
+      "unicode_decimal": 59251
+    },
+    {
+      "icon_id": "11488000",
+      "name": "category",
+      "font_class": "category",
+      "unicode": "e747",
+      "unicode_decimal": 59207
+    },
+    {
       "icon_id": "11474272",
       "name": "editor",
       "font_class": "editor",
@@ -53,13 +74,6 @@
       "font_class": "24gf-folderOpen",
       "unicode": "eac5",
       "unicode_decimal": 60101
-    },
-    {
-      "icon_id": "24797064",
-      "name": "目录树",
-      "font_class": "mulushu",
-      "unicode": "e662",
-      "unicode_decimal": 58978
     },
     {
       "icon_id": "29657618",

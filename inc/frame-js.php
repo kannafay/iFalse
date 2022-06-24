@@ -9,7 +9,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/user/user.js"></script>
-<script>        
+<script type="text/javascript">  
+    // 轮播图
     var mySwiper = new Swiper ('.swiper', {
         loop: true,
         parallax : true,
@@ -28,9 +29,9 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
     },
-    })        
-</script>
-<script type="text/javascript">
+    })
+
+    // 延迟加载
     jQuery(function() {        
         jQuery("img").lazyload({
             effect : "fadeIn",

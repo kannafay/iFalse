@@ -24,7 +24,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    /* background: linear-gradient(to top, var(--black-1), rgba(0 0 0 / 0)); */
     z-index: -8;
 }
 
@@ -37,12 +36,13 @@
     width: 100%;
     padding: 0 20px;
     border-radius: 10px;
-    background-color: rgba(255 255 255 / .8);
+    background-color: var(--bgc-blur);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 8px rgb(28 31 35 / 3%), 0 0 24px 8px rgb(28 31 35 / 5%);
     position: relative;
     top: -30px;
+    transition: var(--tr3);
 }
 .say-author .say-author-box .say-author-logo {
     width: 75px;
@@ -53,6 +53,7 @@
     position: relative;
     top: -39px;
     overflow: hidden;
+    transition: var(--tr3);
 }
 .say-author .say-author-box .say-author-logo img {
     width: 100%;
@@ -69,12 +70,14 @@
     font-size: 18px;
     font-weight: 700;
     color: var(--text);
+    transition: var(--tr3);
 }
 .say-author .say-author-box .say-author-des {
     position: relative;
     top: -20px;
     font-size: 14px;
     color: var(--text-info);
+    transition: var(--tr3);
 }
 
 /* content */
@@ -86,6 +89,7 @@
     border-bottom: 1px solid var(--border);
     padding-bottom: 20px;
     margin-bottom: 20px;
+    transition: var(--tr3);
 }
 .say-content .say-post-item:last-child {
     margin-bottom: 0;
@@ -128,12 +132,11 @@
     margin-left: 10px;
     font-size: 12px;
     font-weight: 400;
-    color: var(--bgc);
+    color: var(--text-keep);
     padding: 1px 6px;
     border-radius: var(--radius) 0 var(--radius) 0;
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
-    
 }
 .say-content .say-post-item .say-post-box .say-post-msg .say-post-time {
     font-size: 12px;
@@ -186,6 +189,7 @@
     font-size: 16px;
     margin-bottom: 10px;
     color: var(--text);
+    transition: var(--tr3);
 }
 .say-post-content > *:last-child {
     margin-bottom: 0;

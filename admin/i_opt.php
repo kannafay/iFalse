@@ -31,6 +31,7 @@ $logo_img = get_option("logo_img");
     <div class="ifalse-text">
         <div class="start"><a href="/wp-admin/admin.php?page=i_base">开始设置</a></div>
         <div>
+            使用文档：<a href="https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2" target="_blank">传送门</a><br>
             主题官网：<a href="https://www.ifalse.cn" target="_blank">iFalse主题</a><br>
             项目地址：<a href="https://gitee.com/kannafay/ifalse" target="_blank">Gitee</a><span>/</span><a href="https://github.com/kannafay/ifalse" target="_blank">GitHub</a>
         </div>

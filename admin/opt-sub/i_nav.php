@@ -23,10 +23,10 @@ if($_POST["i_opt"]){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_logo_hidden">显示logo</label></th>
+                    <th scope="row"><label for="i_logo_hidden">隐藏logo</label></th>
                     <td>
                         <input name="i_logo_hidden" type="text" value="<?php echo get_option("i_logo_hidden"); ?>" class="regular-text">
-                        <p class="description">数字1为关闭。显示在导航栏的logo图标。默认：开启</p>
+                        <p class="description">数字1为开启。显示在导航栏的logo图标。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>

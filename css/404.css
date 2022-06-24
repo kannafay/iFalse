@@ -23,7 +23,7 @@
     padding: 6px 12px;
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
-    color: var(--bgc);
+    color: var(--text-keep);
     border-radius: var(--radius);
     font-size: 14px;
     transition: var(--tr3);

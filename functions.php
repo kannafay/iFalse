@@ -84,28 +84,35 @@ function show_wp_title(){
 }
 
 // ---------------------------------------------------------------------
+// 默认封面图
+function i_cover_pic() {
+  $cover_pic = get_template_directory_uri() . '/static/img/thumbnail.png';
+  return $cover_pic;
+}
+// 加载图
+function i_loading_pic() {
+  if($_COOKIE['night'] == 0) {
+    $loading_pic = get_template_directory_uri() . '/static/img/loading.gif';
+    return $loading_pic;
+  } else {
+    $loading_pic = get_template_directory_uri() . '/static/img/loading-night.gif';
+    return $loading_pic;
+  }
+}
+
+// ---------------------------------------------------------------------
 // 延迟加载
 function add_image_placeholders( $content ) {
   if( is_feed() || is_preview() || ( function_exists( 'is_mobile' ) && is_mobile() ) )
   return $content;
   if ( false !== strpos( $content, 'data-original' ) )
   return $content;
-  $placeholder_image = apply_filters( 'lazyload_images_placeholder_image', get_template_directory_uri() . '/static/img/loading.gif' );
+    $placeholder_image = apply_filters( 'lazyload_images_placeholder_image', i_loading_pic() );
   $content = preg_replace( '#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', sprintf( '<img${1}src="%s" data-original="${2}"${3}><noscript><img${1}src="${2}"${3}></noscript>', $placeholder_image ), $content );
   return $content;
 }
 add_filter( 'the_content', 'add_image_placeholders', 99 );
 add_filter( 'post_thumbnail_html', 'add_image_placeholders', 11 );
-
-// ---------------------------------------------------------------------
-// 默认封面图
-function i_cover_pic() {
-  echo get_template_directory_uri() . '/static/img/thumbnail.png';
-}
-// 加载图
-function i_loading_pic() {
-  echo get_template_directory_uri() . '/static/img/loading.gif';
-}
 
 // ---------------------------------------------------------------------
 // 说说

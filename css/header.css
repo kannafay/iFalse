@@ -10,7 +10,7 @@
 
 .nav-bar {
     height: 70px;
-    background-color: rgba(255 255 255 / .8);
+    background-color: var(--bgc-blur);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border); 
@@ -19,6 +19,7 @@
     position: fixed;
     top: 0;
     z-index: 10;
+    transition: var(--tr3);
 }
 .nav-bar .left,
 .nav-bar .right {
@@ -42,7 +43,7 @@
     color: var(--theme) !important;
 }
 .nav-bar .nav-menu .current-menu-item > a:hover {
-    color: var(--bgc) !important;
+    color: var(--text-keep) !important;
 }
 .nav-bar .nav-menu > .current-menu-item > a:hover {
     color: var(--theme) !important;
@@ -86,7 +87,7 @@
     height: auto;
     background-color: var(--bgc);
     border-radius: var(--radius);
-    box-shadow: 0 0 10px rgb(28 31 35 / 10%);
+    box-shadow: var(--box);
     padding: 6px 8px;
     transform: translateY(10px);
     transition: var(--tr3);
@@ -102,7 +103,7 @@
     transition: var(--tr3);
 }
 .nav-bar .nav-menu .sub-menu li a:hover {
-    color: var(--bgc);
+    color: var(--text-keep);
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
 }
@@ -157,8 +158,8 @@
     height: auto;
     padding: 10px 8px;
     border-radius: var(--radius);
-    background-color: #fff;
-    box-shadow: 0 0 10px rgb(28 31 35 / 10%);
+    background-color: var(--bgc);
+    box-shadow: var(--box);
     display: flex;
     flex-direction: column;
     transform: translateY(8px);
@@ -180,7 +181,7 @@
     margin-bottom: 0;
 }
 .nav-bar .user-set a:hover {
-    color: var(--bgc);
+    color: var(--text-keep);
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
 }
@@ -217,7 +218,7 @@
     }
     .nav-bar-mb {
         height: 70px;
-        background-color: rgba(255 255 255 / .8);
+        background-color: var(--bgc-blur);
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--border); 
@@ -228,6 +229,7 @@
         top: 0;
         z-index: 8;
         padding: 0 20px;
+        transition: var(--tr3);
     }
     .nav-bar-mb .center .logo-mb img {
         height: 32px;
@@ -269,8 +271,8 @@
         height: auto;
         padding: 10px 8px;
         border-radius: var(--radius);
-        background-color: #fff;
-        box-shadow: 0 0 10px rgb(28 31 35 / 10%);
+        background-color: var(--bgc);
+        box-shadow: var(--box);
         display: flex;
         flex-direction: column;
         transform: translateY(8px);
@@ -297,7 +299,7 @@
         margin-bottom: 0;
     }
     .nav-bar-mb .user-set a:hover {
-        color: var(--bgc);
+        color: var(--text-keep);
         background: var(--theme);
         /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
     }
@@ -331,7 +333,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--black-5);
+        background-color: var(--mask-5);
         transition: var(--tr6);
         z-index: 9;
     }
@@ -348,6 +350,7 @@
         padding: 0 10px;
         background-color: var(--bgc);
         z-index: 10;
+        transition: var(--tr3);
     }
     .menu-mb-top .menu-mb-box {
         height: 100%;
@@ -368,6 +371,7 @@
         line-height: 40px;
         color: var(--text-sub);
         font-size: 15px;
+        transition: var(--tr3);
     }
     .menu-mb-top .menu-mb-box .user-info img {
         width: 32px;
@@ -397,13 +401,13 @@
         transition: var(--tr3);
     }
     .nav-menu-mb .current-menu-item > a {
-        color: var(--bgc) !important;
+        color: var(--text-keep) !important;
         background: var(--theme);
         /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
 
     }
     .nav-menu-mb .current-menu-item > a:hover {
-        color: var(--bgc) !important;
+        color: var(--text-keep) !important;
     }
     .nav-mb .nav-menu-mb li a {
         font-size: 14px;
@@ -422,11 +426,12 @@
     .nav-mb .nav-menu-mb > li a:hover {
         background: var(--theme);
         /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
-        color: var(--bgc);
+        color: var(--text-keep);
     }
     .nav-mb .nav-menu-mb > li ul {
         border-left: 2px solid var(--border);
         margin-left: 10px;
+        transition: var(--tr3);
     }
     .nav-mb .nav-menu-mb > li ul a {
         margin: 5px 0 5px 10px;
@@ -436,7 +441,7 @@
     .nav-mb .nav-menu-mb > li ul a:hover {
         background: var(--theme);
         /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
-        color: var(--bgc);
+        color: var(--text-keep);
     }
     .nav-mb .nav-menu-mb > li > ul ul {
         margin-left: 20px;

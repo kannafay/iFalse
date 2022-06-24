@@ -3,6 +3,7 @@ error_reporting(0);
 if($_POST["i_opt"]){
     
     // 文章设置
+    update_option("i_post_copyright",$_POST["i_post_copyright"]);
     update_option("i_next_post",$_POST["i_next_post"]);
     update_option("i_comments_article",$_POST["i_comments_article"]);
     update_option("i_comments_page",$_POST["i_comments_page"]);
@@ -16,6 +17,13 @@ if($_POST["i_opt"]){
     <form method="post" action="" novalidate="novalidate">
         <table class="form-table">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="i_post_copyright">文章版权</label></th>
+                    <td>
+                        <input name="i_post_copyright" type="text" value="<?php echo get_option("i_post_copyright"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。提示用户文章版权信息。默认：关闭</p>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="i_next_post">文章上下篇</label></th>
                     <td>

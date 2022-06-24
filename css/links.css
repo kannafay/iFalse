@@ -21,7 +21,7 @@
     font-size: 14px;
     margin-bottom: 20px;
     background-color: var(--bgc);
-    border: 1px solid var(--black-1);
+    border: 1px solid var(--border);
     padding: 15px;
     border-radius: var(--radius);
     overflow: hidden;

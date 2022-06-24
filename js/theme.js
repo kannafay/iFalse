@@ -4,7 +4,7 @@ console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linea
 // 查询次数，花费时间
 console.log(document.querySelector('#queries_num').firstChild.data);
 
-// 导航栏用户菜单
+// PC端导航栏用户菜单
 const user_set_btn = document.querySelector('.nav-bar .admin img');
 const user_set_menu = document.querySelector('.nav-bar .user-set');
 if(user_set_btn) {
@@ -21,6 +21,7 @@ if(user_set_btn) {
     user_set_menu.addEventListener("click",(e)=>e.stopPropagation());
 }
 
+// 移动端导航栏用户菜单
 const user_set_btn_mb = document.querySelector('.nav-bar-mb .admin img');
 const user_set_menu_mb = document.querySelector('.nav-bar-mb .user-set');
 if(user_set_btn_mb) {
@@ -37,7 +38,7 @@ if(user_set_btn_mb) {
     user_set_menu_mb.addEventListener("click",(e)=>e.stopPropagation());
 }
 
-// 菜单
+// 移动端菜单
 const menu_mb_open = document.querySelector('#menu-mb-open');
 const menu_mb_close = document.querySelector('#menu-mb-close');
 const menu_mb = document.querySelector('.menu-mb');
@@ -82,7 +83,7 @@ if(comments_meta) {
         comments_meta[i].removeChild(comments_meta[i].childNodes[1]);
     })
 }
-// 删除评论作者超链接
+// 删除评论区用户超链接
 const remove_comments_author_a = document.querySelectorAll('.wp-block-latest-comments__comment-author');
 $(remove_comments_author_a).each(function(i) {
     remove_comments_author_a[i].removeAttribute('href');
@@ -166,4 +167,28 @@ $(swiper_img).each(function(i){
     swiper_img[i].removeAttribute('data-original');
 })
 
-
+// 黑夜模式按钮
+function getCookie(name){
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i].trim();
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+const night_btn = document.querySelector('.change-night span');
+if (getCookie("night") == "1") {
+    night_btn.classList.add('icon-Daytimemode');
+} else {
+    night_btn.classList.add('icon-nightmode');
+}
+function nightBtn() {
+    if (getCookie("night") == "1") {
+        night_btn.classList.add('icon-Daytimemode');
+        night_btn.classList.remove('icon-nightmode');
+    } else {
+        night_btn.classList.add('icon-nightmode');
+        night_btn.classList.remove('icon-Daytimemode');
+    }
+}

@@ -37,26 +37,17 @@
     border-radius: 15px;
 }
 
-/* 控制 */
-.login-page .login-msg .login-box {
-    /* display: none; */
-}
-.login-page .login-msg .register-box {
-    /* display: none; */
-}
-
-.login-page .login-msg .forget-box {
-    /* display: none; */
-}
 /* 盒子 */
 .login-page .login-msg h2 {
     color: var(--text);
     font-size: 28px;
     margin-bottom: 5px;
+    transition: var(--tr3);
 }
 .login-page .login-msg .des{
     margin-bottom: 20px;
     color: var(--text-sub);
+    transition: var(--tr3);
 }
 .login-page .login-msg p,
 .login-page .login-msg p span {
@@ -82,6 +73,7 @@
     font-size: 20px;
     text-align: center;
     color: var(--text);
+    transition: var(--tr3);
 }
 .login-page .login-msg .form-item input {
     width: 100%;
@@ -90,6 +82,7 @@
     background-color: var(--bgc-sub);
     outline: 0;
     border: 1px solid var(--bgc-sub);
+    color: var(--text);
     border-radius: var(--radius);
     padding: 0 10px 0 35px;
     transition: var(--tr3);
@@ -124,7 +117,7 @@
     border: 0;
     border-radius: var(--radius);
     cursor: pointer;
-    color: var(--bgc);
+    color: var(--text-keep);
     background: var(--theme);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
     transition: var(--tr3);

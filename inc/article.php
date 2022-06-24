@@ -26,8 +26,13 @@
     <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
-            <!-- <div class="the-end">—— THE END ——</div> -->
             <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
+            <?php if(get_option("i_post_copyright") == 1) { ?>
+                <div class="post-copyright">
+                    <div class="post-copyright-title">© 版权声明</div>
+                    <div class="post-copyright-text">分享是一种美德，转载请保留原链接</div>
+                </div>
+            <?php } ?>
         </div>
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">
@@ -51,6 +56,6 @@
 
 <div class="post-menu-mb-btn">
     <div>
-        <span class="iconfont icon-mulushu"></span>
+        <span class="iconfont icon-category"></span>
     </div>
 </div>

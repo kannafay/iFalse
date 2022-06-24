@@ -3,6 +3,7 @@ error_reporting(0);
 if($_POST["i_opt"]){
     
     // 其他设置
+    update_option("i_night",$_POST["i_night"]);
     update_option("i_say_img",$_POST["i_say_img"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
     update_option("i_404_bak",$_POST["i_404_bak"]);
@@ -16,6 +17,13 @@ if($_POST["i_opt"]){
     <form method="post" action="" novalidate="novalidate">
         <table class="form-table">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="i_night">自动夜间模式</label></th>
+                    <td>
+                        <input name="i_night" type="text" value="<?php echo get_option("i_night"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。21:00~06:00自动开启夜间模式。默认：关闭</p>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="i_say_img">说说背景</label></th>
                     <td>

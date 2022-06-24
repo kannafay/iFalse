@@ -6,6 +6,7 @@
     margin-bottom: 20px;
     width: 100%;
     position: relative;
+    transition: var(--tr3);
 }
 .single-main .left .post-content a {
     color: var(--theme);
@@ -51,6 +52,7 @@
     border-left: 4px solid var(--theme-sub);
     padding: 10px;
     color: var(--text-sub);
+    transition: var(--tr3);
 }
 .single-main .left .post-content blockquote p {
     color: var(--text-info);
@@ -149,12 +151,14 @@
 }
 .single-main .left .post-content tr:nth-child(odd) {
     background-color: var(--bgc-sub);
+    transition: var(--tr3);
 }
 .single-main .left .post-content table, 
 .single-main .left .post-content th, 
 .single-main .left .post-content td {
     font-size: 15px;
     border: 1px solid var(--border);
+    transition: var(--tr3);
 }
 .single-main .left .post-content th, 
 .single-main .left .post-content td {
@@ -163,7 +167,7 @@
 }
 .single-main .left .post-content th {
     background-color: var(--theme-sub);
-    color: var(--bgc);
+    color: var(--text-keep);
 }
 .single-main .left .post-content td a {
     text-decoration: underline;
@@ -266,14 +270,14 @@
     line-height: 3;
     padding: 6px 15px;
     border-radius: var(--radius-sub);
-    color: var(--bgc);
+    color: var(--text-keep);
     font-size: 14px;
     background: var(--theme-sub); 
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
     transition: var(--tr3);  
 }
 .single-main .left .post-content .wp-block-button__link:hover {
-    color: var(--bgc);
+    color: var(--text-keep);
     opacity: .8;
     text-decoration: none;
 }
@@ -289,7 +293,7 @@
     color: #abb8c3;
 }
 .single-main .left .post-content .has-white-color {
-    color: #fff;
+    color: var(--text-keep);
 }
 .single-main .left .post-content .has-pale-pink-color {
     color: #f78da7;

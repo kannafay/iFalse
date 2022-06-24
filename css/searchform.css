@@ -34,7 +34,7 @@
     right: 0;
     border: 0;
     border-radius: var(--radius-sub);
-    background-color: rgba(0 0 0 / 0);
+    background-color: var(--bgc-0);
     cursor: pointer;
 }
 .searchform button span {
@@ -54,6 +54,7 @@
         position: relative;
         padding: 10px;
         border-bottom: 1px solid var(--border);
+        transition: var(--tr3);
     }
     .searchform-mb input {
         width: 100%;
