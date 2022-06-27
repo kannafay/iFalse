@@ -45,7 +45,9 @@
                                 $sanitized_user_login = '';
                             } elseif ( username_exists( $sanitized_user_login ) ) {
                                 $error .= '<p style="color:#D43030">该用户名已被注册！</p>';
-                            }
+                            } elseif(strlen($sanitized_user_login) < 5) {
+                                $error .= '<p style="color:#D43030">用户名长度至少5位！</p>';
+                            } 
                             // 检查邮箱
                             if ( ! is_email( $user_email ) ) {
                                 $error .= '<p style="color:#D43030">电子邮件地址不正确！</p>';

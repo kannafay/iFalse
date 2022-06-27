@@ -373,6 +373,9 @@
     font-size: 12px;
     color: var(--text-info);
 }
+.home-detail .home-msg > a {
+    border-radius: 50%;
+}
 .home-detail .home-msg span {
     margin: 0 5px;
 }
@@ -410,6 +413,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    vertical-align: middle;
 }
 /* 卡片模式end */
 
@@ -593,6 +597,9 @@
     font-size: 13px;
     transition: var(--tr3);
 }
+.home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-msg > a {
+    border-radius: 50%;
+}
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-msg a:hover {
     color: var(--theme);
 }
@@ -600,6 +607,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    vertical-align: middle;
 }
 
 .home-2 .home-2-sidebar {

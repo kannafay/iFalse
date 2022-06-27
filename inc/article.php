@@ -9,7 +9,7 @@
         <div class="single-title"><h1><?php the_title(); ?></h1></div>
         <div class="single-detail">
             <div class="author">
-                <?php the_post(); echo get_avatar( get_the_author_email(), '100' ); rewind_posts(); ?>
+                <a href="<?php the_post();home_url();echo '/author/';echo get_the_author_meta('user_login');rewind_posts(); ?>"><?php the_post();echo get_avatar( get_the_author_email(), '100' );rewind_posts(); ?></a>
                 <span><?php the_author_posts_link(); ?></span>
             </div>
             <div class="other">
@@ -26,13 +26,13 @@
     <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
-            <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
             <?php if(get_option("i_post_copyright") == 1) { ?>
                 <div class="post-copyright">
                     <div class="post-copyright-title">© 版权声明</div>
-                    <div class="post-copyright-text">分享是一种美德，转载请保留原链接</div>
+                    <div class="post-copyright-text"><?php if(get_option("i_post_copyright_text")){echo get_option("i_post_copyright_text");}else{echo '分享是一种美德，转载请保留原链接';} ?></div>
                 </div>
             <?php } ?>
+            <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
         </div>
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">

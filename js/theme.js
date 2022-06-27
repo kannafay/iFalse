@@ -179,16 +179,16 @@ function getCookie(name){
 }
 const night_btn = document.querySelector('.change-night span');
 if (getCookie("night") == "1") {
-    night_btn.classList.add('icon-Daytimemode');
+    night_btn.classList.add('icon-rijianmoshixhdpi');
 } else {
-    night_btn.classList.add('icon-nightmode');
+    night_btn.classList.add('icon-yueduye-yejianmoshi');
 }
 function nightBtn() {
     if (getCookie("night") == "1") {
-        night_btn.classList.add('icon-Daytimemode');
-        night_btn.classList.remove('icon-nightmode');
+        night_btn.classList.add('icon-rijianmoshixhdpi');
+        night_btn.classList.remove('icon-yueduye-yejianmoshi');
     } else {
-        night_btn.classList.add('icon-nightmode');
-        night_btn.classList.remove('icon-Daytimemode');
+        night_btn.classList.add('icon-yueduye-yejianmoshi');
+        night_btn.classList.remove('icon-rijianmoshixhdpi');
     }
 }

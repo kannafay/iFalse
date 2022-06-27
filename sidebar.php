@@ -2,7 +2,7 @@
     <div class="author-info-box">
         <div class="author-info">
             <div class="post-author-logo">
-                <?php echo get_avatar(1, 300); ?>
+                <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login',1); ?>"><?php echo get_avatar(1, 300); ?></a>
             </div>
             <div class="post-author-name"><?php the_author_posts_link(); ?></div>
             <div class="post-author-description">

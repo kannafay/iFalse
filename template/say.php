@@ -61,7 +61,7 @@
                     <li class="say-post-item">
                         <div class="say-post-box">
                             <div class="say-author-logo">
-                                <?php echo get_avatar( get_the_author_email(), '400' );?>
+                                <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login'); ?>"><?php echo get_avatar( get_the_author_ID(), '400' );?></a>
                             </div>
                             <div class="say-post-msg">
                                 <div class="say-author-name"><?php the_author_posts_link(); ?><?php if(wp_get_current_user()->ID == get_the_author_ID()){echo '<span>自己</span>';} ?></div>

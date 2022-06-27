@@ -5,93 +5,50 @@
 	height: 45px;
 	width: 45px;
 	cursor: pointer;
-	display: block;
-	border-radius: 50%;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
 	background-color: var(--bgc);
+	box-shadow: var(--box-s);
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(15px);
 	-webkit-transition: var(--tr3) ;
-	z-index: 5;
-	box-shadow: var(--box-s);
 	transition: var(--tr3);
+	z-index: 5;
+}
+.progress-wrap:hover {
+	border: 1px solid var(--theme);
 }
 .progress-wrap.active-progress {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
 }
-.progress-wrap::after {
-	position: absolute;
-	content: '↑';
-	/* transform: rotate(-90deg); */
-	text-align: center;
-	line-height: 45px;
-	font-size: 20px;
-	color: var(--theme);
-	left: 0;
-	top: 0;
-	height: 45px;
-	width: 45px;
-	cursor: pointer;
-	display: block;
-	z-index: 1;
-	transition: var(--tr3);
-}
-.progress-wrap:hover::after {
-	opacity: 1;
+.progress-wrap svg,
+.progress-wrap svg path { 
+	display: none;
 }
 .progress-wrap::before {
-	position: absolute;
-	content: '↑';
-	/* transform: rotate(-90deg); */
-	text-align: center;
-	line-height: 45px;
-	font-size: 20px;
-	opacity: 0;
-	background-color: var(--theme);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	left: 0;
-	top: 0;
-	height: 45px;
-	width: 45px;
-	cursor: pointer;
-	display: block;
-	z-index: 2;
-	
-    transition: var(--tr3) ;
-}
-.progress-wrap:hover::before {
-	opacity: 1;
-}
-.progress-wrap svg path { 
-	fill: none; 
-}
-.progress-wrap svg.progress-circle path {
-	stroke: var(--theme);
-	stroke-width: 4;
-	box-sizing: border-box;
+	content: '\e64a';
+	font-family: 'iconfont';
+	font-size: 26px;
+	width: 100%;
+	height: 100%;
+	margin-top: -1px;
+	color: var(--text-info);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	transition: var(--tr3);
 }
-
+.progress-wrap:hover::before {
+	color: var(--theme);
+}
 @media screen and (max-width: 960px) {
 	.progress-wrap {
 		right: 20px;
 		bottom: 40px;
 		height: 41px;
 		width: 41px;
-	}
-	.progress-wrap::after {
-		height: 41px;
-		width: 41px;
-		line-height: 41px;
-		font-size: 18px;
-	}
-	.progress-wrap::before {
-		height: 41px;
-		width: 41px;
-		line-height: 41px;
-		font-size: 18px;
 	}
 }

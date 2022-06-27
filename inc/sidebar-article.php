@@ -2,9 +2,7 @@
     <div class="author-info-box">
         <div class="author-info">
             <div class="post-author-logo">
-                <?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
-                    <?php echo get_avatar( get_the_author_email(), '300' );?>
-                <?php endif; ?>
+                <a href="<?php the_post();home_url();echo '/author/';echo get_the_author_meta('user_login');rewind_posts(); ?>"><?php the_post();echo get_avatar( get_the_author_email(), '100' );rewind_posts(); ?></a>
             </div>
             <div class="post-author-name"><?php the_author_posts_link(); ?></div>
             <div class="post-author-description">

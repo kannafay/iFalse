@@ -3,11 +3,13 @@
     flex-direction: column;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border);
+    transition: var(--tr3);
 }
 .page-banner .page-title h1 {
     color: var(--text);
     margin-bottom: 15px;
     margin-top: 20px;
+    transition: var(--tr3);
 }
 .page-banner .page-detail .author,
 .page-banner .page-detail .other {
@@ -48,11 +50,15 @@
 .page-banner .page-detail .author a:hover {
     color: var(--theme);
 }
+.page-banner .page-detail .author > a {
+    margin-right: 5px;
+    border-radius: 50%;
+}
 .page-banner .page-detail img {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin-right: 5px;
+    vertical-align: middle;
 }
 .page-banner .page-detail .post-edit-link {
     color: var(--theme);

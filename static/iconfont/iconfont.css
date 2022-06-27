@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3363448 */
-  src: url('iconfont.woff2?t=1656002603237') format('woff2'),
-       url('iconfont.woff?t=1656002603237') format('woff'),
-       url('iconfont.ttf?t=1656002603237') format('truetype');
+  src: url('iconfont.woff2?t=1656172058431') format('woff2'),
+       url('iconfont.woff?t=1656172058431') format('woff'),
+       url('iconfont.ttf?t=1656172058431') format('truetype');
 }
 
 .iconfont {
@@ -13,12 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Daytimemode:before {
-  content: "\e771";
+.icon-fanhuidingbu3:before {
+  content: "\e64a";
 }
 
-.icon-nightmode:before {
-  content: "\e773";
+.icon-yueduye-yejianmoshi:before {
+  content: "\e620";
+}
+
+.icon-rijianmoshixhdpi:before {
+  content: "\e623";
 }
 
 .icon-category:before {
@@ -73,10 +77,6 @@
   content: "\e61f";
 }
 
-.icon-fabu:before {
-  content: "\e60a";
-}
-
 .icon-atm:before {
   content: "\e744";
 }
@@ -123,14 +123,6 @@
 
 .icon-User:before {
   content: "\ea94";
-}
-
-.icon-caidan:before {
-  content: "\e652";
-}
-
-.icon-caidan1:before {
-  content: "\e62c";
 }
 
 .icon-sousuo:before {

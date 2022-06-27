@@ -76,11 +76,15 @@
 .single-banner .single-detail .author a:hover {
     color: var(--theme);
 }
+.single-banner .single-detail .author > a {
+    margin-right: 5px;
+    border-radius: 50%;
+}
 .single-banner .single-detail img {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin-right: 5px;
+    vertical-align: middle;
 }
 .single-banner .single-detail .post-edit-link {
     font-size: 14px;
@@ -136,7 +140,7 @@
     background-color: var(--bgc);
     width: 45px;
     height: 45px;
-    border-radius: 50%;
+    border-radius: 8px;
     box-shadow: var(--box-s);
     cursor: pointer;
     display: none;
@@ -153,11 +157,21 @@
     width: 100%;
     height: 100%;
     display: flex;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
     justify-content: center;
     align-items: center;
+    transition: var(--tr3);
+}
+.post-menu-mb-btn div:hover {
+    border: 1px solid var(--theme);
 }
 .post-menu-mb-btn span {
-    font-size: 26px;
+    font-size: 24px;
+    color: var(--text-info);
+    transition: var(--tr3);
+}
+.post-menu-mb-btn:hover span {
     color: var(--theme);
 }
 /* 按钮-end */
@@ -177,9 +191,13 @@
     box-shadow: var(--box);
     padding: 10px;
     border-radius: var(--radius);
+    border: 1px solid var(--border);
     overflow: auto;
     z-index: 5;
     transition: var(--tr3);
+}
+#article-toc-mb:hover {
+    border: 1px solid var(--theme);
 }
 #article-toc-mb::-webkit-scrollbar {
     width: 6px;
@@ -833,8 +851,9 @@
     position: fixed;
     right: 30px;
     bottom: 95px;
-    border-radius: 50%;
+    border-radius: var(--radius);
     background-color: var(--bgc);
+    border: 1px solid var(--border);
     box-shadow: var(--box-s);
     cursor: pointer;
     display: flex;
@@ -845,9 +864,18 @@
     animation: open .5s;
     transition: var(--tr3);
 }
-
+.change-night:hover {
+    border: 1px solid var(--theme);
+}
 .change-night span {
-    font-size: 26px;
+    font-size: 20px;
+    color: var(--text-info);
+    margin-top: -1px;
+    transition: var(--tr3);
+    -webkit-animation: open .5s;
+    animation: open .5s;
+}
+.change-night:hover span {
     color: var(--theme);
 }
 

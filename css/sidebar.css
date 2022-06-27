@@ -1,7 +1,6 @@
 .author-info-box {
     border-radius: var(--radius);
     padding: 20px;
-    /* background-color: var(--bgc-sub); */
     margin-bottom: 20px;
     border: 1px solid var(--border);
     transition: var(--tr3);
@@ -20,10 +19,14 @@
     margin: 0 auto;
     margin-bottom: 10px;
 }
+.author-info-box .author-info .post-author-logo a {
+    border-radius: 50%;
+}
 .author-info-box .author-info img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    vertical-align: middle;
 }
 .author-info-box .author-info .post-author-name {
     font-weight: 400;
@@ -138,7 +141,6 @@
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
-    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
     border: 1px solid var(--border);
     transition: var(--tr3);

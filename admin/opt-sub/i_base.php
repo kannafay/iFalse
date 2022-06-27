@@ -3,11 +3,10 @@ error_reporting(0);
 if($_POST["i_opt"]){
 
     // 基本设置
-    update_option("i_avatar_v",$_POST["i_avatar_v"]);
+    update_option("i_loading_pic",$_POST["i_loading_pic"]);
     update_option("i_login",$_POST["i_login"]);
     update_option("i_register_turn",$_POST["i_register_turn"]);
     update_option("i_forget_turn",$_POST["i_forget_turn"]);
-    update_option("i_loading_pic",$_POST["i_loading_pic"]);
     
 }
 ?>
@@ -18,10 +17,10 @@ if($_POST["i_opt"]){
         <table class="form-table">
             <tbody>
                 <tr>
-                    <th scope="row"><label for="i_avatar_v">游客头像</label></th>
+                    <th scope="row"><label for="i_loading_pic">懒加载图</label></th>
                     <td>
-                        <input name="i_avatar_v" type="text" value="<?php echo get_option("i_avatar_v"); ?>" class="regular-text">
-                        <p class="description">显示游客的头像。填写图片链接即可。默认：主题logo</p>
+                        <input name="i_loading_pic" type="text" value="<?php echo get_option("i_loading_pic"); ?>" class="regular-text">
+                        <p class="description">图片未加载出时显示。默认：主题自带GIF加载图</p>
                     </td>
                 </tr>
                 <tr>
@@ -36,6 +35,7 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_register_turn" type="text" value="<?php echo get_option("i_register_turn"); ?>" class="regular-text">
                         <p class="description">数字1为开启。用户注册功能。默认：关闭</p>
+                        <p class="description">仅用于主题注册模板</p>
                     </td>
                 </tr>
                 <tr>
@@ -43,15 +43,10 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_forget_turn" type="text" value="<?php echo get_option("i_forget_turn"); ?>" class="regular-text">
                         <p class="description">数字1为开启。用户找回密码功能。默认：关闭</p>
+                        <p class="description">仅用于主题找回密码模板</p>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row"><label for="i_loading_pic">懒加载图</label></th>
-                    <td>
-                        <input name="i_loading_pic" type="text" value="<?php echo get_option("i_loading_pic"); ?>" class="regular-text">
-                        <p class="description">图片未加载出时显示。默认：主题自带GIF加载图</p>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
         <p class="submit">

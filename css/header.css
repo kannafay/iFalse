@@ -26,6 +26,10 @@
     display: flex;
     align-items: center;
 }
+.nav-bar .left {
+    max-width: calc(100% - 100px);
+    /* overflow: hidden; */
+}
 .nav-bar .logo {
     margin-right: 20px;
 }
@@ -36,6 +40,11 @@
 .nav-bar .nav-menu {
     display: flex;
 }
+/* .nav-bar .nav-menu > li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
 .nav-bar .nav-menu > ul {
     display: none;
 }
@@ -136,6 +145,7 @@
 .nav-bar .admin {
     position: absolute;
     right: 30px;
+    border-radius: 50%;
 }
 .nav-bar .admin img {
     cursor: pointer;
@@ -252,6 +262,7 @@
     .nav-bar-mb .admin {
         width: 32px;
         height: 32px;
+        border-radius: 50%;
     }
     .nav-bar-mb .admin img {
         width: 100%;

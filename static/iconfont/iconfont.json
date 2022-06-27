@@ -6,18 +6,25 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "11488199",
-      "name": "Daytime mode",
-      "font_class": "Daytimemode",
-      "unicode": "e771",
-      "unicode_decimal": 59249
+      "icon_id": "729521",
+      "name": "返回顶部 (3)",
+      "font_class": "fanhuidingbu3",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
     },
     {
-      "icon_id": "11488205",
-      "name": "night mode",
-      "font_class": "nightmode",
-      "unicode": "e773",
-      "unicode_decimal": 59251
+      "icon_id": "9097246",
+      "name": "阅读页-夜间模式",
+      "font_class": "yueduye-yejianmoshi",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "9101775",
+      "name": "日间模式xhdpi",
+      "font_class": "rijianmoshixhdpi",
+      "unicode": "e623",
+      "unicode_decimal": 58915
     },
     {
       "icon_id": "11488000",
@@ -111,13 +118,6 @@
       "unicode_decimal": 58911
     },
     {
-      "icon_id": "15726759",
-      "name": "发布",
-      "font_class": "fabu",
-      "unicode": "e60a",
-      "unicode_decimal": 58890
-    },
-    {
       "icon_id": "11487985",
       "name": "atm",
       "font_class": "atm",
@@ -200,20 +200,6 @@
       "font_class": "User",
       "unicode": "ea94",
       "unicode_decimal": 60052
-    },
-    {
-      "icon_id": "7155227",
-      "name": "菜单",
-      "font_class": "caidan",
-      "unicode": "e652",
-      "unicode_decimal": 58962
-    },
-    {
-      "icon_id": "1304947",
-      "name": "菜单",
-      "font_class": "caidan1",
-      "unicode": "e62c",
-      "unicode_decimal": 58924
     },
     {
       "icon_id": "577365",

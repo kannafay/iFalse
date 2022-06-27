@@ -91,6 +91,7 @@ function i_cover_pic() {
 }
 // 加载图
 function i_loading_pic() {
+  error_reporting(0);
   if($_COOKIE['night'] == 0) {
     $loading_pic = get_template_directory_uri() . '/static/img/loading.gif';
     return $loading_pic;
@@ -259,23 +260,12 @@ if( !is_user_logged_in() ){
 
 // ---------------------------------------------------------------------
 // 自定义头像
-function get_ssl_avatar($avatar) {
-  $i_logo = get_option("i_avatar_v");
-  $i_logo_bak = get_template_directory_uri() . '/static/img/avatar.png';
-  if(get_option("i_avatar_v")) {
-    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="' . $i_logo . '" class="avatar avatar-$2" height="32" width="32">',$avatar);
-  } else{
-    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="' . $i_logo_bak . '" class="avatar avatar-$2" height="32" width="32">',$avatar);
-  }
-  return $avatar;
-}
-add_filter('get_avatar', 'get_ssl_avatar');
-
-include (TEMPLATEPATH . '/admin/i_avatar.php');
+require('avatar/wp-user-profile-avatar.php');
 
 // ---------------------------------------------------------------------
 // 文章目录
 function insert_table_of_contents($content) {
+  error_reporting(0);
 	$html_comment = "<!--insert-toc-->";
 	$comment_found = strpos($content, $html_comment) ? true : false;
 	$fixed_location = true;
@@ -291,7 +281,7 @@ function insert_table_of_contents($content) {
  
 	// 默认小于1个段落标题不生成目录
 	$num_match = count($heading_results[0]);
-	if($num_match < 1) {
+	if($num_match < 2) {
 		return $content;
 	}
 	$link_list = "";
@@ -359,8 +349,8 @@ register_sidebar( array(
 
 // ---------------------------------------------------------------------
 // 特色图
-if ( function_exists( 'add_theme_support' ) ) {
-  add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+if(function_exists('add_theme_support')) {
+  add_theme_support('post-thumbnails',array('post','page'));
 }
 
 // ---------------------------------------------------------------------
@@ -415,10 +405,11 @@ function setPostViews($postID) {
 
 // ---------------------------------------------------------------------
 // 登录后重定向
-function soi_login_redirect($redirect_to, $request, $user) {
-  return (is_array($user->roles) && in_array('administrator', $user->roles)) ? site_url() : site_url(); // 跳转后台: admin_site()
+function i_login_redirect($redirect_to, $request, $user) {
+  error_reporting(0);
+  return (is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();
 }
-add_filter('login_redirect', 'soi_login_redirect', 10, 3);
+add_filter('login_redirect', 'i_login_redirect', 10, 3);
 // 登出后重定向
 function auto_redirect_after_logout(){
   wp_redirect(home_url());
@@ -450,18 +441,6 @@ function wp_pagenavi() {
   echo paginate_links($pagination);
 }
 
-// ---------------------------------------------------------------------
-// 自定义头像
-add_filter( 'avatar_defaults', 'newgravatar' );  
-function newgravatar ($avatar_defaults) {  
-  if(get_option("i_avatar_v")) {
-    $myavatar = get_option("i_avatar_v");
-  } else {
-    $myavatar = get_bloginfo('template_directory') . '/static/img/avatar.png';
-  }
-  $avatar_defaults[$myavatar] = "默认头像";  
-  return $avatar_defaults;  
-}  
 
 // ---------------------------------------------------------------------
 // 后台添加链接
