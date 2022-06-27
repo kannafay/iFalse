@@ -20,6 +20,8 @@ QQ交流群：544740608
 
 ## 使用说明
 
+[![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=large)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_large)
+
 使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
 
 请从发行版里下载最新版。如果从标签或master下载/克隆，请在安装主题后，将主题文件夹名改为iFalse再启用，以保证一键/自动更新程序的正常运行。
