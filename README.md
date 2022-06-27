@@ -4,6 +4,8 @@
 
 ## 主题介绍
 
+[![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=small)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_small)
+
 一款界面清新，干净轻量，轻松上手的WordPress开源主题。还在不断更新中，如有更多需求及建议或者BUG欢迎大家积极提出，营造一个更完善、更完美的开源主题。如果有喜欢的可以多多支持，点上一个Star！
 
 主题更新频繁，支持一键/自动更新
@@ -19,8 +21,6 @@ GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse
 QQ交流群：544740608
 
 ## 使用说明
-
-[![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=large)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_large)
 
 使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
 
