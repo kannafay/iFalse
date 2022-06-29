@@ -29,7 +29,7 @@ if ( ! function_exists( 'get_wpupa_default_avatar' ) ) {
      */
 	function get_wpupa_default_avatar() {
 		return apply_filters( 'wp_user_default_avatar', array(
-			// 'mystery' => __('Mystery Man','wp-user-profile-avatar'),
+			'mystery' => __('默认','wp-user-profile-avatar'),
 	      	// 'blank' => __('Blank','wp-user-profile-avatar'),
 	      	// 'gravatar_default' => __('Gravatar Logo','wp-user-profile-avatar'),
 	      	// 'identicon' => __('Identicon (Generated)','wp-user-profile-avatar'),
@@ -77,12 +77,12 @@ if ( ! function_exists( 'get_wpupa_default_avatar_url' ) ) {
 				}
 				else
 				{
-					return get_template_directory_uri().'/avatar/assets/images/wp-user-'. $size .'.png';
+					return get_template_directory_uri() . '/avatar/assets/images/wp-user-'. $size .'.png';
 				}
 			}
 			else
 			{
-				return get_template_directory_uri().'/avatar/assets/images/wp-user-'. $size .'.png';
+				return get_template_directory_uri() . '/avatar/assets/images/wp-user-'. $size .'.png';
 			}
 		}
 		else
@@ -91,7 +91,7 @@ if ( ! function_exists( 'get_wpupa_default_avatar_url' ) ) {
 			{
 				if($size == 'admin')
 				{
-					return get_template_directory_uri().'/avatar/assets/images/wp-user-'. $size .'.png';
+					return get_template_directory_uri() . '/avatar/assets/images/wp-user-'. $size .'.png';
 				}
 				else if($size == 'original')
 				{
@@ -120,12 +120,12 @@ if ( ! function_exists( 'get_wpupa_default_avatar_url' ) ) {
 				}
 				else
 				{
-					return get_template_directory_uri().'/avatar/assets/images/wp-user-'. $size .'.png';	
+					return get_template_directory_uri() . '/avatar/assets/images/wp-user-'. $size .'.png';	
 				}
 			}
 			else
 			{
-				return get_template_directory_uri().'/avatar/assets/images/wp-user-'. $size .'.png';	
+				return get_template_directory_uri() . '/avatar/assets/images/wp-user-'. $size .'.png';	
 			}
 			
 		}

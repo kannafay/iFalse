@@ -1,5 +1,4 @@
 <?php
-
 // Exit if accessed directly
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -46,7 +45,7 @@ class WP_User_Profile_Avatar {
 		// Define constants
 		define( 'WPUPA_VERSION', '1.0' );
 		define( 'WPUPA_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
-		define( 'get_template_directory_uri()', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
+		define( 'WPUPA_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 
 
 		//Includes		
@@ -118,7 +117,7 @@ class WP_User_Profile_Avatar {
 
         $locale = apply_filters('plugin_locale', get_locale(), $domain);
 
-		load_textdomain( $domain, WP_LANG_DIR . "/avatar/".$domain."-" .$locale. ".mo" );
+		load_textdomain( $domain, WP_LANG_DIR . "/wp-user-profile-avatar/".$domain."-" .$locale. ".mo" );
 
 		load_plugin_textdomain($domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
@@ -141,7 +140,7 @@ class WP_User_Profile_Avatar {
 								'ajax_url' 	 => admin_url( 'admin-ajax.php' ),
 								'wp_user_profile_avatar_security'  => wp_create_nonce( "_nonce_user_profile_avatar_security" ),
 								'media_box_title' => __( 'Choose Image: Default Avatar', 'wp-user-profile-avatar'),
-								'default_avatar' => get_template_directory_uri().'/avatar/assets/images/wp-user-thumbnail.png',
+								'default_avatar' => get_template_directory_uri() . '/avatar/assets/images/wp-user-thumbnail.png',
 							)
 						);
 	}

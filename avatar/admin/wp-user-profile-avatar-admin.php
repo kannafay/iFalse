@@ -72,8 +72,8 @@ class WPUPA_Admin {
 								'thinkbox_title' 	 =>  __( 'WP User Profile Avatar', 'wp-user-profile-avatar'),
 								'icon_title' 	 =>  __( 'WP User Profile Avatar', 'wp-user-profile-avatar'),
 								'wp_user_profile_avatar_security'  => wp_create_nonce( "_nonce_user_profile_avatar_security" ),
-								'media_box_title' => __( '选择默认头像', 'wp-user-profile-avatar'),
-								'default_avatar' => get_template_directory_uri().'/avatar/assets/images/wp-user-thumbnail.png',
+								'media_box_title' => __( '选择图片', 'wp-user-profile-avatar'),
+								'default_avatar' => get_template_directory_uri() . '/avatar/assets/images/wp-user-thumbnail.png',
 							)
 						);
 
@@ -106,7 +106,7 @@ class WPUPA_Admin {
 		$wpupa_url = get_user_meta($user_id, '_wpupa_url', true);
 
 		?>
-		<h3><?php _e('用户头像', 'wp-user-profile-avatar'); ?></h3>
+		<h3><?php _e('个人头像', 'wp-user-profile-avatar'); ?></h3>
 		
 		<table class="form-table">
 			<tr>
@@ -114,17 +114,12 @@ class WPUPA_Admin {
 					<label for="wp_user_profile_avatar"><?php _e('图片地址', 'wp-user-profile-avatar'); ?></label>
 				</th>
 				<td>
-					<p>
-						<input type="text" name="wpupa_url" id="wpupa_url" class="regular-text code" value="<?php echo $wpupa_url; ?>" placeholder="填写图片URL地址">
-					</p>
-
-					<p><?php _e('或者上传图片', 'wp-user-profile-avatar'); ?></p>
-
 					<p id="wp_user_profile_avatar_add_button_existing">
-						<button type="button" class="button" id="wp_user_profile_avatar_add"><?php _e('选择图片'); ?></button>
+						<input type="text" name="wpupa_url" id="wpupa_url" class="regular-text code" value="<?php echo $wpupa_url; ?>" placeholder="填写图片URL地址">
+						<button style="margin:10px 0;" type="button" class="button" id="wp_user_profile_avatar_add"><?php _e('选择图片'); ?></button>
 						<input type="hidden" name="wpupa_attachment_id" id="wpupa_attachment_id" value="<?php echo $wpupa_attachment_id; ?>">
 					</p>
-
+				
 					<?php
 	              	$class_hide = 'wp-user-profile-avatar-hide';
 	              	if(!empty($wpupa_attachment_id))

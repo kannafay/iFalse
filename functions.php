@@ -263,6 +263,34 @@ if( !is_user_logged_in() ){
 require('avatar/wp-user-profile-avatar.php');
 
 // ---------------------------------------------------------------------
+// Gravatar国内头像
+if ( ! function_exists( 'dr_filter_get_avatar' ) ) {
+  function dr_filter_get_avatar( $avatar ) {
+      $new_gravatar_sever = 'cravatar.cn';
+
+      $sources = array(
+          'www.gravatar.com/avatar/',
+          '0.gravatar.com/avatar/',
+          '1.gravatar.com/avatar/',
+          '2.gravatar.com/avatar/',
+          'secure.gravatar.com/avatar/',
+          'cn.gravatar.com/avatar/'
+      );
+
+      return str_replace( $sources, $new_gravatar_sever.'/avatar/', $avatar );
+  }
+  add_filter( 'get_avatar', 'dr_filter_get_avatar' );
+}
+
+// ---------------------------------------------------------------------
+// 获取用户头像
+function get_user_avatar(){
+  global $current_user;
+  get_currentuserinfo();
+  return get_avatar($current_user -> user_email, 400);
+}
+
+// ---------------------------------------------------------------------
 // 文章目录
 function insert_table_of_contents($content) {
   error_reporting(0);
@@ -359,24 +387,6 @@ function new_excerpt_length($length) {
   return 100;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
-
-// ---------------------------------------------------------------------
-// Gravatar国内头像
-function baolog_get_avatar($avatar)
-{
-  $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com","secure.gravatar.com"),
-    "gravatar.wp-china-yes.net", $avatar);
-  return $avatar;
-}
-add_filter('get_avatar', 'baolog_get_avatar', 10, 3);
-
-// ---------------------------------------------------------------------
-// 获取用户头像
-function get_user_avatar(){
-  global $current_user;
-  get_currentuserinfo();
-  return get_avatar($current_user -> user_email, 400);
-}
 
 // ---------------------------------------------------------------------
 // 显示文章浏览次数

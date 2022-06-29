@@ -75,22 +75,25 @@ class WPUPA_Settings {
 
 							            <fieldset>
 							              <label for="wpupa_allow_upload">
-							                <input name="wpupa_allow_upload" type="checkbox" id="wpupa_allow_upload" value="1"<?php echo checked($wpupa_allow_upload, 1, 0); ?> > <?php _e('允许贡献者和订阅者上传头像', 'wp-user-profile-avatar'); ?>
+							                <input name="wpupa_allow_upload" type="checkbox" id="wpupa_allow_upload" value="1"<?php echo checked($wpupa_allow_upload, 1, 0); ?> > <?php _e('允许订阅者和贡献者上传头像', 'wp-user-profile-avatar'); ?>
 							              </label>
 							            </fieldset>
 
-							            <fieldset style="display:none;">
-							              <label for="wpupa_disable_gravatar">
-							                <input name="wpupa_disable_gravatar" type="checkbox" id="wpupa_disable_gravatar" value="1" <?php echo checked(1); ?> > <?php _e('禁用所有默认头像，并设置自定义默认头像', 'wp-user-profile-avatar'); ?>
+							            <fieldset>
+							              <label for="wpupa_disable_gravatar" style="color:#8183ff;">
+							                <input name="wpupa_disable_gravatar" type="checkbox" id="wpupa_disable_gravatar" value="1"<?php echo checked($wpupa_disable_gravatar, 1, 0); ?> > <?php _e('设置自定义默认头像时请勾选', 'wp-user-profile-avatar'); ?>
 							              </label>
 							            </fieldset>
 			  						</td>
 			  					</tr>
-								  <tr valign="top">
-			  						<th scope="row"><?php _e('头像等级', 'wp-user-profile-avatar'); ?></th>
+
+			  					
+
+			  					<tr valign="top">
+			  						<th scope="row"><?php _e('最高评级', 'wp-user-profile-avatar'); ?></th>
 			  						<td>
 			  							<fieldset>
-							              	<legend class="screen-reader-text"><?php _e('头像等级','wp-user-profile-avatar'); ?></legend>
+							              	<legend class="screen-reader-text"><?php _e('Avatar Rating','wp-user-profile-avatar'); ?></legend>
 							              	<?php foreach (get_wpupa_rating() as $name => $rating) : ?>
 							              		<?php $selected = ($wpupa_rating == $name) ? 'checked="checked"' : ""; ?>
 							              		<label><input type="radio" name="wpupa_rating" value="<?php echo esc_attr( $name ); ?>" <?php echo $selected; ?> /> <?php echo $rating; ?></label><br />
@@ -104,10 +107,10 @@ class WPUPA_Settings {
 			  						<td class="defaultavatarpicker">
 			  							<fieldset>
 							              	<legend class="screen-reader-text"><?php _e('Default Avatar','wp-user-profile-avatar'); ?></legend>
-							              	<?php _e('设置用户默认头像','wp-user-profile-avatar'); ?><br />
+							              	<?php _e('未使用自定义头像时，用户头像将使用默认或根据邮箱自动获取。如QQ邮箱将自动获取QQ头像。','wp-user-profile-avatar'); ?><br />
 							              	
 							              	<?php $selected = ($wpupa_default == 'wp_user_profile_avatar') ? 'checked="checked"' : ""; ?>
-							              	<label><input type="radio" name="wpupa_default" id="wp_user_profile_avatar_radio" value="wp_user_profile_avatar" checked /> <div id="wp_user_profile_avatar_preview"><img src="<?php echo $wpupa_attachment_url; ?>" width="32" /></div> <?php _e('默认'); ?> </label><br />
+							              	<label><input type="radio" name="wpupa_default" id="wp_user_profile_avatar_radio" value="wp_user_profile_avatar" <?php echo $selected; ?> /> <div id="wp_user_profile_avatar_preview"><img src="<?php echo $wpupa_attachment_url; ?>" width="32" /></div> <?php _e('自定义'); ?> </label><br />
 
 							              	<?php
 							              	$class_hide = 'wp-user-profile-avatar-hide';
@@ -118,8 +121,8 @@ class WPUPA_Settings {
 							              	?>
 							              	<p id="wp-user-profile-avatar-edit">
 							              		<button type="button" class="button" id="wp_user_profile_avatar_add" name="wp_user_profile_avatar_add"><?php _e('选择图片'); ?></button>
-							              		<span id="wp_user_profile_avatar_remove_button" class="<?php echo $class_hide; ?>"><a href="javascript:void(0)" id="wp_user_profile_avatar_remove"><?php _e('移除图片'); ?></a></span>
-							              		<span id="wp_user_profile_avatar_undo_button"><a href="javascript:void(0)" id="wp_user_profile_avatar_undo"><?php _e('撤销'); ?></a></span>
+							              		<span id="wp_user_profile_avatar_remove_button" class="<?php echo $class_hide; ?>"><a href="javascript:void(0)" id="wp_user_profile_avatar_remove"><?php _e('移除'); ?></a></span>
+							              		<span id="wp_user_profile_avatar_undo_button"><a href="javascript:void(0)" id="wp_user_profile_avatar_undo"><?php _e('Undo'); ?></a></span>
 							              		<input type="hidden" name="wpupa_attachment_id" id="wpupa_attachment_id" value="<?php echo $wpupa_attachment_id; ?>">
 							              	</p>
 
@@ -129,7 +132,7 @@ class WPUPA_Settings {
 
 							              		<?php $selected = ($wpupa_default == $name) ? 'checked="checked"' : ""; ?>
 							              		<label><input type="radio" name="wpupa_default" value="<?php echo esc_attr( $name ); ?>" <?php echo $selected; ?> /> 
-							              		<?php echo preg_replace("/src='(.+?)'/", "src='\$1&amp;forcedefault=1'", $avatar); ?>
+							              		<?php echo preg_replace("/src='(.+?)'/", "src='\$1;'", $avatar); ?>
 							              		<?php echo $label; ?></label><br />
 							              	<?php endforeach; ?>
 							              	<?php endif; ?>
@@ -137,7 +140,7 @@ class WPUPA_Settings {
 							            </fieldset>
 			  						</td>
 			  					</tr>
-								
+
 			  					<tr>
 			  						<td style="padding-left:0;">
 			  							<input type="submit" class="button button-primary" name="wp_user_profile_avatar_settings" value="<?php esc_attr_e( '保存设置', 'wp-user-profile-avatar' ); ?>" />

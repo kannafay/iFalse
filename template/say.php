@@ -36,7 +36,7 @@
                     </div>
                 <?php } else { ?>
                     <div class="say-author-logo">
-                        <?php echo get_avatar(1, 400); ?>
+                        <?php echo get_avatar(1); ?>
                     </div>
                     <div class="say-author-name"><?php echo get_the_author_meta('nickname', 1); ?></div>
                     <div class="say-author-des">
@@ -61,7 +61,7 @@
                     <li class="say-post-item">
                         <div class="say-post-box">
                             <div class="say-author-logo">
-                                <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login'); ?>"><?php echo get_avatar( get_the_author_ID(), '400' );?></a>
+                                <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login'); ?>"><?php echo get_avatar( get_the_author_ID() );?></a>
                             </div>
                             <div class="say-post-msg">
                                 <div class="say-author-name"><?php the_author_posts_link(); ?><?php if(wp_get_current_user()->ID == get_the_author_ID()){echo '<span>自己</span>';} ?></div>

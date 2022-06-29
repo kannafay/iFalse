@@ -3,7 +3,7 @@
         <div class="page-title"><h1><?php the_title(); ?></h1></div>
         <div class="page-detail">
             <div class="author">
-                <a href="<?php the_post();home_url();echo '/author/';echo get_the_author_meta('user_login');rewind_posts(); ?>"><?php the_post();echo get_avatar( get_the_author_email(), '100' );rewind_posts(); ?></a>
+                <a href="<?php the_post();home_url();echo '/author/';echo get_the_author_meta('user_login');rewind_posts(); ?>"><?php the_post();echo get_avatar( get_the_author_ID() );rewind_posts(); ?></a>
                 <span><?php the_author_posts_link(); ?></span>
             </div>
             <div class="other">
