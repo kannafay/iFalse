@@ -81,7 +81,7 @@ class WPUPA_Settings {
 
 							            <fieldset>
 							              <label for="wpupa_disable_gravatar" style="color:#8183ff;">
-							                <input name="wpupa_disable_gravatar" type="checkbox" id="wpupa_disable_gravatar" value="1"<?php echo checked($wpupa_disable_gravatar, 1, 0); ?> > <?php _e('设置自定义默认头像时请勾选', 'wp-user-profile-avatar'); ?>
+							                <input name="wpupa_disable_gravatar" type="checkbox" id="wpupa_disable_gravatar" value="1"<?php echo checked($wpupa_disable_gravatar, 1, 0); ?> > <?php _e('使用自定义默认头像时请勾选', 'wp-user-profile-avatar'); ?>
 							              </label>
 							            </fieldset>
 			  						</td>
@@ -132,7 +132,7 @@ class WPUPA_Settings {
 
 							              		<?php $selected = ($wpupa_default == $name) ? 'checked="checked"' : ""; ?>
 							              		<label><input type="radio" name="wpupa_default" value="<?php echo esc_attr( $name ); ?>" <?php echo $selected; ?> /> 
-							              		<?php echo preg_replace("/src='(.+?)'/", "src='\$1;'", $avatar); ?>
+							              		<?php echo preg_replace("/src='(.+?)'/", "src='\$1&amp;forcedefault=1'", $avatar); ?>
 							              		<?php echo $label; ?></label><br />
 							              	<?php endforeach; ?>
 							              	<?php endif; ?>
