@@ -44,6 +44,7 @@
         </div>
     </div>
     </div>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/yiyan.js"></script>
 <?php }?>
 
 <div class="container main-content main">
@@ -69,4 +70,3 @@
         ?>
     </div>
 </div>
-<script src="<?php echo get_template_directory_uri(); ?>/js/yiyan.js"></script>

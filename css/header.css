@@ -372,16 +372,21 @@
     .menu-mb-top .menu-mb-box .user-info {
         display: flex;
         align-items: center;
+        width: calc(100% - 50px);
     }
     .menu-mb-top .menu-mb-box .user-info > .visitor {
         display: flex;
         align-items: center;
+        width: 100%;
         transition: var(--tr3);
     }
     .menu-mb-top .menu-mb-box .user-info > .visitor p {
         line-height: 40px;
         color: var(--text-sub);
         font-size: 15px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         transition: var(--tr3);
     }
     .menu-mb-top .menu-mb-box .user-info img {

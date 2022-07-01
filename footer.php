@@ -32,5 +32,3 @@
         </div>
     </div>
 </div>
-
-<span style="display:none" id="queries_num"><?php echo get_num_queries(); ?> queries in <?php timer_stop(7); ?>s</span>
