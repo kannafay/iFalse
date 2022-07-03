@@ -8,6 +8,7 @@
     <meta name="renderer" content="webkit" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="keywords" content="<?php if(get_option("i_keywords")){echo get_option("i_keywords");}else{echo 'iFalse,iFalse主题,一款界面清新、轻松上手的WordPress主题';} ?>" />
     <meta name="description" content="<?php bloginfo('description'); ?>" />
     <title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />

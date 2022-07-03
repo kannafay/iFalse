@@ -4,6 +4,7 @@ if($_POST["i_opt"]){
     
     // 首页设置
     update_option("i_swiper",$_POST["i_swiper"]);
+    update_option("i_swiper_effect",$_POST["i_swiper_effect"]);
     update_option("i_wrapper_text",$_POST["i_wrapper_text"]);
     update_option("i_wrapper_name",$_POST["i_wrapper_name"]);
     update_option("i_notice",$_POST["i_notice"]);
@@ -24,6 +25,18 @@ if($_POST["i_opt"]){
                         <input name="i_swiper" type="text" value="<?php echo get_option("i_swiper"); ?>" class="regular-text">
                         <p class="description">填写文章编号，以英文逗号隔开，如1,2,3。默认：无</p>
                         <p class="description">包含置顶文章时将会提前。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_swiper_effect">轮播图切换效果</label></th>
+                    <td>
+                        <input name="i_swiper_effect" type="text" value="<?php echo get_option("i_swiper_effect"); ?>" class="regular-text">
+                        <p class="description">请填入对应的英文字符，不填即默认</p>
+                        <p class="description">slide：普通位移切换（默认）</p>
+                        <p class="description">fade：淡入</p>
+                        <p class="description">cube：方块</p>
+                        <p class="description">cards：卡片式</p>
+                        <p class="description">coverflow：3D流</p>
                     </td>
                 </tr>
                 <tr>

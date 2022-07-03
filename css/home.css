@@ -6,6 +6,7 @@
 .wrapper-home .swiper {
     --swiper-navigation-size: 24px;
     --swiper-navigation-color: var(--bgc);
+    
     border-radius: var(--radius);
     overflow: hidden;
 }
@@ -343,7 +344,7 @@
     margin-right: 3px;
 }
 .home-detail .home-cate a:hover {
-    color: var(--bgc);
+    color: var(--text-keep);
     background-color: var(--theme);
 }
 .home-detail .home-title {
@@ -556,7 +557,7 @@
     transition: var(--tr3);
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-cate a:hover {
-    color: var(--bgc);
+    color: var(--text-keep);
     background-color: var(--theme);
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom-cate a::before {

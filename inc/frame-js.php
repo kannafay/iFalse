@@ -9,13 +9,21 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/user/user.js"></script>
+<?php 
+if(get_option("i_swiper_effect")) {
+    $swiper_effect = get_option("i_swiper_effect");
+} else {
+    $swiper_effect = 'slide';
+}
+echo <<< EOF
 <script type="text/javascript">  
     // 轮播图
     var mySwiper = new Swiper ('.swiper', {
         loop: true,
         parallax : true,
-        effect: 'coverflow',
-        speed: 800,
+        effect: '$swiper_effect',
+        spaceBetween: 10,
+        speed: 600,
         autoplay: { 
             delay: 3000,
             disableOnInteraction: false,
@@ -30,7 +38,10 @@
             prevEl: '.swiper-button-prev',
     },
     })
-
+</script>
+EOF;
+?>
+<script type="text/javascript"> 
     // 延迟加载
     jQuery(function() {        
         jQuery("img").lazyload({

@@ -3,6 +3,7 @@ error_reporting(0);
 if($_POST["i_opt"]){
     
     // 其他设置
+    update_option("i_keywords",$_POST["i_keywords"]);
     update_option("i_night",$_POST["i_night"]);
     update_option("i_say_img",$_POST["i_say_img"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
@@ -17,6 +18,14 @@ if($_POST["i_opt"]){
     <form method="post" action="" novalidate="novalidate">
         <table class="form-table">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="i_keywords">关键词</label></th>
+                    <td>
+                        <input name="i_keywords" type="text" value="<?php echo get_option("i_keywords"); ?>" class="regular-text">
+                        <p class="description">利于网站SEO，以英文逗号隔开。</p>
+                        <p class="description">默认：iFalse,iFalse主题,一款界面清新、轻松上手的WordPress主题</p>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="i_night">自动夜间模式</label></th>
                     <td>

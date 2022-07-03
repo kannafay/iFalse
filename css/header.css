@@ -243,12 +243,14 @@
     }
     .nav-bar-mb .center .logo-mb img {
         height: 32px;
+        vertical-align: middle;
     }
     .nav-bar-mb .left span, 
     .nav-bar-mb .login span {
         font-size: 24px;
         color: var(--text-sub);
         cursor: pointer;
+        vertical-align: middle;
         transition: var(--tr3);
     }
     .nav-bar-mb .login span{

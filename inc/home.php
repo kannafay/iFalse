@@ -23,7 +23,7 @@
                     <?php } ?>
                 </a>
                 <a href="<?php the_permalink(); ?>" class="swiper-img-mask">
-                    <div class="title" data-swiper-parallax="200" data-swiper-parallax-duration="800"><?php the_title(); ?></div>
+                    <div class="title" <?php if(get_option("i_swiper_effect") != 'fade'){echo 'data-swiper-parallax="200"';} ?> data-swiper-parallax-duration="600"><?php the_title(); ?></div>
                 </a>
             </div>
             <?php endwhile; ?>

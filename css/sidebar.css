@@ -254,7 +254,7 @@
 #primary-sidebar .widget_tag_cloud a:hover {
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub));  */
-    color: var(--bgc);
+    color: var(--text-keep);
 }
 
 #primary-sidebar .widget_categories,
