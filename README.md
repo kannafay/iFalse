@@ -6,6 +6,7 @@
 
 [![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=small)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_small)
 [![Gitee](https://img.shields.io/badge/Gitee-master-%23C71D23)](https://gitee.com/kannafay/ifalse)
+[![GitHub](https://img.shields.io/badge/GitHub-master-%23F6F8FA)](https://github.com/kannafay/ifalse)
 
 一款界面清新，干净轻量，轻松上手的WordPress开源主题。还在不断更新中，如有更多需求及建议或者BUG欢迎大家积极提出，营造一个更完善、更完美的开源主题。如果有喜欢的可以多多支持，点上一个Star！
 
