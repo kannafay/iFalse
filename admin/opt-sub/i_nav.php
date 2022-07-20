@@ -4,6 +4,7 @@ if($_POST["i_opt"]){
 
     // 导航设置
     update_option("i_header_hidden",$_POST["i_header_hidden"]);
+    update_option("i_login_hidden",$_POST["i_login_hidden"]);
     update_option("i_logo_hidden",$_POST["i_logo_hidden"]);
     update_option("i_hello",$_POST["i_hello"]);
     
@@ -20,6 +21,13 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_header_hidden" type="text" value="<?php echo get_option("i_header_hidden"); ?>" class="regular-text">
                         <p class="description">数字1为开启。向下滚动页面时隐藏导航栏。默认：关闭</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_login_hidden">隐藏登录入口</label></th>
+                    <td>
+                        <input name="i_login_hidden" type="text" value="<?php echo get_option("i_login_hidden"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。默认：关闭</p>
                     </td>
                 </tr>
                 <tr>

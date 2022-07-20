@@ -26,7 +26,7 @@
                                 <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login'); ?>"><?php echo get_avatar( get_the_author_ID() );?></a>
                                 <div class="home-2-detail-time"><?php echo get_the_date(); ?></div>
                                 <div class="home-2-detail-views"><?php echo getPostViews(get_the_ID()) ?></div>
-                                <div class="home-2-detail-comments"><?php if(post_password_required()){echo '已加密';}elseif(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></div>
+                                <?php if(get_option("i_comments_article") == 1){ ?><div class="home-2-detail-comments"><?php if(post_password_required()){echo '已加密';}elseif(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?></div><?php } ?>
                             </div>
                         </div>
                    </div>

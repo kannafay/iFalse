@@ -13,7 +13,19 @@
     <title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/theme.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/404.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/searchform.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article-style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/page-template.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/backtop.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/sidebar.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/footer.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/home.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/links.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/login.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/say.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/highlight/styles/vs2015.min.css">

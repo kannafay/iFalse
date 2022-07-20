@@ -12,26 +12,28 @@
             ) );
         ?>
     </div>
-    <div class="right">
-        <?php if (is_user_logged_in()) { ?>
-            <div class="admin">
-                <?php echo get_user_avatar(); ?>
-            </div>
-            <div class="user-set">
-                <?php if(current_user_can('level_7')) { ?>
-                    <a href="<?php bloginfo('url') ?>/wp-admin"><span class="iconfont icon-shezhi"></span> 后台管理</a>
-                <?php } ?>
-                <?php if(current_user_can('level_1')) { ?>
-                    <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php"><span class="iconfont icon-tianxieziliao"></span> 发布文章</a>
-                    <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php?post_type=shuoshuo"><span class="iconfont icon-xiaoxi1"></span> 发表说说</a>
-                <?php } ?>
-                <a href="<?php bloginfo('url') ?>/wp-admin/profile.php"><span class="iconfont icon-gerenziliao"></span> 个人资料</a>
-                <a href="<?php echo wp_logout_url(); ?>"><span class="iconfont icon-tuichu"></span> 退出登录</a>
-            </div>
-        <?php ;} else { ?>
-            <a href="<?php echo wp_login_url(); ?>" class="login"><span class="iconfont icon-User"></span></a>
-        <?php ;} ?>
-    </div>
+    <?php if(get_option("i_login_hidden") != 1 || is_user_logged_in()){ ?>
+        <div class="right">
+            <?php if (is_user_logged_in()) { ?>
+                <div class="admin">
+                    <?php echo get_user_avatar(); ?>
+                </div>
+                <div class="user-set">
+                    <?php if(current_user_can('level_7')) { ?>
+                        <a href="<?php bloginfo('url') ?>/wp-admin"><span class="iconfont icon-shezhi"></span> 后台管理</a>
+                    <?php } ?>
+                    <?php if(current_user_can('level_1')) { ?>
+                        <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php"><span class="iconfont icon-tianxieziliao"></span> 发布文章</a>
+                        <a href="<?php bloginfo('url') ?>/wp-admin/post-new.php?post_type=shuoshuo"><span class="iconfont icon-xiaoxi1"></span> 发表说说</a>
+                    <?php } ?>
+                    <a href="<?php bloginfo('url') ?>/wp-admin/profile.php"><span class="iconfont icon-gerenziliao"></span> 个人资料</a>
+                    <a href="<?php echo wp_logout_url(); ?>"><span class="iconfont icon-tuichu"></span> 退出登录</a>
+                </div>
+            <?php ;} else { ?>
+                <a href="<?php echo wp_login_url(); ?>" class="login"><span class="iconfont icon-User"></span></a>
+            <?php ;} ?>
+        </div>
+    <?php } ?>
 </div>
 <?php i_header_mb(); ?>
 
