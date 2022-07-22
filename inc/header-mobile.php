@@ -38,23 +38,28 @@
         <div class="menu-mb-box">
             <div class="user-info">
                 <div class="visitor">
-                    <?php  
-                        if(is_user_logged_in()) {
-                            echo get_user_avatar();
-                        } else { ?>
-                            <img src="<?php echo get_template_directory_uri();?>/static/img/avatar.png" alt="">
+                    <?php if(get_option("i_login_hidden") != 1 || is_user_logged_in()){ ?>
+                        <?php  
+                            if(is_user_logged_in()) {
+                                echo get_user_avatar();
+                            } else { ?>
+                                <img src="<?php echo get_template_directory_uri();?>/static/img/avatar.png" alt="">
+                        <?php } ?>
+                        <p>
+                            <?php 
+                                if ( is_user_logged_in() ) {
+                                    global $current_user, $display_name;
+                                    get_currentuserinfo();
+                                    echo $current_user -> display_name;
+                                } else {
+                                    if(get_option("i_hello")) {echo get_option("i_hello");} else {echo 'Hi, 请登录!';};
+                                } 
+                            ?>
+                        </p>
+                    <?php } else { ?>   
+                        <img src="<?php site_icon_url(); ?>" alt="" >
+                        <p><?php bloginfo('name'); ?></p> 
                     <?php } ?>
-                    <p>
-                        <?php 
-                            if ( is_user_logged_in() ) {
-                                global $current_user, $display_name;
-                                get_currentuserinfo();
-                                echo $current_user -> display_name;
-                            } else {
-                                if(get_option("i_hello")) {echo get_option("i_hello");} else {echo 'Hi, 请登录!';};
-                            } 
-                        ?>
-                    </p>
                 </div>
             </div>
             <span id="menu-mb-close" class="iconfont icon-guanbi"></span>

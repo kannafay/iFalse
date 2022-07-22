@@ -245,6 +245,13 @@
         height: 32px;
         vertical-align: middle;
     }
+    .nav-bar-mb .left,
+    .nav-bar-mb .right {
+        width: 32px;
+    }
+    .nav-bar-mb .right {
+        text-align: right;
+    }
     .nav-bar-mb .left span, 
     .nav-bar-mb .login span {
         font-size: 24px;
@@ -255,7 +262,6 @@
     }
     .nav-bar-mb .login span{
         font-size: 22px;
-        margin-left: 2px;
     }
     .nav-bar-mb .left span:hover,
     .nav-bar-mb .login span:hover {
