@@ -1,9 +1,8 @@
 # iFalse主题
 
-![](https://pic.rmb.bdstatic.com/bjh/43becc7a4355b5c02497f7d58435621e.png)
+[![Poster](https://pic.rmb.bdstatic.com/bjh/43becc7a4355b5c02497f7d58435621e.png)](https://pic.rmb.bdstatic.com/bjh/43becc7a4355b5c02497f7d58435621e.png)
 
 [![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=small)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_small) [![Author](https://img.shields.io/badge/Author-%E7%A5%9E%E7%A7%98%E5%B8%83%E5%81%B6%E7%8C%AB-8183ff)](https://www.ifalse.cn) [![Gitee](https://img.shields.io/badge/Releases-Gitee-%23C71D23)](https://gitee.com/kannafay/ifalse/releases) [![GitHub](https://img.shields.io/badge/Releases-GitHub-blue)](https://github.com/kannafay/ifalse/releases) [![Version](https://img.shields.io/badge/dynamic/json?color=green&label=Version&query=version&url=https%3A%2F%2Fwww.ifalse.cn%2Fthemes%2Finfo.json)](#) [![License](https://img.shields.io/badge/License-MIT-yellow)](/LICENSE) [![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-544740608-orange)](https://jq.qq.com/?_wv=1027&k=g04UTLJN)
-
 
 ## 主题介绍
 
@@ -24,7 +23,6 @@
 使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
 
 更新日志：[传送门](/UpdateLog.md)
-
 
 ## 感谢捐赠
 
