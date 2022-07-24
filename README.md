@@ -23,7 +23,7 @@
 
 使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
 
-更新日志：[传送门](/UpdateLog.md)
+更新日志：[传送门](../../UpdateLog.md)
 
 
 ## 感谢捐赠
