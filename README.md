@@ -1,6 +1,6 @@
 # iFalse主题
 
-![](https://pic.rmb.bdstatic.com/bjh/6e3ae91521929b68e7c8d98f8cf2242f.png)
+![](https://pic.rmb.bdstatic.com/bjh/43becc7a4355b5c02497f7d58435621e.png)
 
 [![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=small)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_small)
 
