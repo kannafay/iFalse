@@ -139,10 +139,10 @@
     font-size: 12px;
     font-weight: 400;
     color: var(--text-keep);
-    padding: 1px 6px;
-    border-radius: var(--radius) 0 var(--radius) 0;
     background: var(--theme-sub);
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
+    padding: 2px 6px;
+    border-radius: var(--radius-sub);
 }
 .say-content .say-post-item .say-post-box .say-post-msg .say-post-time {
     font-size: 12px;

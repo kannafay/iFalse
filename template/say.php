@@ -64,7 +64,7 @@
                                 <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login'); ?>"><?php echo get_avatar( get_the_author_ID() );?></a>
                             </div>
                             <div class="say-post-msg">
-                                <div class="say-author-name"><?php the_author_posts_link(); ?><?php if(wp_get_current_user()->ID == get_the_author_ID()){echo '<span>自己</span>';} ?></div>
+                                <div class="say-author-name"><?php the_author_posts_link(); ?><?php if( wp_get_current_user()->ID == get_the_author_ID() ){echo '<span>自己</span>';} ?></div>
                                 <div class="say-post-time"><?php echo get_the_date(); ?> <?php the_time(); ?></div>
                             </div>
                         </div>

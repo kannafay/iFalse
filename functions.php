@@ -220,16 +220,16 @@ function ashu_add_page($title,$slug,$page_template=''){
 function ashu_add_pages() {   
 	global $pagenow;   
 	//判断是否为激活主题页面   
-	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ){   
+	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ){
 		ashu_add_page('会员登录','login','template/login.php');
-		ashu_add_page('会员注册','register','template/register.php');   
-		ashu_add_page('找回密码','forget','template/forget.php');   
-    ashu_add_page('动态说说','say','template/say.php'); 
-    ashu_add_page('友情链接','links','template/links.php'); 
+		ashu_add_page('会员注册','register','template/register.php');
+		ashu_add_page('找回密码','forget','template/forget.php');
+    ashu_add_page('动态说说','say','template/say.php');
+    ashu_add_page('友情链接','links','template/links.php');
 	}   
 }   
 add_action( 'load-themes.php', 'ashu_add_pages' );  
-  
+
 // ---------------------------------------------------------------------
 // 评论博主高亮
 function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
@@ -240,9 +240,9 @@ function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
 			$webMaster = '<span class="master">'.$author.'</span>';
 			return $webMaster;
 		}
-	};
+	}
 	return $author;
-};  
+}
 add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
 
 function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
@@ -251,9 +251,9 @@ function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
 		if( $cookie_comment_author_cookiehash == $user->display_name ){
 			return $cookie_comment_author_cookiehash.'的崇拜者';
 		}
-	};
+	}
 	return $cookie_comment_author_cookiehash;
-};
+}
 if( !is_user_logged_in() ){
 	add_filter( 'pre_comment_author_name', 'filter_pre_comment_author_name', 10, 1 ); 
 }
@@ -276,7 +276,6 @@ if ( ! function_exists( 'dr_filter_get_avatar' ) ) {
           'secure.gravatar.com/avatar/',
           'cn.gravatar.com/avatar/'
       );
-
       return str_replace( $sources, $new_gravatar_sever.'/avatar/', $avatar );
   }
   add_filter( 'get_avatar', 'dr_filter_get_avatar' );
@@ -341,7 +340,7 @@ add_filter('the_content', 'insert_table_of_contents');
 require 'admin/update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://www.ifalse.cn/themes/info.json',
-	__FILE__, //Full path to the main plugin file or functions.php.
+	__FILE__,
 	'iFalse'
 );
 
@@ -450,7 +449,6 @@ function wp_pagenavi() {
     $pagination['add_args'] = array('s'=>get_query_var('s'));
   echo paginate_links($pagination);
 }
-
 
 // ---------------------------------------------------------------------
 // 后台添加链接
