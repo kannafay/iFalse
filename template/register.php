@@ -1,5 +1,5 @@
 <?php
-/*Template Name: 会员注册*/
+/*Template Name: 用户注册*/
 ?>
 
 <?php i_frame(); ?>

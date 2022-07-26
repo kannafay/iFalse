@@ -221,8 +221,8 @@ function ashu_add_pages() {
 	global $pagenow;   
 	//判断是否为激活主题页面   
 	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ){
-		ashu_add_page('会员登录','login','template/login.php');
-		ashu_add_page('会员注册','register','template/register.php');
+		ashu_add_page('用户登录','login','template/login.php');
+		ashu_add_page('用户注册','register','template/register.php');
 		ashu_add_page('找回密码','forget','template/forget.php');
     ashu_add_page('动态说说','say','template/say.php');
     ashu_add_page('友情链接','links','template/links.php');
