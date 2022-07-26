@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "8759836",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e698",
+      "unicode_decimal": 59032
+    },
+    {
+      "icon_id": "9186714",
+      "name": "QQ",
+      "font_class": "QQ1",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "14055529",
+      "name": "QQ",
+      "font_class": "QQ11",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "24111576",
+      "name": "QQ",
+      "font_class": "QQ2",
+      "unicode": "fae0",
+      "unicode_decimal": 64224
+    },
+    {
       "icon_id": "729521",
       "name": "返回顶部 (3)",
       "font_class": "fanhuidingbu3",

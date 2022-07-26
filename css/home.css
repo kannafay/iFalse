@@ -429,7 +429,7 @@
     width: calc(100% - 305px);
 }
 .home-2 .home-2-mian ul {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .home-2 .home-2-mian ul li {
     display: flex;

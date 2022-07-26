@@ -36,7 +36,7 @@ echo <<< EOF
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-    },
+        },
     })
 </script>
 EOF;

@@ -125,10 +125,11 @@
 .login-page .login-msg .form-item button:hover {
     opacity: .8;
 }
-.login-page .login-msg .login-third {
+.login-page .login-msg .login-third .hr-line {
     text-align: center;
+    margin: 20px 0 15px 0;
 }
-.login-page .login-msg .login-third > * {
+.login-page .login-msg .login-third .hr-line > * {
     display: inline-block;
     color: var(--text-info);
 }
@@ -142,6 +143,22 @@
 .login-page .login-msg .login-third p {
     margin: 0 10px;
 }
+.login-page .login-msg .login-third .qqlogin {
+    display: flex;
+    justify-content: center;
+}
+.login-page .login-msg .login-third .qqlogin a {
+    border-radius: 50%;
+}
+.login-page .login-msg .login-third .qqlogin img {
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+
+
+
+
 
 @media screen and (max-width: 1100px) {
     .login-page .login-main .login-img {

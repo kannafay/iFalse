@@ -32,7 +32,7 @@
                     <div class="post-copyright-text"><?php if(get_option("i_post_copyright_text")){echo get_option("i_post_copyright_text");}else{echo '分享是一种美德，转载请保留原链接';} ?></div>
                 </div>
             <?php } ?>
-            <div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div>
+            <?php if(get_the_tag_list()){ ?><div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div><?php } ?>
         </div>
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">

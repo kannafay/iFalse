@@ -8,7 +8,6 @@ if($_POST["i_opt"]){
     update_option("i_wrapper_text",$_POST["i_wrapper_text"]);
     update_option("i_wrapper_name",$_POST["i_wrapper_name"]);
     update_option("i_notice",$_POST["i_notice"]);
-    update_option("i_blog_or_card",$_POST["i_blog_or_card"]);
     update_option("i_random_pic",$_POST["i_random_pic"]);
     
 }
@@ -65,13 +64,6 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_random_pic" type="text" value="<?php echo get_option("i_random_pic"); ?>" class="regular-text">
                         <p class="description">用于文章没有封面时代替。默认：主题海报</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="i_blog_or_card">博客模式</label></th>
-                    <td>
-                        <input name="i_blog_or_card" type="text" value="<?php echo get_option("i_blog_or_card"); ?>" class="regular-text">
-                        <p class="description">数字1为开启，首页切换成两栏模式。默认：卡片模式</p>
                     </td>
                 </tr>
             </tbody>

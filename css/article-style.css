@@ -8,6 +8,9 @@
     position: relative;
     transition: var(--tr3);
 }
+.single-main .left .post-content > *:last-child {
+    margin-bottom: 0;
+}
 .single-main .left .post-content a {
     color: var(--theme);
 }
@@ -333,6 +336,7 @@
 .single-main .left .post-content h1 {
     margin-bottom: 25px;
     line-height: 1.8;
+    transition: var(--tr3);
 }
 .single-main .left .post-content h6 {
     font-size: 15px;
@@ -360,7 +364,6 @@
     font-size: 18px;
     color: var(--text);
     position: relative;
-
 }
 .single-main .left .post-content h1 {
     font-size: 20px;

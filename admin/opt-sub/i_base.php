@@ -3,6 +3,8 @@ error_reporting(0);
 if($_POST["i_opt"]){
 
     // 基本设置
+    update_option("i_plane",$_POST["i_plane"]);
+    update_option("i_blog_or_card",$_POST["i_blog_or_card"]);
     update_option("i_loading_pic",$_POST["i_loading_pic"]);
     update_option("i_login",$_POST["i_login"]);
     update_option("i_register_turn",$_POST["i_register_turn"]);
@@ -16,6 +18,20 @@ if($_POST["i_opt"]){
     <form method="post" action="" novalidate="novalidate">
         <table class="form-table">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="i_plane">面性样式</label></th>
+                    <td>
+                        <input name="i_plane" type="text" value="<?php echo get_option("i_plane"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。局部样式由线性转为面性。默认：关闭</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_blog_or_card">博客模式</label></th>
+                    <td>
+                        <input name="i_blog_or_card" type="text" value="<?php echo get_option("i_blog_or_card"); ?>" class="regular-text">
+                        <p class="description">数字1为开启，首页切换成两栏模式。默认：卡片模式</p>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="i_loading_pic">懒加载图</label></th>
                     <td>

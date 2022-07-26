@@ -32,11 +32,12 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/user.css">
-    <?php if(get_option("i_mourn") == 1){ ?><style>html{filter:grayscale(1);}body::-webkit-scrollbar-thumb{background-color: gray !important;}</style><?php }; ?>
-    <?php if(get_option("i_night") == 1) { ?>
-        <script>var judge = new Date().getHours() >= 21 || new Date().getHours() <= 6;</script>
-    <?php } else { ?> 
-        <script>var judge = false;</script> 
+    <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-plane.css">
+    <?php } ?>
+    <?php if(get_option("i_mourn") == 1) { ?><style>html{filter:grayscale(1);}body::-webkit-scrollbar-thumb{background-color: gray !important;}</style>
+    <?php } ?>
+    <?php if(get_option("i_night") == 1) { ?><script>var judge = new Date().getHours() >= 21 || new Date().getHours() <= 6;</script>
+    <?php } else { ?><script>var judge = false;</script> 
     <?php } ?>
     <script src="<?php echo get_template_directory_uri(); ?>/js/changeNight.js"></script>
 </head>
