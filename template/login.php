@@ -59,11 +59,10 @@
                             <button type="submit" name="wp-submit">登录</button>
                         </div>
                     </form>
-                        
-                    <div class="login-third">
+                    <!-- <div class="login-third">
                         <div class="hr-line"><hr><p>第三方登录</p><hr></div>
                         <div class="qqlogin"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/static/img/qq.png" alt=""></a></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
