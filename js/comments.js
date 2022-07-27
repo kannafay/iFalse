@@ -57,7 +57,7 @@ const change_comment_respond_textarea = document.querySelector('.post-comments .
 if(change_comment_respond_textarea){change_comment_respond_textarea.rows = '6'}
 
 const change_comment_respond_textarea_text = document.querySelector('.post-comments .post-comments-content .comment-respond textarea');
-if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','A good comment will bring good luck!')}
+if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','一条善良的评论可以带来无限的好运!')}
 
 const change_comment_respond_author = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author input');
 const change_comment_respond_author_label = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author label');

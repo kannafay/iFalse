@@ -195,7 +195,7 @@
 }
 .content .title-part p {
     max-width: calc(100% - 300px);
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: 3px solid var(--theme);
     font-size: 15px;
     color: var(--text-sub);

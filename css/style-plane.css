@@ -2,12 +2,13 @@
 [data-color-mode=light] {
     --body: #f5f5f5;
     --box-p: 0 0 10px rgba(28 31 35 / 5%);
+    --border: #e3e3e3;
 }
 [data-color-mode=night] {
     --body: #292A2D;
     --bgc: #34363a;
     --box-p: 0 0 10px rgba(28 31 35 / 30%);
-    --border: #474747;
+    --border: #505050;
 }
 body {
     background-color: var(--body);
@@ -211,14 +212,14 @@ body {
 @media screen and (max-width: 640px) {
     /* 首页 */
     .wrapper-home {
-        padding: 10px;
+        padding: 10px 10px 0 10px;
         margin-top: 70px;
     }
     .main {
         padding: 0 10px;
     }
     .main-content .notice {
-        margin-top: 5px;
+        margin-top: 10px;
     }
     .content .title-part {
         margin: 10px 0;
