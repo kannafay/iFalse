@@ -151,6 +151,8 @@
     border-radius: 50%;
 }
 .login-page .login-msg .login-third .qqlogin img {
+    width: 32px;
+    height: 32px;
     vertical-align: middle;
     border-radius: 50%;
 }
