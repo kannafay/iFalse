@@ -158,31 +158,32 @@
     height: 50px;
     margin-top: 30px;
     background: var(--notice);
-    border: 8px solid var(--notice);
     border-radius: var(--radius);
+    padding: 0 10px;
+}
+.main-content .notice .notice-box {
+    height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 5px;
     overflow: auto;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.main-content .notice,
-.main-content .notice * {
-    transition: var(--tr3);
-}
-.main-content .notice::-webkit-scrollbar {
+
+.main-content .notice .notice-box::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
-.main-content .notice span {
+.main-content .notice .notice-box span {
     font-size: 22px;
     color: var(--text);
     margin-right: 10px;
+    transition: var(--tr3);
 }
-.main-content .notice p {
+.main-content .notice .notice-box p {
     font-size: 15px;
     color: var(--text-sub);
+    transition: var(--tr3);
 }
 
 .content .title-part {
@@ -798,7 +799,6 @@
     }
     .main-content .notice {
         height: 42px;
-        padding: 0 3px;
     }
     .main-content .notice span {
         font-size: 20px;

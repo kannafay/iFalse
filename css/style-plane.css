@@ -8,7 +8,7 @@
     --body: #292A2D;
     --bgc: #34363a;
     --box-p: 0 0 10px rgba(28 31 35 / 30%);
-    --border: #505050;
+    --border: #4c4c4c;
 }
 body {
     background-color: var(--body);
@@ -54,7 +54,12 @@ body {
 #primary-sidebar .widget_tag_cloud,
 #primary-sidebar .widget_recent_comments li,
 #primary-sidebar .widget_recent_entries,
-#primary-sidebar .widget_search input {
+#primary-sidebar .widget_search input,
+/* 组合 */
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-comments__comment,
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-posts,
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives,
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-categories {
     border: 0;
     background-color: var(--bgc);
     box-shadow: var(--box-p);
@@ -66,7 +71,12 @@ body {
 #primary-sidebar .widget_recent_comments li:hover,
 #primary-sidebar .widget_recent_entries:hover,
 #primary-sidebar .widget_search input:hover,
-#primary-sidebar .widget_search input:focus {
+#primary-sidebar .widget_search input:focus,
+/* 组合 */
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-comments__comment:hover,
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-posts:hover,
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives:hover,
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-categories:hover {
     border: 0;
 }
 
@@ -131,13 +141,22 @@ body {
 .single-main .left .post-context .post-prev-next .post-prev {
     border: 0;
 }
-.post-comments .comment-respond textarea {
+.post-comments .comment-respond textarea,
+.post-comments .comment-respond .comment-form-author input, 
+.post-comments .comment-respond .comment-form-email input, 
+.post-comments .comment-respond .comment-form-url input {
     border: 0;
     background-color: var(--body);
     transition: var(--tr3);
 }
 .post-comments .comment-respond textarea:hover,
-.post-comments .comment-respond textarea:focus {
+.post-comments .comment-respond textarea:focus,
+.post-comments .comment-respond .comment-form-author input:hover, 
+.post-comments .comment-respond .comment-form-author input:focus, 
+.post-comments .comment-respond .comment-form-email input:hover, 
+.post-comments .comment-respond .comment-form-email input:focus, 
+.post-comments .comment-respond .comment-form-url input:hover,
+.post-comments .comment-respond .comment-form-url input:focus{
     border: 0;
 }
 .post-comments {
@@ -162,6 +181,7 @@ body {
     background-color: var(--body);
     transition: var(--tr3);
 }
+
 
 /* links.css */
 .linkcat ul li {
@@ -191,6 +211,7 @@ body {
 .login-page .login-msg .form-item input {
     background-color: var(--bgc);
     border: 0;
+    box-shadow: var(--box-p);
 }
 .login-page .login-msg .form-item input:hover,
 .login-page .login-msg .form-item input:focus {
@@ -212,14 +233,14 @@ body {
 @media screen and (max-width: 640px) {
     /* 首页 */
     .wrapper-home {
-        padding: 10px 10px 0 10px;
+        padding: 15px 10px 0 10px;
         margin-top: 70px;
     }
     .main {
         padding: 0 10px;
     }
     .main-content .notice {
-        margin-top: 10px;
+        margin-top: 15px;
     }
     .content .title-part {
         margin: 10px 0;
@@ -227,6 +248,9 @@ body {
     }
     .content .title-part p {
         padding-bottom: 5px;
+    }
+    .content .main-part ul {
+        grid-gap: 15px;
     }
     .home-2 .home-2-mian ul li {
         padding: 10px;
@@ -239,7 +263,7 @@ body {
     /* 文章页 */
     .single-top {
         margin-bottom: 10px;
-        margin-top: 80px;
+        margin-top: 85px;
     }
     .single-top, .article-main {
         padding: 0 10px;
@@ -248,7 +272,7 @@ body {
         padding: 10px;
     }
     .single-main .left {
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
     .single-main .left .post-content {
         padding: 10px;
@@ -264,14 +288,14 @@ body {
         margin-top: 5px;
     }
     .single-main .left .post-context {
-        margin-top: 10px;
+        margin-top: 15px;
     }
     .single-main .left .post-context .post-prev-next .post-prev,
     .single-main .left .post-context .post-prev-next .post-next {
         padding: 0 10px;
     }
     .post-comments {
-        margin-top: 10px;
+        margin-top: 15px;
         padding: 10px;
     }
     .post-comments .comment-reply-title {
@@ -282,7 +306,7 @@ body {
     }
     .post-comments .post-comments-title {
         padding-top: 10px;
-        margin-top: 10px;
+        margin-top: 15px;
     }
     .post-comments .depth-1 {
         margin-top: 10px; 

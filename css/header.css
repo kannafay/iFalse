@@ -45,7 +45,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 } */
-.nav-bar .nav-menu > ul {
+#nav-menu > ul,
+#nav-menu-mb > ul {
     display: none;
 }
 .nav-bar .nav-menu .current-menu-item > a {

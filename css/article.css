@@ -714,7 +714,7 @@
 .post-comments .comment-respond .comment-form-cookies-consent {
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 10px 0 5px 0;
 }
 .post-comments .comment-respond .comment-form-cookies-consent input {
     width: 15px;
@@ -937,15 +937,17 @@
 }
 
 @media screen and (max-width: 640px) {
+    .single-top {
+        margin-bottom: 15px;
+    }
     .single-banner {
         border-bottom: 1px solid var(--border);
-        padding-bottom: 20px;
+        padding-bottom: 15px;
     }
     .single-banner .single-title h1 {
         font-size: 24px;
     }
     .single-main .left {
-        padding: 0;
         border: none;
     }
 
@@ -969,6 +971,11 @@
     .post-comments .comment-respond .comment-form-url {
         padding-left: 0;
         margin-bottom: 5px;
+    }
+    .post-comments .comment-respond .comment-form-cookies-consent {
+        display: flex;
+        align-items: center;
+        margin: 5px 0 10px 0;
     }
 }
 

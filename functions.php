@@ -246,7 +246,7 @@ function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
 add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
 
 function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
-	$blogusers = get_user_by('id', 1);
+	$blogusers = get_user_by('id', get_the_author_ID());
 	foreach ( $blogusers as $user ){
 		if( $cookie_comment_author_cookiehash == $user->display_name ){
 			return $cookie_comment_author_cookiehash.'的崇拜者';

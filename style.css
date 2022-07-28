@@ -4,7 +4,7 @@ Theme URI: https://www.ifalse.cn
 Author: 神秘布偶猫
 Author URI: https://www.ifalse.cn
 Description: 一款界面清新、轻松上手的WordPress主题！
-Version: 1.4.6
+Version: 1.4.7
 Tags: iFalse主题
 */
 
@@ -12,7 +12,9 @@ Tags: iFalse主题
     --theme: #8183ff;
     --theme-sub: #a1a1f7;
     --theme-1: #8183ff1a;
+    --theme-2: #8183ff33;
     --theme-3: #8183ff4d;
+    --notice: #8183ff26;
     --bgc-0: #ffffff00;
     --text-keep: #f5f5f5;
     --radius: 6px;
@@ -32,7 +34,6 @@ Tags: iFalse主题
     --box-s: 0 2px 8px rgb(28 31 35 / 3%), 0 16px 48px 8px rgb(28 31 35 / 8%);
     --mask-3: #0000004d;
     --mask-5: #00000080;
-    --notice: #e6e6f7;
 }
 [data-color-mode=night] {
     --text: #f5f5f5;
@@ -46,7 +47,6 @@ Tags: iFalse主题
     --box-s: 0 0 20px rgba(28 31 35 / 50%);
     --mask-3: #0000004d;
     --mask-5: #00000080;
-    --notice: #464756;
 }
 * {
     margin: 0;
@@ -91,13 +91,13 @@ img {
 
 /* selection */
 ::selection{
-    background-color: var(--theme-1);
+    background-color: var(--theme-2);
 }
 ::-webkit-selection{
-    background-color: var(--theme-1);
+    background-color: var(--theme-2);
 }
 ::-moz-selection{
-    background-color: var(--theme-1); 
+    background-color: var(--theme-2); 
 }
 
 /* scrollbar */
@@ -107,5 +107,5 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
     background-color: var(--theme);
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
 }

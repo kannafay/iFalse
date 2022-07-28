@@ -41,7 +41,7 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_build_date">运行时间</label></th>
                     <td>
                         <input name="i_build_date" type="text" value="<?php echo get_option("i_build_date"); ?>" class="regular-text">
-                        <p class="description">输入建站日期，如2022/04/27 0:00:00。页脚显示运行时间。</p>
+                        <p class="description">输入建站日期，如2022/04/27 17:30:00。页脚显示运行时间。</p>
                         <p class="description">留空则不显示。默认：不显示</p>
                     </td>
                 </tr>
