@@ -100,6 +100,23 @@ function i_loading_pic() {
     return $loading_pic;
   }
 }
+//获取文章第一张图片
+function catch_that_image() { 
+  global $post, $posts; 
+  $first_img = ''; 
+  ob_start(); 
+  ob_end_clean(); 
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches); 
+  $first_img = $matches [1] [0]; 
+  if(empty($first_img)){  
+      if(get_option("i_random_pic")) {
+        $first_img = get_option("i_random_pic");
+      } else{
+        $first_img = i_cover_pic(); 
+      }
+  } 
+  return $first_img; 
+} 
 
 // ---------------------------------------------------------------------
 // 延迟加载

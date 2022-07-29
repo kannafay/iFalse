@@ -11,8 +11,10 @@
         <?php
             if(get_option("i_notice")) {?>
                 <div class="notice">
-                    <span class="iconfont icon-xiaoxi"></span>
-                    <p><?php echo get_option("i_notice"); ?></p>
+                    <div class="notice-box">
+                        <span class="iconfont icon-xiaoxi"></span>
+                        <p><?php echo get_option("i_notice"); ?></p>
+                    </div>
                 </div>
             <?php }
         ?>
