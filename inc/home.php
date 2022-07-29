@@ -19,7 +19,7 @@
                     <?php the_post_thumbnail('large'); ?>
                     <?php } else {?>
                         <img src="<?php if(get_option("i_loading_pic")) { echo get_option("i_loading_pic");} else{ echo i_loading_pic(); } ?>"
-                        data-original="<?php if(get_option("i_random_pic")) { echo get_option("i_random_pic");} else{ echo i_cover_pic(); } ?>?top=<?php $i++; echo $i; ?>" />
+                        data-original="<?php echo catch_that_image(); ?>?top=<?php $i++; echo $i; ?>" />
                     <?php } ?>
                 </a>
                 <a href="<?php the_permalink(); ?>" class="swiper-img-mask">
