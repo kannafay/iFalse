@@ -141,6 +141,12 @@ body {
 .single-main .left .post-context .post-prev-next .post-prev {
     border: 0;
 }
+.is-logined {
+    height: 80px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
 .post-comments .comment-respond textarea,
 .post-comments .comment-respond .comment-form-author input, 
 .post-comments .comment-respond .comment-form-email input, 
