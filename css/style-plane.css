@@ -147,6 +147,9 @@ body {
     padding-top: 0;
     border-top: 0;
 }
+.is-logined .is-logined-box {
+    background-color: var(--body);
+}
 .post-comments .comment-respond textarea,
 .post-comments .comment-respond .comment-form-author input, 
 .post-comments .comment-respond .comment-form-email input, 

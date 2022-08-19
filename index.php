@@ -1,8 +1,12 @@
 <?php i_frame(); ?> 
-<body>
+<body>  
     <?php get_header(); ?>
-    <?php i_home(); ?>
-    <?php get_footer(); ?>
+    <section>
+        <div>
+            <?php i_home(); ?>
+        </div>
+        <?php get_footer(); ?>
+    </section>
     <?php i_frame_js(); ?>
 </body>
 </html>

@@ -3,10 +3,8 @@
 ?>
 
 <?php i_frame(); ?>
-
-<body class="say-body">
-    <?php get_header(); ?>
-     
+<?php get_header(); ?>
+<section>
     <div class="say container-small">
         <div class="say-banner">
             <img src="<?php if(get_option("i_loading_pic")) {echo get_option("i_loading_pic");} else {echo i_loading_pic(); } ?>" 
@@ -98,6 +96,6 @@
         </div>
     </div>
     <?php get_footer(); ?>
-    <?php i_frame_js(); ?>
-</body>
-</html>
+</section>
+
+<?php i_frame_js(); ?>

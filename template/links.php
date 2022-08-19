@@ -4,8 +4,8 @@
 
 <?php i_frame(); ?>
  
-<body>
-    <?php get_header(); ?>
+<?php get_header(); ?>
+<section>
     <div class="container single-main page-main page-link">
         <div class="left">
             <div class="post-content">
@@ -20,8 +20,6 @@
             ?>
         </div>
     </div>
-
     <?php get_footer(); ?>
-    <?php i_frame_js(); ?>
-</body>
-</html>
+</section>
+<?php i_frame_js(); ?>

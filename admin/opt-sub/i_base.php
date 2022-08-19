@@ -22,7 +22,7 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_plane">面性样式</label></th>
                     <td>
                         <input name="i_plane" type="text" value="<?php echo get_option("i_plane"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。局部样式由线性转为面性。默认：关闭</p>
+                        <p class="description">数字1为开启。局部样式由线性转为面性。默认：线性样式</p>
                     </td>
                 </tr>
                 <tr>
