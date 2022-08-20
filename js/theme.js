@@ -1,5 +1,5 @@
 // 关于
-console.log('%c iFalse %c https://gitee.com/kannafay/ifalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
+console.log('%c iFalse %c https://github.com/kannafay/iFalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
 
 // 查询次数，花费时间
 console.log(document.querySelector('#queries_num').firstChild.data);
