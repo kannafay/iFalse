@@ -240,20 +240,12 @@
     background-color: var(--bgc-sub);
     padding: 10px;
 }
-.single-main .left .post-content p code {
-    border-radius: var(--radius-sub);
-    background-color: var(--theme-1);
-    color: var(--theme);
-    font-size: 14px;
-    margin: 0 4px;
-    padding: 2px 4px;
-}
+.single-main .left .post-content p code,
 .single-main .left .post-content li code {
     border-radius: var(--radius-sub);
     background-color: var(--theme-1);
     color: var(--theme);
     font-size: 14px;
-    margin: 0 4px;
     padding: 2px 4px;
 }
 .single-main .left .post-content code {
