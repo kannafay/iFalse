@@ -305,7 +305,12 @@ function get_user_avatar(){
   get_currentuserinfo();
   return get_avatar($current_user -> user_email, 400);
 }
-
+//获取用户信息
+function get_user_role($id)
+{
+$user = new WP_User($id);
+return $user->data;
+}
 // ---------------------------------------------------------------------
 // 文章目录
 function insert_table_of_contents($content) {

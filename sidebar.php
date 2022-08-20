@@ -4,11 +4,11 @@
             <div class="post-author-logo">
                 <a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login',1); ?>"><?php echo get_avatar(1); ?></a>
             </div>
-            <div class="post-author-name"><?php the_author_posts_link(); ?></div>
+            <div class="post-author-name"><a href="<?php home_url();echo '/author/';echo get_the_author_meta('user_login',1); ?>"><?php echo get_user_role(1)->display_name; ?></a></div>
             <div class="post-author-description">
                 <?php 
-                    if(get_the_author_meta('description',$post->post_author)) {
-                        echo get_the_author_meta('description',$post->post_author); 
+                    if(get_the_author_meta('description',1)) {
+                        echo get_the_author_meta('description',1); 
                     } else {
                         echo '这家伙很懒，什么都没写';
                     }
