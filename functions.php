@@ -311,6 +311,7 @@ function get_user_role($id)
 $user = new WP_User($id);
 return $user->data;
 }
+
 // ---------------------------------------------------------------------
 // 文章目录
 function insert_table_of_contents($content) {
