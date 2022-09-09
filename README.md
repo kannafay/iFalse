@@ -10,9 +10,9 @@
 
 - 主题反馈：[https://support.qq.com/products/404787](https://support.qq.com/products/404787)
 
-- Gitee：[https://gitee.com/kannafay/ifalse](https://gitee.com/kannafay/ifalse)
+- Gitee：[https://gitee.com/kannafay/iFalse](https://gitee.com/kannafay/iFalse)
 
-- GitHub：[https://github.com/kannafay/ifalse](https://github.com/kannafay/ifalse)
+- GitHub：[https://github.com/kannafay/iFalse](https://github.com/kannafay/iFalse)
 
 ## 使用说明
 
