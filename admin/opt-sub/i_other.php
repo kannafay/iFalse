@@ -23,7 +23,7 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_keywords" type="text" value="<?php echo get_option("i_keywords"); ?>" class="regular-text">
                         <p class="description">利于网站SEO，以英文逗号隔开。</p>
-                        <p class="description">默认：iFalse,iFalse主题,一款界面清新、轻松上手的WordPress主题</p>
+                        <p class="description">默认：iFalse, iFalse主题, WordPress开源主题</p>
                     </td>
                 </tr>
                 <tr>

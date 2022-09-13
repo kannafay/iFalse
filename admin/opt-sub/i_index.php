@@ -23,7 +23,7 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_swiper" type="text" value="<?php echo get_option("i_swiper"); ?>" class="regular-text">
                         <p class="description">填写文章编号，以英文逗号隔开，如1,2,3。默认：无</p>
-                        <p class="description">包含置顶文章时将会提前。</p>
+                        <p class="description">包含置顶文章时将会提前显示。</p>
                     </td>
                 </tr>
                 <tr>
