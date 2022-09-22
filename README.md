@@ -6,7 +6,7 @@
 
 一款界面清新，干净轻量，轻松上手的WordPress开源主题。还在不断更新中，如有更多需求及建议或者BUG欢迎大家积极提出，营造一个更完善、更完美的开源主题。如果有喜欢的可以多多支持，点上一个⭐Star！
 
-- 主题演示：[https://www.ifalse.cn](https://www.ifalse.cn)
+- 主题演示：[https://ifalse.onll.cn](https://ifalse.onll.cn)
 
 - 主题反馈：[https://support.qq.com/products/404787](https://support.qq.com/products/404787)
 
