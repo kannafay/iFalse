@@ -362,7 +362,7 @@ add_filter('the_content', 'insert_table_of_contents');
 // 主题自动/一键升级
 require 'admin/update/update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://www.ifalse.cn/themes/info.json',
+	'https://ifalse.onll.cn/themes/info.json',
 	__FILE__,
 	'iFalse'
 );

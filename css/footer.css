@@ -37,7 +37,16 @@
 .footer .footer-box .author span {
     margin-right: 5px;
 }
-
+.footer .footer-box .icp_gov {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-box .icp_gov img {
+    vertical-align: middle;
+    width: 18px;
+    margin-right: 2px;
+}
 
 @media screen and (max-width: 1280px) {
     .footer .footer-box {

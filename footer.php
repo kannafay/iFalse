@@ -1,13 +1,26 @@
+<?php  
+    if(get_option("i_icp_gov")) {
+        $patterns = "/\d+/";
+        $strs = get_option("i_icp_gov");
+        preg_match_all($patterns,$strs,$arr);
+        $icp_url = implode($arr[0]);
+    }
+?>
+
 <div class="container-full footer">
     <div class="container footer-box">
         <div class="copyright">
-            <?php if(get_option("i_copyright")) {echo get_option("i_copyright");} else{echo "Copyright © 2022";} ?>
+            <?php if(get_option("i_copyright")) {echo get_option("i_copyright");} else{echo "Copyright © " . date("Y");} ?>
             <a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
-            <a href="https://beian.miit.gov.cn/"><?php if(get_option("i_icp")) {echo get_option("i_icp");} ?></a>      
         </div>
-        <div class="author">
-            <span class="iconfont icon-zhiwen"></span>
-            <div>Powered by <a href="https://wordpress.org/">WordPress</a> Theme by <a href="https://www.ifalse.cn">iFalse</a></div>
+        <div class="icp">
+            <a href="https://beian.miit.gov.cn/"><?php if(get_option("i_icp")) {echo get_option("i_icp");} ?></a>
+        </div>
+        <div class="icp_gov">
+            <?php if(get_option("i_icp_gov")) { ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/beian.png" alt="">
+                    <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo $icp_url; ?>"><?php echo get_option("i_icp_gov"); ?></a>
+            <?php } ?>
         </div>
         <?php if(get_option("i_upyun") == 1) { ?>
             <div class="upyun">
@@ -30,6 +43,10 @@
         <?php } ?>
         <div class="custom">
             <?php require('user/user.php'); ?>
+        </div>
+        <div class="author">
+            <span class="iconfont icon-zhiwen"></span>
+            <div>Powered by <a href="https://wordpress.org/">WordPress</a> Theme by <a href="https://www.ifalse.cn">iFalse</a></div>
         </div>
     </div>
 </div>
