@@ -46,7 +46,7 @@
         </div>
         <div class="author">
             <span class="iconfont icon-zhiwen"></span>
-            <div>Powered by <a href="https://wordpress.org/">WordPress</a> Theme by <a href="https://www.ifalse.cn">iFalse</a></div>
+            <div>Powered by <a href="https://wordpress.org/">WordPress</a> Theme by <a href="https://ifalse.onll.cn">iFalse</a></div>
         </div>
     </div>
 </div>
