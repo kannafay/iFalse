@@ -13,7 +13,7 @@
 
 ## 使用说明
 
-请从[Releases(发行版)](../../releases)下载，dev分支为开发版。
+请从[Releases(发行版)](../../releases/latest)下载，dev分支为开发版。
 
 使用文档：[传送门](https://bilicat.coding.net/share/km/c99056dd-1782-4a22-a462-fe9a3240bccb/K-2)
 
