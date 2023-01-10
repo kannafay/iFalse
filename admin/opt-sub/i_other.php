@@ -13,6 +13,7 @@ if($_POST["i_opt"]){
 }
 ?>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
 <div class="wrap">
     <h1>其他设置</h1>
     <form method="post" action="" novalidate="novalidate">
@@ -23,14 +24,14 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_keywords" type="text" value="<?php echo get_option("i_keywords"); ?>" class="regular-text">
                         <p class="description">利于网站SEO，以英文逗号隔开。</p>
-                        <p class="description">默认：iFalse, iFalse主题, WordPress开源主题</p>
+                        <p class="description-primary">默认：iFalse, iFalse主题, WordPress开源主题</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_night">夜间模式</label></th>
                     <td>
                         <input name="i_night" type="text" value="<?php echo get_option("i_night"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。全局夜间模式。默认：关闭</p>
+                        <p class="description">数字1为开启。开启后全局夜间模式。</p>
                         <p class="description">数字2为自动夜间模式。时间为20:00~06:00。</p>
                         
                     </td>
@@ -39,28 +40,31 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_say_img">说说背景</label></th>
                     <td>
                         <input name="i_say_img" type="text" value="<?php echo get_option("i_say_img"); ?>" class="regular-text">
-                        <p class="description">说说页面顶部背景图。填写图片地址即可。默认：主题海报</p>
+                        <p class="description">说说页面顶部背景图。填写图片地址即可。</p>
+                        <p class="description-primary">默认：主题海报</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_404_tip">404提示</label></th>
                     <td>
                         <input name="i_404_tip" type="text" value="<?php echo get_option("i_404_tip"); ?>" class="regular-text">
-                        <p class="description">提示用户404错误信息。留空则使用默认值</p>
+                        <p class="description">404错误信息。</p>
+                        <p class="description-primary">默认：抱歉, 您请求的页面找不到了!</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_404_bak">404按钮</label></th>
                     <td>
                         <input name="i_404_bak" type="text" value="<?php echo get_option("i_404_bak"); ?>" class="regular-text">
-                        <p class="description">按钮文字。默认：返回首页</p>
+                        <p class="description">按钮文字。</p>
+                        <p class="description-primary">默认：返回首页</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_mourn">悼念模式</label></th>
                     <td>
                         <input name="i_mourn" type="text" value="<?php echo get_option("i_mourn"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。首页变灰，缅怀先烈。默认：关闭</p>
+                        <p class="description">数字1为开启。开启后首页变成灰色。</p>
                     </td>
                 </tr>
             </tbody>

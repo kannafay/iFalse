@@ -26,13 +26,13 @@
     } else ?>
     <div class="login-page">
         <div class="login-main">
-            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/static/img/login.png" alt="login">
+            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/inc/random-img.php" alt="login">
             <div class="login-msg">
                 <div class="login-box">
                 <!-- 注册 -->
                 <div class="register-box">
                     <h2>欢迎注册！</h2>
-                    <div class="des">注册成为会员</div>
+                    <div class="des">Welcome to register!</div>
                     <?php
                         if( !empty($_POST['ludou_reg']) ) {
                             $error = '';
@@ -111,7 +111,7 @@
                             <button type="submit" name="wp-submit">注册</button>
                         </div>
                         <div class="form-other">
-                            <span><span class="iconfont icon-tishi1"> </span>注册即代表同意<a href="<?php home_url(); ?>/privacy-policy">《用户协议》</a></span>
+                            <span style="margin-bottom:0;"><span class="iconfont icon-tishi1"></span>注册即代表同意<a href="<?php home_url(); ?>/privacy-policy">《用户协议》</a></span>
                         </div>
                     </form>
                 </div>

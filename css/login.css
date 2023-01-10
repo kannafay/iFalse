@@ -11,18 +11,12 @@
     align-items: center;
     position: relative;
 }
-.login-page .login-main::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
 .login-page .login-main .login-img {
-    width: 700px;
-    padding-right: 80px;
+    width: 450px;
+    border-radius: 10%;
+    margin-right: 80px;
     pointer-events: none;
+
 }
 .login-page .login-msg {
     position: relative;

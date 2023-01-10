@@ -12,6 +12,7 @@ if($_POST["i_opt"]){
 }
 ?>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
 <div class="wrap">
     <h1>底部设置</h1>
     <form method="post" action="" novalidate="novalidate">
@@ -42,15 +43,14 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_upyun">又拍云联盟</label></th>
                     <td>
                         <input name="i_upyun" type="text" value="<?php echo get_option("i_upyun"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。页脚启用又拍云联盟链接。默认：关闭</p>
+                        <p class="description">数字1为开启。开启后页脚显示又拍云联盟链接。</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_build_date">运行时间</label></th>
                     <td>
                         <input name="i_build_date" type="text" value="<?php echo get_option("i_build_date"); ?>" class="regular-text">
-                        <p class="description">输入建站日期，如2022/04/27 17:30:00。页脚显示运行时间。</p>
-                        <p class="description">留空则不显示。默认：不显示</p>
+                        <p class="description">输入建站日期，如2022/04/27 17:30:00。开启后页脚显示运行时间。</p>
                     </td>
                 </tr>
             </tbody>

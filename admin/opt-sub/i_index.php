@@ -13,6 +13,7 @@ if($_POST["i_opt"]){
 }
 ?>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
 <div class="wrap">
     <h1>首页设置</h1>
     <form method="post" action="" novalidate="novalidate">
@@ -22,8 +23,8 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_swiper">轮播图</label></th>
                     <td>
                         <input name="i_swiper" type="text" value="<?php echo get_option("i_swiper"); ?>" class="regular-text">
-                        <p class="description">填写文章编号，以英文逗号隔开，如1,2,3。默认：无</p>
-                        <p class="description">包含置顶文章时将会提前显示。</p>
+                        <p class="description">填写文章编号，以英文逗号隔开，如1,2,3。</p>
+                        <p class="description-primary">包含置顶文章时将会提前显示。</p>
                     </td>
                 </tr>
                 <tr>
@@ -42,14 +43,16 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_wrapper_text">首页标语</label></th>
                     <td>
                         <input name="i_wrapper_text" type="text" value="<?php echo get_option("i_wrapper_text"); ?>" class="regular-text">
-                        <p class="description">轮播图无内容时显示。默认：一言</p>
+                        <p class="description">轮播图无内容时显示。</p>
+                        <p class="description-primary">默认：一言</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_wrapper_name">标语作者</label></th>
                     <td>
                         <input name="i_wrapper_name" type="text" value="<?php echo get_option("i_wrapper_name"); ?>" class="regular-text">
-                        <p class="description">轮播图无内容时显示。默认：一言作者</p>
+                        <p class="description">轮播图无内容时显示。</p>
+                        <p class="description-primary">默认：一言作者</p>
                     </td>
                 </tr>
                 <tr>
@@ -63,7 +66,8 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_random_pic">文章封面</label></th>
                     <td>
                         <input name="i_random_pic" type="text" value="<?php echo get_option("i_random_pic"); ?>" class="regular-text">
-                        <p class="description">用于文章没有封面时代替。默认：主题海报</p>
+                        <p class="description">用于文章没有封面时顶替。</p>
+                        <p class="description-primary">默认：主题海报</p>
                     </td>
                 </tr>
             </tbody>

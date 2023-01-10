@@ -89,6 +89,11 @@
     text-transform: uppercase;
     letter-spacing: 5px;
 }
+
+/* 子选项 */
+.description-primary {
+  color: #8183ff;
+}
   
 @keyframes mainBlock {
     0% {

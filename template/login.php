@@ -26,11 +26,11 @@
     <?php get_header(); ?>
     <div class="login-page">
         <div class="login-main">
-            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/static/img/login.png" alt="login">
+            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/inc/random-img.php" alt="login">
             <div class="login-msg">
                 <div class="login-box">
                     <h2>欢迎回来！</h2>
-                    <div class="des">会员请登录</div>
+                    <div class="des">Welcome back!</div>
                     <p style="color:#D43030">
                         <?php
                             $login = (isset($_GET['login']) ) ? $_GET['login'] : 0;

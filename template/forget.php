@@ -27,11 +27,11 @@
     <?php get_header(); ?>
     <div class="login-page">
         <div class="login-main">
-            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/static/img/login.png" alt="login">
+            <img class="login-img" src="<?php echo get_template_directory_uri(); ?>/inc/random-img.php" alt="login">
             <div class="login-msg">
                 <div class="forget-box">
                     <h2>找回密码！</h2>
-                    <div class="des">找回会员密码</div>
+                    <div class="des">Retrieve password!</div>
                     <p style="color:#D43030"></p>
                     <form name="lostpasswordform" method="POST" action="<?php home_url(); ?>/wp-login.php?action=lostpassword">
                         <div class="form-item form-email">
