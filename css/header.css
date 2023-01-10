@@ -96,11 +96,15 @@
     width: auto;
     height: auto;
     background-color: var(--bgc);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--box);
     padding: 6px 8px;
     transform: translateY(10px);
     transition: var(--tr3);
+}
+.nav-bar .nav-menu .sub-menu:hover {
+    border: 1px solid var(--theme);
 }
 .nav-bar .nav-menu .sub-menu li {
     padding: 2px 0;
@@ -389,6 +393,9 @@
         width: 100%;
         transition: var(--tr3);
     }
+    .menu-mb-top .menu-mb-box .user-info > .visitor img{
+        border-radius: 50%;
+    }
     .menu-mb-top .menu-mb-box .user-info > .visitor p {
         line-height: 40px;
         color: var(--text-sub);
@@ -453,7 +460,7 @@
         color: var(--text-keep);
     }
     .nav-mb .nav-menu-mb > li ul {
-        border-left: 2px solid var(--border);
+        border-left: 1px solid var(--border);
         margin-left: 10px;
         transition: var(--tr3);
     }

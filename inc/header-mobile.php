@@ -39,25 +39,24 @@
             <div class="user-info">
                 <div class="visitor">
                     <?php if(get_option("i_login_hidden") != 1 || is_user_logged_in()){ ?>
-                        <?php  
-                            if(is_user_logged_in()) {
-                                echo get_user_avatar();
-                            } else { ?>
-                                <img src="<?php echo get_template_directory_uri();?>/static/img/avatar.png" alt="">
+                        <?php if(is_user_logged_in()) { ?>
+                            <a href="<?php bloginfo('url') ?>/wp-admin"><?php echo get_user_avatar(); ?></a>
+                        <?php } else { ?>
+                            <a href="<?php echo wp_login_url(); ?>"><img src="<?php echo get_template_directory_uri();?>/static/img/avatar.png" alt=""></a>
                         <?php } ?>
-                        <p>
-                            <?php 
-                                if ( is_user_logged_in() ) {
+                        <a href="<?php if(is_user_logged_in()) {echo bloginfo('url')."/wp-admin";} else {echo wp_login_url();} ?>">
+                            <p><?php 
+                                if (is_user_logged_in()) {
                                     global $current_user, $display_name;
                                     get_currentuserinfo();
                                     echo $current_user -> display_name;
                                 } else {
                                     if(get_option("i_hello")) {echo get_option("i_hello");} else {echo 'Hi, 请登录!';};
                                 } 
-                            ?>
-                        </p>
+                            ?></p>
+                        </a>
                     <?php } else { ?>   
-                        <img src="<?php site_icon_url(); ?>" alt="" >
+                        <img src="<?php site_icon_url(); ?>" alt="" style="border-radius: 100%;">
                         <p><?php bloginfo('name'); ?></p> 
                     <?php } ?>
                 </div>

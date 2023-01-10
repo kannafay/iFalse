@@ -178,17 +178,51 @@ function getCookie(name){
 	return null;
 }
 const night_btn = document.querySelector('.change-night span');
+const allImgs = document.querySelectorAll('.post-content img, .say-banner img, .say-post-content img'); //获取文章、页面、说说图片
+
 if (getCookie("night") == "1") {
     night_btn.classList.add('icon-rijianmoshixhdpi');
+
+    //所有图片降低亮度
+    for(let i=0; i<allImgs.length; i++) {
+        allImgs[i].classList.add("img-night");
+    }
 } else {
     night_btn.classList.add('icon-yueduye-yejianmoshi');
+
+    //恢复所有图片降低亮度
+    for(let i=0; i<allImgs.length; i++) {
+        allImgs[i].classList.remove("img-night");
+    }
 }
 function nightBtn() {
     if (getCookie("night") == "1") {
         night_btn.classList.add('icon-rijianmoshixhdpi');
         night_btn.classList.remove('icon-yueduye-yejianmoshi');
+
+        //所有图片降低亮度
+        for(let i=0; i<allImgs.length; i++) {
+            allImgs[i].classList.add("img-night");
+        }
     } else {
         night_btn.classList.add('icon-yueduye-yejianmoshi');
         night_btn.classList.remove('icon-rijianmoshixhdpi');
+
+        //恢复所有图片降低亮度
+        for(let i=0; i<allImgs.length; i++) {
+            allImgs[i].classList.remove("img-night");
+        }
     }
 }
+
+// function getCookie(cookieName) {
+//     const strCookie = document.cookie
+//     const cookieList = strCookie.split(';')
+//     for(let i = 0; i < cookieList.length; i++) {
+//       const arr = cookieList[i].split('=')
+//       if (cookieName === arr[0].trim()) {
+//         return arr[1]
+//       }
+//     }
+//     return ''
+// }

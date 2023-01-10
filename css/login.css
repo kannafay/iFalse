@@ -22,6 +22,7 @@
 .login-page .login-main .login-img {
     width: 700px;
     padding-right: 80px;
+    pointer-events: none;
 }
 .login-page .login-msg {
     position: relative;

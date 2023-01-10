@@ -86,7 +86,7 @@ function show_wp_title(){
 // ---------------------------------------------------------------------
 // 默认封面图
 function i_cover_pic() {
-  $cover_pic = get_template_directory_uri() . '/static/img/thumbnail.png';
+  $cover_pic = get_template_directory_uri() . '/static/img/thumbnail.jpg';
   return $cover_pic;
 }
 // 加载图

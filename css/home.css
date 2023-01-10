@@ -508,8 +508,12 @@
     justify-content: space-between;
 }
 .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-top-title {
+    margin-top: 5px;
     color: var(--text);
     transition: var(--tr3);
+}
+.home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom {
+    margin-bottom: 5px;
 }
 .home-2 .home-2-mian ul li .home-2-detail h2 {
     word-break: break-all;
@@ -870,7 +874,12 @@
     .home-2 .home-2-mian ul li .home-2-detail-bottom-msg .home-2-detail-comments::before {
         display: none !important;
     }
-
+    .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-top-title {
+        margin-top: 0;
+    }
+    .home-2 .home-2-mian ul li .home-2-detail .home-2-detail-bottom {
+        margin-bottom: 0;
+    }
     .home-2 .home-2-mian ul li .home-2-detail h2 a {
         font-size: 15px;
     }

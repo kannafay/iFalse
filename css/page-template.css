@@ -6,6 +6,7 @@
     transition: var(--tr3);
 }
 .page-banner .page-title h1 {
+    font-size: 32px;
     color: var(--text);
     margin-bottom: 15px;
     margin-top: 20px;

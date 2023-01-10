@@ -84,6 +84,9 @@ a:hover {
 img {
     object-fit: cover;
 }
+.img-night {
+    filter: brightness(.7);
+}
 .container-small {
     width: 680px;
     margin: 0 auto;

@@ -8,10 +8,16 @@
     --body: #292A2D;
     --bgc: #34363a;
     --box-p: 0 0 10px rgba(28 31 35 / 30%);
-    --border: #4c4c4c;
+    --border: #3f3f3f;
 }
 body {
     background-color: var(--body);
+}
+
+/* header.css */
+.nav-bar .nav-menu .sub-menu,
+.nav-bar .nav-menu .sub-menu:hover {
+    border: 0;
 }
 
 /* home.css */
@@ -149,6 +155,10 @@ body {
 }
 .is-logined .is-logined-box {
     background-color: var(--body);
+    border: 0;
+}
+.is-logined .is-logined-box:hover {
+    border: 0;
 }
 .post-comments .comment-respond textarea,
 .post-comments .comment-respond .comment-form-author input, 
@@ -184,6 +194,10 @@ body {
 .post-comments .depth-1 {
     background-color: var(--body);
     transition: var(--tr3);
+    border:0;
+}
+.post-comments .depth-1:hover {
+    border:0;
 }
 .post-comments #post-comments-nav a,
 .post-comments #post-comments-nav span {
@@ -263,7 +277,7 @@ body {
     }
     .home-2 .home-2-mian ul li {
         padding: 10px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     .page-nav-bar {
         height: 60px;

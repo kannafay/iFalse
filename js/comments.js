@@ -57,7 +57,7 @@ const change_comment_respond_textarea = document.querySelector('.post-comments .
 if(change_comment_respond_textarea){change_comment_respond_textarea.rows = '6'}
 
 const change_comment_respond_textarea_text = document.querySelector('.post-comments .post-comments-content .comment-respond textarea');
-if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','一条善良的评论可以带来无限的好运!')}
+if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','友好发言，维护世界和平!')}
 
 const change_comment_respond_author = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author input');
 const change_comment_respond_author_label = document.querySelector('.post-comments .post-comments-content .comment-respond .comment-form-author label');
@@ -84,4 +84,14 @@ if(change_comment_email_notes){change_comment_email_notes.innerText = '发表评
 const change_comment_edit = document.querySelectorAll('.post-comments .comment-meta .comment-edit-link');
 $(change_comment_edit).each(function(i) {
     change_comment_edit[i].innerText = '编辑评论';
+})
+
+const replyText = document.querySelector('.post-comments .comment-respond textarea');
+const currentUrl = window.location.href;
+$(document).ready(function() {
+    if (/replytocom=\d+#respond$/.exec(currentUrl)) {
+        $(replyText).focus();
+    } else {
+        $(replyText).blur();
+    }
 })

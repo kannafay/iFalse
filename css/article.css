@@ -29,6 +29,7 @@
     color: var(--theme);
 }
 .single-banner .single-title h1 {
+    font-size: 32px;
     color: var(--text);
     margin-bottom: 10px;
     text-align: justify;
@@ -361,7 +362,7 @@
     line-height: 1.8;
 }
 .single-main .left .post-context {
-    border-top: 1px solid var(--border);
+    /* border-top: 1px solid var(--border); */
     padding-top: 20px;
     margin-top: 20px;
     transition: var(--tr3);
@@ -436,7 +437,7 @@
     font-size: 16px;
     font-weight: 400;
     margin: 20px 0;   
-    border-top: 1px solid var(--border);
+    /* border-top: 1px solid var(--border); */
     padding-top: 20px;
     display: flex;
     align-items: center;
@@ -467,7 +468,7 @@
     color: var(--text-sub);
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid var(--border);
+    /* border-top: 1px solid var(--border); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -491,9 +492,13 @@
 .post-comments .depth-1 {
     padding: 15px;
     margin-top: 20px;
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
+    border: 1px solid var(--border);
     transition: var(--tr3);
+}
+.post-comments .depth-1:hover {
+    border: 1px solid var(--theme);
 }
 .post-comments .depth-2,
 .post-comments .depth-3,
@@ -565,7 +570,7 @@
 .post-comments .comment-author {
     display: flex;
     align-items: center;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 .post-comments .comment-author img {
     border-radius: 50%;
@@ -592,7 +597,7 @@
 
 .post-comments .comment-meta {
     font-size: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
@@ -642,7 +647,7 @@
     color: var(--text-sub);
     background-color: var(--bgc);
     resize: none;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     outline: none;
@@ -780,7 +785,7 @@
     height: 100px;
     padding-top: 20px;
     margin-top: 20px;
-    border-top: 1px solid var(--border);
+    /* border-top: 1px solid var(--border); */
     transition: var(--tr3);
 }
 .is-logined .is-logined-box {
@@ -789,11 +794,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bgc-sub);
+    /* background-color: var(--bgc-sub); */
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     font-size: 14px;
     color: var(--text-info);
     transition: var(--tr3);
+}
+.is-logined .is-logined-box:hover {
+    border: 1px solid var(--theme);
 }
 .is-logined .is-logined-box a {
     margin: 0 5px;
@@ -901,6 +910,10 @@
     .single-main .right {
         display: none;
     }
+    .single-banner .single-title h1,
+    .page-banner .page-title h1 {
+        font-size: 28px;
+    }
     .post-comments .comment-body .reply a {
         visibility: visible;
         opacity: 1;
@@ -944,7 +957,8 @@
         border-bottom: 1px solid var(--border);
         padding-bottom: 15px;
     }
-    .single-banner .single-title h1 {
+    .single-banner .single-title h1,
+    .page-banner .page-title h1 {
         font-size: 24px;
     }
     .single-main .left {
@@ -955,6 +969,9 @@
     .post-comments .fn,
     .post-comments .fn a {
         font-size: 15px;
+    }
+    .post-comments .comment-respond textarea {
+        padding: 15px;
     }
     .post-comments .comment-respond .comment-form-author,
     .post-comments .comment-respond .comment-form-email,

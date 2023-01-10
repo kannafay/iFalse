@@ -437,6 +437,9 @@
     border: 1px solid var(--border);
     transition: var(--tr3);
 }
+#primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-comments__comment:hover {
+    border: 1px solid var(--theme);
+}
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-comments__comment img {
     border-radius: 50%;
     width: 40px;

@@ -19,7 +19,7 @@ if($_POST["i_opt"]){
         <table class="form-table">
             <tbody>
                 <tr>
-                    <th scope="row"><label for="i_keywords">关键词</label></th>
+                    <th scope="row"><label for="i_keywords">首页关键词</label></th>
                     <td>
                         <input name="i_keywords" type="text" value="<?php echo get_option("i_keywords"); ?>" class="regular-text">
                         <p class="description">利于网站SEO，以英文逗号隔开。</p>
@@ -27,10 +27,12 @@ if($_POST["i_opt"]){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_night">自动夜间模式</label></th>
+                    <th scope="row"><label for="i_night">夜间模式</label></th>
                     <td>
                         <input name="i_night" type="text" value="<?php echo get_option("i_night"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。20:00~06:00自动开启夜间模式。默认：关闭</p>
+                        <p class="description">数字1为开启。全局夜间模式。默认：关闭</p>
+                        <p class="description">数字2为自动夜间模式。时间为20:00~06:00。</p>
+                        
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +60,7 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_mourn">悼念模式</label></th>
                     <td>
                         <input name="i_mourn" type="text" value="<?php echo get_option("i_mourn"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。全站变灰，缅怀先烈。默认：关闭</p>
+                        <p class="description">数字1为开启。首页变灰，缅怀先烈。默认：关闭</p>
                     </td>
                 </tr>
             </tbody>

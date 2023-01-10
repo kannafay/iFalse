@@ -55,10 +55,10 @@ if($_POST["i_opt"]){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_comments_turn">游客评论</label></th>
+                    <th scope="row"><label for="i_comments_turn">登录后评论</label></th>
                     <td>
                         <input name="i_comments_turn" type="text" value="<?php echo get_option("i_comments_turn"); ?>" class="regular-text">
-                        <p class="description">数字1为关闭。是否开启游客评论。默认：开启</p>
+                        <p class="description">数字1为开启。开启后仅已登录用户可评论。默认：关闭</p>
                     </td>
                 </tr>
             </tbody>

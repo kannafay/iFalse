@@ -27,7 +27,7 @@ if($_POST["i_opt"]){
                     <th scope="row"><label for="i_login_hidden">隐藏登录入口</label></th>
                     <td>
                         <input name="i_login_hidden" type="text" value="<?php echo get_option("i_login_hidden"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。默认：关闭</p>
+                        <p class="description">数字1为开启。开启后隐藏右上角登录图标默认：关闭</p>
                     </td>
                 </tr>
                 <tr>
