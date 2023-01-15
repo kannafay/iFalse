@@ -32,7 +32,7 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_night" type="text" value="<?php echo get_option("i_night"); ?>" class="regular-text">
                         <p class="description">数字1为开启。开启后全局夜间模式。</p>
-                        <p class="description">数字2为自动夜间模式。时间为20:00~06:00。</p>
+                        <p class="description">数字2为自动夜间模式。时间为20:00~07:00。</p>
                         
                     </td>
                 </tr>
