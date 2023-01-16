@@ -1,13 +1,19 @@
 <?php
-error_reporting(0);
-if($_POST["i_opt"]){
+
+@$i_keywords = stripslashes($_POST["i_keywords"]);
+@$i_night = stripslashes($_POST["i_night"]);
+@$i_say_img = stripslashes($_POST["i_say_img"]);
+@$i_404_tip = stripslashes($_POST["i_404_tip"]);
+@$i_404_back = stripslashes($_POST["i_404_back"]);
+@$i_mourn = stripslashes($_POST["i_mourn"]);
+
+if(@stripslashes($_POST["i_opt"])){
     
-    // 其他设置
     update_option("i_keywords",$_POST["i_keywords"]);
     update_option("i_night",$_POST["i_night"]);
     update_option("i_say_img",$_POST["i_say_img"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
-    update_option("i_404_bak",$_POST["i_404_bak"]);
+    update_option("i_404_back",$_POST["i_404_back"]);
     update_option("i_mourn",$_POST["i_mourn"]);
     
 }
@@ -32,7 +38,8 @@ if($_POST["i_opt"]){
                     <td>
                         <input name="i_night" type="text" value="<?php echo get_option("i_night"); ?>" class="regular-text">
                         <p class="description">数字1为开启。开启后全局夜间模式。</p>
-                        <p class="description">数字2为自动夜间模式。时间为20:00~07:00。</p>
+                        <p class="description">数字2为自动夜间模式。</p>
+                        <p class="description-primary">春夏季(3~8)：20:00~06:00，秋冬季(9~2)：19:00~07:00</p>
                         
                     </td>
                 </tr>
@@ -53,9 +60,9 @@ if($_POST["i_opt"]){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_404_bak">404按钮</label></th>
+                    <th scope="row"><label for="i_404_back">404按钮</label></th>
                     <td>
-                        <input name="i_404_bak" type="text" value="<?php echo get_option("i_404_bak"); ?>" class="regular-text">
+                        <input name="i_404_back" type="text" value="<?php echo get_option("i_404_back"); ?>" class="regular-text">
                         <p class="description">按钮文字。</p>
                         <p class="description-primary">默认：返回首页</p>
                     </td>

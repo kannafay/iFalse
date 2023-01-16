@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.css">
+
 <?php 
     if(get_option("i_swiper")) {
         
@@ -53,7 +55,7 @@
             if(get_option("i_notice")) {?>
                 <div class="notice">
                     <div class="notice-box">
-                        <span class="iconfont icon-xiaoxi"></span>
+                        <span></span>
                         <p><?php echo get_option("i_notice"); ?></p>
                     </div>
                 </div>
@@ -72,3 +74,35 @@
         ?>
     </div>
 </div>
+
+<script src="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.js"></script>
+<?php 
+    if(get_option("i_swiper_effect")) {
+        $swiper_effect = get_option("i_swiper_effect");
+    } else {
+        $swiper_effect = 'slide';
+    }
+?>
+<script type="text/javascript">  
+    // 轮播图
+    var mySwiper = new Swiper ('.swiper', {
+        loop: true,
+        parallax : true,
+        effect: '<?php echo $swiper_effect; ?>',
+        spaceBetween: 10,
+        speed: 600,
+        autoplay: { 
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable : true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+</script>

@@ -2,7 +2,12 @@
 /*Template Name: 动态说说*/
 ?>
 
+
+
 <?php i_frame(); ?>
+
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
+
 <?php get_header(); ?>
 <section>
     <div class="say container-small">
@@ -98,4 +103,7 @@
     <?php get_footer(); ?>
 </section>
 
+<script src="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.umd.js"></script>
+
 <?php i_frame_js(); ?>
+

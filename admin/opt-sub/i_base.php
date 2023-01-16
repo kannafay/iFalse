@@ -1,14 +1,19 @@
 <?php
-error_reporting(0);
-if($_POST["i_opt"]){
+@$i_plane = stripslashes($_POST["i_plane"]);
+@$i_blog_or_card = stripslashes($_POST["i_blog_or_card"]);
+@$i_loading_pic = stripslashes($_POST["i_loading_pic"]);
+@$i_login = stripslashes($_POST["i_login"]);
+@$i_register_turn = stripslashes($_POST["i_register_turn"]);
+@$i_forget_turn = stripslashes($_POST["i_forget_turn"]);
 
-    // 基本设置
-    update_option("i_plane",$_POST["i_plane"]);
-    update_option("i_blog_or_card",$_POST["i_blog_or_card"]);
-    update_option("i_loading_pic",$_POST["i_loading_pic"]);
-    update_option("i_login",$_POST["i_login"]);
-    update_option("i_register_turn",$_POST["i_register_turn"]);
-    update_option("i_forget_turn",$_POST["i_forget_turn"]);
+if(@stripslashes($_POST["i_opt"])){
+
+    update_option("i_plane",$i_plane);
+    update_option("i_blog_or_card",$i_blog_or_card);
+    update_option("i_loading_pic",$i_loading_pic);
+    update_option("i_login",$i_login);
+    update_option("i_register_turn",$i_register_turn);
+    update_option("i_forget_turn",$i_forget_turn);
     
 }
 ?>

@@ -1,4 +1,22 @@
+<?php
+// ---------------------------------------------------------------------
+// 评论博主高亮
+function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
+    error_reporting(0);
+      $blogusers = get_user_by('id', 1);
+      foreach ( $blogusers as $user ){
+          if( $author == $user->display_name ){
+              $webMaster = '<span class="master">'.$author.'</span><i>博主</i>';
+              return $webMaster;
+          }
+      }
+    return $author;
+}
+add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
+?>
+
 <?php if(comments_open()) { ?>
+
 <div class="post-comments">
     <div class="post-comments-content">
     <?php comment_form() ?>
@@ -41,3 +59,6 @@
         }
     } 
 ?>
+
+
+<script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>

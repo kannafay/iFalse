@@ -8,19 +8,30 @@ function insertAfter(newElement, targetElement){
     }
 }
 
-// 添加博主标签
-const comment_author_name_a = document.querySelectorAll('.post-comments .post-comments-content .fn a');
-const comment_author_card = document.querySelectorAll('.post-comments .post-comments-content .fn .master');
-const comment_author_i = [];
-const comment_author_title = [];
-for(let i=0; i<comment_author_card.length; i++) {
-    comment_author_i[i] = document.createElement('i');
-    comment_author_title[i] = document.createTextNode('作者');
-    comment_author_i[i].appendChild(comment_author_title[i]);
-    insertAfter(comment_author_i[i],comment_author_card[i]);
+// 评论者标签
+const comment_name = document.querySelectorAll('.post-comments .comment .comment-body .vcard .fn');
+const comment_name_span = [];
+const comment_name_i = [];
+for(let i=0; i<comment_name.length; i++) {
+    comment_name_span[i] = document.createElement('span');
+    comment_name_span[i].innerText = comment_name[i].innerText;
+    comment_name_i[i] = document.createElement('i');
+    comment_name_i[i].innerText = '游客';
+    // insertAfter(comment_name_i[i],comment_name[i]);
+    comment_name[i].appendChild(comment_name_i[i]);
+}
+// 会员标签
+const comment_member = document.querySelectorAll('.post-comments .byuser > .comment-body > .vcard > .fn > i');
+for(let i=0; i<comment_member.length; i++) {
+    comment_member[i].innerText = '会员';
+}
+// 作者标签
+const comment_author = document.querySelectorAll('.post-comments .bypostauthor > .comment-body > .vcard > .fn > i');
+for(let i=0; i<comment_author.length; i++) {
+    comment_author[i].innerText = '作者';
 }
 
-// 删除评论链接
+// 删除评论区用户链接
 const remove_author_a = document.querySelectorAll('.post-comments .post-comments-content .fn a');
 for(let i=0; i<remove_author_a.length; i++) {
     remove_author_a[i].removeAttribute('href');
@@ -86,6 +97,7 @@ $(change_comment_edit).each(function(i) {
     change_comment_edit[i].innerText = '编辑评论';
 })
 
+// 回复时文本域聚焦
 const replyText = document.querySelector('.post-comments .comment-respond textarea');
 const currentUrl = window.location.href;
 $(document).ready(function() {
@@ -95,3 +107,10 @@ $(document).ready(function() {
         $(replyText).blur();
     }
 })
+
+// 文章、页面评论为0时隐藏
+const comment_number = document.querySelector('.post-comments .post-comments-title a').innerHTML;
+if(comment_number == "沙发") {
+    document.querySelector('.post-comments .post-comments-title').style.display = 'none';
+}
+

@@ -1,13 +1,17 @@
 <?php
-error_reporting(0);
-if($_POST["i_opt"]){
+@$i_copyright = stripslashes($_POST["i_copyright"]);
+@$i_icp = stripslashes($_POST["i_icp"]);
+@$i_icp_gov = stripslashes($_POST["i_icp_gov"]);
+@$i_upyun = stripslashes($_POST["i_upyun"]);
+@$i_build_date = stripslashes($_POST["i_build_date"]);
+
+if(@stripslashes($_POST["i_opt"])){
     
-    // 底部设置
-    update_option("i_copyright",$_POST["i_copyright"]);
-    update_option("i_icp",$_POST["i_icp"]);
-    update_option("i_icp_gov",$_POST["i_icp_gov"]);
-    update_option("i_upyun",$_POST["i_upyun"]);
-    update_option("i_build_date",$_POST["i_build_date"]);
+    update_option("i_copyright",$i_copyright);
+    update_option("i_icp",$i_icp);
+    update_option("i_icp_gov",$i_icp_gov);
+    update_option("i_upyun",$i_upyun);
+    update_option("i_build_date",$i_build_date);
     
 }
 ?>
@@ -21,8 +25,9 @@ if($_POST["i_opt"]){
                 <tr>
                     <th scope="row"><label for="i_copyright">网站版权</label></th>
                     <td>
-                        <input name="i_copyright" type="text" value="<?php echo get_option("i_copyright"); ?>" class="regular-text">
-                        <p class="description">默认：Copyright © <?php echo date("Y"); ?></p>
+                        <input name="i_copyright" type="number" value="<?php echo get_option("i_copyright"); ?>" class="regular-text">
+                        <p class="description">填写年份即可。</p>
+                        <p class="description-primary">默认：Copyright © <?php echo date("Y"); ?></p>
                     </td>
                 </tr>
                 <tr>

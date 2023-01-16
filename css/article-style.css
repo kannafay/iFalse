@@ -72,6 +72,7 @@
     object-fit: cover;
     border-radius: var(--radius);
     vertical-align: bottom;
+    transition: var(--tr3);
 }
 .single-main .left .post-content figcaption {
     font-size: 14px;
@@ -108,6 +109,10 @@
 }
 .single-main .left .post-content > .wp-block-image img {
     cursor: pointer;
+    transition: var(--tr3);
+}
+.single-main .left .post-content > .wp-block-image img:hover {
+    box-shadow: var(--box-l);
 }
 .single-main .left .post-content .wp-block-gallery {
     display: grid;
@@ -130,6 +135,10 @@
     border-radius: 4px;
     vertical-align: middle;
     position: absolute;
+    transition: var(--tr3);
+}
+.single-main .left .post-content .wp-block-gallery .wp-block-image img:hover {
+    box-shadow: var(--box-l);
 }
 .single-main .left .post-content video {
     width: 100%;

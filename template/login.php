@@ -42,7 +42,7 @@
                     <form name="loginform" method="POST" action="<?php home_url(); ?>/wp-login.php">
                         <div class="form-item form-username">
                             <span class="iconfont icon-atm"></span>
-                            <input type="text" name="log" placeholder="用户名/邮箱" size="20" required="required" autofocus />
+                            <input type="text" name="log" placeholder="用户名/邮箱" size="20" required="required" />
                         </div>
                         <div class="form-item form-password">
                             <span class="iconfont icon-password"></span>

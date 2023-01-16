@@ -34,8 +34,9 @@
     margin-right: 20px;
 }
 .nav-bar .logo img {
-    width: 32px; 
+    height: 36px; 
     vertical-align: middle;
+    transition: var(--tr3);
 }
 .nav-bar .nav-menu {
     display: flex;
@@ -65,7 +66,18 @@
     font-size: 15px;
 }
 .nav-bar .nav-menu .menu-item-has-children > a::after {
-    content: '▾';
+    content: '\e6b9';
+    display: inline-block;
+    font-family: 'iconfont';
+    font-size: 14px;
+    margin-left: 2px;
+    transform: rotate(0deg);
+    vertical-align: middle;
+    transition: var(--tr3);
+}
+.nav-bar .nav-menu .menu-item-has-children > a:hover::after {
+    transform: rotate(-90deg);
+    color: var(--theme)
 }
 .nav-bar .nav-menu > li > a {
     display: block;
@@ -114,12 +126,15 @@
     color: var(--text-sub);
     padding: 4px 50px 4px 6px;
     border-radius: var(--radius-sub);
-    transition: var(--tr3);
+    transition: var(--tr1);
 }
 .nav-bar .nav-menu .sub-menu li a:hover {
     color: var(--text-keep);
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
+}
+.nav-bar .nav-menu .sub-menu li a:hover::after {
+    color: var(--text-keep);
 }
 .nav-bar .nav-menu > li:hover > .sub-menu {
     transform: translateY(0);
@@ -172,6 +187,7 @@
     width: auto;
     height: auto;
     padding: 10px 8px;
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     background-color: var(--bgc);
     box-shadow: var(--box);
@@ -183,6 +199,9 @@
     transition: var(--tr3);
     z-index: 2;
 }
+.nav-bar .user-set:hover {
+    border: 1px solid var(--theme);
+}
 .nav-bar .user-set a {
     display: block;
     color: var(--text-sub);
@@ -190,7 +209,7 @@
     padding: 4px 6px 4px 6px;
     border-radius: var(--radius-sub);
     margin-bottom: 4px;
-    transition: var(--tr3);
+    transition: var(--tr1);
 }
 .nav-bar .user-set a:last-child{
     margin-bottom: 0;
@@ -247,7 +266,7 @@
         transition: var(--tr3);
     }
     .nav-bar-mb .center .logo-mb img {
-        height: 32px;
+        height: 36px;
         vertical-align: middle;
     }
     .nav-bar-mb .left,
@@ -434,7 +453,7 @@
     }
     .nav-menu-mb .current-menu-item > a {
         color: var(--text-keep) !important;
-        background: var(--theme);
+        background: var(--theme) !important;;
         /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
 
     }
@@ -453,30 +472,58 @@
         display: block;
         padding: 10px;
         border-radius: var(--radius);
-        transition: var(--tr3);
+        transition: var(--tr1);
     }
     .nav-mb .nav-menu-mb > li a:hover {
-        background: var(--theme);
-        /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
-        color: var(--text-keep);
+        background: var(--bgc-sub);
+        /* background: var(--body); */
+        color: var(--text);
     }
     .nav-mb .nav-menu-mb > li ul {
-        border-left: 1px solid var(--border);
-        margin-left: 10px;
+        border-left: 1px dashed var(--theme-3);
+        /* margin-left: 10px; */
         transition: var(--tr3);
     }
+    .nav-mb .nav-menu-mb > li > ul {
+        padding: 0 10px;
+        padding-bottom: 5px;
+        border: 0;
+    }
+    .nav-mb .nav-menu-mb > li ul > li {
+        /* padding: 0 10px; */
+    }
     .nav-mb .nav-menu-mb > li ul a {
-        margin: 5px 0 5px 10px;
+        margin: 5px 0;
         border-radius: var(--radius);
         color: var(--text-sub);
     }
     .nav-mb .nav-menu-mb > li ul a:hover {
-        background: var(--theme);
-        /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
-        color: var(--text-keep);
+        background: var(--theme-2);
+        color: var(--text);
     }
     .nav-mb .nav-menu-mb > li > ul ul {
-        margin-left: 20px;
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+
+    .nav-mb .nav-menu-mb > .menu-item-has-children {
+        overflow: hidden;
+        background-color: var(--bgc-sub);
+        border-radius: var(--radius);
+        transition: var(--tr3);
+    }
+    .nav-mb .nav-menu-mb > .menu-item-has-children > a {
+        display: flex;
+        background-color: var(--bgc);
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-mb .nav-menu-mb > .menu-item-has-children > a.open {
+        background-color: transparent;
+        color: var(--theme);
+    }
+    .nav-mb .nav-menu-mb > .menu-item-has-children > a > i {
+        transition: var(--tr3);
     }
 }
 

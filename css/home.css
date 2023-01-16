@@ -38,6 +38,12 @@
     visibility: visible;
     opacity: 1;
 }
+.wrapper-home .swiper:hover .swiper-button-prev {
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+.wrapper-home .swiper:hover .swiper-button-next {
+    border-radius: var(--radius) 0  0 var(--radius);
+}
 .wrapper-home  .swiper-pagination-bullet {
     height: 6px;
     background-color: var(--text-keep);
@@ -65,6 +71,8 @@
     object-fit: cover;
     border-radius: var(--radius);
     vertical-align: middle;
+    pointer-events: none;
+    transition: var(--tr3);
 }
 .wrapper-home .swiper-slide .swiper-img-mask {
     display: block;
@@ -159,7 +167,7 @@
     margin-top: 30px;
     background: var(--notice);
     border-radius: var(--radius);
-    padding: 0 10px;
+    padding: 0 15px;
 }
 .main-content .notice .notice-box {
     height: 100%;
@@ -174,17 +182,23 @@
     width: 0;
     height: 0;
 }
-.main-content .notice .notice-box span {
-    font-size: 22px;
-    color: var(--text);
+.main-content .notice .notice-box > span {
+    color: var(--text-sub);
     margin-right: 10px;
     transition: var(--tr3);
 }
-.main-content .notice .notice-box p {
-    font-size: 15px;
+.main-content .notice .notice-box > span::before {
+    content: '\e60c';
+    font-family: 'iconfont';
+    font-size: 20px;
+    /* vertical-align: middle; */
+}
+.main-content .notice .notice-box > p {
     color: var(--text-sub);
+    font-size: 15px;
     transition: var(--tr3);
 }
+
 
 .content .title-part {
     width: 100%;
@@ -240,7 +254,7 @@
 .content .title-part .tag span,
 .content .title-part .date span,
 .content .title-part .name span {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 /* 卡片模式 */
@@ -302,6 +316,7 @@
     justify-content: center;
     align-items: center;
     transition: var(--tr3);
+    z-index: 1;
 }
 .content .main-part ul li .home-pic:hover .mask-pic {
     background-color: var(--mask-3);
@@ -316,6 +331,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--radius);
+    transition: var(--tr3);
 }
 
 .home-detail .home-cate {
@@ -484,6 +500,7 @@
     justify-content: center;
     align-items: center;
     transition: var(--tr3);
+    z-index: 1;
 }
 .home-2 .home-2-mian ul li .home-2-pic:hover .mask-pic {
     background-color: var(--mask-3);
@@ -498,6 +515,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--radius);
+    transition: var(--tr3);
 }
 .home-2 .home-2-mian ul li .home-2-detail {
     width: calc(100% - 214px);

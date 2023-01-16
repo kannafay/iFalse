@@ -12,7 +12,7 @@
     <meta name="description" content="<?php bloginfo('description'); ?>" />
     <?php } ?><title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/_init.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/404.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article-style.css">
@@ -26,17 +26,21 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/say.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/searchform.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/sidebar.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/highlight/styles/vs2015.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/iconfont/iconfont.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/user/user.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3363448_0f9mua78wldv.css">
+    <?php if(get_option("i_custom_html_head")){echo get_option("i_custom_html_head");}; ?>
+    <style><?php if(get_option("i_custom_css_head")){echo get_option("i_custom_css_head");}; ?></style>
     <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-plane.css">
     <?php } ?>
-    <?php if(get_option("i_night") == 2) { ?><script>var judge = new Date().getHours() >= 20 || new Date().getHours() <= 6;</script>
+    <?php if(get_option("i_night") == 2) { 
+        if(date("m") >= 3 && date("m") <= 8) { ?>
+            <script>var judge = new Date().getHours() >= 20 || new Date().getHours() <= 5;</script>
+        <?php } else if(date("m") >= 9 && date("m") <= 12 || date("m") <= 2) { ?>
+            <script>var judge = new Date().getHours() >= 19 || new Date().getHours() <= 6;</script>
+        <?php } ?>
     <?php } else if(get_option("i_night") == 1) { ?><script>var judge = true;</script> 
     <?php } else { ?><script>var judge = false;</script> 
     <?php } ?>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/changeNight.js"></script>
 </head>

@@ -55,6 +55,7 @@ add_action('admin_menu', 'ifalse_set_index');
 add_action('admin_menu', 'ifalse_set_post');
 add_action('admin_menu', 'ifalse_set_footer');
 add_action('admin_menu', 'ifalse_set_other');
+add_action('admin_menu', 'ifalse_set_custom');
 
 function ifalse_set_base(){add_submenu_page('i_opt', '基本设置', '基本设置', 'edit_themes', 'i_base', 'i_base' );}  
 function ifalse_set_nav(){add_submenu_page('i_opt', '导航设置', '导航设置', 'edit_themes', 'i_nav', 'i_nav' );}  
@@ -62,6 +63,7 @@ function ifalse_set_index(){add_submenu_page('i_opt', '首页设置', '首页设
 function ifalse_set_post(){add_submenu_page('i_opt', '文章设置', '文章设置', 'edit_themes', 'i_post', 'i_post' );}   
 function ifalse_set_footer(){add_submenu_page('i_opt', '底部设置', '底部设置', 'edit_themes', 'i_footer', 'i_footer' );}  
 function ifalse_set_other(){add_submenu_page('i_opt', '其他设置', '其他设置', 'edit_themes', 'i_other', 'i_other' );}  
+function ifalse_set_custom(){add_submenu_page('i_opt', '自定义', '自定义', 'edit_themes', 'i_custom', 'i_custom' );}  
 
 function i_base(){require get_template_directory()."/admin/opt-sub/i_base.php";}
 function i_nav(){require get_template_directory()."/admin/opt-sub/i_nav.php";}
@@ -69,6 +71,7 @@ function i_index(){require get_template_directory()."/admin/opt-sub/i_index.php"
 function i_post(){require get_template_directory()."/admin/opt-sub/i_post.php";}
 function i_footer(){require get_template_directory()."/admin/opt-sub/i_footer.php";}
 function i_other(){require get_template_directory()."/admin/opt-sub/i_other.php";}
+function i_custom(){require get_template_directory()."/admin/opt-sub/i_custom.php";}
 
 // ---------------------------------------------------------------------
 // 网站标题
@@ -162,7 +165,7 @@ function shuoshuo_init() {
     'has_archive' => false, 
     'hierarchical' => false, 
     'menu_position' => null, 
-    'supports' => array('title','editor','author') 
+    'supports' => array('title','editor','author'),
   ]; 
   register_post_type('shuoshuo', $args); 
 }
@@ -247,32 +250,52 @@ function ashu_add_pages() {
 }   
 add_action( 'load-themes.php', 'ashu_add_pages' );  
 
-// ---------------------------------------------------------------------
-// 评论博主高亮
-function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
-  error_reporting(0);
-	$blogusers = get_user_by('id', get_the_author_ID());
-	foreach ( $blogusers as $user ){
-		if( $author == $user->display_name ){
-			$webMaster = '<span class="master">'.$author.'</span>';
-			return $webMaster;
-		}
-	}
-	return $author;
-}
-add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
 
-function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
-	$blogusers = get_user_by('id', get_the_author_ID());
-	foreach ( $blogusers as $user ){
-		if( $cookie_comment_author_cookiehash == $user->display_name ){
-			return $cookie_comment_author_cookiehash.'的崇拜者';
-		}
+// ---------------------------------------------------------------------
+// 评论区同步昵称
+add_filter('get_comment_author', function ($author, $comment_ID, $comment) {
+	if (!$comment->user_id) {
+		return $author;
 	}
-	return $cookie_comment_author_cookiehash;
+
+	$newuser = get_userdata($comment->user_id);
+
+	return $newuser->display_name ?: $author;
+}, 10, 3);
+
+// 添加@回复人
+// ---------------------------------------------------------------------
+function comment_add_at( $comment_text, $comment = '') {
+  if( $comment->comment_parent > 0) {
+    $comment_text = '<a style="color:#1ea91e;" href="#comment-' . $comment->comment_parent . '">@'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+  }
+  return $comment_text;
+}
+add_filter( 'comment_text' , 'comment_add_at', 20, 2);
+
+// ---------------------------------------------------------------------
+// 评论区同步昵称
+add_filter('get_comment_author', function ($author, $comment_ID, $comment) {
+  if (!$comment->user_id) {
+    return $author;
+  }
+  $newuser = get_userdata($comment->user_id);
+  return $newuser->display_name ?: $author;
+}, 10, 3);
+
+// ---------------------------------------------------------------------
+// 评论区同步昵称
+function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
+  $blogusers = get_user_by('id', 1);
+  foreach ( $blogusers as $user ){
+    if( $cookie_comment_author_cookiehash == $user->display_name ){
+      return $cookie_comment_author_cookiehash.'的崇拜者';
+    }
+  }
+  return $cookie_comment_author_cookiehash;
 }
 if( !is_user_logged_in() ){
-	add_filter( 'pre_comment_author_name', 'filter_pre_comment_author_name', 10, 1 ); 
+  add_filter( 'pre_comment_author_name', 'filter_pre_comment_author_name', 10, 1 ); 
 }
 
 // ---------------------------------------------------------------------
@@ -350,7 +373,7 @@ function insert_table_of_contents($content) {
 	if($fixed_location && !$comment_found) {
 		$first_paragraph = strpos($content, '</p>', 0) + 4;
 		$second_paragraph = strpos($content, '</p>', $first_p_pos);
-		return substr_replace($content, $table_of_contents, $second_paragraph + 4 , 0);
+		return substr_replace($content, $table_of_contents, $second_paragraph + 0 , 0);
 	}
 	else {
 		return str_replace($html_comment, $table_of_contents, $content);

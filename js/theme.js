@@ -119,6 +119,12 @@ if(header_element) {
 }
 
 // 侧边栏搜索
+const sidebar_search_input = document.querySelector('#primary-sidebar .widget_search input');
+if(sidebar_search_input) {
+    if(sidebar_search_input.getAttribute("placeholder") == false) {
+        sidebar_search_input.setAttribute("placeholder","搜索...");
+    }
+}
 const sidebar_search_btn = document.querySelector('#primary-sidebar .widget_search button');
 if(sidebar_search_btn) {
     sidebar_search_btn.innerHTML = '<span class="iconfont icon-sousuo">';
@@ -178,7 +184,15 @@ function getCookie(name){
 	return null;
 }
 const night_btn = document.querySelector('.change-night span');
-const allImgs = document.querySelectorAll('.post-content img, .say-banner img, .say-post-content img'); //获取文章、页面、说说图片
+const allImgs = document.querySelectorAll(
+   `.post-content img,
+    .say-banner img, 
+    .say-post-content img, 
+    .content .main-part ul li .home-pic img,
+    .home-2 .home-2-mian ul li .home-2-pic img,
+    .wrapper-home .swiper-slide img
+   `
+); //获取文章、页面、说说、主页图片
 
 if (getCookie("night") == "1") {
     night_btn.classList.add('icon-rijianmoshixhdpi');
@@ -199,6 +213,11 @@ function nightBtn() {
     if (getCookie("night") == "1") {
         night_btn.classList.add('icon-rijianmoshixhdpi');
         night_btn.classList.remove('icon-yueduye-yejianmoshi');
+        // logo黑
+        logo_light.style.display = "none";
+        logo_night.style.display = "block";
+        logo_light_m.style.display = "none";
+        logo_night_m.style.display = "block";
 
         //所有图片降低亮度
         for(let i=0; i<allImgs.length; i++) {
@@ -207,6 +226,11 @@ function nightBtn() {
     } else {
         night_btn.classList.add('icon-yueduye-yejianmoshi');
         night_btn.classList.remove('icon-rijianmoshixhdpi');
+        // logo白
+        logo_light.style.display = "block";
+        logo_night.style.display = "none";
+        logo_light_m.style.display = "block";
+        logo_night_m.style.display = "none";
 
         //恢复所有图片降低亮度
         for(let i=0; i<allImgs.length; i++) {
@@ -215,14 +239,24 @@ function nightBtn() {
     }
 }
 
-// function getCookie(cookieName) {
-//     const strCookie = document.cookie
-//     const cookieList = strCookie.split(';')
-//     for(let i = 0; i < cookieList.length; i++) {
-//       const arr = cookieList[i].split('=')
-//       if (cookieName === arr[0].trim()) {
-//         return arr[1]
-//       }
-//     }
-//     return ''
-// }
+// 折叠菜单
+const menu_m = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children');
+const menu_m_a = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a');
+const menu_m_a_i = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a > i');
+$(menu_m).each(function(i) {
+    let menu_height = [];
+    menu_height[i] = $(menu_m[i]).innerHeight();
+    $(menu_m[i]).css("height",$(menu_m_a[i]).innerHeight());
+    $(menu_m_a[i]).click(function() {
+        if($(menu_m[i]).innerHeight() != menu_height[i]) {
+            $(menu_m[i]).css("height",menu_height[i]);
+            $(menu_m_a_i[i]).css("transform","rotate(-90deg)");
+            $(menu_m_a[i]).addClass("open");
+        } else {
+            $(menu_m[i]).css("height",$(menu_m_a[i]).innerHeight());
+            $(menu_m_a_i[i]).css("transform","rotate(0deg)");
+            $(menu_m_a[i]).removeClass("open");
+        } 
+    })  
+})
+

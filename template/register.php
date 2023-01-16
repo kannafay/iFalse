@@ -82,13 +82,14 @@
                         if(!empty($error)) {
                             echo '<p class="ludou-error">'.$error.'</p>';
                         } elseif (is_user_logged_in()) {
-                            echo '<p style="color:#32CD32"><span class="iconfont icon-yduizhengqueshixin" style="color:#1AAD19;"></span> 注册成功！</p>';
+                            echo '<p style="color:#32CD32"><span class="iconfont icon-yduizhengqueshixin" style="color:#18aa18;"></span> 注册成功！正在跳转中...</p>';
+                            header("refresh:2");
                         }
                     ?>
                     <form name="registerform" method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                         <div class="form-item form-username">
                             <span class="iconfont icon-atm"></span>
-                            <input type="text" name="user_login" placeholder="用户名" size="20" required="required" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" autofocus />
+                            <input type="text" name="user_login" placeholder="用户名" size="20" required="required" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" />
                         </div>
                         <div class="form-item form-email">
                             <span class="iconfont icon-email"></span>

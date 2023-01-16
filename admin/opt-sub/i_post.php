@@ -1,14 +1,20 @@
 <?php
-error_reporting(0);
-if($_POST["i_opt"]){
+
+@$i_post_copyright = stripslashes($_POST["i_post_copyright"]);
+@$i_post_copyright_text = stripslashes($_POST["i_post_copyright_text"]);
+@$i_next_post = stripslashes($_POST["i_next_post"]);
+@$i_comments_article = stripslashes($_POST["i_comments_article"]);
+@$i_comments_page = stripslashes($_POST["i_comments_page"]);
+@$i_comments_turn = stripslashes($_POST["i_comments_turn"]);
+
+if(@stripslashes($_POST["i_opt"])){
     
-    // 文章设置
-    update_option("i_post_copyright",$_POST["i_post_copyright"]);
-    update_option("i_post_copyright_text",$_POST["i_post_copyright_text"]);
-    update_option("i_next_post",$_POST["i_next_post"]);
-    update_option("i_comments_article",$_POST["i_comments_article"]);
-    update_option("i_comments_page",$_POST["i_comments_page"]);
-    update_option("i_comments_turn",$_POST["i_comments_turn"]);
+    update_option("i_post_copyright",$i_post_copyright);
+    update_option("i_post_copyright_text",$i_post_copyright_text);
+    update_option("i_next_post",$i_next_post);
+    update_option("i_comments_article",$i_comments_article);
+    update_option("i_comments_page",$i_comments_page);
+    update_option("i_comments_turn",$i_comments_turn);
     
 }
 ?>

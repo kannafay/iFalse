@@ -12,7 +12,7 @@
             if(get_option("i_notice")) {?>
                 <div class="notice">
                     <div class="notice-box">
-                        <span class="iconfont icon-xiaoxi"></span>
+                        <span></span>
                         <p><?php echo get_option("i_notice"); ?></p>
                     </div>
                 </div>

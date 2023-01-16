@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/highlight/styles/vs2015.min.css">
+
 <div class="container single-top article-top">
     <div class="single-banner">
         <div class="single-cate">
@@ -37,8 +40,8 @@
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">
                 <div class="post-prev-next">
-                    <div class="post-prev"><span>上一篇：</span><?php previous_post_link('%link'); ?></div>
-                    <div class="post-next"><span>下一篇：</span><?php next_post_link('%link'); ?></div>
+                    <div class="post-prev"><span>← 上一章节</span><p><?php if(get_previous_post()){previous_post_link('%link');}else{echo "无";}; ?></p></div><i></i>
+                    <div class="post-next"><span>下一章节 →</span><p><?php if(get_next_post()){next_post_link('%link');}else{echo "无";}; ?></p></div>
                 </div>
             </div>
         <?php } ?>
@@ -59,3 +62,6 @@
         <span class="iconfont icon-category"></span>
     </div>
 </div>
+
+<script src="<?php echo get_template_directory_uri(); ?>/static/highlight/highlight.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.umd.js"></script>

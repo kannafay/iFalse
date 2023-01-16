@@ -87,6 +87,9 @@
     border: 1px solid var(--theme);
     background-color: var(--bgc);
 }
+.login-page .login-msg .form-item input:focus {
+    box-shadow: var(--input);
+}
 .login-page .login-msg .form-other {
     display: flex;
     justify-content: space-between;
@@ -115,6 +118,7 @@
     color: var(--text-keep);
     background: var(--theme);
     background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
+    box-shadow: var(--box-p);
     transition: var(--tr3);
 }
 .login-page .login-msg .form-item button:hover {

@@ -1,6 +1,6 @@
 /* main css */
 [data-color-mode=light] {
-    --body: #f5f5f5;
+    --body: #f5f6f7;
     --box-p: 0 0 10px rgba(28 31 35 / 5%);
     --border: #e3e3e3;
 }
@@ -19,6 +19,15 @@ body {
 .nav-bar .nav-menu .sub-menu:hover {
     border: 0;
 }
+.nav-bar .user-set,
+.nav-bar .user-set:hover {
+    border: 0;
+}
+.nav-mb .nav-menu-mb > li a:hover,
+.nav-mb .nav-menu-mb > .menu-item-has-children {
+    background-color: var(--body);
+}
+
 
 /* home.css */
 .searchform input {
@@ -53,6 +62,29 @@ body {
     transition: var(--tr3);
 }
 
+/* article.css */
+.single-main .left .post-context .post-prev-next {
+    border: 0;
+    padding: 0;
+    background-color: var(--body);
+    box-shadow: none;
+    transition: var(--tr3);
+}
+.single-main .left .post-context .post-prev-next:hover {
+    border: 0;
+}
+.single-main .left .post-context .post-prev-next i {
+    display: none;
+}
+.single-main .left .post-context .post-prev-next .post-prev, 
+.single-main .left .post-context .post-prev-next .post-next {
+    width: calc(50% - 7.5px);
+    padding: 15px;
+    background-color: var(--bgc);
+    border-radius: var(--radius);
+    box-shadow: var(--box-p);
+}
+
 /* sidebar.css */
 .author-info-box,
 #primary-sidebar .widget_categories,
@@ -84,6 +116,9 @@ body {
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives:hover,
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-categories:hover {
     border: 0;
+}
+.author-info-box .author-info .post-author-logo {
+    border: 1px solid var(--theme);
 }
 
 /* article.css */
@@ -135,18 +170,16 @@ body {
     padding-top: 0;
     margin-bottom: 0;
 }
-.single-main .left .post-context .post-prev-next {
-    border: 0;
-    background-color: var(--bgc);
-    box-shadow: var(--box-p);
-    transition: var(--tr3);
-}
-.single-main .left .post-context .post-prev-next:hover {
+.single-main .left .post-content .post-copyright {
     border: 0;
 }
-.single-main .left .post-context .post-prev-next .post-prev {
+.single-main .left .post-content .post-copyright:hover {
     border: 0;
 }
+.single-main .left .post-content .post-copyright:hover div {
+    color: var(--text-info);
+}
+
 .is-logined {
     height: 80px;
     margin-top: 0;
@@ -154,8 +187,9 @@ body {
     border-top: 0;
 }
 .is-logined .is-logined-box {
-    background-color: var(--body);
+    background-color: var(--bgc);
     border: 0;
+    box-shadow: var(--box-p);
 }
 .is-logined .is-logined-box:hover {
     border: 0;
@@ -165,7 +199,8 @@ body {
 .post-comments .comment-respond .comment-form-email input, 
 .post-comments .comment-respond .comment-form-url input {
     border: 0;
-    background-color: var(--body);
+    background-color: var(--bgc);
+    box-shadow: var(--box-p);
     transition: var(--tr3);
 }
 .post-comments .comment-respond textarea:hover,
@@ -179,11 +214,9 @@ body {
     border: 0;
 }
 .post-comments {
-    background-color: var(--bgc);
-    padding: 20px;
+    padding-top: 20px;
     margin-top: 20px;
     border-radius: var(--radius);
-    box-shadow: var(--box-p);
     transition: var(--tr3);
 }
 .post-comments .comment-reply-title {
@@ -192,9 +225,10 @@ body {
     padding-top: 0;
 }
 .post-comments .depth-1 {
-    background-color: var(--body);
-    transition: var(--tr3);
+    background-color: var(--bgc);
     border:0;
+    box-shadow: var(--box-p);
+    transition: var(--tr3);
 }
 .post-comments .depth-1:hover {
     border:0;
@@ -250,6 +284,9 @@ body {
     .searchform-mb input:focus {
         background-color: var(--body);
         border: 0;
+    }
+    .searchform-mb input:focus {
+        box-shadow: none;
     }
 }
 
@@ -315,11 +352,10 @@ body {
     }
     .single-main .left .post-context .post-prev-next .post-prev,
     .single-main .left .post-context .post-prev-next .post-next {
-        padding: 0 10px;
+        width: calc(50% - 5px);
     }
     .post-comments {
         margin-top: 15px;
-        padding: 10px;
     }
     .post-comments .comment-reply-title {
         margin-bottom: 10px;
@@ -328,11 +364,11 @@ body {
         margin-top: 0;
     }
     .post-comments .post-comments-title {
-        padding-top: 10px;
+        padding-top: 20px;
         margin-top: 15px;
     }
     .post-comments .depth-1 {
-        margin-top: 10px; 
+        margin-top: 15px; 
     }
 
     /* 页面 */

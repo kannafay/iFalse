@@ -25,6 +25,7 @@
     width: 285px;
     background-color: var(--bgc);
     border: 1px solid var(--theme);
+    box-shadow: var(--input);
 }
 .searchform button {
     width: 36px;
@@ -76,6 +77,7 @@
     .searchform-mb input:focus {
         background-color: var(--bgc);
         border: 1px solid var(--theme);
+        box-shadow: var(--input);
     }
     .searchform-mb button {
         width: 39px;

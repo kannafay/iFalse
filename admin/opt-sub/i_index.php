@@ -1,14 +1,20 @@
 <?php
-error_reporting(0);
-if($_POST["i_opt"]){
+
+@$i_swiper = stripslashes($_POST["i_swiper"]);
+@$i_swiper_effect = stripslashes($_POST["i_swiper_effect"]);
+@$i_wrapper_text = stripslashes($_POST["i_wrapper_text"]);
+@$i_wrapper_name = stripslashes($_POST["i_wrapper_name"]);
+@$i_notice = stripslashes($_POST["i_notice"]);
+@$i_random_pic = stripslashes($_POST["i_random_pic"]);
+
+if(@stripslashes($_POST["i_opt"])){
     
-    // 首页设置
-    update_option("i_swiper",$_POST["i_swiper"]);
-    update_option("i_swiper_effect",$_POST["i_swiper_effect"]);
-    update_option("i_wrapper_text",$_POST["i_wrapper_text"]);
-    update_option("i_wrapper_name",$_POST["i_wrapper_name"]);
-    update_option("i_notice",$_POST["i_notice"]);
-    update_option("i_random_pic",$_POST["i_random_pic"]);
+    update_option("i_swiper",$i_swiper);
+    update_option("i_swiper_effect",$i_swiper_effect);
+    update_option("i_wrapper_text",$i_wrapper_text);
+    update_option("i_wrapper_name",$i_wrapper_name);
+    update_option("i_notice",$i_notice);
+    update_option("i_random_pic",$i_random_pic);
     
 }
 ?>

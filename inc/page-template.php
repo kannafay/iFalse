@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
+
 <div class="container single-top page-top">
     <div class="page-banner">
         <div class="page-title"><h1><?php the_title(); ?></h1></div>
@@ -30,3 +32,5 @@
         ?>
     </div>
 </div>
+
+<script src="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.umd.js"></script>
