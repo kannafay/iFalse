@@ -19,7 +19,7 @@ add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
 <div class="post-comments">
     <div class="post-comments-content">
     <?php comment_form() ?>
-    <h2 class="post-comments-title"><?php if(post_password_required()){echo '已加密';}elseif(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?>条评论</h2>
+    <h2 class="post-comments-title">发现<?php if(post_password_required()){echo '已加密';}elseif(comments_open()){comments_popup_link('沙发','1','%');}else{echo '已关闭';} ?>条评论</h2>
     <?php wp_list_comments( array(
         'avatar_size' => '400',
         'type' => 'comment'

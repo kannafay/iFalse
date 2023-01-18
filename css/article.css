@@ -200,11 +200,11 @@
 #article-toc::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    /* border-radius: var(--radius); */
+    border-radius: var(--radius);
 }
 #article-toc::-webkit-scrollbar-thumb {
-    background-color: var(--theme-5);
-    /* border-radius: var(--radius); */
+    background-color: var(--theme-sub);
+    border-radius: var(--radius);
 }
 
 .article-toc {
@@ -367,6 +367,7 @@
     width: 100%;
     font-size: 14px;
     padding: 15px;
+    margin-top: 5px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     color: var(--text-info);
@@ -382,9 +383,13 @@
 .single-main .left .post-content .post-copyright:hover div {
     color: var(--theme);
 }
+.single-main .left .post-content .post-copyright + .the-end {
+    /* background-color: var(--theme); */
+    display: none;
+}
 .single-main .left .post-context {
     /* border-top: 1px solid var(--border); */
-    margin-top: 80px;
+    /* margin-top: 80px; */
     transition: var(--tr3);
 }
 .single-main .left .post-context .post-prev-next {
@@ -720,6 +725,7 @@
 }
 .post-comments .comment-respond textarea {
     font-size: 14px;
+    line-height: 24px;
     width: 100%;
     color: var(--text-sub);
     background-color: var(--bgc);
@@ -744,7 +750,7 @@
     border-radius: var(--radius);
 }
 .post-comments .comment-respond textarea::-webkit-scrollbar-thumb {
-    background-color: var(--theme);
+    background-color: var(--theme-sub);
     border-radius: var(--radius);
 }
 .post-comments .comment-respond textarea::-webkit-scrollbar:hover {
@@ -1134,10 +1140,13 @@
         font-size: 24px;
     }
     .single-main .left .post-content .the-end {
-        margin: 30px 0 !important;
+        /* margin: 30px 0 !important; */
     }
     .single-main .left .post-context {
         margin-top: 0;
+    }
+    .single-main .left .post-content .the-end {
+        margin-top: 20px;
     }
     
 }

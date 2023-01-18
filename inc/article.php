@@ -29,14 +29,14 @@
     <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
+            <?php if(get_option("i_plane") != 1) { ?>
+                <div class="the-end"><i></i><span>THE END</span><i></i></div>
+            <?php } ?>
             <?php if(get_option("i_post_copyright") == 1) { ?>
                 <div class="post-copyright">
                     <div class="post-copyright-title">© 版权声明</div>
                     <div class="post-copyright-text"><?php if(get_option("i_post_copyright_text")){echo get_option("i_post_copyright_text");}else{echo '分享是一种美德，转载请保留原链接';} ?></div>
                 </div>
-            <?php } ?>
-            <?php if(get_option("i_plane") != 1) { ?>
-                <div class="the-end"><i></i><span>THE END</span><i></i></div>
             <?php } ?>
             <?php if(get_the_tag_list()){ ?><div class="post-tag-title">本文标签</div><div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div><?php } ?>
         </div>
