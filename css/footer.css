@@ -10,12 +10,17 @@
 .footer .footer-box a {
     font-size: 14px;
 }
+.footer .footer-box,
+.footer .footer-box .author,
+.footer .footer-box .icp_gov {
+    justify-content: center;
+    text-align: center;
+}
 .footer .footer-box {
     display: flex;
     flex-direction: column;
     line-height: 28px;
     color: var(--text-info);
-    text-align: center;
 }
 .footer .footer-box a {
     color: var(--text-info);
@@ -31,7 +36,6 @@
 }
 .footer .footer-box .author {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .footer .footer-box .author span {
@@ -40,7 +44,6 @@
 .footer .footer-box .icp_gov {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 .footer .footer-box .icp_gov img {
     vertical-align: middle;
@@ -57,4 +60,10 @@
     .footer {
         padding: 20px;
     }
+    /* .footer .footer-box,
+    .footer .footer-box .author,
+    .footer .footer-box .icp_gov {
+        justify-content: left;
+        text-align: left;
+    } */
 }

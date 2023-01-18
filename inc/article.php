@@ -35,10 +35,14 @@
                     <div class="post-copyright-text"><?php if(get_option("i_post_copyright_text")){echo get_option("i_post_copyright_text");}else{echo '分享是一种美德，转载请保留原链接';} ?></div>
                 </div>
             <?php } ?>
-            <?php if(get_the_tag_list()){ ?><div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div><?php } ?>
+            <?php if(get_option("i_plane") != 1) { ?>
+                <div class="the-end"><i></i><span>THE END</span><i></i></div>
+            <?php } ?>
+            <?php if(get_the_tag_list()){ ?><div class="post-tag-title">本文标签</div><div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div><?php } ?>
         </div>
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">
+            <div class="post-context_text">上下篇章</div>
                 <div class="post-prev-next">
                     <div class="post-prev"><span>← 上一章节</span><p><?php if(get_previous_post()){previous_post_link('%link');}else{echo "这已经是第一章内容了";}; ?></p></div><i></i>
                     <div class="post-next"><span>下一章节 →</span><p><?php if(get_next_post()){next_post_link('%link');}else{echo "这已经是最后章内容了";}; ?></p></div>
@@ -59,7 +63,7 @@
 
 <div class="post-menu-btn">
     <div>
-        <span class="iconfont icon-category"></span>
+        <span class="iconfont icon-nav-list"></span>
     </div>
 </div>
 

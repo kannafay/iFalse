@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11488167",
+      "name": "viewlist",
+      "font_class": "viewlist",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "11474302",
+      "name": "nav-list",
+      "font_class": "nav-list",
+      "unicode": "e6fd",
+      "unicode_decimal": 59133
+    },
+    {
+      "icon_id": "11488029",
+      "name": "discount",
+      "font_class": "discount",
+      "unicode": "e74c",
+      "unicode_decimal": 59212
+    },
+    {
+      "icon_id": "11488080",
+      "name": "map",
+      "font_class": "map",
+      "unicode": "e758",
+      "unicode_decimal": 59224
+    },
+    {
+      "icon_id": "3020025",
+      "name": "一级-资源监管",
+      "font_class": "yiji-ziyuanjianguan",
+      "unicode": "eaa9",
+      "unicode_decimal": 60073
+    },
+    {
+      "icon_id": "672036",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "13332682",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
       "icon_id": "15838429",
       "name": "arrow-down",
       "font_class": "arrow-down",
@@ -76,11 +125,25 @@
       "unicode_decimal": 59207
     },
     {
+      "icon_id": "11488043",
+      "name": "folder",
+      "font_class": "folder",
+      "unicode": "e751",
+      "unicode_decimal": 59217
+    },
+    {
       "icon_id": "11474272",
       "name": "editor",
       "font_class": "editor",
       "unicode": "e6f6",
       "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "11488138",
+      "name": "suggest",
+      "font_class": "suggest",
+      "unicode": "e767",
+      "unicode_decimal": 59239
     },
     {
       "icon_id": "11488020",

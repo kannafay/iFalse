@@ -41,7 +41,7 @@
                 </div>
             </div>
         <?php } else { ?>
-            <p class="haveNoMore"><span class="iconfont icon-tishi1"> 没有更多内容了</span></p>
+            <p class="haveNoMore"><span class="iconfont icon-tishi1"> 没有更多内容</span></p>
             <?php if(get_previous_posts_link()) { ?>
                 <div class="page-nav-bar">
                     <div class="page-nav">

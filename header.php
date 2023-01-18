@@ -28,11 +28,13 @@
             </a>
         <?php } ?>
         <?php 
-            wp_nav_menu( array( 
-                'container_id' => 'nav',
+            wp_nav_menu(array( 
+                'theme_location'  => 'menu',
+                'container_id'    => 'nav',
                 'container_class' => 'nav',
-                'menu_id' => 'nav-menu',
-                'menu_class' => 'nav-menu'
+                'menu_id'         => 'nav-menu',
+                'menu_class'      => 'nav-menu',
+                'fallback_cb'     => 'nav_fallback'
             ) );
         ?>
     </div>
@@ -61,7 +63,7 @@
 </div>
 <?php i_header_mb(); ?>
 
-<div class="change-night" onclick="switchNightMode();nightBtn();"><span class="iconfont"></span></div>
+<div class="change-night change-night-pc" onclick="switchNightMode();nightBtn();"><span class="iconfont"></span></div>
 
 <div class="progress-wrap"><svg><path></svg></div>
 

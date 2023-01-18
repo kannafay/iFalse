@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3363448 */
-  src: url('iconfont.woff2?t=1673880196593') format('woff2'),
-       url('iconfont.woff?t=1673880196593') format('woff'),
-       url('iconfont.ttf?t=1673880196593') format('truetype');
+  src: url('iconfont.woff2?t=1674072686689') format('woff2'),
+       url('iconfont.woff?t=1674072686689') format('woff'),
+       url('iconfont.ttf?t=1674072686689') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-viewlist:before {
+  content: "\e76d";
+}
+
+.icon-nav-list:before {
+  content: "\e6fd";
+}
+
+.icon-discount:before {
+  content: "\e74c";
+}
+
+.icon-map:before {
+  content: "\e758";
+}
+
+.icon-yiji-ziyuanjianguan:before {
+  content: "\eaa9";
+}
+
+.icon-xiala:before {
+  content: "\e6b9";
+}
+
+.icon-tongzhi:before {
+  content: "\e60c";
 }
 
 .icon-arrow-down:before {
@@ -53,8 +81,16 @@
   content: "\e747";
 }
 
+.icon-folder:before {
+  content: "\e751";
+}
+
 .icon-editor:before {
   content: "\e6f6";
+}
+
+.icon-suggest:before {
+  content: "\e767";
 }
 
 .icon-clock:before {

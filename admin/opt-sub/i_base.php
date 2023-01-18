@@ -7,14 +7,12 @@
 @$i_forget_turn = stripslashes($_POST["i_forget_turn"]);
 
 if(@stripslashes($_POST["i_opt"])){
-
     update_option("i_plane",$i_plane);
     update_option("i_blog_or_card",$i_blog_or_card);
     update_option("i_loading_pic",$i_loading_pic);
     update_option("i_login",$i_login);
     update_option("i_register_turn",$i_register_turn);
     update_option("i_forget_turn",$i_forget_turn);
-    
 }
 ?>
 

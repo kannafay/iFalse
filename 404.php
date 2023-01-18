@@ -5,7 +5,8 @@
         <div class="page-404-detail">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/404.png" alt="404">
             <p><?php if(get_option("i_404_tip")) {echo get_option("i_404_tip");} else{echo "抱歉, 您请求的页面找不到了!";} ?></p>
-            <a href="<?php bloginfo('url') ?>"><?php if(get_option("i_404_back")) {echo get_option("i_404_back");} else{echo "返回首页";} ?></a>
+            <a class="back-home" href="<?php bloginfo('url') ?>">返回首页</a>
+            <a class="back-history" onclick="window.history.go(-1)" style="cursor:pointer">返回上页</a>
         </div>
     </div>
     <div class="progress-wrap">

@@ -1,5 +1,4 @@
 <?php
-
 @$i_custom_css_head = stripslashes($_POST["i_custom_css_head"]);
 @$i_custom_js_footer = stripslashes($_POST["i_custom_js_footer"]);
 @$i_custom_html_head = stripslashes($_POST["i_custom_html_head"]);
@@ -7,14 +6,11 @@
 @$i_custom_html_tongji = stripslashes($_POST["i_custom_html_tongji"]);
 
 if(@stripslashes($_POST["i_opt"])){
-
-  // 基本设置
   update_option("i_custom_css_head",$i_custom_css_head);
   update_option("i_custom_js_footer",$i_custom_js_footer);
   update_option("i_custom_html_head",$i_custom_html_head);
   update_option("i_custom_html_footer",$i_custom_html_footer);
   update_option("i_custom_html_tongji",$i_custom_html_tongji);
-    
 }
 ?>
 

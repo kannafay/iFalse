@@ -241,7 +241,7 @@
 }
 #primary-sidebar .widget_tag_cloud a {
     line-height: 25px;
-    font-size: 14px;
+    font-size: 14px !important;
     padding: 2px 6px;
     border-radius: var(--radius-sub);
     color: var(--theme);

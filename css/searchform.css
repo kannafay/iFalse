@@ -51,10 +51,9 @@
     }
     .searchform-mb {
         display: block;
-        width: 100%;
+        width: calc(100% - 49px);
         position: relative;
         padding: 10px;
-        border-bottom: 1px solid var(--border);
         transition: var(--tr3);
     }
     .searchform-mb input {

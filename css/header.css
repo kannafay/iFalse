@@ -67,6 +67,7 @@
 }
 .nav-bar .nav-menu .menu-item-has-children > a::after {
     content: '\e6b9';
+    color: var(--text-info);
     display: inline-block;
     font-family: 'iconfont';
     font-size: 14px;
@@ -153,12 +154,12 @@
     padding: 4px 0 4px 6px;
 }
 .nav-bar .nav-menu .sub-menu li:hover > .sub-menu {
-    transform: translateY(-8px);
+    transform: translateY(-9px);
     visibility: visible;
     opacity: 1;
 }
 .nav-bar .nav-menu .sub-menu li .sub-menu li:hover .sub-menu {
-    transform: translateY(-8px);
+    transform: translateY(-9px);
     visibility: visible;
     opacity: 1;
 }
@@ -183,7 +184,7 @@
 .nav-bar .user-set {
     position: absolute;
     right: 0px;
-    top: 70px;
+    top: 69px;
     width: auto;
     height: auto;
     padding: 10px 8px;
@@ -239,14 +240,21 @@
 .nav-bar .login span:hover {
     color: var(--theme);
 }
+.nav-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children > .sub-menu > .menu-item-has-children > a::after {
+    display: none;
+}
+.nav-menu li a span {
+    font-size: 15px;
+}
 
+
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
 /* mobile */
 .nav-bar-mb,
 .menu-mb-mask,
 .menu-mb {
     display: none;
 }
-/* ///////////////////////////////////////////////////////////////////////////////////////// */
 .nav-bar-mb {
     height: 70px;
     background-color: var(--bgc-blur);
@@ -348,12 +356,12 @@
     display: block;
     position: fixed;
     top: 0;
-    left: -70%;
+    left: -80%;
     background-color: var(--bgc);
     width: 70%;
     height: 100%;
     overflow: auto;
-    transition: var(--tr6);
+    transition: left .6s cubic-bezier(.28,.9,.34,.99);
     z-index: 10;
 }
 .menu-mb-open {
@@ -439,8 +447,14 @@
 .menu-mb-top .menu-mb-box > span:hover {
     color: var(--theme);
 }
-.nav-mb-content{
+.nav-mb-content {
     padding: 70px 0 80px;
+}
+.nav-mb-content .nav-mb-content-top {
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    display: flex;
+    transition: var(--tr3);
 }
 .nav-mb {
     margin: 10px;
@@ -462,6 +476,12 @@
     color: var(--text);
     margin-bottom: 0;
 }
+.nav-mb .nav-menu-mb li a span {
+    font-size: 14px;
+}
+.nav-mb .nav-menu-mb li a span::before {
+    /* font-size: 16px; */
+}
 .nav-mb .nav-menu-mb > li {
     margin-bottom: 10px;
 }
@@ -476,21 +496,26 @@
     /* background: var(--body); */
     color: var(--text);
 }
+.nav-mb > ul > .menu-item-has-children ul li a {
+    padding: 8px 10px;
+}
 .nav-mb .nav-menu-mb > li ul {
-    border-left: 1px dashed var(--theme-3);
     /* margin-left: 10px; */
     transition: var(--tr3);
 }
 .nav-mb .nav-menu-mb > li > ul {
-    padding: 0 10px;
-    padding-bottom: 5px;
+    padding: 10px 10px 0.1px 10px;
+    margin-top: 10px;
     border: 0;
+    background-color: var(--bgc-sub);
+    border-radius: var(--radius);
+    transition: var(--tr3);
 }
 .nav-mb .nav-menu-mb > li ul > li {
     /* padding: 0 10px; */
 }
 .nav-mb .nav-menu-mb > li ul a {
-    margin: 5px 0;
+    margin-bottom: 10px;
     border-radius: var(--radius);
     color: var(--text-sub);
 }
@@ -501,31 +526,71 @@
 .nav-mb .nav-menu-mb > li > ul ul {
     margin-left: 10px;
     padding-left: 10px;
+    /* background: var(--theme-2);
+    background: linear-gradient(to right,var(--theme-2) 20% ,var(--bgc-0) 80%); */
 }
 
 .nav-mb .nav-menu-mb > .menu-item-has-children {
     overflow: hidden;
-    background-color: var(--bgc-sub);
-    border-radius: var(--radius);
     transition: var(--tr3);
 }
-.nav-mb .nav-menu-mb > .menu-item-has-children > a {
+
+.nav-mb .nav-menu-mb > .menu-item-has-children > a,
+.nav-mb .nav-menu-mb > .menu-item-has-children > .sub-menu .menu-item-has-children a {
     display: flex;
-    background-color: var(--bgc);
     justify-content: space-between;
     align-items: center;
 }
-.nav-mb .nav-menu-mb > .menu-item-has-children > a.open {
-    background-color: transparent;
-    color: var(--theme);
+.nav-mb .nav-menu-mb > .menu-item-has-children > a {
+    /* background-color: var(--bgc); */
+    transition: var(--tr3);
+}
+.nav-mb .nav-menu-mb > .menu-item-has-children > .sub-menu .menu-item-has-children a i {
+    font-size: 14px;
 }
 
+.nav-mb .nav-menu-mb > .menu-item-has-children > a.open {
+    background-color: var(--bgc-sub);
+    color: var(--theme);
+}
 .nav-mb > ul > .menu-item-has-children > a.current {
     color: var(--theme);
 }
 .nav-mb .nav-menu-mb > .menu-item-has-children > a > i {
     transition: var(--tr3);
 }
+
+.nav-mb .nav-menu-mb > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu {
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding: 10px 0 0 10px;
+    border-left: 1px solid var(--theme-5);
+    background: var(--theme-2);
+    background: linear-gradient(to right,var(--theme-1) -100%,var(--bgc-0) 100%);
+    /* border-radius: var(--radius); */
+}
+.nav-mb .nav-menu-mb > .menu-item-has-children > .sub-menu > .menu-item-has-children .sub-menu li {
+    padding-bottom: 0.1px;
+}
+.nav-menu-mb > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu,
+.nav-menu-mb > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > .sub-menu > 
+.menu-item-has-children > a > i
+ {
+    display: none;
+}
+
+
 
 /* 夜间模式按钮 */
 .change-night {
@@ -639,11 +704,28 @@
     .article-toc-mb {
         right: 20px !important;
     }
-    .change-night {
+    .change-night-pc {
         width: 41px;
         height: 41px;
         right: 20px;
         bottom: 91px;
+        display: none;
+    }
+
+    .change-night-mb {
+        width: 39px;
+        height: 39px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: var(--bgc-sub);
+        border: 1px solid var(--bgc-sub);
+        box-shadow: none;
+        display: flex;
+        animation: none;
+    }
+    .change-night-mb span {
+        animation: none;
     }
     /* 返回顶部 */
     .progress-wrap {

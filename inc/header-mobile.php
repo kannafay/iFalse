@@ -65,7 +65,7 @@
                                     get_currentuserinfo();
                                     echo $current_user -> display_name;
                                 } else {
-                                    if(get_option("i_hello")) {echo get_option("i_hello");} else {echo 'Hi, 请登录!';};
+                                    if(get_option("i_hello")) {echo get_option("i_hello");} else {echo '您还没有登录哦！';};
                                 } 
                             ?></p>
                         </a>
@@ -79,21 +79,33 @@
         </div>
     </div>
     <div class="nav-mb-content">
-        <?php i_searchform_mb(); ?>
+        <div class="nav-mb-content-top">
+            <?php i_searchform_mb(); ?>
+            <div class="change-night change-night-mb" onclick="switchNightMode();nightBtn();"><span class="iconfont"></span></div>
+        </div>
+        
         <?php 
-            wp_nav_menu( array( 
-            'container_id' => 'nav-mb',
+            wp_nav_menu(array( 
+            'theme_location'  => 'menu-mb',
+            'container_id'    => 'nav-mb',
             'container_class' => 'nav-mb',
-            'menu_id' => 'nav-menu-mb',
-            'menu_class' => 'nav-menu-mb'
+            'menu_id'         => 'nav-menu-mb',
+            'menu_class'      => 'nav-menu-mb',
+            'fallback_cb'     => 'nav_fallback_mb'
             ) );
         ?>
         <script>
-            const menu_item_m = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a');
-            const menu_item_box_m = [];
-            for(let i=0; i<menu_item_m.length; i++) {
-                menu_item_box_m[i] = document.createElement('i');
-                menu_item_m[i].appendChild(menu_item_box_m[i]).setAttribute('class','iconfont icon-arrow-down');
+            const menu_item_mb = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a');
+            const menu_item_box_mb = [];
+            for(let i=0; i<menu_item_mb.length; i++) {
+                menu_item_box_mb[i] = document.createElement('i');
+                menu_item_mb[i].appendChild(menu_item_box_mb[i]).setAttribute('class','iconfont icon-arrow-down');
+            }
+            const menu_items_mb = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > .sub-menu .menu-item-has-children > a');
+            const menu_items_box_mb = [];
+            for(let i=0; i<menu_items_mb.length; i++) {
+                menu_items_box_mb[i] = document.createElement('i');
+                menu_items_mb[i].appendChild(menu_items_box_mb[i]).setAttribute('class','iconfont icon-yiji-ziyuanjianguan');
             }
         </script>
     </div>

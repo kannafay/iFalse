@@ -89,7 +89,7 @@
                     </div>
                 </div>
             <?php } else { ?>
-                <p class="haveNoMore-say"><span class="iconfont icon-tishi1"> 没有更多内容了</span></p>
+                <p class="haveNoMore-say"><span class="iconfont icon-tishi1"> 没有更多内容</span></p>
                 <?php if(get_previous_posts_link()) { ?>
                     <div class="say-page-nav">
                         <div class="say-page-nav-bar">

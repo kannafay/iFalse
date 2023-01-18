@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/searchform.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3363448_0f9mua78wldv.css">
     <?php if(get_option("i_custom_html_head")){echo get_option("i_custom_html_head");}; ?>
     <style><?php if(get_option("i_custom_css_head")){echo get_option("i_custom_css_head");}; ?></style>
     <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-plane.css">

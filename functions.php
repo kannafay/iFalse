@@ -250,24 +250,11 @@ function ashu_add_pages() {
 }   
 add_action( 'load-themes.php', 'ashu_add_pages' );  
 
-
-// ---------------------------------------------------------------------
-// 评论区同步昵称
-add_filter('get_comment_author', function ($author, $comment_ID, $comment) {
-	if (!$comment->user_id) {
-		return $author;
-	}
-
-	$newuser = get_userdata($comment->user_id);
-
-	return $newuser->display_name ?: $author;
-}, 10, 3);
-
 // 添加@回复人
 // ---------------------------------------------------------------------
 function comment_add_at( $comment_text, $comment = '') {
   if( $comment->comment_parent > 0) {
-    $comment_text = '<a style="color:#FFA500;" href="#comment-' . $comment->comment_parent . '">@'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+    $comment_text = '<a style="color:#42a2ff;" href="#comment-' . $comment->comment_parent . '">@'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
   }
   return $comment_text;
 }
@@ -284,7 +271,7 @@ add_filter('get_comment_author', function ($author, $comment_ID, $comment) {
 }, 10, 3);
 
 // ---------------------------------------------------------------------
-// 评论区同步昵称
+// 过滤使用博主昵称的评论者
 function filter_pre_comment_author_name( $cookie_comment_author_cookiehash ) {
   $blogusers = get_user_by('id', 1);
   foreach ( $blogusers as $user ){
@@ -367,13 +354,13 @@ function insert_table_of_contents($content) {
 	}
 	$start_nav = "<div id='article-toc'>";
 	$end_nav = "</div>";
-	$title = "<div id='article-toc-title'>文章目录</div>";
+	$title = "<div id='article-toc-title'>目录</div>";
 	$link_list = "<ul id='article-toc-ul'>" . $link_list . "</ul>";
 	$table_of_contents = $start_nav . $title . $link_list . $end_nav;
 	if($fixed_location && !$comment_found) {
 		$first_paragraph = strpos($content, '</p>', 0) + 4;
 		$second_paragraph = strpos($content, '</p>', $first_p_pos);
-		return substr_replace($content, $table_of_contents, $second_paragraph + 1 , 0);
+		return substr_replace($content, $table_of_contents, $second_paragraph + 0 , 0);
 	}
 	else {
 		return str_replace($html_comment, $table_of_contents, $content);
@@ -393,8 +380,46 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 // ---------------------------------------------------------------------
 // 菜单
 register_nav_menus( array(        
-    'menu' => '顶部菜单'
-) );
+    'menu' => 'PC端菜单（最高支持4级）',
+    'menu-mb' => '移动端菜单（最高支持6级）'
+));
+// 获取当前url
+function getpageurl() {
+  $pageURL = 'http';
+  if(isset($_SERVER['HTTPS']) && $_SERVER["HTTPS"] == "on"){
+      $pageURL .= "s";
+  }
+  $pageURL .= "://";
+  if ($_SERVER["SERVER_PORT"] != "80") {
+      $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+  }else{
+      $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+  }
+  return $pageURL;
+}
+// 菜单为定义时提示
+function nav_fallback(){
+  if(is_user_logged_in()) {
+    echo '<div class="nav"><ul class="nav-menu"><li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li></ul></div>';
+  } else {
+    if(getpageurl() == home_url().'/') {
+      echo '<div class="nav"><ul class="nav-menu"><li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li></ul></div>';
+    } else {
+      echo '<div class="nav"><ul class="nav-menu"><li><a href="'.home_url().'">网站首页</a></li></ul></div>';
+    }
+  }
+}
+function nav_fallback_mb(){
+  if(is_user_logged_in()) {
+	  echo '<div class="nav-mb"><ul class="nav-menu-mb"><li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li></ul></div>';
+  } else {
+    if(getpageurl() == home_url().'/') {
+      echo '<div class="nav-mb"><ul class="nav-menu-mb"><li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li></ul></div>';
+    } else {
+      echo '<div class="nav-mb"><ul class="nav-menu-mb"><li><a href="'.home_url().'">网站首页</a></li></ul></div>';
+    }
+  }
+}
 
 // ---------------------------------------------------------------------
 //侧边栏

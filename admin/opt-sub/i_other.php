@@ -1,21 +1,16 @@
 <?php
-
 @$i_keywords = stripslashes($_POST["i_keywords"]);
 @$i_night = stripslashes($_POST["i_night"]);
 @$i_say_img = stripslashes($_POST["i_say_img"]);
 @$i_404_tip = stripslashes($_POST["i_404_tip"]);
-@$i_404_back = stripslashes($_POST["i_404_back"]);
 @$i_mourn = stripslashes($_POST["i_mourn"]);
 
 if(@stripslashes($_POST["i_opt"])){
-    
     update_option("i_keywords",$_POST["i_keywords"]);
     update_option("i_night",$_POST["i_night"]);
     update_option("i_say_img",$_POST["i_say_img"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
-    update_option("i_404_back",$_POST["i_404_back"]);
     update_option("i_mourn",$_POST["i_mourn"]);
-    
 }
 ?>
 
@@ -57,14 +52,6 @@ if(@stripslashes($_POST["i_opt"])){
                         <input name="i_404_tip" type="text" value="<?php echo get_option("i_404_tip"); ?>" class="regular-text">
                         <p class="description">404错误信息。</p>
                         <p class="description-primary">默认：抱歉, 您请求的页面找不到了!</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="i_404_back">404按钮</label></th>
-                    <td>
-                        <input name="i_404_back" type="text" value="<?php echo get_option("i_404_back"); ?>" class="regular-text">
-                        <p class="description">按钮文字。</p>
-                        <p class="description-primary">默认：返回首页</p>
                     </td>
                 </tr>
                 <tr>

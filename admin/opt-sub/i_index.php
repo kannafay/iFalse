@@ -1,21 +1,16 @@
 <?php
-
 @$i_swiper = stripslashes($_POST["i_swiper"]);
 @$i_swiper_effect = stripslashes($_POST["i_swiper_effect"]);
 @$i_wrapper_text = stripslashes($_POST["i_wrapper_text"]);
 @$i_wrapper_name = stripslashes($_POST["i_wrapper_name"]);
 @$i_notice = stripslashes($_POST["i_notice"]);
-@$i_random_pic = stripslashes($_POST["i_random_pic"]);
 
 if(@stripslashes($_POST["i_opt"])){
-    
     update_option("i_swiper",$i_swiper);
     update_option("i_swiper_effect",$i_swiper_effect);
     update_option("i_wrapper_text",$i_wrapper_text);
     update_option("i_wrapper_name",$i_wrapper_name);
     update_option("i_notice",$i_notice);
-    update_option("i_random_pic",$i_random_pic);
-    
 }
 ?>
 
@@ -68,14 +63,7 @@ if(@stripslashes($_POST["i_opt"])){
                         <p class="description">用于首页发布公告，留空则不显示</p>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row"><label for="i_random_pic">文章封面</label></th>
-                    <td>
-                        <input name="i_random_pic" type="text" value="<?php echo get_option("i_random_pic"); ?>" class="regular-text">
-                        <p class="description">用于文章没有封面时顶替。</p>
-                        <p class="description-primary">默认：主题海报</p>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
         <p class="submit">

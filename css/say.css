@@ -150,6 +150,7 @@
 .say-content .say-post-item .say-post-box .say-post-msg .say-post-time {
     font-size: 12px;
     color: var(--text-info);
+    margin-top: 5px;
 }
 .say-content .say-post-item .say-post-content {
     word-break: break-all;

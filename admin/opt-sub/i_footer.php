@@ -6,13 +6,11 @@
 @$i_build_date = stripslashes($_POST["i_build_date"]);
 
 if(@stripslashes($_POST["i_opt"])){
-    
     update_option("i_copyright",$i_copyright);
     update_option("i_icp",$i_icp);
     update_option("i_icp_gov",$i_icp_gov);
     update_option("i_upyun",$i_upyun);
     update_option("i_build_date",$i_build_date);
-    
 }
 ?>
 
