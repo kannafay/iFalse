@@ -133,7 +133,7 @@
 /* 目录树*/
 
 /* 按钮 */
-.post-menu-mb-btn {
+.post-menu-btn {
     display: none;
     position: fixed;
     right: 30px;
@@ -151,7 +151,7 @@
     transition: var(--tr3);
 }
 
-.post-menu-mb-btn div {
+.post-menu-btn div {
     width: 100%;
     height: 100%;
     display: flex;
@@ -161,15 +161,15 @@
     align-items: center;
     transition: var(--tr3);
 }
-.post-menu-mb-btn div:hover {
+.post-menu-btn div:hover {
     border: 1px solid var(--theme);
 }
-.post-menu-mb-btn span {
+.post-menu-btn span {
     font-size: 24px;
     color: var(--text-info);
     transition: var(--tr3);
 }
-.post-menu-mb-btn:hover span {
+.post-menu-btn:hover span {
     color: var(--theme);
 }
 /* 按钮-end */
@@ -988,7 +988,7 @@
     }
 
     /* 目录树菜单按钮 */
-    .post-menu-mb-btn {
+    .post-menu-btn {
         right: 20px;
         bottom: 142px;
         width: 41px;

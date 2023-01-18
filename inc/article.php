@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<div class="post-menu-mb-btn">
+<div class="post-menu-btn">
     <div>
         <span class="iconfont icon-category"></span>
     </div>

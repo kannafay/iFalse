@@ -254,15 +254,15 @@ body {
     border: 0;
 }
 
-/* right-botton button */
+/* right-button button */
 #article-toc-mb,
-.post-menu-mb-btn div,
+.post-menu-btn div,
 .change-night,
 .progress-wrap {
     border: 0;
 }
 #article-toc-mb:hover,
-.post-menu-mb-btn div:hover,
+.post-menu-btn div:hover,
 .change-night:hover,
 .progress-wrap:hover {
     border: 0;
@@ -394,7 +394,7 @@ body {
 
     /* right-botton button */
     .article-toc-mb,
-    .post-menu-mb-btn,
+    .post-menu-btn,
     .change-night,
     .progress-wrap {
         right: 10px !important;

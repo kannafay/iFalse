@@ -87,7 +87,7 @@ menu_mb_close.onclick = function() {
 }
 
 // 目录树菜单按钮
-const post_menu_btn = document.querySelector('.post-menu-mb-btn');
+const post_menu_btn = document.querySelector('.post-menu-btn');
 const post_menu = document.querySelector('#article-toc');
 if(post_menu && post_menu_btn) {
     function remove_post_menu(e) {
@@ -277,11 +277,15 @@ $(window).scroll(function(){
     let scrollTop = $(this).scrollTop();
     if(scrollTop >= 20 ) {
         $('.change-night').css({'opacity':'1','visibility':'visible','display':'flex'});
-        $('.post-menu-mb-btn, .article-toc-mb').css({'opacity':'1','visibility':'visible','display':'block'});
+        $('.post-menu-btn, .article-toc-mb').css({'opacity':'1','visibility':'visible','display':'block'});
     } else {
-        $('.change-night, .post-menu-mb-btn, .article-toc-mb').css({'opacity':'0','visibility':'hidden'});
+        $('.change-night, .post-menu-btn, .article-toc-mb').css({'opacity':'0','visibility':'hidden'});
+    }
+    if(post_menu == null) {
+        $(post_menu_btn).css('display','none');
     }
 })
+
 
 // 折叠菜单
 const menu_m = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children');
