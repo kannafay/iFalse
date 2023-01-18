@@ -140,6 +140,7 @@
 }
 .content-wrapper .text-wrapper h2 {
     color: var(--text);
+    padding-top: 5px;
     line-height: 1.5;
     margin-bottom: 5px;
     word-break: break-all;
@@ -185,6 +186,7 @@
 .main-content .notice .notice-box > span {
     color: var(--text-sub);
     margin-right: 10px;
+    margin-top: 2px;
     transition: var(--tr3);
 }
 .main-content .notice .notice-box > span::before {
@@ -822,10 +824,11 @@
     .main-content .notice {
         height: 42px;
     }
-    .main-content .notice span {
+    .main-content .notice .notice-box > span {
         font-size: 20px;
+        margin-top: 0;
     }
-    .main-content .notice p {
+    .main-content .notice .notice-box > p {
         font-size: 14px;
     }  
     .content .main-part ul {

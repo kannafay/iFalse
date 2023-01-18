@@ -1,5 +1,4 @@
 <?php
-// ---------------------------------------------------------------------
 // 评论博主高亮
 function filter_get_comment_author( $author, $comment_comment_id, $comment ) {
     error_reporting(0);
@@ -60,5 +59,29 @@ add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
     } 
 ?>
 
-
 <script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
+<script>
+    // 回复时文本域聚焦
+    const replyText = document.querySelector('.post-comments .comment-respond textarea');
+    $(document).ready(function() {
+        if (/replytocom=\d+/.exec(window.location.href)) {
+            $(replyText).focus();
+        }
+    })
+</script>
+
+<?php if(get_option("i_plane") != 1) { ?>
+    <script>
+        const respond_area = $(`.post-comments .comment-respond textarea,
+            .post-comments .comment-respond .comment-form-author input, 
+            .post-comments .comment-respond .comment-form-email input, 
+            .post-comments .comment-respond .comment-form-url input`
+        );
+        respond_area.focus(function() {
+            $(this).css('box-shadow','var(--input)');
+        });
+        respond_area.blur(function() {
+            $(this).css('box-shadow','none');
+        });
+    </script>
+<?php } ?>

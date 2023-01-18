@@ -1,13 +1,17 @@
 /* main css */
 [data-color-mode=light] {
     --body: #f5f6f7;
+    --box: #f3f3f3;
     --box-p: 0 0 10px rgba(28 31 35 / 5%);
+    --input: 0 10px 20px 1px var(--theme-1);
     --border: #e3e3e3;
 }
 [data-color-mode=night] {
     --body: #292A2D;
+    --box: var(--body);
     --bgc: #34363a;
     --box-p: 0 0 10px rgba(28 31 35 / 30%);
+    --input: var(--box-p);
     --border: #3f3f3f;
 }
 body {
@@ -210,7 +214,7 @@ body {
 .post-comments .comment-respond .comment-form-email input:hover, 
 .post-comments .comment-respond .comment-form-email input:focus, 
 .post-comments .comment-respond .comment-form-url input:hover,
-.post-comments .comment-respond .comment-form-url input:focus{
+.post-comments .comment-respond .comment-form-url input:focus {
     border: 0;
 }
 .post-comments {
@@ -361,7 +365,7 @@ body {
         margin-bottom: 10px;
     }
     .post-comments .comment-respond .form-submit input {
-        margin-top: 0;
+        /* margin-top: 0; */
     }
     .post-comments .post-comments-title {
         padding-top: 20px;

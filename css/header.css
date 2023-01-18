@@ -77,7 +77,7 @@
 }
 .nav-bar .nav-menu .menu-item-has-children > a:hover::after {
     transform: rotate(-90deg);
-    color: var(--theme)
+    color: var(--theme);
 }
 .nav-bar .nav-menu > li > a {
     display: block;
@@ -246,285 +246,412 @@
 .menu-mb {
     display: none;
 }
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+.nav-bar-mb {
+    height: 70px;
+    background-color: var(--bgc-blur);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 8;
+    padding: 0 20px;
+    transition: var(--tr3);
+}
+.nav-bar-mb .center .logo-mb img {
+    height: 36px;
+    vertical-align: middle;
+}
+.nav-bar-mb .left,
+.nav-bar-mb .right {
+    width: 32px;
+}
+.nav-bar-mb .right {
+    text-align: right;
+}
+.nav-bar-mb .left span, 
+.nav-bar-mb .login span {
+    font-size: 24px;
+    color: var(--text-sub);
+    cursor: pointer;
+    vertical-align: middle;
+    transition: var(--tr3);
+}
+.nav-bar-mb .login span{
+    font-size: 22px;
+}
+.nav-bar-mb .left span:hover,
+.nav-bar-mb .login span:hover {
+    color: var(--theme);
+}
+.nav-bar-mb .admin {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.nav-bar-mb .admin img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--tr3);
+}
+.nav-bar-mb .admin img:hover {
+    opacity: .8;
+}
+.nav-bar-mb .user-set {
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    width: auto;
+    height: auto;
+    padding: 10px 8px;
+    border-radius: var(--radius);
+    background-color: var(--bgc);
+    box-shadow: var(--box);
+    display: flex;
+    flex-direction: column;
+    transform: translateY(8px);
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--tr3);
+    z-index: 2;
+}
+.nav-bar-mb .user-set-open-mb {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+}
+.nav-bar-mb .user-set a {
+    display: block;
+    color: var(--text-sub);
+    font-size: 15px;
+    padding: 4px 6px 4px 6px;
+    border-radius: var(--radius-sub);
+    margin-bottom: 4px;
+    transition: var(--tr3);
+}
+.nav-bar-mb .user-set a:last-child{
+    margin-bottom: 0;
+}
+.nav-bar-mb .user-set a:hover {
+    color: var(--text-keep);
+    background: var(--theme);
+    /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
+}
+
+.menu-mb {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -70%;
+    background-color: var(--bgc);
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+    transition: var(--tr6);
+    z-index: 10;
+}
+.menu-mb-open {
+    left: 0;
+    transition: var(--tr6);
+}
+.menu-mb::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.menu-mb-mask {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mask-5);
+    transition: var(--tr6);
+    z-index: 9;
+}
+.menu-mb-mask-block {
+    opacity: 1;
+    visibility: visible;
+    transition: var(--tr6);
+}
+.menu-mb-top {
+    width: 70%;
+    height: 70px;
+    position: fixed;
+    border-bottom: 1px solid var(--border);
+    padding: 0 10px;
+    background-color: var(--bgc);
+    z-index: 10;
+    transition: var(--tr3);
+}
+.menu-mb-top .menu-mb-box {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-mb-top .menu-mb-box .user-info {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 50px);
+}
+.menu-mb-top .menu-mb-box .user-info > .visitor {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: var(--tr3);
+}
+.menu-mb-top .menu-mb-box .user-info > .visitor img{
+    border-radius: 50%;
+}
+.menu-mb-top .menu-mb-box .user-info > .visitor p {
+    line-height: 40px;
+    color: var(--text-sub);
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: var(--tr3);
+}
+.menu-mb-top .menu-mb-box .user-info img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.menu-mb-top .menu-mb-box .user-info > span {
+    font-size: 16px;
+}
+.menu-mb-top .menu-mb-box > span {
+    font-size: 22px;
+    color: var(--text);
+    cursor: pointer;
+    transition: var(--tr3);
+}
+.menu-mb-top .menu-mb-box > span:hover {
+    color: var(--theme);
+}
+.nav-mb-content{
+    padding: 70px 0 80px;
+}
+.nav-mb {
+    margin: 10px;
+}
+.nav-mb .nav-menu-mb a {
+    transition: var(--tr3);
+}
+.nav-menu-mb .current-menu-item > a {
+    color: var(--text-keep) !important;
+    background: var(--theme) !important;;
+    /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
+
+}
+.nav-menu-mb .current-menu-item > a:hover {
+    color: var(--text-keep) !important;
+}
+.nav-mb .nav-menu-mb li a {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 0;
+}
+.nav-mb .nav-menu-mb > li {
+    margin-bottom: 10px;
+}
+.nav-mb .nav-menu-mb > li a {
+    display: block;
+    padding: 10px;
+    border-radius: var(--radius);
+    transition: var(--tr1);
+}
+.nav-mb .nav-menu-mb > li a:hover {
+    background: var(--bgc-sub);
+    /* background: var(--body); */
+    color: var(--text);
+}
+.nav-mb .nav-menu-mb > li ul {
+    border-left: 1px dashed var(--theme-3);
+    /* margin-left: 10px; */
+    transition: var(--tr3);
+}
+.nav-mb .nav-menu-mb > li > ul {
+    padding: 0 10px;
+    padding-bottom: 5px;
+    border: 0;
+}
+.nav-mb .nav-menu-mb > li ul > li {
+    /* padding: 0 10px; */
+}
+.nav-mb .nav-menu-mb > li ul a {
+    margin: 5px 0;
+    border-radius: var(--radius);
+    color: var(--text-sub);
+}
+.nav-mb .nav-menu-mb > li ul a:hover {
+    background: var(--theme-2);
+    color: var(--text);
+}
+.nav-mb .nav-menu-mb > li > ul ul {
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.nav-mb .nav-menu-mb > .menu-item-has-children {
+    overflow: hidden;
+    background-color: var(--bgc-sub);
+    border-radius: var(--radius);
+    transition: var(--tr3);
+}
+.nav-mb .nav-menu-mb > .menu-item-has-children > a {
+    display: flex;
+    background-color: var(--bgc);
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-mb .nav-menu-mb > .menu-item-has-children > a.open {
+    background-color: transparent;
+    color: var(--theme);
+}
+
+.nav-mb > ul > .menu-item-has-children > a.current {
+    color: var(--theme);
+}
+.nav-mb .nav-menu-mb > .menu-item-has-children > a > i {
+    transition: var(--tr3);
+}
+
+/* 夜间模式按钮 */
+.change-night {
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    right: 30px;
+    bottom: 95px;
+    border-radius: var(--radius);
+    background-color: var(--bgc);
+    border: 1px solid var(--border);
+    box-shadow: var(--side-icon);
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    -webkit-animation: open .5s;
+    animation: open .5s;
+    transition: var(--tr3);
+}
+.change-night:hover {
+    border: 1px solid var(--theme);
+}
+.change-night span {
+    font-size: 20px;
+    color: var(--text-info);
+    margin-top: -1px;
+    transition: var(--tr3);
+    -webkit-animation: open .5s;
+    animation: open .5s;
+}
+.change-night:hover span {
+    color: var(--theme);
+}
+/* 夜间模式按钮-end */
+
+/* 返回顶部按钮 */
+.progress-wrap {
+	position: fixed;
+	right: 30px;
+	bottom: 40px;
+	height: 45px;
+	width: 45px;
+	cursor: pointer;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	background-color: var(--bgc);
+	box-shadow: var(--side-icon);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	-webkit-transition: var(--tr3) ;
+	transition: var(--tr3);
+	z-index: 5;
+}
+.progress-wrap:hover {
+	border: 1px solid var(--theme);
+}
+.progress-wrap.active-progress {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.progress-wrap svg,
+.progress-wrap svg path { 
+	display: none;
+}
+.progress-wrap::before {
+	content: '\e64a';
+	font-family: 'iconfont';
+	font-size: 26px;
+	width: 100%;
+	height: 100%;
+	margin-top: -1px;
+	color: var(--text-info);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: var(--tr3);
+}
+.progress-wrap:hover::before {
+	color: var(--theme);
+}
+/* 返回顶部按钮-end */
+
+@media screen and (min-width: 961px) {
+    .nav-bar-mb,
+    .menu-mb-mask,
+    .menu-mb {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0s;
+    }
+}
 @media screen and (max-width: 960px) {
     .nav-bar {
         display: none;
     }
     .nav-bar-mb {
-        height: 70px;
-        background-color: var(--bgc-blur);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border); 
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: fixed;
-        top: 0;
-        z-index: 8;
-        padding: 0 20px;
-        transition: var(--tr3);
-    }
-    .nav-bar-mb .center .logo-mb img {
-        height: 36px;
-        vertical-align: middle;
-    }
-    .nav-bar-mb .left,
-    .nav-bar-mb .right {
-        width: 32px;
-    }
-    .nav-bar-mb .right {
-        text-align: right;
-    }
-    .nav-bar-mb .left span, 
-    .nav-bar-mb .login span {
-        font-size: 24px;
-        color: var(--text-sub);
-        cursor: pointer;
-        vertical-align: middle;
-        transition: var(--tr3);
-    }
-    .nav-bar-mb .login span{
-        font-size: 22px;
-    }
-    .nav-bar-mb .left span:hover,
-    .nav-bar-mb .login span:hover {
-        color: var(--theme);
-    }
-    .nav-bar-mb .admin {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-    }
-    .nav-bar-mb .admin img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: var(--tr3);
-    }
-    .nav-bar-mb .admin img:hover {
-        opacity: .8;
-    }
-    .nav-bar-mb .user-set {
-        position: absolute;
-        right: 0px;
-        top: 70px;
-        width: auto;
-        height: auto;
-        padding: 10px 8px;
-        border-radius: var(--radius);
-        background-color: var(--bgc);
-        box-shadow: var(--box);
-        display: flex;
-        flex-direction: column;
-        transform: translateY(8px);
-        visibility: hidden;
-        opacity: 0;
-        transition: var(--tr3);
-        z-index: 2;
-    }
-    .nav-bar-mb .user-set-open-mb {
-        transform: translateY(0);
-        visibility: visible;
-        opacity: 1;
-    }
-    .nav-bar-mb .user-set a {
-        display: block;
-        color: var(--text-sub);
-        font-size: 15px;
-        padding: 4px 6px 4px 6px;
-        border-radius: var(--radius-sub);
-        margin-bottom: 4px;
-        transition: var(--tr3);
-    }
-    .nav-bar-mb .user-set a:last-child{
-        margin-bottom: 0;
-    }
-    .nav-bar-mb .user-set a:hover {
-        color: var(--text-keep);
-        background: var(--theme);
-        /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
-    }
-    
-    .menu-mb {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: -70%;
-        background-color: var(--bgc);
-        width: 70%;
-        height: 100%;
-        overflow: auto;
-        transition: var(--tr6);
-        z-index: 10;
-    }
-    .menu-mb-open {
-        left: 0;
-        transition: var(--tr6);
-    }
-    .menu-mb::-webkit-scrollbar {
-        width: 0;
-        height: 0;
     }
     .menu-mb-mask {
         display: block;
-        opacity: 0;
-        visibility: hidden;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--mask-5);
-        transition: var(--tr6);
-        z-index: 9;
     }
-    .menu-mb-mask-block {
-        opacity: 1;
-        visibility: visible;
-        transition: var(--tr6);
-    }
-    .menu-mb-top {
-        width: 70%;
-        height: 70px;
-        position: fixed;
-        border-bottom: 1px solid var(--border);
-        padding: 0 10px;
-        background-color: var(--bgc);
-        z-index: 10;
-        transition: var(--tr3);
-    }
-    .menu-mb-top .menu-mb-box {
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .menu-mb-top .menu-mb-box .user-info {
-        display: flex;
-        align-items: center;
-        width: calc(100% - 50px);
-    }
-    .menu-mb-top .menu-mb-box .user-info > .visitor {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        transition: var(--tr3);
-    }
-    .menu-mb-top .menu-mb-box .user-info > .visitor img{
-        border-radius: 50%;
-    }
-    .menu-mb-top .menu-mb-box .user-info > .visitor p {
-        line-height: 40px;
-        color: var(--text-sub);
-        font-size: 15px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        transition: var(--tr3);
-    }
-    .menu-mb-top .menu-mb-box .user-info img {
-        width: 32px;
-        height: 32px;
-        margin-right: 8px;
-        vertical-align: middle;
-    }
-    .menu-mb-top .menu-mb-box .user-info > span {
-        font-size: 16px;
-    }
-    .menu-mb-top .menu-mb-box > span {
-        font-size: 22px;
-        color: var(--text);
-        cursor: pointer;
-        transition: var(--tr3);
-    }
-    .menu-mb-top .menu-mb-box > span:hover {
-        color: var(--theme);
-    }
-    .nav-mb-content{
-        padding: 70px 0 80px;
-    }
-    .nav-mb {
-        margin: 10px;
-    }
-    .nav-mb .nav-menu-mb a {
-        transition: var(--tr3);
-    }
-    .nav-menu-mb .current-menu-item > a {
-        color: var(--text-keep) !important;
-        background: var(--theme) !important;;
-        /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
-
-    }
-    .nav-menu-mb .current-menu-item > a:hover {
-        color: var(--text-keep) !important;
-    }
-    .nav-mb .nav-menu-mb li a {
-        font-size: 14px;
-        color: var(--text);
-        margin-bottom: 0;
-    }
-    .nav-mb .nav-menu-mb > li {
-        margin-bottom: 10px;
-    }
-    .nav-mb .nav-menu-mb > li a {
+    .menu-mb {
         display: block;
-        padding: 10px;
-        border-radius: var(--radius);
-        transition: var(--tr1);
     }
-    .nav-mb .nav-menu-mb > li a:hover {
-        background: var(--bgc-sub);
-        /* background: var(--body); */
-        color: var(--text);
+    
+    /* 夜间模式按钮 */
+    .article-toc-mb {
+        right: 20px !important;
     }
-    .nav-mb .nav-menu-mb > li ul {
-        border-left: 1px dashed var(--theme-3);
-        /* margin-left: 10px; */
-        transition: var(--tr3);
+    .change-night {
+        width: 41px;
+        height: 41px;
+        right: 20px;
+        bottom: 91px;
     }
-    .nav-mb .nav-menu-mb > li > ul {
-        padding: 0 10px;
-        padding-bottom: 5px;
-        border: 0;
-    }
-    .nav-mb .nav-menu-mb > li ul > li {
-        /* padding: 0 10px; */
-    }
-    .nav-mb .nav-menu-mb > li ul a {
-        margin: 5px 0;
-        border-radius: var(--radius);
-        color: var(--text-sub);
-    }
-    .nav-mb .nav-menu-mb > li ul a:hover {
-        background: var(--theme-2);
-        color: var(--text);
-    }
-    .nav-mb .nav-menu-mb > li > ul ul {
-        margin-left: 10px;
-        padding-left: 10px;
-    }
-
-    .nav-mb .nav-menu-mb > .menu-item-has-children {
-        overflow: hidden;
-        background-color: var(--bgc-sub);
-        border-radius: var(--radius);
-        transition: var(--tr3);
-    }
-    .nav-mb .nav-menu-mb > .menu-item-has-children > a {
-        display: flex;
-        background-color: var(--bgc);
-        justify-content: space-between;
-        align-items: center;
-    }
-    .nav-mb .nav-menu-mb > .menu-item-has-children > a.open {
-        background-color: transparent;
-        color: var(--theme);
-    }
-    .nav-mb .nav-menu-mb > .menu-item-has-children > a > i {
-        transition: var(--tr3);
-    }
+    /* 返回顶部 */
+    .progress-wrap {
+		right: 20px;
+		bottom: 40px;
+		height: 41px;
+		width: 41px;
+	}
 }
 
 /* iconfont.cn */

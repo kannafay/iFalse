@@ -41,14 +41,18 @@
     <div class="banner"></div>
     <div class="content-wrapper">
         <div class="text-wrapper">
-            <h2><?php if(get_option("i_wrapper_text")) {echo get_option("i_wrapper_text");} else{echo '<p id="hitokoto"><span id="hitokoto_text">一言加载中...</span></p>';} ?></h2>
-            <i><?php if(get_option("i_wrapper_name")) {echo get_option("i_wrapper_name");} else{echo '<p id="hitokoto_author"></p>';} ?></i>
+            <?php if(get_option("i_wrapper_text") || get_option("i_wrapper_name")) { ?>
+                <?php if(get_option("i_wrapper_text")){echo "<h2>".get_option("i_wrapper_text")."</h2>";}; ?>
+                <?php if(get_option("i_wrapper_name")){echo "<i>".get_option("i_wrapper_name")."</i>";}; ?>
+            <?php } else { ?>
+                <h2><?php echo '<p id="hitokoto"><span id="hitokoto_text">一言加载中...</span></p>'; ?></h2>
+                <i><?php echo '<p id="hitokoto_author"></p>'; ?></i>
+                <script src="<?php echo get_template_directory_uri(); ?>/js/yiyan.js"></script>
+            <?php } ?>
         </div>
     </div>
     </div>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/yiyan.js"></script>
-<?php }?>
-
+<?php } ?>
 <div class="container main-content main">
     <div class="content">
         <?php

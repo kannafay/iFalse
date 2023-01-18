@@ -267,7 +267,7 @@ add_filter('get_comment_author', function ($author, $comment_ID, $comment) {
 // ---------------------------------------------------------------------
 function comment_add_at( $comment_text, $comment = '') {
   if( $comment->comment_parent > 0) {
-    $comment_text = '<a style="color:#1ea91e;" href="#comment-' . $comment->comment_parent . '">@'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+    $comment_text = '<a style="color:#FFA500;" href="#comment-' . $comment->comment_parent . '">@'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
   }
   return $comment_text;
 }
@@ -365,15 +365,15 @@ function insert_table_of_contents($content) {
 	  $link_list .= "<li class='heading-level-" . $heading_results[2][$i] .
 	  "'><a href='#$i'>" . $heading_results[4][$i] . "</a></li>";
 	}
-	$start_nav = "<div id='article-toc-mb'>";
+	$start_nav = "<div id='article-toc'>";
 	$end_nav = "</div>";
-	$title = "<div id=\"article-toc-title-mb\">文章目录</div>";
-	$link_list = "<ul id=\"article-toc-ul-mb\">" . $link_list . "</ul>";
+	$title = "<div id='article-toc-title'>文章目录</div>";
+	$link_list = "<ul id='article-toc-ul'>" . $link_list . "</ul>";
 	$table_of_contents = $start_nav . $title . $link_list . $end_nav;
 	if($fixed_location && !$comment_found) {
 		$first_paragraph = strpos($content, '</p>', 0) + 4;
 		$second_paragraph = strpos($content, '</p>', $first_p_pos);
-		return substr_replace($content, $table_of_contents, $second_paragraph + 0 , 0);
+		return substr_replace($content, $table_of_contents, $second_paragraph + 1 , 0);
 	}
 	else {
 		return str_replace($html_comment, $table_of_contents, $content);

@@ -64,7 +64,7 @@ if(@stripslashes($_POST["i_opt"])){
                 <tr>
                     <th scope="row"><label for="i_notice">首页公告</label></th>
                     <td>
-                        <input name="i_notice" type="text" value="<?php echo get_option("i_notice"); ?>" class="regular-text">
+                        <textarea name="i_notice" rows="3" class="regular-text"><?php echo get_option("i_notice"); ?></textarea> <br>
                         <p class="description">用于首页发布公告，留空则不显示</p>
                     </td>
                 </tr>

@@ -4,10 +4,11 @@
   --theme-1: #8183ff1a;
   --theme-2: #8183ff33;
   --theme-3: #8183ff4d;
+  --theme-5: #8183ff80;
   --notice: #8183ff26;
   --bgc-0: #ffffff00;
-  --input: 0 10px 20px 1px var(--theme-1);
   --text-keep: #f5f6f7;
+  --input: 0 10px 20px 1px var(--theme-1);
   --radius: 6px;
   --radius-sub: 4px;
   --tr1: all .1s;
@@ -24,7 +25,7 @@
   --bgc-sub: #f5f5f5;
   --bgc-blur: rgba(255 255 255 / .8);
   --box: 0 0 10px rgba(28 31 35 / 10%);
-  --box-s: 0 2px 8px rgb(28 31 35 / 3%), 0 16px 48px 8px rgb(28 31 35 / 8%);
+  --side-icon: 0 0 4px rgb(28 31 35 / 3%), 0 0 24px 4px rgb(28 31 35 / 8%);
   --box-l: 0 2px 8px rgb(28 31 35 / 3%), 0 16px 48px 8px rgb(28 31 35 / 12%);
   --mask-3: #0000004d;
   --mask-5: #00000080;
@@ -39,7 +40,7 @@
   --bgc-sub: #34363a;
   --bgc-blur: rgba(55, 56, 58, 0.8);
   --box: 0 0 10px rgba(28 31 35 / 40%);
-  --box-s: 0 0 20px rgba(28 31 35 / 50%);
+  --side-icon: 0 0 20px rgba(28 31 35 / 50%);
   --mask-3: #0000004d;
   --mask-5: #00000080;
 }
@@ -48,6 +49,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color:rgba(0 0 0 / 0) ;
+  font-family: sans-serif;
 }
 html, body {
   height: 100%;

@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/404.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article-style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/backtop.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/footer.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/home.css">

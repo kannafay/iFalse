@@ -2,17 +2,17 @@
 
 @$i_logo_url_light = stripslashes($_POST["i_logo_url_light"]);
 @$i_logo_url_night = stripslashes($_POST["i_logo_url_night"]);
+@$i_logo_hidden = stripslashes($_POST["i_logo_hidden"]);
 @$i_header_hidden = stripslashes($_POST["i_header_hidden"]);
 @$i_login_hidden = stripslashes($_POST["i_login_hidden"]);
-@$i_logo_hidden = stripslashes($_POST["i_logo_hidden"]);
 @$i_hello = stripslashes($_POST["i_hello"]);
 
 if(@stripslashes($_POST["i_opt"])){
 
     update_option("i_logo_url_light",$i_logo_url_light);
     update_option("i_logo_url_night",$i_logo_url_night);
-    update_option("i_header_hidden",$i_header_hidden);
     update_option("i_login_hidden",$i_login_hidden);
+    update_option("i_header_hidden",$i_header_hidden);
     update_option("i_logo_hidden",$i_logo_hidden);
     update_option("i_hello",$i_hello);
 
@@ -26,19 +26,26 @@ if(@stripslashes($_POST["i_opt"])){
         <table class="form-table">
             <tbody>
                 <tr>
-                    <th scope="row"><label for="i_logo_url_light">自定义LOGO（白天）</label></th>
+                    <th scope="row"><label for="i_logo_url_light">自定义logo（白天）</label></th>
                     <td>
                         <input name="i_logo_url_light" type="text" value="<?php echo get_option("i_logo_url_light"); ?>" class="regular-text">
-                        <p class="description">填写LOGO图标链接地址即可。</p>
-                        <p class="description-primary">默认：WordPress自带LOGO或自定义-站点身份-站点图标。</p>
+                        <p class="description">填写logo图标链接地址即可。</p>
+                        <p class="description-primary">默认：WordPress自带logo或自定义-站点身份-站点图标。</p>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_logo_url_night">自定义LOGO（夜间）</label></th>
+                    <th scope="row"><label for="i_logo_url_night">自定义logo（夜间）</label></th>
                     <td>
                         <input name="i_logo_url_night" type="text" value="<?php echo get_option("i_logo_url_night"); ?>" class="regular-text">
-                        <p class="description">填写LOGO图标链接地址即可。</p>
-                        <p class="description-primary">默认：WordPress自带LOGO或自定义-站点身份-站点图标。</p>
+                        <p class="description">填写logo图标链接地址即可。</p>
+                        <p class="description-primary">默认：WordPress自带logo或自定义-站点身份-站点图标。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_logo_hidden">隐藏logo</label></th>
+                    <td>
+                        <input name="i_logo_hidden" type="text" value="<?php echo get_option("i_logo_hidden"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。开启后隐藏导航栏的logo图标。</p>
                     </td>
                 </tr>
                 <tr>
@@ -53,13 +60,6 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_login_hidden" type="text" value="<?php echo get_option("i_login_hidden"); ?>" class="regular-text">
                         <p class="description">数字1为开启。开启后隐藏右上角登录图标。</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="i_logo_hidden">隐藏LOGO</label></th>
-                    <td>
-                        <input name="i_logo_hidden" type="text" value="<?php echo get_option("i_logo_hidden"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。开启后隐藏导航栏的LOGO图标。</p>
                     </td>
                 </tr>
                 <tr>

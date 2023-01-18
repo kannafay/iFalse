@@ -40,8 +40,8 @@
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">
                 <div class="post-prev-next">
-                    <div class="post-prev"><span>← 上一章节</span><p><?php if(get_previous_post()){previous_post_link('%link');}else{echo "无";}; ?></p></div><i></i>
-                    <div class="post-next"><span>下一章节 →</span><p><?php if(get_next_post()){next_post_link('%link');}else{echo "无";}; ?></p></div>
+                    <div class="post-prev"><span>← 上一章节</span><p><?php if(get_previous_post()){previous_post_link('%link');}else{echo "这已经是第一章内容了";}; ?></p></div><i></i>
+                    <div class="post-next"><span>下一章节 →</span><p><?php if(get_next_post()){next_post_link('%link');}else{echo "这已经是最后章内容了";}; ?></p></div>
                 </div>
             </div>
         <?php } ?>

@@ -1,8 +1,37 @@
-// 关于
-console.log('%c iFalse %c https://github.com/kannafay/iFalse', 'background: linear-gradient(to right, #8183ff, #a1a1f7);color:#fff;border-radius:2px;', '');
-
-// 查询次数，花费时间
-console.log(document.querySelector('#queries_num').firstChild.data);
+// 返回顶部
+(function($) { "use strict";	
+	$(document).ready(function(){"use strict";
+		var progressPath = document.querySelector('.progress-wrap path');
+		var pathLength = progressPath.getTotalLength();
+		progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+		progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+		progressPath.style.strokeDashoffset = pathLength;
+		progressPath.getBoundingClientRect();
+		progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';		
+		var updateProgress = function () {
+			var scroll = $(window).scrollTop();
+			var height = $(document).height() - $(window).height();
+			var progress = pathLength - (scroll * pathLength / height);
+			progressPath.style.strokeDashoffset = progress;
+		}
+		updateProgress();
+		$(window).scroll(updateProgress);	
+		var offset = 20;
+		var duration = 0;
+		jQuery(window).on('scroll', function() {
+			if (jQuery(this).scrollTop() > offset) {
+				jQuery('.progress-wrap').addClass('active-progress');
+			} else {
+				jQuery('.progress-wrap').removeClass('active-progress');
+			}
+		});				
+		jQuery('.progress-wrap').on('click', function(event) {
+			event.preventDefault();
+			jQuery('html, body').animate({scrollTop: 0}, duration);
+			return false;
+		})
+	});
+})(jQuery);
 
 // PC端导航栏用户菜单
 const user_set_btn = document.querySelector('.nav-bar .admin img');
@@ -58,22 +87,25 @@ menu_mb_close.onclick = function() {
 }
 
 // 目录树菜单按钮
-const post_menu_mb_btn = document.querySelector('.post-menu-mb-btn');
-const post_menu_mb = document.querySelector('#article-toc-mb');
-if(post_menu_mb && post_menu_mb_btn) {
-    post_menu_mb_btn.className = 'post-menu-mb-btn post-menu-mb-btn-on';
+const post_menu_btn = document.querySelector('.post-menu-mb-btn');
+const post_menu = document.querySelector('#article-toc');
+if(post_menu && post_menu_btn) {
     function remove_post_menu(e) {
-        post_menu_mb.classList.remove('article-toc-mb');
+        post_menu.classList.remove('article-toc');
         document.removeEventListener("click",remove_post_menu);
     }
-    post_menu_mb_btn.addEventListener("click",(e)=>{
+    post_menu_btn.addEventListener("click",(e)=>{
         e.stopPropagation()
-        if(post_menu_mb.classList.toggle('article-toc-mb')) {
+        if(post_menu.classList.toggle('article-toc')) {
             document.addEventListener("click",remove_post_menu);
         }
     })
-    post_menu_mb.addEventListener("click",(e)=>e.stopPropagation());
+    post_menu.addEventListener("click",(e)=>e.stopPropagation());
 }
+
+$(window).scroll(function() {
+    $('#article-toc').removeAttr('class');
+})
 
 // 删除 "发表在"
 const comments_meta = document.querySelectorAll('.wp-block-latest-comments__comment-meta');
@@ -173,7 +205,7 @@ $(swiper_img).each(function(i){
     swiper_img[i].removeAttribute('data-original');
 })
 
-// 黑夜模式按钮
+// 夜间模式按钮
 function getCookie(name){
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
@@ -183,6 +215,7 @@ function getCookie(name){
 	}
 	return null;
 }
+
 const night_btn = document.querySelector('.change-night span');
 const allImgs = document.querySelectorAll(
    `.post-content img,
@@ -239,17 +272,29 @@ function nightBtn() {
     }
 }
 
+// 距离顶部20px内隐藏夜间模式按钮
+$(window).scroll(function(){
+    let scrollTop = $(this).scrollTop();
+    if(scrollTop >= 20 ) {
+        $('.change-night').css({'opacity':'1','visibility':'visible','display':'flex'});
+        $('.post-menu-mb-btn, .article-toc-mb').css({'opacity':'1','visibility':'visible','display':'block'});
+    } else {
+        $('.change-night, .post-menu-mb-btn, .article-toc-mb').css({'opacity':'0','visibility':'hidden'});
+    }
+})
+
 // 折叠菜单
 const menu_m = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children');
 const menu_m_a = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a');
 const menu_m_a_i = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a > i');
+
 $(menu_m).each(function(i) {
-    let menu_height = [];
-    menu_height[i] = $(menu_m[i]).innerHeight();
+    const menu_m_height = [];
+    menu_m_height[i] = $(menu_m[i]).innerHeight();
     $(menu_m[i]).css("height",$(menu_m_a[i]).innerHeight());
     $(menu_m_a[i]).click(function() {
-        if($(menu_m[i]).innerHeight() != menu_height[i]) {
-            $(menu_m[i]).css("height",menu_height[i]);
+        if($(menu_m[i]).innerHeight() != menu_m_height[i]) {
+            $(menu_m[i]).css("height",menu_m_height[i]);
             $(menu_m_a_i[i]).css("transform","rotate(-90deg)");
             $(menu_m_a[i]).addClass("open");
         } else {
@@ -260,3 +305,14 @@ $(menu_m).each(function(i) {
     })  
 })
 
+const menu_m_li = document.querySelectorAll('.nav-mb > ul > .menu-item-has-children'); // 一级
+const menu_m_li_a = document.querySelectorAll('.nav-mb > ul > .menu-item-has-children > a'); // 一级a
+$(menu_m_li).each(function(i){
+    let menu_m_li_item = menu_m_li[i].querySelectorAll('.nav-mb > ul > .menu-item-has-children ul li'); // 孩子
+    $(menu_m_li_item).each(function(k){
+        if(/current-menu-item/.exec(menu_m_li_item[k].getAttribute('class'))) {
+            $(menu_m_li_a[i]).addClass("current");
+            return false;
+        }
+    })
+})

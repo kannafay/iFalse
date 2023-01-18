@@ -61,12 +61,8 @@
 </div>
 <?php i_header_mb(); ?>
 
-<div class="change-night" onclick="switchNightMode();nightBtn();">
-    <span class="iconfont"></span>
-</div>
+<div class="change-night" onclick="switchNightMode();nightBtn();"><span class="iconfont"></span></div>
 
 <div class="progress-wrap"><svg><path></svg></div>
-
-<span style="display:none" id="queries_num"><?php echo get_num_queries(); ?> queries in <?php timer_stop(7); ?>s</span>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/headroom.min.js"></script>
