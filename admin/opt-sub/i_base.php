@@ -1,6 +1,7 @@
 <?php
 @$i_plane = stripslashes($_POST["i_plane"]);
-@$i_blog_or_card = stripslashes($_POST["i_blog_or_card"]);
+@$i_blog_to_column = stripslashes($_POST["i_blog_to_column"]);
+@$i_blog_auto_column = stripslashes($_POST["i_blog_auto_column"]);
 @$i_loading_pic = stripslashes($_POST["i_loading_pic"]);
 @$i_login = stripslashes($_POST["i_login"]);
 @$i_register_turn = stripslashes($_POST["i_register_turn"]);
@@ -8,7 +9,8 @@
 
 if(@stripslashes($_POST["i_opt"])){
     update_option("i_plane",$i_plane);
-    update_option("i_blog_or_card",$i_blog_or_card);
+    update_option("i_blog_to_column",$i_blog_to_column);
+    update_option("i_blog_auto_column",$i_blog_auto_column);
     update_option("i_loading_pic",$i_loading_pic);
     update_option("i_login",$i_login);
     update_option("i_register_turn",$i_register_turn);
@@ -31,11 +33,20 @@ if(@stripslashes($_POST["i_opt"])){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_blog_or_card">博客模式</label></th>
+                    <th scope="row"><label for="i_blog_to_column">博客模式</label></th>
                     <td>
-                        <input name="i_blog_or_card" type="text" value="<?php echo get_option("i_blog_or_card"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。开启后首页切换成双栏模式。</p>
+                        <input name="i_blog_to_column" type="text" value="<?php echo get_option("i_blog_to_column"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。开启后首页切换成博客模式（双栏模式）。</p>
                         <p class="description-primary">默认：卡片模式</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_blog_auto_column">移动端自动博客模式</label></th>
+                    <td>
+                        <input name="i_blog_auto_column" type="text" value="<?php echo get_option("i_blog_auto_column"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。开启后PC端不变，移动端自动切换成博客模式。</p>
+                        <p class="description-primary">PC端：卡片模式</p>
+                        <p class="description-primary">手机端：博客模式</p>
                     </td>
                 </tr>
                 <tr>

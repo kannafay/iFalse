@@ -848,11 +848,11 @@
     margin-top: 10px;
     cursor: pointer;
     box-shadow: var(--box-p);
-    opacity: .8;
+    opacity: 1;
     transition: opacity .3s;
 }
 .post-comments .comment-respond .form-submit input:hover {
-    opacity: 1;
+    opacity: .8;
 }
 .post-comments .comment-respond .form-submit .comment-cancel-btn {
     display: inline-block;
@@ -879,7 +879,7 @@
 .post-comments .byuser > .comment-body > .vcard > .fn i {
     margin-left: 8px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 13px;
     font-style: normal;
     color: var(--text-keep);
     background: var(--theme-sub);

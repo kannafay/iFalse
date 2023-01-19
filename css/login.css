@@ -16,7 +16,7 @@
     border-radius: 10%;
     margin-right: 80px;
     pointer-events: none;
-
+    transition: filter var(--tr3-c);
 }
 .login-page .login-msg {
     position: relative;

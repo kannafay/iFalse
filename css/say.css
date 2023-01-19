@@ -17,7 +17,7 @@
     vertical-align: middle;
     z-index: -9;
     pointer-events: none;
-    transition: var(--tr3);
+    transition: filter var(--tr3-c);
 }
 .say .say-banner::before {
     content: "";
@@ -291,7 +291,7 @@
 .say-post-content img {
     vertical-align: middle;
     border-radius: var(--radius);
-    transition: var(--tr3);
+    transition: filter var(--tr3-c);
 }
 .say-post-content .say-img img {
     width: 100%;

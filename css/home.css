@@ -72,7 +72,7 @@
     border-radius: var(--radius);
     vertical-align: middle;
     pointer-events: none;
-    transition: var(--tr3);
+    transition: filter var(--tr3-c);
 }
 .wrapper-home .swiper-slide .swiper-img-mask {
     display: block;
@@ -333,7 +333,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--radius);
-    transition: var(--tr3);
+    transition: filter var(--tr3-c);
 }
 
 .home-detail .home-cate {
@@ -517,7 +517,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--radius);
-    transition: var(--tr3);
+    transition: filter var(--tr3-c);
 }
 .home-2 .home-2-mian ul li .home-2-detail {
     width: calc(100% - 214px);

@@ -23,10 +23,14 @@
             <?php get_search_form(); ?>
         </div>
         <?php 
-            if(get_option("i_blog_or_card") == 1) {
+            if(get_option("i_blog_to_column") == 1) {
                 get_template_part('inc/home-blog');
             } else{
-                get_template_part('inc/home-card');
+                if(get_option("i_blog_auto_column") == 1) {
+                    autoBlog();
+                } else {
+                    get_template_part('inc/home-card');
+                }
             } 
         ?>
     </div>

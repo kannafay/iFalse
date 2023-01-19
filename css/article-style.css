@@ -72,7 +72,7 @@
     object-fit: cover;
     border-radius: var(--radius);
     vertical-align: bottom;
-    transition: var(--tr3);
+    transition: filter var(--tr3-c);
 }
 .single-main .left .post-content figcaption {
     font-size: 14px;

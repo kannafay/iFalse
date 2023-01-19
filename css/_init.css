@@ -14,6 +14,9 @@
   --tr1: all .1s;
   --tr3: all .3s;
   --tr6: all .6s cubic-bezier(.28,.9,.34,.99);
+  --tr1-c: .1s;
+  --tr3-c: .3s;
+  --tr6-c: .6s;
 }
 [data-color-mode=light] {
   --text: #3c3c3c;
