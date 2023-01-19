@@ -86,6 +86,12 @@ menu_mb_close.onclick = function() {
     menu_mb_mask.className = 'menu-mb-mask';
 };
 
+// 滚动时隐藏用户菜单
+$(window).scroll(function() {
+    $(user_set_menu).removeClass('user-set-open');
+    $(user_set_menu_mb).removeClass('user-set-open-mb');
+})
+
 // 目录树菜单按钮
 const post_menu_btn = document.querySelector('.post-menu-btn');
 const post_menu = document.querySelector('#article-toc');
