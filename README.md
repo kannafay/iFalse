@@ -6,14 +6,16 @@
 
 一款界面清新，干净轻量，轻松上手的WordPress开源主题。还在不断更新中，如有更多需求及建议或者BUG欢迎大家积极提出，营造一个更完善、更完美的开源主题。如果有喜欢的可以多多支持，点上一个⭐Star！
 
-- 主题演示：[https://ifalse.onll.cn](https://ifalse.onll.cn)
-- 主题反馈：[https://support.qq.com/products/404787](https://support.qq.com/products/404787)
-- GitHub：[https://github.com/kannafay/iFalse](https://github.com/kannafay/iFalse)
-- Gitee：[https://gitee.com/kannafay/iFalse](https://gitee.com/kannafay/iFalse)（大陆镜像）
+- 主题演示：https://ifalse.onll.cn
+- 主题反馈：https://support.qq.com/products/404787
+- GitHub：https://github.com/kannafay/iFalse
+- Gitee：https://gitee.com/kannafay/iFalse（大陆镜像）
 
-## 使用说明
+## 下载说明
 
-dev分支为开发版。正式版[点击这里](../../releases/latest)下载。
+> 请注意：dev分支为开发版本。
+
+正式版：[前往下载](../../releases/latest)
 
 使用文档：[传送门](https://ifalse.onll.cn/docs)
 
