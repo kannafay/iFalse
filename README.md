@@ -13,7 +13,7 @@
 
 ## 使用说明
 
-请从[Releases(发行版)](../../releases/latest)下载，dev分支为开发版。
+dev分支为开发版。正式版[点击这里](../../releases/latest)下载。
 
 使用文档：[传送门](https://ifalse.onll.cn/docs)
 
