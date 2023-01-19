@@ -109,10 +109,6 @@ if(post_menu && post_menu_btn) {
     post_menu.addEventListener("click",(e)=>e.stopPropagation());
 };
 
-if(post_menu == null) {
-    $(post_menu_btn).css('display','none');
-}
-
 // 滚动时收起toc
 // $(window).scroll(function() {
 //     $('#article-toc').removeAttr('class');
@@ -308,6 +304,9 @@ $(window).scroll(function() {
             $('.post-menu-btn, .article-toc-mb').css({'opacity':'0','visibility':'hidden'});
         };
     };
+    if(post_menu == null) {
+        $(post_menu_btn).css('display','none');
+    }
 });
 
 $(window).resize(function() {
@@ -327,7 +326,11 @@ $(window).resize(function() {
             $('.post-menu-btn, .article-toc-mb').css({'opacity':'0','visibility':'hidden'});
         };
     }
+    if(post_menu == null) {
+        $(post_menu_btn).css('display','none');
+    }
 })
+
 
 // 折叠菜单
 const menu_m = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children'); // 一级
