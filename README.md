@@ -9,7 +9,7 @@
 - 主题演示：https://ifalse.onll.cn
 - 主题反馈：https://support.qq.com/products/404787
 - GitHub：https://github.com/kannafay/iFalse
-- Gitee：https://gitee.com/kannafay/iFalse（大陆镜像）
+- Gitee：https://gitee.com/kannafay/iFalse （大陆镜像）
 
 ## 下载说明
 
