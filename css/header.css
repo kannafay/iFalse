@@ -700,16 +700,17 @@
         display: block;
     }
     
-    /* 夜间模式按钮 */
+    
     .article-toc-mb {
         right: 20px !important;
     }
+
+    /* 夜间模式按钮 */
     .change-night-pc {
         width: 41px;
         height: 41px;
         right: 20px;
         bottom: 91px;
-        display: none;
     }
 
     .change-night-mb {

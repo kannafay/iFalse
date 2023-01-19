@@ -126,27 +126,24 @@ function autoBlog() {
 get_template_part('inc/home-blog');
 get_template_part('inc/home-card');?>
 <script language=javascript>
-  const getWindowInfo = () => {
-	  const windowInfo = {
-	  	width: window.innerWidth,
-	  }
-      if(windowInfo.width <= 640) {
-        $('.home-2').css('display','block');
-        $('.main-part').css('display','none');
-      }
-      else if(windowInfo.width > 640) {
-        $('.home-2').css('display','none');
-        $('.main-part').css('display','block');
-      }
-    }
-  if($(window).width() <= 640) {
+const getWindowInfo = () => {
+  if(window.innerWidth <= 640) {
     $('.home-2').css('display','block');
     $('.main-part').css('display','none');
-  } else if($(window).width() > 640) {
+  }
+  else if(window.innerWidth > 640) {
     $('.home-2').css('display','none');
     $('.main-part').css('display','block');
   }
-  window.addEventListener('resize', getWindowInfo);
+}
+if(window.innerWidth <= 640) {
+  $('.home-2').css('display','block');
+  $('.main-part').css('display','none');
+} else if(window.innerWidth > 640) {
+  $('.home-2').css('display','none');
+  $('.main-part').css('display','block');
+}
+window.addEventListener('resize', getWindowInfo);
 </script>
 <?php }
 
