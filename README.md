@@ -1,6 +1,6 @@
 ![Poster](/static/img/poster.png)
 
-[![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=small)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_small) [![Author](https://img.shields.io/badge/Author-%E7%A5%9E%E7%A7%98%E5%B8%83%E5%81%B6%E7%8C%AB-8183ff)](https://www.liecat.com) [![GitHub](https://img.shields.io/badge/Releases-GitHub-blue)](https://github.com/kannafay/iFalse/releases) [![Gitee](https://img.shields.io/badge/Releases-Gitee-%23C71D23)](https://gitee.com/kannafay/iFalse/releases) [![Version](https://img.shields.io/badge/dynamic/json?color=yellow&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fkannafay%2FiFalse%2Fdev%2Finfo.json)]() [![License](https://img.shields.io/badge/License-MIT-green)](/LICENSE) 
+[![OSCS Status](https://www.oscs1024.com/platform/badge/kannafay/ifalse.svg?size=small)](https://www.oscs1024.com/project/kannafay/ifalse?ref=badge_small) [![Author](https://img.shields.io/badge/Author-%E7%A5%9E%E7%A7%98%E5%B8%83%E5%81%B6%E7%8C%AB-8183ff)](https://www.liecat.com) [![GitHub](https://img.shields.io/badge/Releases-GitHub-blue)](https://github.com/kannafay/iFalse/releases) [![Gitee](https://img.shields.io/badge/Releases-Gitee-%23C71D23)](https://gitee.com/kannafay/iFalse/releases) [![Version](https://img.shields.io/badge/dynamic/json?color=yellow&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fkannafay%2FiFalse%2Fdev%2Finfo.json)](/kannafay/iFalse) [![License](https://img.shields.io/badge/License-MIT-green)](/LICENSE) 
 
 ## 主题介绍
 
