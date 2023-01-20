@@ -24,7 +24,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_copyright">网站版权</label></th>
                     <td>
                         <input name="i_copyright" type="number" value="<?php echo get_option("i_copyright"); ?>" class="regular-text">
-                        <p class="description">填写年份即可。</p>
+                        <p class="description">填写年份（数字）即可。</p>
                         <p class="description-primary">默认：Copyright © <?php echo date("Y"); ?></p>
                     </td>
                 </tr>

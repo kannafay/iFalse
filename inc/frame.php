@@ -41,12 +41,12 @@
                                 }else if(get_option("i_color") && !get_option("i_color_sub")) {
                                     echo get_option("i_color");
                                 }else {
-                                    echo "#a1a1f7";
+                                    echo "#58b3f5";
                                 }
                             }else if(!get_option("i_color") && get_option("i_color_sub")) {
-                                echo "#a1a1f7";
+                                echo "#58b3f5";
                             } else {
-                                echo "#a1a1f7";
+                                echo "#58b3f5";
                             } 
                         ?>;
             --theme-1:<?php echo get_option("i_color").'1a'; ?>;

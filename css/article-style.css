@@ -52,7 +52,7 @@
 /* 附件end */
 .single-main .left .post-content blockquote {
     background-color: var(--bgc-sub);
-    border-left: 4px solid var(--theme-sub);
+    border-left: 4px solid var(--theme);
     padding: 10px;
     color: var(--text-sub);
     transition: var(--tr3);
@@ -183,7 +183,7 @@
     text-align: left;
 }
 .single-main .left .post-content th {
-    background-color: var(--theme-sub);
+    background-color: var(--theme);
     color: var(--text-keep);
 }
 .single-main .left .post-content td a {
@@ -282,7 +282,7 @@
     color: var(--text-keep);
     font-size: 14px;
     background: var(--theme-sub); 
-    background: linear-gradient(to right, var(--theme), var(--theme-sub));
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     transition: var(--tr3);  
 }
 .single-main .left .post-content .wp-block-button__link:hover {

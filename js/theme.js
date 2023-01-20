@@ -92,17 +92,6 @@ $(window).scroll(function() {
     $(user_set_menu_mb).removeClass('user-menu-open-mb');
 })
 
-// 退出登录hover效果
-if($('.user-menu .logout')) {
-    $('.user-menu .logout').mouseenter(function() {
-        $('.user-menu, user-menu-mb').addClass('logout-hover');
-    })
-    $('.user-menu .logout').mouseleave(function() {
-        $('.user-menu, user-menu-mb').removeClass('logout-hover');
-    })
-}
-
-
 // 目录树菜单按钮
 const post_menu_btn = document.querySelector('.post-menu-btn');
 const post_menu = document.querySelector('#article-toc');

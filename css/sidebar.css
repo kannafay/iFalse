@@ -116,14 +116,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .widget_recent_entries li a::before {
     content: '✦ ';
     color: var(--text-keep);
     position: absolute;
     left: -11px;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .widget_recent_entries li a:hover::before {
     left: 8px;
@@ -298,7 +298,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .wp-block-categories li a:hover,
 #primary-sidebar .widget_archive li a:hover {
@@ -313,7 +313,7 @@
     color: var(--text-keep);
     position: absolute;
     left: -11px;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .wp-block-categories li a:hover::before,
 #primary-sidebar .widget_archive li a:hover::before {
@@ -412,7 +412,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-posts li a::before,
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives li a::before,
@@ -421,7 +421,7 @@
     color: var(--text-keep);
     position: absolute;
     left: -11px;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-posts li a:hover::before,
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives li a:hover::before,

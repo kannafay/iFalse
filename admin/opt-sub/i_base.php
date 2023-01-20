@@ -38,8 +38,8 @@ if(@stripslashes($_POST["i_opt"])){
                                 默认：<span style="display:inline-block;width:15px;height:15px;background-color:#8183ff;border-radius:2px"></span>
                             </span>
                         </p>
-                        <p class="description-primary">只能填写HEX值，如#8183FF。否则不显示透明色。</p>
-                        <p class="description-primary">只填主色时，副色将使用主色。</p>
+                        <p class="description-primary">只能填写HEX值。如，#8183FF</p>
+                        <p class="description-primary">只填写主色时，副色将使用主色。</p>
                     </td>
                 </tr>
                 <tr>
@@ -55,22 +55,24 @@ if(@stripslashes($_POST["i_opt"])){
                                     }else if(get_option("i_color") && !get_option("i_color_sub")) {
                                         echo get_option("i_color");
                                     }else {
-                                        echo "#a1a1f7";
+                                        echo "#58b3f5";
                                     }
                                 }else if(!get_option("i_color") && get_option("i_color_sub")) {
-                                    echo "#a1a1f7";
+                                    echo "#58b3f5";
                                 } else {
-                                    echo "#a1a1f7";
+                                    echo "#58b3f5";
                                 }
                             ?>
                             ;border-radius:2px"></span>
                             <span style="padding-left:30px;display:flex;align-items:center">
-                                默认：<span style="display:inline-block;width:15px;height:15px;background-color:#a1a1f7;border-radius:2px"></span>
+                                默认：<span style="display:inline-block;width:15px;height:15px;background-color:#58b3f5;border-radius:2px"></span>
                             </span>
                             
                         </p>
-                        <p class="description-primary">只能填写HEX值，如#A1A1F7。否则不显示透明色。</p>
-                        <p class="description-primary">只填副色不生效。</p>
+                        <p class="description-primary" style="margin-bottom:6px">可以填写任意格式。如，</p>
+                        <li class="description-primary">#58b3f5</li>
+                        <li class="description-primary">rgb(88, 179, 245)</li>
+                        <li class="description-primary">hsl(205deg, 89%, 65%)</li>
                     </td>
                 </tr>
                 <tr>

@@ -140,7 +140,6 @@
 }
 .content-wrapper .text-wrapper h2 {
     color: var(--text);
-    padding-top: 5px;
     line-height: 1.5;
     margin-bottom: 5px;
     word-break: break-all;
