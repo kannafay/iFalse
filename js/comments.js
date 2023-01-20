@@ -77,9 +77,6 @@ if(change_comment_submit_text){change_comment_submit_text.value = 'BiuBiu'};
 const change_comment_respond_textarea = document.querySelector('.post-comments .comment-respond textarea');
 if(change_comment_respond_textarea){change_comment_respond_textarea.rows = '6'};
 
-const change_comment_respond_textarea_text = document.querySelector('.post-comments .comment-respond textarea');
-if(change_comment_respond_textarea_text){change_comment_respond_textarea_text.setAttribute('placeholder','友好发言，维护世界和平!')};
-
 const change_comment_respond_author = document.querySelector('.post-comments .comment-respond .comment-form-author input');
 const change_comment_respond_author_label = document.querySelector('.post-comments .comment-respond .comment-form-author label');
 
@@ -108,10 +105,11 @@ $(change_comment_edit).each(function(i) {
 });
 
 // 文章、页面评论为0时隐藏
-const comment_number = document.querySelector('.post-comments .post-comments-title a').innerHTML;
+const comment_number = $('.post-comments .post-comments-title a').text();
 if(comment_number == "沙发") {
-    document.querySelector('.post-comments .post-comments-title').style.display = 'none';
+    $('.post-comments-title').text('还没有人评论哦！')
 };
+
 
 // 回复时移动输入框
 let respond_id = null;
@@ -122,10 +120,11 @@ $(document).ready(function() {
 
     comment_respond = document.querySelector('.post-comments .comment-respond'); //回复框
     comment_respond_title = document.querySelector('.post-comments .comment-respond .comment-reply-title'); //标题
+    comment_respond_title_a = document.querySelector('.post-comments .comment-respond .comment-reply-title #cancel-comment-reply-link'); //标题
     comment_comment = document.querySelectorAll('.post-comments .comment-body'); //评论者卡片
     comment_comment_input = document.querySelector('.post-comments .comment-respond .form-submit'); //提交按钮
-    if(comment_respond_title){
-        comment_respond_cancel_url = comment_respond_title.querySelector('#cancel-comment-reply-link').getAttribute('href');
+    if(comment_respond_title_a){
+        comment_respond_cancel_url = comment_respond_title_a.getAttribute('href');
         comment_respond_cancel = document.createElement('span').innerHTML = `<a class="comment-cancel-btn" href="${comment_respond_cancel_url}">取消回复</a>`;
     };
     comment_comment_id = [];
@@ -145,8 +144,20 @@ $(document).ready(function() {
             .post-comments .comment-respond .comment-form-author input, 
             .post-comments .comment-respond .comment-form-email input, 
             .post-comments .comment-respond .comment-form-url input`).css({'box-shadow':'none','background-color':'var(--box-comment)'});
-            $("html,body").animate({scrollTop:$(comment_comment[i]).offset().top - 110}, 300);
+            $("html,body").animate({scrollTop:$(comment_comment[i]).offset().top - 110}, 300); //距离顶部110px
+            $(change_comment_respond_textarea).attr('placeholder', '@' + $(comment_respond_title.querySelector('a')).text());//改变文本框placeholder
             return false;
         };
     });
+    if(!respond_id) {
+        $(change_comment_respond_textarea).attr('placeholder', '一言加载中...')
+        fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+          if(change_comment_respond_textarea) {
+            $(change_comment_respond_textarea).attr('placeholder', data.hitokoto);
+          }
+        })
+        .catch(console.error);
+    };
 });

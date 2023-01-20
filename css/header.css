@@ -122,7 +122,7 @@
     box-shadow: var(--box);
     padding: 5px 8px;
     transform: translate(-10px,-10px) scale(.9);
-    transition: var(--tr3);
+    transition: var(--tr2);
 }
 .nav-bar .nav-menu .sub-menu:hover {
     border: 1px solid var(--theme);
@@ -186,7 +186,7 @@
     border-radius: 50%;
     vertical-align: middle;
 }
-.nav-bar .user-set {
+.nav-bar .user-menu {
     position: absolute;
     right: 0px;
     top: 69px;
@@ -205,10 +205,11 @@
     transition: var(--tr3);
     z-index: 2;
 }
-.nav-bar .user-set:hover {
+
+.nav-bar .user-menu:hover {
     border: 1px solid var(--theme);
 }
-.nav-bar .user-set a {
+.nav-bar .user-menu a {
     display: block;
     color: var(--text-sub);
     font-size: 15px;
@@ -217,18 +218,24 @@
     margin-bottom: 4px;
     transition: var(--tr1);
 }
-.nav-bar .user-set a:last-child{
+.nav-bar .user-menu a:last-child{
     margin-bottom: 0;
 }
-.nav-bar .user-set a:hover {
+.nav-bar .user-menu a:hover {
     color: var(--text-keep);
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */
 }
-.nav-bar .user-set-open {
+.nav-bar .user-menu-open {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
+}
+.user-menu .logout:hover {
+    background: #EF3B36 !important;
+}
+.logout-hover {
+    border: 1px solid #EF3B36 !important;
 }
 
 .nav-bar .login {
@@ -316,7 +323,7 @@
 .nav-bar-mb .admin img:hover {
     opacity: .8;
 }
-.nav-bar-mb .user-set {
+.nav-bar-mb .user-menu {
     position: absolute;
     right: 0px;
     top: 69px;
@@ -335,15 +342,15 @@
     transition: var(--tr3);
     z-index: 2;
 }
-.nav-bar-mb .user-set:hover {
+.nav-bar-mb .user-menu:hover {
     border: 1px solid var(--theme);
 }
-.nav-bar-mb .user-set-open-mb {
+.nav-bar-mb .user-menu-open-mb {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
 }
-.nav-bar-mb .user-set a {
+.nav-bar-mb .user-menu a {
     display: block;
     color: var(--text-sub);
     font-size: 15px;
@@ -352,10 +359,10 @@
     margin-bottom: 4px;
     transition: var(--tr3);
 }
-.nav-bar-mb .user-set a:last-child{
+.nav-bar-mb .user-menu a:last-child{
     margin-bottom: 0;
 }
-.nav-bar-mb .user-set a:hover {
+.nav-bar-mb .user-menu a:hover {
     color: var(--text-keep);
     background: var(--theme);
     /* background: linear-gradient(to right, var(--theme), var(--theme-sub)); */

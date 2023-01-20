@@ -12,9 +12,11 @@
   --radius: 6px;
   --radius-sub: 4px;
   --tr1: all .1s;
+  --tr2: all .2s;
   --tr3: all .3s;
   --tr6: all .6s cubic-bezier(.28,.9,.34,.99);
   --tr1-c: .1s;
+  --tr2-c: .2s;
   --tr3-c: .3s;
   --tr6-c: .6s;
 }

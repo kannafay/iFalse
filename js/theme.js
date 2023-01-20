@@ -35,15 +35,15 @@
 
 // PC端导航栏用户菜单
 const user_set_btn = document.querySelector('.nav-bar .admin img');
-const user_set_menu = document.querySelector('.nav-bar .user-set');
+const user_set_menu = document.querySelector('.nav-bar .user-menu');
 if(user_set_btn) {
     function remove_set_menu(e) {
-        user_set_menu.classList.remove('user-set-open');
+        user_set_menu.classList.remove('user-menu-open');
         document.removeEventListener("click",remove_set_menu);
     };
     user_set_btn.addEventListener("click",(e)=>{
         e.stopPropagation();
-        if(user_set_menu.classList.toggle('user-set-open')) {
+        if(user_set_menu.classList.toggle('user-menu-open')) {
             document.addEventListener("click",remove_set_menu);
         };
     });
@@ -52,15 +52,15 @@ if(user_set_btn) {
 
 // 移动端导航栏用户菜单
 const user_set_btn_mb = document.querySelector('.nav-bar-mb .admin img');
-const user_set_menu_mb = document.querySelector('.nav-bar-mb .user-set');
+const user_set_menu_mb = document.querySelector('.nav-bar-mb .user-menu');
 if(user_set_btn_mb) {
     function remove_set_menu(e) {
-        user_set_menu_mb.classList.remove('user-set-open-mb');
+        user_set_menu_mb.classList.remove('user-menu-open-mb');
         document.removeEventListener("click",remove_set_menu);
     };
     user_set_btn_mb.addEventListener("click",(e)=>{
         e.stopPropagation();
-        if(user_set_menu_mb.classList.toggle('user-set-open-mb')) {
+        if(user_set_menu_mb.classList.toggle('user-menu-open-mb')) {
             document.addEventListener("click",remove_set_menu);
         };
     });
@@ -88,9 +88,20 @@ menu_mb_close.onclick = function() {
 
 // 滚动时隐藏用户菜单
 $(window).scroll(function() {
-    $(user_set_menu).removeClass('user-set-open');
-    $(user_set_menu_mb).removeClass('user-set-open-mb');
+    $(user_set_menu).removeClass('user-menu-open');
+    $(user_set_menu_mb).removeClass('user-menu-open-mb');
 })
+
+// 退出登录hover效果
+if($('.user-menu .logout')) {
+    $('.user-menu .logout').mouseenter(function() {
+        $('.user-menu, user-menu-mb').addClass('logout-hover');
+    })
+    $('.user-menu .logout').mouseleave(function() {
+        $('.user-menu, user-menu-mb').removeClass('logout-hover');
+    })
+}
+
 
 // 目录树菜单按钮
 const post_menu_btn = document.querySelector('.post-menu-btn');

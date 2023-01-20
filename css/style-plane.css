@@ -27,10 +27,10 @@ body {
 .nav-bar .nav-menu .sub-menu li .sub-menu li:hover .sub-menu {
     transform: translateY(-8px);
 }
-.nav-bar .user-set,
-.nav-bar .user-set:hover,
-.nav-bar-mb .user-set,
-.nav-bar-mb .user-set:hover {
+.nav-bar .user-menu,
+.nav-bar .user-menu:hover,
+.nav-bar-mb .user-menu,
+.nav-bar-mb .user-menu:hover {
     border: 0;
     top: 70px;
 }

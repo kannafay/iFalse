@@ -30,6 +30,32 @@
     <style><?php if(get_option("i_custom_css_head")){echo get_option("i_custom_css_head");}; ?></style>
     <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-plane.css">
     <?php } ?>
+    <?php if(get_option("i_color")) { ?>
+        <style>
+        :root{
+            --theme:<?php echo get_option("i_color"); ?>;
+            --theme-sub:<?php 
+                            if(get_option("i_color")){
+                                if(get_option("i_color_sub")){
+                                    echo get_option("i_color_sub"); 
+                                }else if(get_option("i_color") && !get_option("i_color_sub")) {
+                                    echo get_option("i_color");
+                                }else {
+                                    echo "#a1a1f7";
+                                }
+                            }else if(!get_option("i_color") && get_option("i_color_sub")) {
+                                echo "#a1a1f7";
+                            } else {
+                                echo "#a1a1f7";
+                            } 
+                        ?>;
+            --theme-1:<?php echo get_option("i_color").'1a'; ?>;
+            --theme-2:<?php echo get_option("i_color").'33'; ?>;
+            --theme-3:<?php echo get_option("i_color").'4d'; ?>;
+            --theme-5:<?php echo get_option("i_color").'80'; ?>;
+        }
+        </style>
+    <? } ?>
     <?php if(get_option("i_night") == 2) { 
         if(date("m") >= 3 && date("m") <= 8) { ?>
             <script>var judge = new Date().getHours() >= 20 || new Date().getHours() <= 5;</script>

@@ -1,5 +1,7 @@
 <?php
 @$i_plane = stripslashes($_POST["i_plane"]);
+@$i_color = stripslashes($_POST["i_color"]);
+@$i_color_sub = stripslashes($_POST["i_color_sub"]);
 @$i_blog_to_column = stripslashes($_POST["i_blog_to_column"]);
 @$i_blog_auto_column = stripslashes($_POST["i_blog_auto_column"]);
 @$i_loading_pic = stripslashes($_POST["i_loading_pic"]);
@@ -9,6 +11,8 @@
 
 if(@stripslashes($_POST["i_opt"])){
     update_option("i_plane",$i_plane);
+    update_option("i_color",$i_color);
+    update_option("i_color_sub",$i_color_sub);
     update_option("i_blog_to_column",$i_blog_to_column);
     update_option("i_blog_auto_column",$i_blog_auto_column);
     update_option("i_loading_pic",$i_loading_pic);
@@ -24,6 +28,51 @@ if(@stripslashes($_POST["i_opt"])){
     <form method="post" action="" novalidate="novalidate">
         <table class="form-table">
             <tbody>
+                <tr>
+                    <th scope="row"><label for="i_color">主题主色</label></th>
+                    <td>
+                        <input name="i_color" type="text" value="<?php echo get_option("i_color"); ?>" class="regular-text">
+                        <p class="description" style="display:flex;align-items:center">
+                            当前主题主色：<span style="display:inline-block;width:15px;height:15px;background-color:<?php if(get_option("i_color")){echo get_option("i_color"); }else {echo "#8183ff";} ?>;border-radius:2px"></span>
+                            <span style="padding-left:30px;display:flex;align-items:center">
+                                默认：<span style="display:inline-block;width:15px;height:15px;background-color:#8183ff;border-radius:2px"></span>
+                            </span>
+                        </p>
+                        <p class="description-primary">只能填写HEX值，如#8183FF。否则不显示透明色。</p>
+                        <p class="description-primary">只填主色时，副色将使用主色。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_color_sub">主题副色</label></th>
+                    <td>
+                        <input name="i_color_sub" type="text" value="<?php echo get_option("i_color_sub"); ?>" class="regular-text">
+                        <p class="description" style="display:flex;align-items:center">
+                            当前主题副色：<span style="display:inline-block;width:15px;height:15px;background-color:
+                            <?php 
+                                if(get_option("i_color")){
+                                    if(get_option("i_color_sub")){
+                                        echo get_option("i_color_sub"); 
+                                    }else if(get_option("i_color") && !get_option("i_color_sub")) {
+                                        echo get_option("i_color");
+                                    }else {
+                                        echo "#a1a1f7";
+                                    }
+                                }else if(!get_option("i_color") && get_option("i_color_sub")) {
+                                    echo "#a1a1f7";
+                                } else {
+                                    echo "#a1a1f7";
+                                }
+                            ?>
+                            ;border-radius:2px"></span>
+                            <span style="padding-left:30px;display:flex;align-items:center">
+                                默认：<span style="display:inline-block;width:15px;height:15px;background-color:#a1a1f7;border-radius:2px"></span>
+                            </span>
+                            
+                        </p>
+                        <p class="description-primary">只能填写HEX值，如#A1A1F7。否则不显示透明色。</p>
+                        <p class="description-primary">只填副色不生效。</p>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="i_plane">面性样式</label></th>
                     <td>
