@@ -23,6 +23,7 @@ if(@stripslashes($_POST["i_opt"])){
 ?>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
+<script src="<?php echo get_template_directory_uri(); ?>/admin/style/i_stat.js"></script>
 <div class="wrap">
     <h1>基本设置</h1>
     <form method="post" action="" novalidate="novalidate">

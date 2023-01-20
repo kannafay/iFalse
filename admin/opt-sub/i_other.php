@@ -4,6 +4,7 @@
 @$i_say_img = stripslashes($_POST["i_say_img"]);
 @$i_404_tip = stripslashes($_POST["i_404_tip"]);
 @$i_mourn = stripslashes($_POST["i_mourn"]);
+@$i_plan = stripslashes($_POST["i_plan"]);
 
 if(@stripslashes($_POST["i_opt"])){
     update_option("i_keywords",$_POST["i_keywords"]);
@@ -11,6 +12,7 @@ if(@stripslashes($_POST["i_opt"])){
     update_option("i_say_img",$_POST["i_say_img"]);
     update_option("i_404_tip",$_POST["i_404_tip"]);
     update_option("i_mourn",$_POST["i_mourn"]);
+    update_option("i_plan",$_POST["i_plan"]);
 }
 ?>
 
@@ -59,6 +61,13 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_mourn" type="text" value="<?php echo get_option("i_mourn"); ?>" class="regular-text">
                         <p class="description">数字1为开启。开启后首页变成灰色。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_plan">体验计划</label></th>
+                    <td>
+                        <input name="i_plan" type="text" value="<?php echo get_option("i_plan"); ?>" class="regular-text">
+                        <p class="description">数字1为开启。开启后将帮助开发者获得更多的BUG反馈。</p>
                     </td>
                 </tr>
             </tbody>
