@@ -42,23 +42,20 @@ add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
 <?php 
     if(get_option("i_comments_article") == 1) {
         if(get_option("i_comments_turn" ) == 1) {
-            if(is_user_logged_in() == false) {?>
+            if(is_user_logged_in() == false) { ?>
                 <div class="is-logined">
                     <div class="is-logined-box"> 
                         发现您未登录，请先<a href="<?php echo wp_login_url(); ?>">登录</a>后再发表评论！
                     </div>
                 </div>
                 <script>
-                    const respond_box = document.querySelector('.post-comments-content #respond');
-                    const comments_content_box = document.querySelector('.post-comments-content');
-                    comments_content_box.removeChild(respond_box);
-                    comments_content_box.insertBefore(document.querySelector('.is-logined'),comments_content_box.childNodes[0]);
+                    $('.post-comments #respond > form').remove();
+                    $('.post-comments #respond').append($('.is-logined'));
                 </script>
             <?php }
-            }
         }
     } 
-?>
+} ?>
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
 <script>

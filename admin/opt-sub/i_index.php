@@ -32,7 +32,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_swiper_effect">轮播图切换效果</label></th>
                     <td>
                         <input name="i_swiper_effect" type="text" value="<?php echo get_option("i_swiper_effect"); ?>" class="regular-text">
-                        <p class="description">请填入对应的英文字符，不填即默认</p>
+                        <p class="description">请填入对应的英文字符，不填即默认。</p>
                         <p class="description">slide：普通位移切换（默认）</p>
                         <p class="description">fade：淡入</p>
                         <p class="description">cube：方块</p>
@@ -60,7 +60,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_notice">首页公告</label></th>
                     <td>
                         <textarea name="i_notice" rows="3" class="regular-text"><?php echo get_option("i_notice"); ?></textarea> <br>
-                        <p class="description">用于首页发布公告，留空则不显示</p>
+                        <p class="description">用于首页发布公告，留空则不显示。</p>
                     </td>
                 </tr>
                 

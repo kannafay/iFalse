@@ -124,8 +124,10 @@ $(document).ready(function() {
     comment_respond_title = document.querySelector('.post-comments .comment-respond .comment-reply-title'); //标题
     comment_comment = document.querySelectorAll('.post-comments .comment-body'); //评论者卡片
     comment_comment_input = document.querySelector('.post-comments .comment-respond .form-submit'); //提交按钮
-    comment_respond_cancel_url = comment_respond_title.querySelector('#cancel-comment-reply-link').getAttribute('href');
-    comment_respond_cancel = document.createElement('span').innerHTML = `<a class="comment-cancel-btn" href="${comment_respond_cancel_url}">取消回复</a>`;
+    if(comment_respond_title){
+        comment_respond_cancel_url = comment_respond_title.querySelector('#cancel-comment-reply-link').getAttribute('href');
+        comment_respond_cancel = document.createElement('span').innerHTML = `<a class="comment-cancel-btn" href="${comment_respond_cancel_url}">取消回复</a>`;
+    };
     comment_comment_id = [];
 
     $(comment_comment).each(function(i) {

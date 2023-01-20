@@ -203,8 +203,11 @@
     border-radius: var(--radius);
 }
 #article-toc::-webkit-scrollbar-thumb {
-    background-color: var(--theme-sub);
+    /* background-color: var(--theme-1); */
     border-radius: var(--radius);
+}
+#article-toc:hover::-webkit-scrollbar-thumb {
+    background-color: var(--theme-sub);
 }
 
 .article-toc {
@@ -353,7 +356,7 @@
     align-items: center;
     color: var(--text-info);
     font-size: 14px;
-    margin-bottom: 0 !important;
+    margin-bottom: 20px;
     margin-top: 60px;
 }
 .single-main .left .post-content .the-end i {
@@ -631,11 +634,10 @@
     padding: 4px 8px;
     margin-bottom: 5px;
     border-radius: var(--radius-sub);
-    transition: var(--tr1);
+    transition: var(--tr3);
 }
 .post-comments .comment-body .reply a:hover {
     color: var(--theme);
-    transition: var(--tr1);
 }
 
 .post-comments .comment-body:hover .reply a {
@@ -734,7 +736,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     outline: none;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     transition: var(--tr3);
 }
 .post-comments .comment-respond textarea:hover,
@@ -939,8 +941,6 @@
 .is-logined {
     width: 100%;
     height: 100px;
-    padding-top: 20px;
-    margin-top: 20px;
     /* border-top: 1px solid var(--border); */
     transition: var(--tr3);
 }
@@ -1082,6 +1082,7 @@
 
     .single-main .left .post-content .the-end {
         font-size: 13px;
+        margin-bottom: 10px;
     }
 
     /* 评论区 */

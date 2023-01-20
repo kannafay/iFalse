@@ -52,7 +52,7 @@ class WPUPA_Settings {
 
 				  			<table class="form-table">
 
-				  				<tr valign="top">
+				  				<!-- <tr valign="top">
 			  						<th scope="row"><?php _e('头像显示', 'wp-user-profile-avatar'); ?></th>
 			  						<td>
 			  							<fieldset>
@@ -62,7 +62,7 @@ class WPUPA_Settings {
 							              <p class="description"><?php _e('如果未选中，则不会在个人资料和前端显示用户头像。', 'wp-user-profile-avatar'); ?></p>
 							            </fieldset>
 			  						</td>
-			  					</tr>
+			  					</tr> -->
 
 			  					<tr valign="top">
 			  						<th scope="row"><?php _e('设置', 'wp-user-profile-avatar'); ?></th>
@@ -80,8 +80,8 @@ class WPUPA_Settings {
 							            </fieldset>
 
 							            <fieldset>
-							              <label for="wpupa_disable_gravatar" style="color:#8183ff;">
-							                <input name="wpupa_disable_gravatar" type="checkbox" id="wpupa_disable_gravatar" value="1"<?php echo checked($wpupa_disable_gravatar, 1, 0); ?> > <?php _e('使用自定义默认头像时请勾选', 'wp-user-profile-avatar'); ?>
+							              <label for="wpupa_disable_gravatar" style="color:red;font-weight:700;">
+							                <input name="wpupa_disable_gravatar" type="checkbox" id="wpupa_disable_gravatar" value="1"<?php echo checked($wpupa_disable_gravatar, 1, 0); ?> > <?php _e('使用自定义头像时必须勾选此项', 'wp-user-profile-avatar'); ?>
 							              </label>
 							            </fieldset>
 			  						</td>

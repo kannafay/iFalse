@@ -152,12 +152,12 @@
 .single-main .left .post-content .wp-block-table::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: var(--border);
+    /* background-color: var(--border); */
     border-radius: var(--radius);
 }
 .single-main .left .post-content .wp-block-table::-webkit-scrollbar-thumb {
     background-color: var(--theme-3);
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
 }
 .single-main .left .post-content .wp-block-table::-webkit-scrollbar-thumb:hover {
     background-color: var(--theme-sub);

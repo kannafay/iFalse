@@ -1,16 +1,16 @@
 /* main css */
 [data-color-mode=light] {
     --body: #f5f6f7;
+    --box-p: 0 0 15px rgba(28 31 35 / 2%);
     --box-comment: #f3f3f3;
-    --box-p: 0 0 15px rgba(28 31 35 / 1%);
     --input: 0 10px 20px 1px var(--theme-1);
     --border: #e3e3e3;
 }
 [data-color-mode=night] {
     --body: #292A2D;
-    --box-comment: var(--body);
     --bgc: #34363a;
     --box-p: 0 0 10px rgba(28 31 35 / 10%);
+    --box-comment: var(--body);
     --input: var(--box-p);
     --border: #3f3f3f;
 }
@@ -28,8 +28,11 @@ body {
     transform: translateY(-8px);
 }
 .nav-bar .user-set,
-.nav-bar .user-set:hover {
+.nav-bar .user-set:hover,
+.nav-bar-mb .user-set,
+.nav-bar-mb .user-set:hover {
     border: 0;
+    top: 70px;
 }
 .nav-mb .nav-menu-mb > li > ul,
 .nav-mb .nav-menu-mb > .menu-item-has-children > a:hover {
@@ -39,7 +42,6 @@ body {
 .nav-mb .nav-menu-mb > li a:hover {
     background-color: var(--body);
 }
-
 
 /* home.css */
 .searchform input {

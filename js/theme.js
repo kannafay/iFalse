@@ -389,3 +389,14 @@ $(menu_m_li).each(function(i){
         };
     });
 });
+
+
+// 文章版权hover效果
+if($('.the-end')) {
+    $('.post-copyright').mouseenter(function() {
+        $('.single-main .left .post-content .the-end i').css('background-color','var(--theme)');
+    })
+    $('.post-copyright').mouseleave(function() {
+        $('.single-main .left .post-content .the-end i').css('background-color','var(--border)');
+    })
+}

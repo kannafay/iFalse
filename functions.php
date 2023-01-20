@@ -119,33 +119,7 @@ function catch_that_image() {
       }
   } 
   return $first_img; 
-} 
-// ---------------------------------------------------------------------
-// 自动博客模式
-function autoBlog() {
-get_template_part('inc/home-blog');
-get_template_part('inc/home-card');?>
-<script language=javascript>
-const getWindowInfo = () => {
-  if(window.innerWidth <= 640) {
-    $('.home-2').css('display','block');
-    $('.main-part').css('display','none');
-  }
-  else if(window.innerWidth > 640) {
-    $('.home-2').css('display','none');
-    $('.main-part').css('display','block');
-  }
 }
-if(window.innerWidth <= 640) {
-  $('.home-2').css('display','block');
-  $('.main-part').css('display','none');
-} else if(window.innerWidth > 640) {
-  $('.home-2').css('display','none');
-  $('.main-part').css('display','block');
-}
-window.addEventListener('resize', getWindowInfo);
-</script>
-<?php }
 
 // ---------------------------------------------------------------------
 // 延迟加载

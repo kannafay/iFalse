@@ -32,14 +32,14 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_icp">ICP备案号</label></th>
                     <td>
                         <input name="i_icp" type="text" value="<?php echo get_option("i_icp"); ?>" class="regular-text">
-                        <p class="description">页脚显示ICP备案号，没有ICP备案号请留空</p>
+                        <p class="description">页脚显示ICP备案号，没有ICP备案号请留空。</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_icp_gov">公网安备号</label></th>
                     <td>
                         <input name="i_icp_gov" type="text" value="<?php echo get_option("i_icp_gov"); ?>" class="regular-text">
-                        <p class="description">页脚显示公网安备号，没有公网安备号请留空</p>
+                        <p class="description">页脚显示公网安备号，没有公网安备号请留空。</p>
                     </td>
                 </tr>
                 <tr>

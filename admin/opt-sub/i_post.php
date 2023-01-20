@@ -43,7 +43,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_post_copyright_text">文章版权内容</label></th>
                     <td>
                         <input name="i_post_copyright_text" type="text" value="<?php echo get_option("i_post_copyright_text"); ?>" class="regular-text">
-                        <p class="description">文章版权文字信息</p>
+                        <p class="description">文章版权文字信息。</p>
                         <p class="description-primary">默认：分享是一种美德，转载请保留原链接</p>
                     </td>
                 </tr>

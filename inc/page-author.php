@@ -27,10 +27,26 @@
                 get_template_part('inc/home-blog');
             } else{
                 if(get_option("i_blog_auto_column") == 1) {
-                    autoBlog();
+                    get_template_part('inc/home-card');
+                    get_template_part('inc/home-blog');
+                ?> 
+                <style>
+                    .home-2{
+                        display: none;
+                    }
+                    @media screen and (max-width: 640px) {
+                        .home-2 {
+                            display: block;
+                        }
+                        .main-part {
+                            display: none;
+                        }
+                    }
+                </style>
+                <?php 
                 } else {
                     get_template_part('inc/home-card');
-                }
+                }  
             } 
         ?>
     </div>
