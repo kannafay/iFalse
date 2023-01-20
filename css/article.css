@@ -10,28 +10,29 @@
     transition: var(--tr3);
 }
 .single-banner .single-cate {
-    margin: 20px 0 10px 0;
+    margin: 20px 0 13px 0;
 }
 .single-banner .single-cate .single-cate-box {
     display: inline-block;
     padding: 2px 10px 3px 4px ;
-    background-color: var(--theme-1);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     border-radius: 15px;
 }
 .single-banner .single-cate .single-cate-box span {
     font-size: 22px;
-    color: var(--theme);
+    color: var(--bgc-blur);
     vertical-align: middle;
 }
 .single-banner .single-cate .single-cate-box a {
     font-size: 12px;
     font-weight: 400;
-    color: var(--theme);
+    color: var(--text-keep);
 }
 .single-banner .single-title h1 {
     font-size: 32px;
     color: var(--text);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: justify;
     white-space: normal;
     word-break: break-all;
@@ -44,7 +45,7 @@
     align-items: center;
 }
 .single-banner .single-detail .author {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .single-banner .single-detail .date::before {
     content: '\e74b';
@@ -74,11 +75,15 @@
     color: var(--text-info);
     transition: var(--tr3);
 }
+.single-banner .single-detail .author > span a {
+    color: var(--text-sub);
+    font-weight: 700;
+}
 .single-banner .single-detail .author a:hover {
     color: var(--theme);
 }
 .single-banner .single-detail .author > a {
-    margin-right: 5px;
+    margin-right: 8px;
     border-radius: 50%;
 }
 .single-banner .single-detail img {
@@ -93,7 +98,7 @@
     margin-left: 5px;
 }
 .single-banner .breadcrumb {
-    margin-top: 10px;
+    margin-top: 15px;
     color: var(--text-sub);
 }
 .single-banner .breadcrumb span {
@@ -250,8 +255,9 @@
     transition: var(--tr3);
 }
 #article-toc ul li a:hover {
-    color: var(--bgc);
-    background: var(--theme);
+    color: var(--text-keep);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
 }
 #article-toc #article-toc-ul .heading-level-1,
 #article-toc #article-toc-ul .heading-level-2 {
@@ -285,7 +291,7 @@
     color: var(--text-sub);
     position: relative;
     overflow: hidden;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #article-toc #article-toc-ul .heading-level-1 a:hover,
 #article-toc #article-toc-ul .heading-level-2 a:hover,
@@ -308,7 +314,7 @@
     color: var(--text-keep);
     position: absolute;
     left: -12px;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #article-toc #article-toc-ul .heading-level-1 a:hover::before,
 #article-toc #article-toc-ul .heading-level-2 a:hover::before,
@@ -339,14 +345,15 @@
     background: var(--theme-1);
     border-radius: var(--radius-sub);
     white-space: nowrap;
-    transition: var(--tr3);
+    transition: var(--tr1);
 }
 .single-main .left .post-content .the-tag span a::before {
     content: '#';
     left: 0;
 }
 .single-main .left .post-content .the-tag span a:hover {
-    background: var(--theme);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     color: var(--text-keep);
     text-decoration: none;
 }
@@ -500,6 +507,7 @@
     justify-content: left;
     background: var(--theme-2);
     background: linear-gradient(90deg,var(--theme-2) 0%,var(--bgc-0) 100%);
+    animation: hueRotate 3s infinite alternate;
     border-radius: var(--radius);
     transition: var(--tr3);
 }
@@ -634,20 +642,20 @@
     padding: 4px 8px;
     margin-bottom: 5px;
     border-radius: var(--radius-sub);
-    transition: var(--tr3);
+    transition: var(--tr1);
 }
 .post-comments .comment-body .reply a:hover {
     color: var(--theme);
 }
-
 .post-comments .comment-body:hover .reply a {
     visibility: visible;
     opacity: 1;
     background-color: var(--bgc-0);
-    color: var(--text-sub);
+    color: var(--text-info);
 }
 .post-comments .comment-body:hover .reply a:hover {
-    background-color: var(--theme);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     color: var(--text-keep);
 }
 .post-comments .comment-author {
@@ -845,6 +853,7 @@
     color: var(--text-keep);
     background: var(--theme-sub);
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     border-radius: var(--radius);
     border: 0;
     margin-top: 10px;
@@ -930,10 +939,10 @@
 /* 博主标签 */
 .post-comments .byuser > .comment-body > .vcard > .fn .master {
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* text-shadow: 0 0 1px rgba(0 0 0 / .3); */
-    /* font-weight: 400; */
+    font-weight: 700;
 }
 .post-comments .byuser > .comment-body > .vcard > .fn .master::selection{
     background: var(--theme);
@@ -943,6 +952,7 @@
     background: var(--theme);
     background: -webkit-linear-gradient(120deg, var(--theme), var(--theme-sub));
     background: linear-gradient(120deg, var(--theme), var(--theme-sub)); 
+    animation: hueRotate 3s infinite alternate;
 }
 /* 评论区标签-end */
 
@@ -972,7 +982,7 @@
     margin: 0 5px;
     color: var(--text-keep);
     background: var(--theme-sub);
-    background: linear-gradient(to right, var(--theme), var(--theme-sub)); 
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub)); 
     padding: 2px 8px;
     border-radius: var(--radius-sub);
     transition: var(--tr3);
@@ -1016,7 +1026,8 @@
 .post-comments #post-comments-nav .current {
     cursor: default;
     color: var(--text-keep);
-    background-color: var(--theme);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     overflow: hidden;
 }
 /* 评论区-end-------------------------------------------- */
@@ -1083,6 +1094,9 @@
     .single-banner .single-title h1,
     .page-banner .page-title h1 {
         font-size: 24px;
+    }
+    .single-banner .single-title h1 {
+        margin-bottom: 10px;
     }
     .single-main .left {
         border: none;

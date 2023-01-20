@@ -27,7 +27,7 @@
     width: 0%;
     height: inherit;
     background-color: #8183ff;
-    background: linear-gradient(to right, #8183ff, #58b3f5); 
+    background: linear-gradient(120deg, #8183ff, #58b3f5); 
     position: absolute;
     animation: mainBlock 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
     display: flex;
@@ -230,7 +230,7 @@
   color: #fff;
   border-radius: 6px;
   background-color: #8183ff;
-  background: linear-gradient(to right, #8183ff, #58b3f5); 
+  background: linear-gradient(120deg, #8183ff, #58b3f5); 
   text-decoration: none;
   font-size: 14px;
   transition: all .3s;

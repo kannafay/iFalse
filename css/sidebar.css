@@ -116,23 +116,24 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #primary-sidebar .widget_recent_entries li a::before {
     content: '✦ ';
     color: var(--text-keep);
     position: absolute;
     left: -11px;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #primary-sidebar .widget_recent_entries li a:hover::before {
     left: 8px;
 }
 #primary-sidebar .widget_recent_entries li a:hover {
     padding-left: 24px;
-    background: var(--theme);
-    /* background: linear-gradient(to right, var(--theme), var(--theme-sub));  */
-    color: var(--text-keep);
+    background: var(--theme-2);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
+    color: var(--text-keep)
 }
 
 /* 最新回复 */
@@ -228,9 +229,8 @@
 #primary-sidebar .widget_tag_cloud {
     cursor: default;
     max-height: 400px;
-    padding: 10px;
+    padding: 10px 10px 4px 8px;
     margin-bottom: 20px;
-    /* background-color: var(--bgc-sub); */
     border-radius: var(--radius);
     border: 1px solid var(--border);
     overflow: hidden;
@@ -240,24 +240,25 @@
     border: 1px solid var(--theme);
 }
 #primary-sidebar .widget_tag_cloud a {
-    line-height: 25px;
+    display: inline-block;
     font-size: 14px !important;
     padding: 2px 6px;
+    margin: 0 0 6px 2px;
     border-radius: var(--radius-sub);
     color: var(--theme);
-    background-color: var(--theme-1);
+    background-color: var(--theme-2);
     word-break: break-all;
     word-wrap: break-word;
     white-space: nowrap;
-    transition: var(--tr3);
+    transition: var(--tr1);
 }
 #primary-sidebar .widget_tag_cloud a::before {
     content: '#';
     left: 0;
 }
 #primary-sidebar .widget_tag_cloud a:hover {
-    background: var(--theme);
-    /* background: linear-gradient(to right, var(--theme), var(--theme-sub));  */
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     color: var(--text-keep);
 }
 
@@ -298,14 +299,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #primary-sidebar .wp-block-categories li a:hover,
 #primary-sidebar .widget_archive li a:hover {
     padding-left: 24px;
     color: var(--text-keep);
-    background: var(--theme);
-    /* background: linear-gradient(to right, var(--theme), var(--theme-sub));  */
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
 }
 #primary-sidebar .wp-block-categories li a::before,
 #primary-sidebar .widget_archive li a::before {
@@ -313,7 +314,7 @@
     color: var(--text-keep);
     position: absolute;
     left: -11px;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #primary-sidebar .wp-block-categories li a:hover::before,
 #primary-sidebar .widget_archive li a:hover::before {
@@ -412,7 +413,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-posts li a::before,
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives li a::before,
@@ -421,7 +422,7 @@
     color: var(--text-keep);
     position: absolute;
     left: -11px;
-    transition: var(--tr2);
+    transition: var(--tr1);
 }
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-latest-posts li a:hover::before,
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives li a:hover::before,
@@ -432,7 +433,8 @@
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-archives li a:hover,
 #primary-sidebar .wp-block-group .wp-block-group__inner-container .wp-block-categories li a:hover {
     padding-left: 24px;
-    background: var(--theme);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     color: var(--text-keep);
 }
 

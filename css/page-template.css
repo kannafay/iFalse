@@ -48,11 +48,15 @@
     color: var(--text-info);
     transition: var(--tr3);
 }
+.page-banner .page-detail .author > span a {
+    color: var(--text-sub);
+    font-weight: 700;
+}
 .page-banner .page-detail .author a:hover {
     color: var(--theme);
 }
 .page-banner .page-detail .author > a {
-    margin-right: 5px;
+    margin-right: 8px;
     border-radius: 50%;
 }
 .page-banner .page-detail img {

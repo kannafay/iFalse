@@ -53,6 +53,7 @@
             --theme-2:<?php echo get_option("i_color").'33'; ?>;
             --theme-3:<?php echo get_option("i_color").'4d'; ?>;
             --theme-5:<?php echo get_option("i_color").'80'; ?>;
+            --notice: <?php echo get_option("i_color").'26'; ?>;
         }
         </style>
     <? } ?>

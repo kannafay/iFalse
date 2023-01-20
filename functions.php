@@ -380,8 +380,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 // ---------------------------------------------------------------------
 // 菜单
 register_nav_menus( array(        
-    'menu' => 'PC端菜单（最高支持4级）',
-    'menu-mb' => '移动端菜单（最高支持6级）'
+    'menu' => 'PC端菜单 (最高4级)',
+    'menu-mb' => '移动端菜单 (最高6级)'
 ));
 // 获取当前url
 function getpageurl() {

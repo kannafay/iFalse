@@ -118,6 +118,7 @@
     color: var(--text-keep);
     background: var(--theme);
     background: linear-gradient(120deg, var(--theme), var(--theme-sub)); 
+    animation: hueRotate 3s infinite alternate;
     box-shadow: var(--box-p);
     transition: var(--tr3);
 }

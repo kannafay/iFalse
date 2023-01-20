@@ -72,7 +72,7 @@
     object-fit: cover;
     border-radius: var(--radius);
     vertical-align: bottom;
-    transition: filter var(--tr3-c);
+    transition: var(--tr3);
 }
 .single-main .left .post-content figcaption {
     font-size: 14px;
@@ -283,6 +283,7 @@
     font-size: 14px;
     background: var(--theme-sub); 
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
     transition: var(--tr3);  
 }
 .single-main .left .post-content .wp-block-button__link:hover {

@@ -17,6 +17,7 @@ if(@stripslashes($_POST["i_opt"])){
 ?>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
+<?php if(get_option("i_color")){echo "<style>.description-primary{color:".get_option("i_color").";}</style>";}; ?>
 <div class="wrap">
     <h1>其他设置</h1>
     <form method="post" action="" novalidate="novalidate">

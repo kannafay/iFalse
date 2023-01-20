@@ -38,7 +38,7 @@
     width: 100%;
     padding: 0 20px;
     border-radius: 10px;
-    background-color: var(--bgc-blur);
+    background-color: var(--bgc-blur-say);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 8px rgb(28 31 35 / 3%), 0 0 24px 8px rgb(28 31 35 / 5%);
@@ -143,7 +143,7 @@
     font-weight: 400;
     color: var(--text-keep);
     background: var(--theme-sub);
-    background: linear-gradient(to right, var(--theme), var(--theme-sub));
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     padding: 2px 6px;
     border-radius: var(--radius-sub);
 }
@@ -170,18 +170,36 @@
     justify-content: center;
     color: var(--text-sub);
 }
-.say-content .say-page-nav .say-page-nav-bar .current {
-    border-bottom: 1px solid var(--text-info);
-    color: var(--text-info);
-}
-.say-content .say-page-nav .say-page-nav-bar a {
-    text-decoration: none;
-    color: var(--text);
-}
 .say-content .say-page-nav .say-page-nav-bar > * {
-    padding: 2px 6px;
-    margin: 0 4px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: var(--text-info);
+    font-size: 14px;
+    background-color: var(--border);
+    line-height: 30px;
+    text-align: center;
+    margin: 0 3px;
+    border-radius: var(--radius-sub);
+    overflow: hidden;
+    transition: var(--tr3);
 }
+.say-content .say-page-nav .say-page-nav-bar .current {
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
+    color: var(--text-keep);
+}
+.say-content .say-page-nav .say-page-nav-bar a:hover {
+    background-color: var(--theme);
+    color: var(--text-keep);
+}
+.say-content .say-page-nav .say-page-nav-bar .dots {
+    background-color: var(--bgc-0);
+}
+.say-content .say-page-nav .say-page-nav-bar .dots:hover {
+    cursor: default;
+}
+
 
 /* have no more */
 .haveNoMore-say {

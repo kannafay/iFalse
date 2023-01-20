@@ -30,7 +30,7 @@
 .page-404-detail .back-home {
     color: var(--text-keep);
     background: var(--theme);
-    background: linear-gradient(to right, var(--theme), var(--theme-sub));
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
 }
 .page-404-detail .back-history {
     color: var(--theme);

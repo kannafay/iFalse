@@ -24,6 +24,7 @@ if(@stripslashes($_POST["i_opt"])){
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
 <script src="<?php echo get_template_directory_uri(); ?>/admin/style/i_stat.js"></script>
+<?php if(get_option("i_color")){echo "<style>.description-primary{color:".get_option("i_color").";}</style>";}; ?>
 <div class="wrap">
     <h1>基本设置</h1>
     <form method="post" action="" novalidate="novalidate">
@@ -96,7 +97,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_blog_auto_column">移动端自动博客模式</label></th>
                     <td>
                         <input name="i_blog_auto_column" type="text" value="<?php echo get_option("i_blog_auto_column"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。开启后PC端不变，移动端自动切换成博客模式。</p>
+                        <p class="description">数字1为开启。开启后PC端不变，移动端切换成博客模式。</p>
                         <p class="description-primary">PC端：卡片模式</p>
                         <p class="description-primary">手机端：博客模式</p>
                     </td>
