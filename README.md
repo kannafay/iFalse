@@ -13,9 +13,9 @@
 
 ## 下载说明
 
-> 请注意：dev分支为开发版本。
+> 请注意：master分支为未压缩版本，dev分支为开发版本。
 
-正式版：[前往下载](../../releases/latest)
+正式版本：[前往下载](../../releases/latest)
 
 使用文档：[传送门](https://ifalse.onll.cn/docs)
 
