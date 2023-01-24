@@ -67,4 +67,4 @@
 
 <div class="progress-wrap"><svg><path></svg></div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/headroom.min.js"></script>
+<script src="<?php echo i_static(); ?>/js/headroom.min.js"></script>

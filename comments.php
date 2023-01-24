@@ -57,7 +57,7 @@ add_filter( 'get_comment_author', 'filter_get_comment_author', 10, 4);
     } 
 } ?>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
+<script src="<?php echo i_static(); ?>/js/comments.js"></script>
 <script>
     // 回复时文本域聚焦
     const replyText = document.querySelector('.post-comments .comment-respond textarea');

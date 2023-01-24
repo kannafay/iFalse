@@ -6,7 +6,7 @@
 
 <?php i_frame(); ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/fancybox/fancybox.css">
 
 <?php get_header(); ?>
 <section>
@@ -75,6 +75,9 @@
                             <div class="say-post-content">
                                 <?php the_content(); ?>
                             </div>
+                            <div class="say-post-comments">
+                                <?php if(comments_open()){comments_popup_link('0评论','1评论','%评论');}else{echo '<a>已关闭</a>';}; ?>
+                            </div>
                         </div>
                     </li>
                 <?php 
@@ -103,7 +106,7 @@
     <?php get_footer(); ?>
 </section>
 
-<script src="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.umd.js"></script>
+<script src="<?php echo i_static(); ?>/fancybox/fancybox.umd.js"></script>
 
 <?php i_frame_js(); ?>
 

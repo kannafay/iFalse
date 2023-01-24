@@ -10,7 +10,7 @@ if($_POST["i_opt"]){
 $logo_img = get_option("logo_img");
 ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/admin/options/i_frame.css">
 
 <div class="ifalse">
     <!-- logo -->
@@ -40,4 +40,4 @@ $logo_img = get_option("logo_img");
 </div>
 
 
-<script src="<?php echo get_template_directory_uri(); ?>/admin/style/i_frame.js"></script>
+<script src="<?php echo i_static(); ?>/admin/options/i_frame.js"></script>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @神秘布偶猫
- * @https://www.ifalse.cn
+ * @https://ifalse.onll.cn
  */
 // ---------------------------------------------------------------------
 // 自定义引入文件
@@ -11,7 +11,7 @@ function i_frame() {
 function i_frame_js() {
   require('inc/frame-js.php');
 }
-function i_home() {
+function i_index() {
   require('inc/home.php');
 }
 function i_article() {
@@ -22,6 +22,9 @@ function i_page() {
 }
 function i_search() {
   require('inc/page-search.php');
+}
+function i_shuoshuo() {
+  require('inc/page-shuoshuo.php');
 }
 function i_archive() {
   require('inc/page-archive.php');
@@ -36,10 +39,10 @@ function i_author() {
   require('inc/page-author.php');
 }
 function i_header_mb() {
-  require('inc/header-mobile.php');
+  require('header-mobile.php');
 }
 function i_searchform_mb() {
-  require('inc/searchform-mobile.php');
+  require('searchform-mobile.php');
 }
 
 // ---------------------------------------------------------------------
@@ -51,7 +54,7 @@ function i_opt(){require get_template_directory()."/admin/i_opt.php";}
 // 子菜单
 add_action('admin_menu', 'ifalse_set_base'); 
 add_action('admin_menu', 'ifalse_set_nav'); 
-add_action('admin_menu', 'ifalse_set_index'); 
+add_action('admin_menu', 'ifalse_set_home'); 
 add_action('admin_menu', 'ifalse_set_post');
 add_action('admin_menu', 'ifalse_set_footer');
 add_action('admin_menu', 'ifalse_set_other');
@@ -59,20 +62,38 @@ add_action('admin_menu', 'ifalse_set_custom');
 
 function ifalse_set_base(){add_submenu_page('i_opt', '基本设置', '基本设置', 'edit_themes', 'i_base', 'i_base' );}  
 function ifalse_set_nav(){add_submenu_page('i_opt', '导航设置', '导航设置', 'edit_themes', 'i_nav', 'i_nav' );}  
-function ifalse_set_index(){add_submenu_page('i_opt', '首页设置', '首页设置', 'edit_themes', 'i_index', 'i_index' );}  
+function ifalse_set_home(){add_submenu_page('i_opt', '首页设置', '首页设置', 'edit_themes', 'i_home', 'i_home' );}  
 function ifalse_set_post(){add_submenu_page('i_opt', '文章设置', '文章设置', 'edit_themes', 'i_post', 'i_post' );}   
 function ifalse_set_footer(){add_submenu_page('i_opt', '底部设置', '底部设置', 'edit_themes', 'i_footer', 'i_footer' );}  
 function ifalse_set_other(){add_submenu_page('i_opt', '其他设置', '其他设置', 'edit_themes', 'i_other', 'i_other' );}  
 function ifalse_set_custom(){add_submenu_page('i_opt', '自定义', '自定义', 'edit_themes', 'i_custom', 'i_custom' );}  
 
-function i_base(){require get_template_directory()."/admin/opt-sub/i_base.php";}
-function i_nav(){require get_template_directory()."/admin/opt-sub/i_nav.php";}
-function i_index(){require get_template_directory()."/admin/opt-sub/i_index.php";} 
-function i_post(){require get_template_directory()."/admin/opt-sub/i_post.php";}
-function i_footer(){require get_template_directory()."/admin/opt-sub/i_footer.php";}
-function i_other(){require get_template_directory()."/admin/opt-sub/i_other.php";}
-function i_custom(){require get_template_directory()."/admin/opt-sub/i_custom.php";}
+function i_base(){require get_template_directory()."/admin/options/i_base.php";}
+function i_nav(){require get_template_directory()."/admin/options/i_nav.php";}
+function i_home(){require get_template_directory()."/admin/options/i_home.php";} 
+function i_post(){require get_template_directory()."/admin/options/i_post.php";}
+function i_footer(){require get_template_directory()."/admin/options/i_footer.php";}
+function i_other(){require get_template_directory()."/admin/options/i_other.php";}
+function i_custom(){require get_template_directory()."/admin/options/i_custom.php";}
 
+// ---------------------------------------------------------------------
+// 静态资源CDN
+function i_static() {
+  if(get_option("i_cdn_custom")) {
+    return get_option("i_cdn_custom");
+  } else {
+    switch (get_option("i_cdn")) {
+      case 1:
+        return 'https://cdn.jsdelivr.net/gh/kannafay/iFalse-Static@1.5.3';
+        break;
+      case 2:
+        return '';
+        break;
+      default:
+        return get_template_directory_uri().'/static';
+    }
+  }
+}
 // ---------------------------------------------------------------------
 // 网站标题
 function show_wp_title(){
@@ -89,17 +110,17 @@ function show_wp_title(){
 // ---------------------------------------------------------------------
 // 默认封面图
 function i_cover_pic() {
-  $cover_pic = get_template_directory_uri() . '/static/img/thumbnail.jpg';
+  $cover_pic = i_static().'/images/thumbnail.jpg';
   return $cover_pic;
 }
 // 加载图
 function i_loading_pic() {
   error_reporting(0);
   if($_COOKIE['night'] == 0) {
-    $loading_pic = get_template_directory_uri() . '/static/img/loading.gif';
+    $loading_pic = i_static().'/images/loading.gif';
     return $loading_pic;
   } else {
-    $loading_pic = get_template_directory_uri() . '/static/img/loading-night.gif';
+    $loading_pic = i_static().'/images/loading-night.gif';
     return $loading_pic;
   }
 }
@@ -162,10 +183,10 @@ function shuoshuo_init() {
     'query_var' => true, 
     'rewrite' => true, 
     'capability_type' => 'post', 
-    'has_archive' => false, 
+    'has_archive' => true, 
     'hierarchical' => false, 
     'menu_position' => null, 
-    'supports' => array('title','editor','author'),
+    'supports' => array('title','editor','author','comments'),
   ]; 
   register_post_type('shuoshuo', $args); 
 }
@@ -287,7 +308,11 @@ if( !is_user_logged_in() ){
 
 // ---------------------------------------------------------------------
 // 自定义头像
-require('avatar/wp-user-profile-avatar.php');
+require_once('admin/avatar/wp-user-profile-avatar.php');
+
+// ---------------------------------------------------------------------
+// 添加外链媒体
+require_once('admin/external/external-media-without-import.php');
 
 // ---------------------------------------------------------------------
 // Gravatar国内头像

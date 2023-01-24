@@ -12,23 +12,23 @@
     <meta name="description" content="<?php bloginfo('description'); ?>" />
     <?php } ?><title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/_init.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/404.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/article-style.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/footer.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/home.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/links.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/login.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/page-template.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/say.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/searchform.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/sidebar.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/iconfont/iconfont.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/_init.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/404.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/article.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/article-style.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/footer.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/header.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/home.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/links.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/login.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/page-template.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/say.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/searchform.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/sidebar.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/iconfont/iconfont.css">
     <?php if(get_option("i_custom_html_head")){echo get_option("i_custom_html_head");}; ?>
     <style><?php if(get_option("i_custom_css_head")){echo get_option("i_custom_css_head");}; ?></style>
-    <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style-plane.css">
+    <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo i_static(); ?>/css/style-plane.css">
     <?php } ?>
     <?php if(get_option("i_color")) { ?>
         <style>
@@ -66,6 +66,6 @@
     <?php } else if(get_option("i_night") == 1) { ?><script>var judge = true;</script> 
     <?php } else { ?><script>var judge = false;</script> 
     <?php } ?>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/changeNight.js"></script>
+    <script src="<?php echo i_static(); ?>/js/jquery.min.js"></script>
+    <script src="<?php echo i_static(); ?>/js/changeNight.js"></script>
 </head>

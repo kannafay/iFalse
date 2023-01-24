@@ -32,7 +32,7 @@
             $icp_url = implode($arr[0]);
         ?>
             <div class="icp_gov">
-                <img src="<?php echo get_template_directory_uri(); ?>/static/img/beian.png" alt="">
+                <img src="<?php echo i_static(); ?>/images/beian.png" alt="">
                 <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo $icp_url; ?>"><?php echo get_option("i_icp_gov"); ?></a>
             </div>
         <?php } ?>
@@ -40,7 +40,7 @@
         <?php //又拍云联盟 ?>
         <?php if(get_option("i_upyun") == 1) { ?>
             <div class="upyun">
-                本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="<?php echo get_template_directory_uri(); ?>/static/img/upyun.png"></a>提供CDN加速/云存储服务
+                本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="<?php echo i_static(); ?>/images/upyun.png"></a>提供CDN加速/云存储服务
             </div>
         <?php } ?>
 

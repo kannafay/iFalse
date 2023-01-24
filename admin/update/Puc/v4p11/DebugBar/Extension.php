@@ -43,14 +43,14 @@ if ( !class_exists('Puc_v4p11_DebugBar_Extension', false) ):
 		public function enqueuePanelDependencies() {
 			wp_enqueue_style(
 				'puc-debug-bar-style-v4',
-				$this->getLibraryUrl("/css/puc-debug-bar.css"),
+				$this->getLibraryUrl(i_static()."/admin/update/css/puc-debug-bar.css"),
 				array('debug-bar'),
 				'20171124'
 			);
 
 			wp_enqueue_script(
 				'puc-debug-bar-js-v4',
-				$this->getLibraryUrl("/js/debug-bar.js"),
+				$this->getLibraryUrl(i_static()."/admin/update/js/debug-bar.js"),
 				array('jquery'),
 				'20201209'
 			);

@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/fancybox/fancybox.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/highlight/styles/vs2015.min.css">
 
 <div class="container single-top page-top">
     <div class="page-banner">
@@ -33,4 +34,5 @@
     </div>
 </div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.umd.js"></script>
+<script src="<?php echo i_static(); ?>/fancybox/fancybox.umd.js"></script>
+<script src="<?php echo i_static(); ?>/highlight/highlight.min.js"></script>

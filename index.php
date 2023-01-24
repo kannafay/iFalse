@@ -3,7 +3,7 @@
     <?php get_header(); ?>
     <section>
         <div>
-            <?php i_home(); ?>
+            <?php i_index(); ?>
         </div>
         <?php get_footer(); ?>
     </section>

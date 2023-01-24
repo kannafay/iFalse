@@ -1,0 +1,20 @@
+#wp-user-profile-avatar-errors, #wp-user-profile-avatar-readable-size-error, .wp-user-profile-avatar-error { color: #c00 !important; font-weight: 700 !important; }
+#wp-user-profile-avatar-readable-size-error, #wp_user_profile_avatar_undo_button { display: none; }
+#wp_user_profile_avatar_preview, #wp_user_profile_avatar_preview-existing { margin-right: 10px; }
+#wp_user_profile_avatar_preview, #wp_user_profile_avatar_preview-existing, #wp_user_profile_avatar_thumbnail, #wp_user_profile_avatar_thumbnail-existing { display: inline-block; text-align: center; vertical-align: top; }
+#wp_user_profile_avatar_preview img, #wp_user_profile_avatar_thumbnail img, #wp_user_profile_avatar_preview-existing img, #wp_user_profile_avatar_thumbnail-existing img { max-height: 96px; border: 1px solid #dfdfdf; display: block; }
+.widget_wp_user_profile_avatar #wp_user_profile_avatar_preview img, .widget_wp_user_profile_avatar #wp_user_profile_avatar_thumbnail img, .widget_wp_user_profile_avatar #wp_user_profile_avatar_preview-existing img, .widget_wp_user_profile_avatar #wp_user_profile_avatar_thumbnail-existing img { max-height: 64px; }
+.defaultavatarpicker #wp_user_profile_avatar_preview, .defaultavatarpicker #wp_user_profile_avatar_preview-existing { width: 32px; height: 32px; margin-right: 0; display: inline-block; overflow: hidden; vertical-align: middle; }
+.defaultavatarpicker #wp_user_profile_avatar_preview img , .defaultavatarpicker #wp_user_profile_avatar_preview-existing img { width: 32px; height: auto; border: 0; }
+#wp-user-profile-avatar-edit #wp_user_profile_avatar_remove, #wp-user-profile-avatar-edit #wp_user_profile_avatar_undo, #wp-user-profile-avatar-edit-attachment { margin-left: 10px !important; }
+#wp-user-profile-avatar-slider { width: 22.75em; }
+#wp-user-profile-avatar-upload-messages span { display: block; }
+.wp-user-profile-avatar-hide { display: none !important; }
+.wp-user-profile-avatar-no-avatars { display: none; }
+
+#TB_window #TB_ajaxContent .wp-user-profile-avatar-shortcode-wrap .admin-setting-left{
+	width: 100%;
+}
+#TB_window #TB_ajaxContent .wp-user-profile-avatar-shortcode-wrap .admin-setting-left #settings_upload_avatar{
+	display: none;
+}

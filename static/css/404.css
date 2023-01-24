@@ -1,0 +1,43 @@
+.page-404 {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+.page-404-detail {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 130px 50px 85px 50px ;
+}
+.page-404-detail img {
+    width: 350px;
+    max-width: 100%;
+}
+.page-404-detail p {
+    color: var(--text-info);
+    margin-bottom: 20px;
+}
+.page-404-detail a {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    margin: 5px;
+    transition: var(--tr3);
+}
+.page-404-detail .back-home {
+    color: var(--text-keep);
+    background: var(--theme);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
+}
+.page-404-detail .back-history {
+    color: var(--theme);
+    border: 1px solid var(--theme);
+}
+
+.page-404-detail a:hover {
+    opacity: .8;
+}

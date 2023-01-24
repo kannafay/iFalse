@@ -3,6 +3,13 @@
     <div class="content-wrapper">
         <div class="text-wrapper">
             <h2 class="h2-title"><?php the_author_nickname(); ?></h2>
+            <?php 
+                if(get_the_author_description()) {
+                   echo '<i>'.get_the_author_description().'</i>';
+                } else {
+                    echo '<i>这家伙很懒，什么都没写</i>';
+                }
+            ?>
         </div>
     </div>
 </div>
@@ -19,7 +26,7 @@
             <?php }
         ?>
         <div class="title-part">
-            <p class="name"><span><?php the_author_nickname(); ?></span>用户发布的内容</p>
+            <p class="name"><span><?php the_author_nickname(); ?></span>发布的内容</p>
             <?php get_search_form(); ?>
         </div>
         <?php 

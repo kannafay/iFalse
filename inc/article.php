@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/highlight/styles/vs2015.min.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/fancybox/fancybox.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/highlight/styles/vs2015.min.css">
 
 <div class="container single-top article-top">
     <div class="single-banner">
@@ -29,6 +29,7 @@
     <div class="left">
         <div class="post-content">
             <?php the_content(); ?>
+            <?php if(get_the_tag_list()){ ?><div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div><?php } ?>
             <?php if(get_option("i_plane") != 1) { ?>
                 <div class="the-end"><i></i><span>THE END</span><i></i></div>
             <?php } ?>
@@ -38,7 +39,6 @@
                     <div class="post-copyright-text"><?php if(get_option("i_post_copyright_text")){echo get_option("i_post_copyright_text");}else{echo '分享是一种美德，转载请保留原链接';} ?></div>
                 </div>
             <?php } ?>
-            <?php if(get_the_tag_list()){ ?><div class="post-tag-title">本文标签</div><div class="the-tag"><?php echo get_the_tag_list('<span>',' ','</span>'); ?></div><?php } ?>
         </div>
         <?php if(get_option("i_next_post") == 1) { ?>
             <div class="post-context">
@@ -57,7 +57,7 @@
         ?>
     </div>
     <div class="right">
-        <?php get_template_part('inc/sidebar-article')?>
+        <?php get_template_part('sidebar-article')?>
     </div>
 </div>
 
@@ -67,5 +67,5 @@
     </div>
 </div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/static/highlight/highlight.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/static/fancybox/fancybox.umd.js"></script>
+<script src="<?php echo i_static(); ?>/fancybox/fancybox.umd.js"></script>
+<script src="<?php echo i_static(); ?>/highlight/highlight.min.js"></script>

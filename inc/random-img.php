@@ -1,5 +1,5 @@
 <?php
-    $path = '../static/img/login/'; //存有图片的文件夹imgs
+    $path = '../static/images/login/'; //存有图片的文件夹imgs
     $handle = opendir($path);
     while (false !== ($file = readdir($handle))) {
         list($filesname,$typeOfImg)=explode(".",$file);

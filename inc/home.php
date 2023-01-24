@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="<?php echo i_static(); ?>/swiper/swiper-bundle.min.css">
 
 <?php 
     if(get_option("i_swiper")) {
@@ -47,7 +47,7 @@
             <?php } else { ?>
                 <h2><?php echo '<p id="hitokoto"><span id="hitokoto_text">一言加载中...</span></p>'; ?></h2>
                 <i><?php echo '<p id="hitokoto_author"></p>'; ?></i>
-                <script src="<?php echo get_template_directory_uri(); ?>/js/yiyan.js"></script>
+                <script src="<?php echo i_static(); ?>/js/yiyan.js"></script>
             <?php } ?>
         </div>
     </div>
@@ -99,7 +99,7 @@
     </div>
 </div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/static/swiper/swiper-bundle.min.js"></script>
+<script src="<?php echo i_static(); ?>/swiper/swiper-bundle.min.js"></script>
 <?php 
     if(get_option("i_swiper_effect")) {
         $swiper_effect = get_option("i_swiper_effect");
