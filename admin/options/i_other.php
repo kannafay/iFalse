@@ -70,7 +70,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_cdn_custom" type="text" value="<?php echo get_option("i_cdn_custom"); ?>" class="regular-text">
                         <p class="description">请填写http/https链接。</p>
-                        <p class="description">如，https://cdn.jsdelivr.net/gh/kannafay/iFalse-Static@x.x.x</p>
+                        <p class="description">如，https://cdn.xxx.net/@x.x.x (不需要以/结尾)</p>
                         <p class="description">主题静态资源文件下载：<a href="https://github.com/kannafay/iFalse-Static" class="description-primary" target="_blank">传送门</a></p>
                         <p class="description-primary">默认：无</p>
                     </td>
