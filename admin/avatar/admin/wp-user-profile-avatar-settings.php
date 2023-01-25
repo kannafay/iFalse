@@ -102,7 +102,7 @@ class WPUPA_Settings {
 
                                 <tr>
                                     <th scope="row">
-                                        <label for="wpupa_file_size">限制头像文件大小</label>
+                                        <label for="wpupa_file_size">限制文件上传大小（包括媒体）</label>
                                     </th>
                                     <td>
                                         <select id="wpupa_file_size" name="wpupa_file_size">

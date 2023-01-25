@@ -30,4 +30,3 @@
         <?php endif; ?>
     </ul>
 </div>
-<script></script>

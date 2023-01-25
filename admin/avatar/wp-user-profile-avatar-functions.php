@@ -36,14 +36,14 @@ if (!function_exists('get_wpupa_file_size')) {
             '1' => __('1MB', 'wp-user-profile-avatar'),
             '2' => __('2MB', 'wp-user-profile-avatar'),
             '4' => __('4MB', 'wp-user-profile-avatar'),
-            // '8' => __('8MB', 'wp-user-profile-avatar'),
-            // '16' => __('16MB', 'wp-user-profile-avatar'),
-            // '32' => __('32MB', 'wp-user-profile-avatar'),
-            // '64' => __('64MB', 'wp-user-profile-avatar'),
-            // '128' => __('128MB', 'wp-user-profile-avatar'),
-            // '256' => __('256MB', 'wp-user-profile-avatar'),
-            // '512' => __('512MB', 'wp-user-profile-avatar'),
-            // '1024' => __('1024MB', 'wp-user-profile-avatar')
+            '8' => __('8MB', 'wp-user-profile-avatar'),
+            '16' => __('16MB', 'wp-user-profile-avatar'),
+            '32' => __('32MB', 'wp-user-profile-avatar'),
+            '64' => __('64MB', 'wp-user-profile-avatar'),
+            '128' => __('128MB', 'wp-user-profile-avatar'),
+            '256' => __('256MB', 'wp-user-profile-avatar'),
+            '512' => __('512MB', 'wp-user-profile-avatar'),
+            '1024' => __('1024MB', 'wp-user-profile-avatar')
         ));
     }
 

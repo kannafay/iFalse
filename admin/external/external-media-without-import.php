@@ -67,7 +67,7 @@ function add_submenu() {
 		'upload.php',
 		__( '添加图片外链' ),
 		__( '添加图片外链' ),
-		'manage_options',
+		'publish_posts',
 		'add-external-media-without-import',
 		'emwi\print_submenu_page'
 	);
