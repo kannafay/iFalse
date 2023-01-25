@@ -343,7 +343,7 @@
 .single-main .left .post-content .the-tag span a {
     line-height: 30px;
     font-size: 13px;
-    padding: 2px 6px;
+    padding: 2px 6px 2px 4px;
     margin-right: 5px;
     color: var(--theme);
     background: var(--theme-1);

@@ -84,10 +84,10 @@ function i_static() {
   } else {
     switch (get_option("i_cdn")) {
       case 1:
-        return 'https://cdn.jsdelivr.net/gh/kannafay/iFalse-Static@1.5.3';
+        return 'https://cdn.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.3';
         break;
       case 2:
-        return '';
+        return 'https://ifalse-static.netlify.app/@1.5.3';
         break;
       default:
         return get_template_directory_uri().'/static';

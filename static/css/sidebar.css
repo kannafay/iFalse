@@ -264,8 +264,8 @@
 }
 #primary-sidebar .widget_tag_cloud a {
     display: inline-block;
-    font-size: 14px !important;
-    padding: 2px 6px;
+    font-size: 13px !important;
+    padding: 2px 6px 2px 4px;
     margin: 0 0 6px 2px;
     border-radius: var(--radius-sub);
     color: var(--theme);
@@ -276,8 +276,9 @@
     transition: var(--tr1);
 }
 #primary-sidebar .widget_tag_cloud a::before {
-    content: '#';
-    left: 0;
+    content: '\e74c';
+    font-family: 'iconfont';
+    font-size: 14px;
 }
 #primary-sidebar .widget_tag_cloud a:hover {
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
