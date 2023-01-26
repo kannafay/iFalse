@@ -205,7 +205,8 @@
 .say-content .say-post-item .say-post-comments::before {
     content: '\e7b2';
     font-family: 'iconfont';
-    font-size: 16px;
+    font-size: 17px;
+    margin-right: 5px;
     color: var(--text-info);
 }
 .say-content .say-post-item .say-post-comments a {
