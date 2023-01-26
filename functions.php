@@ -90,7 +90,7 @@ function i_static() {
         return 'https://ifalse-static.netlify.app/@1.5.3'; // netlify
         break;
       case 3:
-        return 'https://cdn.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.3'; // jsdelivr
+        return 'https://fastly.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.3'; // jsdelivr
         break;
       default:
         return get_template_directory_uri().'/static'; // local
