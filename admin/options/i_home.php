@@ -1,6 +1,7 @@
 <?php
 @$i_swiper = stripslashes($_POST["i_swiper"]);
 @$i_swiper_effect = stripslashes($_POST["i_swiper_effect"]);
+@$i_recommend = stripslashes($_POST["i_recommend"]);
 @$i_wrapper_text = stripslashes($_POST["i_wrapper_text"]);
 @$i_wrapper_name = stripslashes($_POST["i_wrapper_name"]);
 @$i_notice = stripslashes($_POST["i_notice"]);
@@ -8,6 +9,7 @@
 if(@stripslashes($_POST["i_opt"])){
     update_option("i_swiper",$i_swiper);
     update_option("i_swiper_effect",$i_swiper_effect);
+    update_option("i_recommend",$i_recommend);
     update_option("i_wrapper_text",$i_wrapper_text);
     update_option("i_wrapper_name",$i_wrapper_name);
     update_option("i_notice",$i_notice);
@@ -40,6 +42,14 @@ if(@stripslashes($_POST["i_opt"])){
                         <p class="description">cube：方块</p>
                         <p class="description">cards：卡片式</p>
                         <p class="description">coverflow：3D流</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_recommend">推荐文章（必须填写2篇）</label></th>
+                    <td>
+                        <input name="i_recommend" type="text" value="<?php echo get_option("i_recommend"); ?>" class="regular-text">
+                        <p class="description">填写文章编号，以英文逗号隔开，如1,2。</p>
+                        <p class="description-primary">位于轮播图右边，如未开启轮播图不显示。</p>
                     </td>
                 </tr>
                 <tr>

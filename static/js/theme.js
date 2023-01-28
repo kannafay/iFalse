@@ -232,8 +232,9 @@ const allImgs = document.querySelectorAll(`
     .content .main-part ul li .home-pic img,
     .home-2 .home-2-mian ul li .home-2-pic img,
     .wrapper-home .swiper-slide img,
+    .wrapper-recommend .recommend a img,
     .login-page .login-main .login-img
-`); //获取文章、页面、说说、主页图片
+`); //获取首页、文章、页面、说说、主页图片
 
 if (getCookie("night") == "1") {
     night_btn.classList.add('icon-rijianmoshixhdpi');
@@ -394,9 +395,9 @@ $(menu_m_li).each(function(i){
 // 文章版权hover效果
 if($('.the-end')) {
     $('.post-copyright').mouseenter(function() {
-        $('.single-main .left .post-content .the-end i').css('background-color','var(--theme)');
+        $('.single-main .left .the-end i').css('background-color','var(--theme)');
     })
     $('.post-copyright').mouseleave(function() {
-        $('.single-main .left .post-content .the-end i').css('background-color','var(--border)');
+        $('.single-main .left .the-end i').css('background-color','var(--border)');
     })
 }

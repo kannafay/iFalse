@@ -138,7 +138,7 @@ body {
 /* article.css */
 .single-main .left .post-content blockquote,
 .single-main .left .post-content tr:nth-child(odd),
-.single-main .left .post-content .post-copyright {
+.single-main .left .post-copyright {
     background-color: var(--body);
     transition: var(--tr3);
 }
@@ -165,7 +165,8 @@ body {
     margin-top: 0;
 }
 .single-main .left {
-    padding-bottom: 20px;
+    border: none;
+    padding-right: 0;
 }
 .page-banner .page-title h1 {
     margin-top: 0;
@@ -180,6 +181,9 @@ body {
     border-bottom: 0;
     transition: var(--tr3);
 }
+.single-main .left .post-content {
+    border-right: none;
+}
 .single-main .left .post-content > *:last-child {
     margin-bottom: 0;
 }
@@ -188,14 +192,14 @@ body {
     padding-top: 0;
     margin-bottom: 0;
 }
-.single-main .left .post-content .post-copyright {
+.single-main .left .post-copyright {
     border: 0;
     margin-top: 15px;
 }
-.single-main .left .post-content .post-copyright:hover {
+.single-main .left .post-copyright:hover {
     border: 0;
 }
-.single-main .left .post-content .post-copyright:hover div {
+.single-main .left .post-copyright:hover div {
     color: var(--text-info);
 }
 
@@ -251,7 +255,7 @@ body {
     transition: var(--tr3);
 }
 
-.single-main .left .post-content .the-end {
+.single-main .left .the-end {
     margin-top: 20px;
     margin-bottom: 15px !important;
 }
@@ -355,7 +359,7 @@ body {
         padding: 15px;
     }
     .single-main .left {
-        padding-bottom: 15px;
+        padding-bottom: 0;
     }
     .single-main .left .post-content {
         padding: 15px;
@@ -386,7 +390,7 @@ body {
     .post-comments .depth-1 {
         margin-top: 15px; 
     }
-    .single-main .left .post-content .the-end {
+    .single-main .left .the-end {
         margin-bottom: 10px !important;
         display: none;
     }
@@ -395,7 +399,7 @@ body {
     .post-comments .post-comments-title {
         margin-top: 20px;
     }
-    .single-main .left .post-content .post-copyright {
+    .single-main .left .post-copyright {
         margin-top: 10px;
     }
 
@@ -422,5 +426,10 @@ body {
     .change-night,
     .progress-wrap {
         right: 10px !important;
+    }
+
+    /* footer */
+    .footer {
+        margin-top: 15px;
     }
 }

@@ -1,6 +1,7 @@
 .single-main .left .post-content {
     font-size: 16px;
     color: var(--text);
+    transition: var(--tr3);
 }
 .single-main .left .post-content > * {
     margin-bottom: 20px;

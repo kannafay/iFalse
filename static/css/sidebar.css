@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     transition: var(--tr3);
 }
 .author-info-box:hover .author-info .post-author-logo {
@@ -269,7 +269,7 @@
     margin: 0 0 6px 2px;
     border-radius: var(--radius-sub);
     color: var(--theme);
-    background-color: var(--theme-2);
+    background-color: var(--theme-1);
     word-break: break-all;
     word-wrap: break-word;
     white-space: nowrap;

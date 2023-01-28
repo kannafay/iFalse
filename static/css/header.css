@@ -61,7 +61,7 @@
     margin: 0 10px;
     margin-bottom: 3px;
     position: relative;
-    transition: var(--tr3);
+    transition: var(--tr2);
     overflow: hidden;
 }
 .nav-menu > li > a i:first-child {
@@ -87,7 +87,7 @@
     height: 2px;
     background-color: var(--theme);
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
-    transition: var(--tr3);
+    transition: var(--tr2);
 }
 .nav-menu > li > a:hover::before,
 .nav-menu > .current-menu-item > a::before {
@@ -384,17 +384,19 @@
     display: block;
     position: fixed;
     top: 0;
-    left: -80%;
+    left: 0;
+    transform: translateX(-100%);
     background-color: var(--bgc);
     width: 70%;
     height: 100%;
     overflow: auto;
-    transition: left .6s cubic-bezier(.28,.9,.34,.99);
+    transition: transform var(--tr3-c);
     z-index: 10;
 }
 .menu-mb-open {
     left: 0;
-    transition: var(--tr6);
+    transform: translateX(0);
+    transition: transform var(--tr6-c);
 }
 .menu-mb::-webkit-scrollbar {
     width: 0;
@@ -410,18 +412,19 @@
     width: 100%;
     height: 100%;
     background-color: var(--mask-5);
-    transition: var(--tr6);
+    transition: opacity var(--tr3-c), visibility var(--tr3-c);
     z-index: 9;
 }
 .menu-mb-mask-block {
     opacity: 1;
     visibility: visible;
-    transition: var(--tr6);
+    transition: opacity var(--tr6-c), visibility var(--tr6-c);
 }
 .menu-mb-top {
-    width: 70%;
+    width: 100%;
     height: 70px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     border-bottom: 1px solid var(--border);
     padding: 0 10px;
     background-color: var(--bgc);
@@ -477,6 +480,7 @@
 }
 .nav-mb-content {
     padding: 70px 0 80px;
+    padding-top: 0;
 }
 .nav-mb-content .nav-mb-content-top {
     border-bottom: 1px solid var(--border);

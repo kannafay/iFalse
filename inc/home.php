@@ -1,41 +1,93 @@
 <link rel="stylesheet" href="<?php echo i_static(); ?>/swiper/swiper-bundle.min.css">
 
-<?php 
-    if(get_option("i_swiper")) {
-        
+<?php if(get_option("i_swiper")) {  
     $swiper_query = new WP_Query(array(
         'post__in' => explode(',',get_option("i_swiper")),
         'post__not_in' => get_option('sticky_posts'),
         'orderby' => 'post__in',
         'showposts' => 10,
-    ));
-?>
-<div class="container wrapper-home">
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <?php $i=0; ?>
-            <?php if($swiper_query->have_posts()) : while($swiper_query->have_posts()) : $swiper_query->the_post(); ?>
-            <div class="swiper-slide">
-                <a href="<?php the_permalink() ?>">
-                    <?php if (has_post_thumbnail()) { ?>
-                    <?php the_post_thumbnail('large'); ?>
-                    <?php } else {?>
-                        <img src="<?php if(get_option("i_loading_pic")) { echo get_option("i_loading_pic");} else{ echo i_loading_pic(); } ?>"
-                        data-original="<?php echo catch_that_image(); ?>?top=<?php $i++; echo $i; ?>" />
-                    <?php } ?>
-                </a>
-                <a href="<?php the_permalink(); ?>" class="swiper-img-mask">
-                    <div class="title" <?php if(get_option("i_swiper_effect") != 'fade'){echo 'data-swiper-parallax="200"';} ?> data-swiper-parallax-duration="600"><?php the_title(); ?></div>
-                </a>
+    )) ?>
+    <?php if(get_option("i_recommend")) { ?>
+        <div class="container wrapper-home wrapper-recommend">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php $i=0; ?>
+                    <?php if($swiper_query->have_posts()) : while($swiper_query->have_posts()) : $swiper_query->the_post(); ?>
+                        <div class="swiper-slide">
+                            <a href="<?php the_permalink() ?>">
+                                <?php if (has_post_thumbnail()) { ?>
+                                <?php the_post_thumbnail('large'); ?>
+                                <?php } else {?>
+                                    <img src="<?php if(get_option("i_loading_pic")) { echo get_option("i_loading_pic");} else{ echo i_loading_pic(); } ?>"
+                                    data-original="<?php echo catch_that_image(); ?>?top=<?php $i++; echo $i; ?>" />
+                                <?php } ?>
+                            </a>
+                            <a href="<?php the_permalink(); ?>" class="swiper-img-mask">
+                                <div class="title" <?php if(get_option("i_swiper_effect") != 'fade'){echo 'data-swiper-parallax="200"';} ?> data-swiper-parallax-duration="600"><?php the_title(); ?></div>
+                            </a>
+                        </div>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
-            <?php endwhile; ?>
-            <?php endif; ?>
+            <?php  
+            $recommend_query = new WP_Query(array(
+                'post__in' => explode(',',get_option("i_recommend")),
+                'post__not_in' => get_option('sticky_posts'),
+                'orderby' => 'post__in',
+                'showposts' => 2,
+                ))
+            ?>
+            <div class="recommend">
+                <?php if($recommend_query->have_posts()) : while($recommend_query->have_posts()) : $recommend_query->the_post(); ?>
+                    <div class="box">
+                        <a href="<?php the_permalink() ?>">
+                            <?php if (has_post_thumbnail()) { ?>
+                            <?php the_post_thumbnail(); ?>
+                            <?php } else {?>
+                                <img src="<?php if(get_option("i_loading_pic")) { echo get_option("i_loading_pic");} else{ echo i_loading_pic(); } ?>"
+                                data-original="<?php echo catch_that_image(); ?>?top=<?php $i++; echo $i; ?>" />
+                            <?php } ?>
+                            <div class="title"><p><?php the_title(); ?></p></div>
+                        </a>
+                    </div>
+                <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-</div>
+    <?php } else { ?>
+        <div class="container wrapper-home">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php $i=0; ?>
+                    <?php if($swiper_query->have_posts()) : while($swiper_query->have_posts()) : $swiper_query->the_post(); ?>
+                        <div class="swiper-slide">
+                            <a href="<?php the_permalink() ?>">
+                                <?php if (has_post_thumbnail()) { ?>
+                                <?php the_post_thumbnail('large'); ?>
+                                <?php } else {?>
+                                    <img src="<?php if(get_option("i_loading_pic")) { echo get_option("i_loading_pic");} else{ echo i_loading_pic(); } ?>"
+                                    data-original="<?php echo catch_that_image(); ?>?top=<?php $i++; echo $i; ?>" />
+                                <?php } ?>
+                            </a>
+                            <a href="<?php the_permalink(); ?>" class="swiper-img-mask">
+                                <div class="title" <?php if(get_option("i_swiper_effect") != 'fade'){echo 'data-swiper-parallax="200"';} ?> data-swiper-parallax-duration="600"><?php the_title(); ?></div>
+                            </a>
+                        </div>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    <?php } ?>
+    
 <?php } else {?>
     <div class="wrapper">
     <div class="banner"></div>

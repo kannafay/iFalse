@@ -23,6 +23,7 @@
     font-size: 22px;
     color: var(--bgc-sub);
     vertical-align: middle;
+    transition: color var(--tr3-c);
 }
 .single-banner .single-cate .single-cate-box a {
     font-size: 12px;
@@ -329,20 +330,20 @@
 /* 目录树-end */
 
 .single-main .left {
-    border-radius: var(--radius);
+    /* border-radius: var(--radius); */
     width: calc(100% - 305px);
-    padding-bottom: 20px;
-    margin-right: 20px;
     border-right: 1px solid var(--border);
+    padding-right: 20px;
+    transition: var(--tr3);
 }
-.single-main .left .post-content .post-tip {
+.single-main .left .post-tip {
     display: none;
 }
-.single-main .left .post-content .the-tag {
+.single-main .left .the-tag {
     margin-bottom: 0;
     margin-top: 40px;
 }
-.single-main .left .post-content .the-tag span a {
+.single-main .left .the-tag span a {
     line-height: 30px;
     font-size: 13px;
     padding: 2px 6px 2px 4px;
@@ -353,18 +354,18 @@
     white-space: nowrap;
     transition: var(--tr1);
 }
-.single-main .left .post-content .the-tag span a::before {
+.single-main .left .the-tag span a::before {
     content: '\e74c';
     font-family: 'iconfont';
     font-size: 14px;
 }
-.single-main .left .post-content .the-tag span a:hover {
+.single-main .left .the-tag span a:hover {
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     animation: hueRotate 3s infinite alternate;
     color: var(--text-keep);
     text-decoration: none;
 }
-.single-main .left .post-content .the-end {
+.single-main .left .the-end {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -373,14 +374,14 @@
     margin-bottom: 20px;
     margin-top: 40px;
 }
-.single-main .left .post-content .the-end i {
+.single-main .left .the-end i {
     display: block;
     width: 30%;
     height: 1px;
     background-color: var(--border);
     transition: var(--tr3);
 }
-.single-main .left .post-content .post-copyright {
+.single-main .left .post-copyright {
     width: 100%;
     font-size: 14px;
     padding: 15px;
@@ -389,18 +390,19 @@
     border-radius: var(--radius);
     color: var(--text-info);
     background-color: var(--bgc);
+    transition: var(--tr3);
 }
-.single-main .left .post-content .post-copyright:hover {
+.single-main .left .post-copyright:hover {
     border: 1px solid var(--theme);
 }
-.single-main .left .post-content .post-copyright div {
+.single-main .left .post-copyright div {
     line-height: 1.8;
     transition: var(--tr3);
 }
-.single-main .left .post-content .post-copyright:hover div {
+.single-main .left .post-copyright:hover div {
     color: var(--theme);
 }
-.single-main .left .post-content .post-copyright + .the-end {
+.single-main .left .post-copyright + .the-end {
     /* background-color: var(--theme); */
     display: none;
 }
@@ -1049,6 +1051,8 @@
     }
     .single-main .left {
         width: 100%;
+        border-right: none;
+        padding-right: 0;
     }
     .single-main .right {
         display: none;
@@ -1103,7 +1107,7 @@
         border: none;
     }
 
-    .single-main .left .post-content .the-end {
+    .single-main .left .the-end {
         font-size: 13px;
         margin-bottom: 10px;
     }
@@ -1149,7 +1153,7 @@
         padding-top: 15px;
     }
 
-    .single-main .left .post-content .the-tag {
+    .single-main .left .the-tag {
         margin-top: 20px;  
     }
     .post-context .post-context_text,
@@ -1165,13 +1169,13 @@
     .post-comments .post-comments-title::before {
         font-size: 24px;
     }
-    .single-main .left .post-content .the-end {
+    .single-main .left .the-end {
         /* margin: 30px 0 !important; */
     }
     .single-main .left .post-context {
         margin-top: 0;
     }
-    .single-main .left .post-content .the-end {
+    .single-main .left .the-end {
         margin-top: 20px;
     }
     

@@ -73,6 +73,7 @@
 .page-main .left {
     width: 100% !important;
     border: none !important;
+    padding-right: 0 !important;
 }
 
 @media screen and (max-width: 1280px) {
