@@ -17,14 +17,14 @@ function i_index() {
 function i_article() {
   require('inc/article.php');
 }
+function i_shuoshuo() {
+  require('inc/article-shuoshuo.php');
+}
 function i_page() {
   require('inc/page-template.php');
 }
 function i_search() {
   require('inc/page-search.php');
-}
-function i_shuoshuo() {
-  require('inc/page-shuoshuo.php');
 }
 function i_archive() {
   require('inc/page-archive.php');

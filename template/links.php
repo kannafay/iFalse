@@ -18,6 +18,15 @@
                 <?php
                 }
             ?>
+            <script>
+            const web_master_links = [];
+            for(let i=0; i<comment_vcard.length; i++) {
+                web_master_links[i] = comment_vcard[i].querySelector('i').innerText + comment_vcard[i].querySelector('.fn > i').innerText;
+                if(web_master_links[i] == "博主作者") {
+                    comment_vcard[i].querySelector('.fn > i').style.display = 'none';
+                };
+            };
+            </script>
         </div>
     </div>
     <?php get_footer(); ?>

@@ -54,6 +54,7 @@
                             <?php } ?>
                             <div class="title"><p><?php the_title(); ?></p></div>
                         </a>
+                        <div class="recommend-text">推荐</div>
                     </div>
                 <?php endwhile; ?>
                 <?php endif; ?>

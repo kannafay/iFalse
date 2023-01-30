@@ -40,8 +40,8 @@ if(@stripslashes($_POST["i_opt"])){
                     <th scope="row"><label for="i_night">夜间模式</label></th>
                     <td>
                         <input name="i_night" type="text" value="<?php echo get_option("i_night"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。开启后全局夜间模式。</p>
-                        <p class="description">数字2为自动夜间模式。</p>
+                        <p class="description">数字1：开启全局夜间模式。</p>
+                        <p class="description">数字2：启自动夜间模式。</p>
                         <p class="description-primary">春夏季(3~8)：20:00~06:00，秋冬季(9~2)：19:00~07:00</p>
                         
                     </td>
@@ -62,7 +62,7 @@ if(@stripslashes($_POST["i_opt"])){
                         <p class="description">数字1：百度云加速（Sola提供）</p>
                         <p class="description">数字2：jsDelivr</p>
                         <p class="description">数字3：Netlify</p>
-                        <p class="description-primary">默认：不使用</p>
+                        <p class="description-primary">默认：本地静态资源文件</p>
                     </td>
                 </tr>
                 <tr>
@@ -70,8 +70,8 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_cdn_custom" type="text" value="<?php echo get_option("i_cdn_custom"); ?>" class="regular-text">
                         <p class="description">请填写http/https链接。</p>
-                        <p class="description">如，https://cdn.xxx.net/@x.x.x (不需要以/结尾)</p>
-                        <p class="description">主题静态资源文件下载：<a href="https://github.com/kannafay/iFalse-Static" class="description-primary" target="_blank">传送门</a></p>
+                        <p class="description">如，https://cdn.xxx.net/@x.x.x（不需要以/结尾）</p>
+                        <p class="description">主题静态资源文件下载：<a href="https://github.com/kannafay/iFalse-Static" class="description-primary" target="_blank">传送门</a>（请下载主题对应的版本）</p>
                         <p class="description-primary">默认：无</p>
                     </td>
                 </tr>

@@ -1,20 +1,24 @@
 <?php
+@$i_random_pic = stripslashes($_POST["i_random_pic"]);
+@$i_post_sidebar = stripslashes($_POST["i_post_sidebar"]);
 @$i_post_copyright = stripslashes($_POST["i_post_copyright"]);
 @$i_post_copyright_text = stripslashes($_POST["i_post_copyright_text"]);
 @$i_next_post = stripslashes($_POST["i_next_post"]);
 @$i_comments_article = stripslashes($_POST["i_comments_article"]);
 @$i_comments_page = stripslashes($_POST["i_comments_page"]);
 @$i_comments_turn = stripslashes($_POST["i_comments_turn"]);
-@$i_random_pic = stripslashes($_POST["i_random_pic"]);
+
 
 if(@stripslashes($_POST["i_opt"])){
+    update_option("i_random_pic",$i_random_pic);
+    update_option("i_post_sidebar",$i_post_sidebar);
     update_option("i_post_copyright",$i_post_copyright);
     update_option("i_post_copyright_text",$i_post_copyright_text);
     update_option("i_next_post",$i_next_post);
     update_option("i_comments_article",$i_comments_article);
     update_option("i_comments_page",$i_comments_page);
     update_option("i_comments_turn",$i_comments_turn);
-    update_option("i_random_pic",$i_random_pic);
+    
 }
 ?>
 
@@ -32,6 +36,14 @@ if(@stripslashes($_POST["i_opt"])){
                         <input name="i_random_pic" type="text" value="<?php echo get_option("i_random_pic"); ?>" class="regular-text">
                         <p class="description">用于文章没有封面时顶替。</p>
                         <p class="description-primary">默认：主题海报</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="i_post_sidebar">文章侧边栏</label></th>
+                    <td>
+                        <input name="i_post_sidebar" type="text" value="<?php echo get_option("i_post_sidebar"); ?>" class="regular-text">
+                        <p class="description">数字1为关闭。关闭文章侧边栏。</p>
+                        <p class="description-primary">默认：开启</p>
                     </td>
                 </tr>
                 <tr>

@@ -40,8 +40,8 @@ if(@stripslashes($_POST["i_opt"])){
                                 默认：<span style="display:inline-block;width:15px;height:15px;background-color:#8183ff;border-radius:2px"></span>
                             </span>
                         </p>
-                        <p class="description-primary">只能填写HEX值。如，#8183FF</p>
-                        <p class="description-primary">只填写主色时，副色将使用主色。</p>
+                        <p class="description-primary">只能填写HEX值。如，#8183ff</p>
+                        <p class="description-primary">只填写主色时，副色将使用主色</p>
                     </td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_register_turn" type="text" value="<?php echo get_option("i_register_turn"); ?>" class="regular-text">
                         <p class="description">数字1为开启。开启后运行用户注册。</p>
-                        <p class="description-primary">仅用于主题注册模板，如需完全关闭请前往WP设置。</p>
+                        <p class="description-primary">仅用于主题注册模板，如需完全关闭请前往WP设置</p>
                     </td>
                 </tr>
                 <tr>

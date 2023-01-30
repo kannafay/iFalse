@@ -41,3 +41,4 @@ $logo_img = get_option("logo_img");
 
 
 <script src="<?php echo i_static(); ?>/admin/options/i_frame.js"></script>
+<script src="<?php echo i_static(); ?>/admin/options/i_stat.js"></script>

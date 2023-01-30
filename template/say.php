@@ -76,7 +76,7 @@
                                 <?php the_content(); ?>
                             </div>
                             <div class="say-post-comments">
-                                <?php if(comments_open()){comments_popup_link('0评论','1评论','%评论');}else{echo '<a>已关闭</a>';}; ?>
+                                <?php if(comments_open()){comments_popup_link('0评论','1评论','%评论');}else{echo '<a class="close">已关闭</a>';}; ?>
                             </div>
                         </div>
                     </li>

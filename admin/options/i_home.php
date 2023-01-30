@@ -29,7 +29,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_swiper" type="text" value="<?php echo get_option("i_swiper"); ?>" class="regular-text">
                         <p class="description">填写文章编号，以英文逗号隔开，如1,2,3。</p>
-                        <p class="description-primary">包含置顶文章时将会提前显示。</p>
+                        <p class="description-primary">包含置顶文章时将会提前显示</p>
                     </td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_swiper_effect" type="text" value="<?php echo get_option("i_swiper_effect"); ?>" class="regular-text">
                         <p class="description">请填入对应的英文字符，不填即默认。</p>
-                        <p class="description">slide：普通位移切换（默认）</p>
+                        <p class="description-primary">slide：普通位移切换（默认）</p>
                         <p class="description">fade：淡入</p>
                         <p class="description">cube：方块</p>
                         <p class="description">cards：卡片式</p>
@@ -49,7 +49,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_recommend" type="text" value="<?php echo get_option("i_recommend"); ?>" class="regular-text">
                         <p class="description">填写文章编号，以英文逗号隔开，如1,2。</p>
-                        <p class="description-primary">位于轮播图右边，如未开启轮播图不显示。</p>
+                        <p class="description-primary">位于轮播图右边，如未开启轮播图不显示</p>
                     </td>
                 </tr>
                 <tr>

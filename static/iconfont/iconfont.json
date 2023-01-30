@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "23259592",
+      "name": "anemo",
+      "font_class": "anemo",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "23259593",
+      "name": "cryo",
+      "font_class": "cryo",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "23259595",
+      "name": "dendro",
+      "font_class": "dendro",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "23259596",
+      "name": "electro",
+      "font_class": "electro",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "23259597",
+      "name": "geo",
+      "font_class": "geo",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "23259598",
+      "name": "hydro",
+      "font_class": "hydro",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "23259599",
+      "name": "pyro",
+      "font_class": "pyro",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "23259908",
+      "name": "amber",
+      "font_class": "amber",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
       "icon_id": "11488167",
       "name": "viewlist",
       "font_class": "viewlist",

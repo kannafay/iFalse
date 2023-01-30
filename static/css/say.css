@@ -206,7 +206,7 @@
     content: '\e7b2';
     font-family: 'iconfont';
     font-size: 17px;
-    margin-right: 5px;
+    margin-right: 3px;
     color: var(--text-info);
 }
 .say-content .say-post-item .say-post-comments a {
@@ -216,6 +216,9 @@
 }
 .say-content .say-post-item .say-post-comments a:hover {
     color: var(--theme);
+}
+.say-content .say-post-item .say-post-comments .close:hover {
+    color: var(--text-info);
 }
 
 /* pageNav */

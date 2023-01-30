@@ -29,8 +29,8 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_logo_url_light" type="text" value="<?php echo get_option("i_logo_url_light"); ?>" class="regular-text">
                         <p class="description">填写logo图标链接地址即可。</p>
-                        <p class="description-primary">默认：显示站点图标，未设置则不显示。</p>
-                        <p class="description-primary">站点图标设置：外观-自定义-站点身份-站点图标。</p>
+                        <p class="description-primary">默认：显示站点图标，未设置则不显示</p>
+                        <p class="description-primary">站点图标设置：外观-自定义-站点身份-站点图标</p>
                     </td>
                 </tr>
                 <tr>
@@ -38,8 +38,8 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_logo_url_night" type="text" value="<?php echo get_option("i_logo_url_night"); ?>" class="regular-text">
                         <p class="description">填写logo图标链接地址即可。</p>
-                        <p class="description-primary">默认：显示站点图标，未设置则不显示。</p>
-                        <p class="description-primary">站点图标设置：外观-自定义-站点身份-站点图标。</p>
+                        <p class="description-primary">默认：显示站点图标，未设置则不显示</p>
+                        <p class="description-primary">站点图标设置：外观-自定义-站点身份-站点图标</p>
                     </td>
                 </tr>
                 <tr>
@@ -61,8 +61,8 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_login_hidden" type="text" value="<?php echo get_option("i_login_hidden"); ?>" class="regular-text">
                         <p class="description">数字1为开启。开启后隐藏右上角登录图标。</p>
-                        <p class="description-primary">开启后不影响正常登录。</p>
-                        <p class="description-primary">域名后输入/admin或/wp-admin即可登录。</p>
+                        <p class="description-primary">开启后不影响正常登录</p>
+                        <p class="description-primary">域名后输入/admin或/wp-admin即可登录</p>
                     </td>
                 </tr>
                 <tr>

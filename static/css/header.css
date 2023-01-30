@@ -226,27 +226,46 @@
 }
 .nav-bar .user-menu a {
     display: block;
+    position: relative;
     color: var(--text-sub);
     font-size: 15px;
     padding: 4px 6px 4px 6px;
     border-radius: var(--radius-sub);
     margin-bottom: 4px;
-    transition: all 0s;
+    transition: var(--tr1);
+    z-index: 1;
 }
 .nav-bar .user-menu a:last-child{
     margin-bottom: 0;
 }
 .nav-bar .user-menu a:hover {
     color: var(--text-keep);
-    background: linear-gradient(to right, var(--theme), var(--theme-sub));
+}
+.nav-bar .user-menu a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    opacity: 0;
+    border-radius: var(--radius-sub);
+    transition: var(--tr1);
+    z-index: -1;
+}
+.nav-bar .user-menu a:hover::after {
+    opacity: 1;
     animation: hueRotate 3s infinite alternate;
 }
+
 .nav-bar .user-menu-open {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
 }
-.user-menu .logout:hover {
+.nav-bar .user-menu .logout::after,
+.nav-bar .user-menu .logout:hover::after {
     background: #EF3B36 !important;
 }
 
@@ -371,13 +390,17 @@
     margin-bottom: 4px;
     transition: all 0s;
 }
-.nav-bar-mb .user-menu a:last-child{
+.nav-bar-mb .user-menu a:last-child {
     margin-bottom: 0;
 }
 .nav-bar-mb .user-menu a:hover {
     color: var(--text-keep);
     background: linear-gradient(to right, var(--theme), var(--theme-sub));
     animation: hueRotate 3s infinite alternate;
+}
+.nav-bar-mb .user-menu a:last-child:hover {
+    background: #DD440F;
+    animation: none;
 }
 
 .menu-mb {

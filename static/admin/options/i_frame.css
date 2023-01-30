@@ -231,6 +231,7 @@
   border-radius: 6px;
   background-color: #8183ff;
   background: linear-gradient(120deg, #8183ff, #58b3f5); 
+  animation: hueRotate 3s infinite alternate;
   text-decoration: none;
   font-size: 14px;
   transition: all .3s;
@@ -250,3 +251,12 @@
     margin-top: 10px;
   }
 }
+
+@keyframes hueRotate { 
+  from { 
+      filter: hue-rotate(0); 
+  } 
+  to { 
+      filter: hue-rotate(30deg); 
+  } 
+} 

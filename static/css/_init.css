@@ -129,11 +129,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: var(--radius);
 }
 
-@keyframes hueRotate { 
+@keyframes hueRotate {
   from { 
       filter: hue-rotate(0); 
   } 
   to { 
       filter: hue-rotate(30deg); 
   } 
-} 
+}

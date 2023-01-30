@@ -33,9 +33,19 @@
             }
         ?>
     </div>
-    <div class="right">
-        <?php get_template_part('sidebar-article')?>
-    </div>
+    <?php if(get_option("i_post_sidebar") == 1) { ?>
+        <style>
+            .single-main .left {
+                width: 100%;
+                padding-right: 0;
+                border-right: none;
+            }
+        </style>
+    <?php } else { ?>
+        <div class="right">
+            <?php get_template_part('sidebar-article')?>
+        </div>
+    <?php } ?>
 </div>
 
 <div class="post-menu-btn">
