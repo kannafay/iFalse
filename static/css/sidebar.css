@@ -1,6 +1,6 @@
 .author-info-box {
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 20px 15px;
     margin-bottom: 20px;
     border: 1px solid var(--border);
     transition: var(--tr3);
