@@ -84,13 +84,13 @@ function i_static() {
   } else {
     switch (get_option("i_cdn")) {
       case 1:
-        return 'https://kannafay.gitee.io/ifalse-static/@1.5.3'; // gitee pages
+        return 'https://cdn.acg.ltd/@1.5.3'; // baidu-sola
         break;
       case 2:
-        return 'https://ifalse-static.netlify.app/@1.5.3'; // netlify
+        return 'https://fastly.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.3'; // jsdelivr
         break;
       case 3:
-        return 'https://fastly.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.3'; // jsdelivr
+        return 'https://ifalse-static.netlify.app/@1.5.3'; // netlify
         break;
       default:
         return get_template_directory_uri().'/static'; // local
@@ -425,7 +425,7 @@ function getpageurl() {
   }
   return $pageURL;
 }
-// 菜单为定义时提示
+// 菜单未定义时提示
 function nav_fallback(){
   if(is_user_logged_in()) {
     echo '<div class="nav"><ul class="nav-menu"><li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li></ul></div>';

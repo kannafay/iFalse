@@ -59,9 +59,9 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_cdn" type="text" value="<?php echo get_option("i_cdn"); ?>" class="regular-text">
                         <p class="description">填入对应的数字即可开启，效果不佳请更换或停用。</p>
-                        <p class="description">数字1：Gitee Pages</p>
-                        <p class="description">数字2：Netlify</p>
-                        <p class="description">数字3：jsDelivr</p>
+                        <p class="description">数字1：百度云加速（Sola提供）</p>
+                        <p class="description">数字2：jsDelivr</p>
+                        <p class="description">数字3：Netlify</p>
                         <p class="description-primary">默认：不使用</p>
                     </td>
                 </tr>
