@@ -1,0 +1,438 @@
+.say {
+    margin-top: 70px;
+}
+.say .say-banner {
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    overflow: hidden;
+}
+.say .say-banner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    z-index: -9;
+    pointer-events: none;
+    transition: filter var(--tr3-c);
+}
+.say .say-banner::before {
+    content: "";
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -8;
+}
+
+/* author */
+.say-author {
+    width: 100%;
+    padding: 0 20px;
+}
+.say-author .say-author-box {
+    width: 100%;
+    padding: 0 20px;
+    border-radius: 10px;
+    background-color: var(--bgc-blur-say);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 8px rgb(28 31 35 / 3%), 0 0 24px 8px rgb(28 31 35 / 5%);
+    position: relative;
+    top: -30px;
+    transition: var(--tr3);
+}
+.say-author .say-author-box .say-author-logo {
+    width: 75px;
+    height: 75px;
+    background-color: var(--bgc);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -39px;
+    overflow: hidden;
+    transition: var(--tr3);
+}
+.say-author .say-author-box .say-author-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.say-author .say-author-box .say-author-name,
+.say-author .say-author-box .say-author-des {
+    text-align: center;
+}
+.say-author .say-author-box .say-author-name {
+    position: relative;
+    top: -25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    transition: var(--tr3);
+}
+.say-author .say-author-box .say-author-des {
+    position: relative;
+    top: -20px;
+    font-size: 14px;
+    color: var(--text-info);
+    transition: var(--tr3);
+}
+
+/* content */
+.say-content .say-post-item {
+    list-style: none;
+    width: 100%;
+    position: relative;
+    padding: 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+    transition: var(--tr3);
+}
+.say-content .say-post-item:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.say-content .say-post-item .say-post-box {
+    display: flex;
+    margin-bottom: 15px;
+}
+.say-content .say-post-item .say-post-box .say-author-logo {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.say-content .say-post-item .say-post-box .say-author-logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.say-content .say-post-item .say-post-box .say-author-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.say-content .say-post-item .say-post-box .say-post-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+.say-content .say-post-item .say-post-box .say-post-msg .say-author-name {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+}
+.say-content .say-post-item .say-post-box .say-post-msg .say-author-name a {
+    transition: var(--tr3);
+}
+.say-content .say-post-item .say-post-box .say-post-msg .say-author-name span {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-keep);
+    background: var(--theme-sub);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
+    padding: 2px 6px;
+    border-radius: var(--radius-sub);
+}
+.say-content .say-post-item .say-post-box .say-post-msg .say-post-time {
+    font-size: 12px;
+    color: var(--text-info);
+    margin-top: 5px;
+}
+.say-content .say-post-item .say-post-content {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.say-content .say-post-item .say-post-content #article-toc-mb,
+.say-content .say-post-item .say-post-content #article-toc {
+    display: none;
+}
+
+/* .say-content .say-post-item .say-post-comments {
+    display: flex;
+    justify-content: center;
+    width: 102px;
+    height: 23px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: -2px;
+    padding-top: 1px;
+    background-color: var(--border);
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: var(--radius);
+    transition: var(--tr3);
+}
+.say-content .say-post-item .say-post-comments a {
+    display: inline-block;
+    width: 100px;
+    height: 22px;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: center;
+    background-color: var(--bgc);
+    color: var(--text-info);
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+    transition: var(--tr3);
+}
+.say-content .say-post-item .say-post-comments a:hover {
+    color: var(--theme);
+} */
+
+.say-content .say-post-item .say-post-comments {
+    margin-top: 40px;
+    transition: var(--tr3);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.say-content .say-post-item .say-post-comments::before {
+    content: '\e7b2';
+    font-family: 'iconfont';
+    font-size: 17px;
+    margin-right: 3px;
+    color: var(--text-info);
+}
+.say-content .say-post-item .say-post-comments a {
+    font-size: 14px;
+    color: var(--text-info);
+    transition: var(--tr3);
+}
+.say-content .say-post-item .say-post-comments a:hover {
+    color: var(--theme);
+}
+.say-content .say-post-item .say-post-comments .close:hover {
+    color: var(--text-info);
+}
+
+/* pageNav */
+.say-content .say-page-nav {
+    padding-bottom: 20px;
+}
+.say-content .say-page-nav .say-page-nav-bar {
+    display: flex;
+    justify-content: center;
+    color: var(--text-sub);
+}
+.say-content .say-page-nav .say-page-nav-bar > * {
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: var(--text-info);
+    font-size: 14px;
+    background-color: var(--border);
+    line-height: 30px;
+    text-align: center;
+    margin: 0 3px;
+    border-radius: var(--radius-sub);
+    overflow: hidden;
+    transition: var(--tr3);
+}
+.say-content .say-page-nav .say-page-nav-bar .current {
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub));
+    animation: hueRotate 3s infinite alternate;
+    color: var(--text-keep);
+}
+.say-content .say-page-nav .say-page-nav-bar a:hover {
+    background-color: var(--theme);
+    color: var(--text-keep);
+}
+.say-content .say-page-nav .say-page-nav-bar .dots {
+    background-color: var(--bgc-0);
+}
+.say-content .say-page-nav .say-page-nav-bar .dots:hover {
+    cursor: default;
+}
+
+
+/* have no more */
+.haveNoMore-say {
+    text-align: center;
+    color: var(--text-info);
+    margin-bottom: 20px;
+}
+.haveNoMore-say span {
+    font-size: 14px;
+}
+/* have no more-end */
+
+/* sayPostStyle */
+.say-post-content > * {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text);
+    transition: var(--tr3);
+}
+.say-post-content > *:last-child {
+    margin-bottom: 0;
+}
+.say-post-content p {
+    line-height: 1.5;
+}
+.say-post-content h1,
+.say-post-content h2,
+.say-post-content h3,
+.say-post-content h4,
+.say-post-content h5,
+.say-post-content h6 {
+    position: relative;
+    padding-left: 15px;
+}
+.say-post-content h1::before,
+.say-post-content h2::before,
+.say-post-content h3::before,
+.say-post-content h4::before,
+.say-post-content h5::before,
+.say-post-content h6::before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: var(--radius);
+    background-color: var(--theme);
+    box-shadow: 1px 1px 3px -1px var(--theme-sub);
+}
+.say-post-content h1 {
+    font-size: 20px;
+}
+.say-post-content h2 {
+    font-size: 18px;
+}
+.say-post-content h3 {
+    font-size: 16px;
+}
+.say-post-content h4 {
+    font-size: 15px;
+}
+.say-post-content h5 {
+    font-size: 14px;
+}
+.say-post-content h6 {
+    font-size: 14px;
+    font-weight: 400;
+}
+.say-post-content pre {
+    padding: 10px;
+    background-color: var(--bgc-sub);
+    border-radius: var(--radius);
+}
+.say-post-content a {
+    color: var(--theme);
+}
+.say-post-content a:hover {
+    text-decoration: underline;
+}
+.say-post-content ul,
+.say-post-content ol {
+    margin-left: 30px;
+}
+.say-post-content ul li,
+.say-post-content ol li {
+    line-height: 1.5;
+    color: var(--text);
+    font-size: 15px;
+    word-break: break-all;
+    word-wrap: break-word;
+    transition: var(--tr3);
+}
+.say-post-content ul li {
+    list-style: disc;
+}
+.say-post-content ol li {
+    list-style: lower-greek;
+}
+.say-post-content .say-img {
+    display: block;
+    width: 66%;
+    height: 0;
+    padding-bottom: 66%;
+    position: relative;
+    outline: 0;
+}
+.say-post-content img {
+    vertical-align: middle;
+    border-radius: var(--radius);
+    transition: filter var(--tr3-c);
+}
+.say-post-content .say-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: var(--tr3);
+}
+.say-post-content .say-img img:hover {
+    box-shadow: var(--box-l);
+}
+.say-post-content .gallery {
+    margin-bottom: 10px !important;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.say-post-content .gallery:last-child {
+    margin-bottom: 0 !important;
+}
+.say-post-content .gallery br {
+    display: none;
+}
+.say-post-content .gallery .gallery-item {
+    margin-top: 0 !important;
+    width: 100% !important;
+    text-align: left !important;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+.say-post-content .gallery .gallery-item dt {
+    cursor: pointer;
+}
+.say-post-content .gallery .gallery-item img {
+    border: 0 !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: var(--tr3);
+}
+.say-post-content .gallery .gallery-item img:hover {
+    box-shadow: var(--box-l);
+}
+
+
+/* 说说详情页 */
+.say-top .single-banner .single-title h1 {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    .say {
+        width: 100%;
+    }
+    .say-post-content > * {
+        font-size: 15px;
+    }
+    .say-post-content ul li,
+    .say-post-content ol li {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,82 @@
+.page-link {
+    margin-top: 90px;
+}
+.linkcat h2 {
+    display: none;
+}
+.linkcat ul {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.linkcat ul,
+.linkcat ul li {
+    margin: 0 !important;
+    width: 100% !important;
+}
+.linkcat ul li {
+    list-style: none !important;
+    line-height: 1 !important;
+    color: var(--text-info);
+    font-size: 14px;
+    margin-bottom: 20px;
+    background-color: var(--bgc);
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: var(--tr3);
+}
+.linkcat ul li:hover {
+    border: 1px solid var(--theme);
+}
+.linkcat ul li a {
+    color: var(--text) !important;
+    display: flex;
+    text-decoration: none !important;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: var(--tr3);
+}
+.linkcat ul li a:hover {
+    color: var(--theme) !important;
+}
+.linkcat ul li a img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    margin-right: 10px;
+    transition: var(--tr3);
+}
+.linkcat ul li a:hover img {
+    opacity: .8;
+}
+@media screen and (max-width: 960px) {
+    .linkcat ul {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .linkcat ul {
+        display: grid !important;
+        grid-template-columns: 1fr;
+    }
+    .linkcat ul li {
+        padding: 10px;
+    }
+    .linkcat ul li a {
+        font-size: 15px;
+    }
+    .linkcat ul li a img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}

@@ -1,0 +1,69 @@
+.footer {
+    margin-top: 20px;
+    background-color: var(--bgc);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: var(--tr3);
+}
+.footer .footer-box,
+.footer .footer-box a {
+    font-size: 14px;
+}
+.footer .footer-box,
+.footer .footer-box .author,
+.footer .footer-box .icp_gov {
+    justify-content: center;
+    text-align: center;
+}
+.footer .footer-box {
+    display: flex;
+    flex-direction: column;
+    line-height: 28px;
+    color: var(--text-info);
+}
+.footer .footer-box a {
+    color: var(--text-info);
+    transition: var(--tr3);
+}
+.footer .footer-box a:hover {
+    color: var(--theme);
+}
+.footer .footer-box .upyun img {
+    vertical-align: middle;
+    height: 28px;
+    margin-top: -3px;
+}
+.footer .footer-box .author {
+    display: flex;
+    align-items: center;
+}
+.footer .footer-box .author span {
+    margin-right: 5px;
+}
+.footer .footer-box .icp_gov {
+    display: flex;
+    align-items: center;
+}
+.footer .footer-box .icp_gov img {
+    vertical-align: middle;
+    width: 18px;
+    margin-right: 2px;
+}
+
+@media screen and (max-width: 1280px) {
+    .footer .footer-box {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 960px) {
+    .footer {
+        padding: 20px;
+    }
+    /* .footer .footer-box,
+    .footer .footer-box .author,
+    .footer .footer-box .icp_gov {
+        justify-content: left;
+        text-align: left;
+    } */
+}

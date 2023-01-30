@@ -1,0 +1,359 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP User Profile Avatar\n"
+"POT-Creation-Date: 2020-05-24 14:12+0200\n"
+"PO-Revision-Date: 2020-05-24 14:12+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_CH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-user-profile-avatar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/templates/shortcode-popup.php:3
+#, fuzzy
+msgid "User Avatar"
+msgstr "User Avatar"
+
+#: admin/templates/shortcode-popup.php:4
+#, fuzzy
+msgid "Upload Avatar"
+msgstr "Avatar hochladen"
+
+#: admin/templates/shortcode-popup.php:13
+msgid "User Name"
+msgstr "Benutzername"
+
+#: admin/templates/shortcode-popup.php:16
+#, fuzzy
+msgid "Select User"
+msgstr "Benutzer auswählen"
+
+#: admin/templates/shortcode-popup.php:26
+msgid "Size"
+msgstr "Grösse"
+
+#: admin/templates/shortcode-popup.php:29
+#: admin/templates/shortcode-popup.php:43
+#: admin/templates/shortcode-popup.php:56
+msgid "None"
+msgstr "Keine"
+
+#: admin/templates/shortcode-popup.php:36
+#, fuzzy
+msgid "size parameter only work for uploaded avatar not with custom url."
+msgstr ""
+"Größenparameter funktionieren nur für hochgeladenen Avatar nicht mit "
+"benutzerdefinierter URL."
+
+#: admin/templates/shortcode-popup.php:40
+msgid "Alignment"
+msgstr "Ausrichtung"
+
+#: admin/templates/shortcode-popup.php:53
+msgid "Link To"
+msgstr "Link zu"
+
+#: admin/templates/shortcode-popup.php:63
+msgid "Add custom URL"
+msgstr "Benutzerdefinierte URL hinzufügen"
+
+#: admin/templates/shortcode-popup.php:67
+#, fuzzy
+msgid "Open link in a new window"
+msgstr "Link in einem neuen Fenster öffnen"
+
+#: admin/templates/shortcode-popup.php:73
+msgid "Caption"
+msgstr "Beschriftung"
+
+#: admin/templates/shortcode-popup.php:82
+#: admin/templates/shortcode-popup.php:101
+msgid "Insert Shortcode"
+msgstr "Shortcode einfügen"
+
+#: admin/templates/shortcode-popup.php:93
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: admin/wp-user-profile-avatar-admin.php:53
+#, fuzzy
+msgid "Profile Avatar Settings"
+msgstr "Profil-Avatar-Einstellungen"
+
+#. Plugin Name of the plugin/theme
+#. Description of the plugin/theme
+#: admin/wp-user-profile-avatar-admin.php:72
+#: admin/wp-user-profile-avatar-admin.php:73
+#: admin/wp-user-profile-avatar-admin.php:109
+#: admin/wp-user-profile-avatar-settings.php:47
+#: admin/wp-user-profile-avatar-settings.php:113
+#, fuzzy
+msgid "WP User Profile Avatar"
+msgstr "WP Benutzerprofil Avatar"
+
+#: admin/wp-user-profile-avatar-admin.php:75 wp-user-profile-avatar.php:159
+#, fuzzy
+msgid "Choose Image: Default Avatar"
+msgstr "Bild auswählen: Standard-Avatar"
+
+#: admin/wp-user-profile-avatar-admin.php:114
+msgid "Image"
+msgstr "Bild"
+
+#: admin/wp-user-profile-avatar-admin.php:121 templates/wp-avatar-upload.php:16
+#, fuzzy
+msgid "OR Upload Image"
+msgstr "ODER Bild hochladen"
+
+#: admin/wp-user-profile-avatar-admin.php:124
+#: admin/wp-user-profile-avatar-settings.php:123
+msgid "Choose Image"
+msgstr "Bild auswählen"
+
+#: admin/wp-user-profile-avatar-admin.php:143 templates/wp-avatar-upload.php:39
+#, fuzzy
+msgid "Original Size"
+msgstr "Originalgröße"
+
+#: admin/wp-user-profile-avatar-admin.php:147 templates/wp-avatar-upload.php:43
+#: wp-user-profile-avatar-functions.php:322
+msgid "Thumbnail"
+msgstr "Vorschaubild"
+
+#: admin/wp-user-profile-avatar-admin.php:150 templates/wp-avatar-upload.php:46
+msgid "Remove Image"
+msgstr "Bild entfernen"
+
+#: admin/wp-user-profile-avatar-admin.php:153
+#: admin/wp-user-profile-avatar-settings.php:125
+#: templates/wp-avatar-upload.php:49
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: admin/wp-user-profile-avatar-settings.php:56
+#, fuzzy
+msgid "Avatar Visibility"
+msgstr "Avatar-Sichtbarkeit"
+
+#: admin/wp-user-profile-avatar-settings.php:60
+#, fuzzy
+msgid "Show Avatars"
+msgstr "Avatare anzeigen"
+
+#: admin/wp-user-profile-avatar-settings.php:62
+#, fuzzy
+msgid ""
+"If it is unchecked then it will not show the user avatar at profile and "
+"frontend side."
+msgstr ""
+"Wenn es deaktiviert ist, zeigt es den Benutzer-Avatar nicht auf Profil- und "
+"Frontend-Seite an."
+
+#: admin/wp-user-profile-avatar-settings.php:68 wp-user-profile-avatar.php:181
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: admin/wp-user-profile-avatar-settings.php:72
+#, fuzzy
+msgid "Add shortcode avatar button to Visual Editor"
+msgstr "Hinzufügen der Kurzcode-Avatar-Schaltfläche zum Visual Editor"
+
+#: admin/wp-user-profile-avatar-settings.php:78
+#, fuzzy
+msgid "Allow Contributors &amp; Subscribers to upload avatars"
+msgstr "Teilnehmern &amp; Abonnenten erlauben, Avatare hochzuladen"
+
+#: admin/wp-user-profile-avatar-settings.php:84
+#, fuzzy
+msgid "Disable Gravatar and use own custom avatars"
+msgstr ""
+"Deaktivieren Sie Gravatar und verwenden Sie eigene benutzerdefinierte Avatare"
+
+#: admin/wp-user-profile-avatar-settings.php:93
+#: admin/wp-user-profile-avatar-settings.php:96
+#, fuzzy
+msgid "Avatar Rating"
+msgstr "Avatar-Bewertung"
+
+#: admin/wp-user-profile-avatar-settings.php:106
+#: admin/wp-user-profile-avatar-settings.php:109
+#, fuzzy
+msgid "Default Avatar"
+msgstr "Standard-Avatar"
+
+#: admin/wp-user-profile-avatar-settings.php:110
+#, fuzzy
+msgid ""
+"For users without a custom avatar of their own, you can either display a "
+"generic logo or a generated one based on their e-mail address."
+msgstr ""
+"Für Benutzer ohne eigenen benutzerdefinierten Avatar können Sie entweder ein "
+"generisches Oder ein generiertes Logo basierend auf ihrer E-Mail-Adresse "
+"anzeigen."
+
+#: admin/wp-user-profile-avatar-settings.php:124
+msgid "Remove"
+msgstr "Entfernen"
+
+#: admin/wp-user-profile-avatar-settings.php:146
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:83
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:98
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:108
+#, fuzzy
+msgid "ERROR: "
+msgstr "Fehler:"
+
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:83
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:98
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:108
+#, fuzzy
+msgid ""
+"You do not have enough priviledge to access this page. Please login to "
+"continue."
+msgstr ""
+"Sie haben nicht genug Privileg, um auf diese Seite zuzugreifen. Bitte melden "
+"Sie sich an, um fortzufahren."
+
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:208
+#, fuzzy
+msgid "Error! Select Image"
+msgstr "Fehler! Bild auswählen"
+
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:215
+#, fuzzy
+msgid "Successfully Updated Avatar"
+msgstr "Erfolgreich aktualisierter Avatar"
+
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:256
+#, fuzzy
+msgid "Successfully Removed Avatar"
+msgstr "Erfolgreich entferntAvatar"
+
+#: shortcodes/wp-user-profile-avatar-shortcodes.php:301
+#, fuzzy
+msgid "Successfully Undo Avatar"
+msgstr "Erfolgreich Rückgängig-Avatar"
+
+#: templates/wp-avatar-upload.php:56
+msgid "Update Profile"
+msgstr "Profil aktualisieren"
+
+#: wp-user-profile-avatar-functions.php:13
+#, fuzzy
+msgid "G &#8212; Suitable for all audiences"
+msgstr "G &#8212; Geeignet für alle Zielgruppen"
+
+#: wp-user-profile-avatar-functions.php:14
+#, fuzzy
+msgid "PG &#8212; Possibly offensive, usually for audiences 13 and above"
+msgstr "PG &#8212; Möglicherweise anstößig, meist für Zuschauer ab 13 Jahren"
+
+#: wp-user-profile-avatar-functions.php:15
+#, fuzzy
+msgid "R &#8212; Intended for adult audiences above 17"
+msgstr "R &#8212; Für erwachsene Zielgruppen ab 17"
+
+#: wp-user-profile-avatar-functions.php:16
+#, fuzzy
+msgid "X &#8212; Even more mature than above"
+msgstr "X &#8212; Noch reifer als oben"
+
+#: wp-user-profile-avatar-functions.php:32
+msgid "Mystery Man"
+msgstr "Geheimnisvolle Person"
+
+#: wp-user-profile-avatar-functions.php:33
+msgid "Blank"
+msgstr "Neue Seite"
+
+#: wp-user-profile-avatar-functions.php:34
+#, fuzzy
+msgid "Gravatar Logo"
+msgstr "Gravatar Logo"
+
+#: wp-user-profile-avatar-functions.php:35
+#, fuzzy
+msgid "Identicon (Generated)"
+msgstr "Identicon (Generiert)"
+
+#: wp-user-profile-avatar-functions.php:36
+#, fuzzy
+msgid "Wavatar (Generated)"
+msgstr "Wavatar (Generiert)"
+
+#: wp-user-profile-avatar-functions.php:37
+#, fuzzy
+msgid "MonsterID (Generated)"
+msgstr "MonsterID (Generiert)"
+
+#: wp-user-profile-avatar-functions.php:38
+#, fuzzy
+msgid "Retro (Generated)"
+msgstr "Retro (Generiert)"
+
+#: wp-user-profile-avatar-functions.php:319
+msgid "Original"
+msgstr "Original"
+
+#: wp-user-profile-avatar-functions.php:320
+msgid "Large"
+msgstr "Gross"
+
+#: wp-user-profile-avatar-functions.php:321
+msgid "Medium"
+msgstr "Mittel"
+
+#: wp-user-profile-avatar-functions.php:338
+msgid "Center"
+msgstr "Zentriert"
+
+#: wp-user-profile-avatar-functions.php:339
+msgid "Left"
+msgstr "Links"
+
+#: wp-user-profile-avatar-functions.php:340
+msgid "Right"
+msgstr "Rechts"
+
+#: wp-user-profile-avatar-functions.php:356
+#, fuzzy
+msgid "Image File"
+msgstr "Bilddatei"
+
+#: wp-user-profile-avatar-functions.php:357
+msgid "Attachment Page"
+msgstr "Anhang-Seite"
+
+#: wp-user-profile-avatar-functions.php:358
+msgid "Custom URL"
+msgstr "Eigene URL"
+
+#. Plugin URI of the plugin/theme
+#, fuzzy
+msgid "https://www.wp-eventmanager.com/"
+msgstr "https://www.wp-eventmanager.com/"
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "WP Event Manager"
+msgstr "WP-Ereignismanager"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "https://www.wp-eventmanager.com"
+msgstr "https://www.wp-eventmanager.com"

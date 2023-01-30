@@ -1,0 +1,179 @@
+.login-page {
+    display: flex;
+    height: 100vh;
+    justify-content: center; 
+}
+.login-page .login-main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.login-page .login-main .login-img {
+    width: 450px;
+    border-radius: 10%;
+    margin-right: 80px;
+    pointer-events: none;
+    transition: filter var(--tr3-c);
+}
+.login-page .login-msg {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: auto;
+}
+.login-page .login-msg > * {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* 盒子 */
+.login-page .login-msg h2 {
+    color: var(--text);
+    font-size: 28px;
+    margin-bottom: 5px;
+    transition: var(--tr3);
+}
+.login-page .login-msg .des{
+    margin-bottom: 20px;
+    color: var(--text-sub);
+    transition: var(--tr3);
+}
+.login-page .login-msg p,
+.login-page .login-msg p span {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.login-page .login-msg .form-item {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+}
+.login-page .login-msg .form-item:last-child {
+    margin-bottom: 0;
+}
+.login-page .login-msg .form-item span {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    font-size: 20px;
+    text-align: center;
+    color: var(--text);
+    transition: var(--tr3);
+}
+.login-page .login-msg .form-item input {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    background-color: var(--bgc-sub);
+    outline: 0;
+    border: 1px solid var(--bgc-sub);
+    color: var(--text);
+    border-radius: var(--radius);
+    padding: 0 10px 0 35px;
+    transition: var(--tr3);
+}
+.login-page .login-msg .form-item input:hover,
+.login-page .login-msg .form-item input:focus {
+    border: 1px solid var(--theme);
+    background-color: var(--bgc);
+}
+.login-page .login-msg .form-item input:focus {
+    box-shadow: var(--input);
+}
+.login-page .login-msg .form-other {
+    display: flex;
+    justify-content: space-between;
+}
+.login-page .login-msg .form-other span {
+    font-size: 14px;
+    color: var(--text-info);
+    margin-bottom: 20px;
+}
+.login-page .login-msg .form-other span a {
+    cursor: pointer;
+    color: var(--theme);
+}
+.login-page .login-msg .form-other span a:hover {
+    text-decoration: underline;
+}
+.login-page .login-msg .form-item button {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    outline: 0;
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--text-keep);
+    background: var(--theme);
+    background: linear-gradient(120deg, var(--theme), var(--theme-sub)); 
+    animation: hueRotate 3s infinite alternate;
+    box-shadow: var(--box-p);
+    transition: var(--tr3);
+}
+.login-page .login-msg .form-item button:hover {
+    opacity: .8;
+}
+.login-page .login-msg .login-third .hr-line {
+    text-align: center;
+    margin: 20px 0 15px 0;
+}
+.login-page .login-msg .login-third .hr-line > * {
+    display: inline-block;
+    color: var(--text-info);
+}
+.login-page .login-msg .login-third hr {
+    width: 50px;
+    height: 1px;
+    border: 0;
+    vertical-align: middle;
+    background-color: var(--text-info);
+}
+.login-page .login-msg .login-third p {
+    margin: 0 10px;
+}
+.login-page .login-msg .login-third .qqlogin {
+    display: flex;
+    justify-content: center;
+}
+.login-page .login-msg .login-third .qqlogin a {
+    border-radius: 50%;
+}
+.login-page .login-msg .login-third .qqlogin img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1100px) {
+    .login-page .login-main .login-img {
+        display: none;
+    }
+    .login-page .login-msg {
+        width: 300px;
+    }
+}
+
+.register-back-home {
+    color: var(--theme);
+}
+.register-back-home:hover {
+    text-decoration: underline;
+}

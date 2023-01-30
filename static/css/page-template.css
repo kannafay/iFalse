@@ -1,0 +1,95 @@
+.page-banner {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    transition: var(--tr3);
+}
+.page-banner .page-title h1 {
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 15px;
+    margin-top: 20px;
+    transition: var(--tr3);
+}
+.page-banner .page-detail .author,
+.page-banner .page-detail .other {
+    display: flex;
+    align-items: center;
+}
+.page-banner .page-detail .author {
+    margin-bottom: 15px;
+}
+.page-banner .page-detail .date::before {
+    content: '\e74b';
+    font-family: 'iconfont';
+    font-size: 18px;
+}
+.page-banner .page-detail .views::before {
+    content: '\e745';
+    font-family: 'iconfont';
+    font-size: 18px;
+}
+.page-banner .page-detail .comments::before {
+    content: '\e7b2';
+    font-family: 'iconfont';
+    font-size: 18px;
+}
+.page-banner .page-detail .date,
+.page-banner .page-detail .views,
+.page-banner .page-detail .comments {
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+.page-banner .page-detail span,
+.page-banner .page-detail a {
+    font-size: 14px;
+    color: var(--text-info);
+    transition: var(--tr3);
+}
+.page-banner .page-detail .author > span a {
+    color: var(--text-sub);
+    font-weight: 700;
+}
+.page-banner .page-detail .author a:hover {
+    color: var(--theme);
+}
+.page-banner .page-detail .author > a {
+    margin-right: 8px;
+    border-radius: 50%;
+}
+.page-banner .page-detail img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.page-banner .page-detail .post-edit-link {
+    color: var(--theme);
+    margin-left: 5px;
+}
+
+.page-main .left {
+    width: 100% !important;
+    border: none !important;
+    padding-right: 0 !important;
+}
+
+@media screen and (max-width: 1280px) {
+    .page-main {
+        width: 100%;
+        padding: 0 30px !important;
+    }
+}
+@media screen and (max-width: 960px) {
+    .page-main {
+        padding: 0 20px !important;
+    }
+}
+@media screen and (max-width: 640px) {
+    .page-banner .page-title h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+}
