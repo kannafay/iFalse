@@ -670,7 +670,7 @@
     color: var(--text);
     word-break: break-all;
     word-wrap: break-word;
-    text-align: justify;
+    /* text-align: justify; */
     transition: var(--tr3);
 }
 .post-comments .comment-body p a {
