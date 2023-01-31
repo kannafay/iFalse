@@ -129,6 +129,7 @@ function i_loading_pic() {
 }
 //获取文章第一张图片
 function catch_that_image() { 
+  error_reporting(0);
   global $post, $posts; 
   $first_img = ''; 
   ob_start(); 
