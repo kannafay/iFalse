@@ -221,6 +221,10 @@
     white-space: nowrap;
 }
 
+#primary-sidebar .widget_recent_comments li .wp-block-latest-comments__comment-author > i {
+    display: none;
+}
+
 /* 标签云 */
 #primary-sidebar .widget_tag_cloud {
     cursor: default;
