@@ -61,7 +61,7 @@ if(@stripslashes($_POST["i_opt"])){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_wrapper_name">标语作者</label></th>
+                    <th scope="row"><label for="i_wrapper_name">副标语</label></th>
                     <td>
                         <input name="i_wrapper_name" type="text" value="<?php echo get_option("i_wrapper_name"); ?>" class="regular-text">
                         <p class="description">轮播图无内容时显示。</p>
