@@ -57,9 +57,9 @@
         <div class="say-content">
             <ul>
                 <?php 
-                    query_posts("post_type=shuoshuo&post_status=publish&paged=".$wp_query->query['paged']);
-                    if (have_posts()) : 
-                        while (have_posts()) : the_post(); 
+                    $limit = get_option('posts_per_page');$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    query_posts('post_type=shuoshuo&post_status=publish&paged=' . $paged);
+                    if (have_posts()) : while (have_posts()) : the_post(); 
                 ?>
                     <li class="say-post-item">
                         <div class="say-post-box">

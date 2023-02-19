@@ -33,6 +33,10 @@
 	});
 })(jQuery);
 
+
+
+
+
 // PC端导航栏用户菜单
 const user_set_btn = document.querySelector('.nav-bar .admin img');
 const user_set_menu = document.querySelector('.nav-bar .user-menu');
@@ -50,6 +54,11 @@ if(user_set_btn) {
     user_set_menu.addEventListener("click",(e)=>e.stopPropagation());
 };
 
+
+
+
+
+
 // 移动端导航栏用户菜单
 const user_set_btn_mb = document.querySelector('.nav-bar-mb .admin img');
 const user_set_menu_mb = document.querySelector('.nav-bar-mb .user-menu');
@@ -66,6 +75,11 @@ if(user_set_btn_mb) {
     });
     user_set_menu_mb.addEventListener("click",(e)=>e.stopPropagation());
 };
+
+
+
+
+
 
 // 移动端菜单
 const menu_mb_open = document.querySelector('#menu-mb-open');
@@ -86,11 +100,22 @@ menu_mb_close.onclick = function() {
     menu_mb_mask.className = 'menu-mb-mask';
 };
 
+
+
+
+
+
 // 滚动时隐藏用户菜单
 $(window).scroll(function() {
     $(user_set_menu).removeClass('user-menu-open');
     $(user_set_menu_mb).removeClass('user-menu-open-mb');
 })
+
+
+
+
+
+
 
 // 目录树菜单按钮
 const post_menu_btn = document.querySelector('.post-menu-btn');
@@ -109,10 +134,20 @@ if(post_menu && post_menu_btn) {
     post_menu.addEventListener("click",(e)=>e.stopPropagation());
 };
 
+
+
+
+
+
 // 滚动时收起toc
 // $(window).scroll(function() {
 //     $('#article-toc').removeAttr('class');
 // })
+
+
+
+
+
 
 // 删除 "发表在"
 const comments_meta = document.querySelectorAll('.wp-block-latest-comments__comment-meta');
@@ -127,6 +162,12 @@ const remove_comments_author_a = document.querySelectorAll('.wp-block-latest-com
 $(remove_comments_author_a).each(function(i) {
     remove_comments_author_a[i].removeAttribute('href');
 });
+
+
+
+
+
+
 
 // 给评论摘要添加超链接
 const comments_links = document.querySelectorAll('.wp-block-latest-comments__comment-link');
@@ -143,6 +184,11 @@ if(comments_links) {
     });
 };
 
+
+
+
+
+
 // 滚动时隐藏header
 var header_element = document.querySelectorAll(".header-hidden");
 if(header_element) {
@@ -157,6 +203,12 @@ if(header_element) {
     });
 };
 
+
+
+
+
+
+
 // 侧边栏搜索
 const sidebar_search_input = document.querySelector('#primary-sidebar .widget_search input');
 if(sidebar_search_input) {
@@ -169,8 +221,14 @@ if(sidebar_search_btn) {
     sidebar_search_btn.innerHTML = '<span class="iconfont icon-sousuo">';
 };
 
+
+
+
+
+
+
 // 图片预览
-const content_p_img = document.querySelectorAll('.post-content .wp-block-image img');
+const content_p_img = document.querySelectorAll('.post-content img');
 if(content_p_img) {
 	const content_p_a = [];
 	for(let i=0; i<content_p_img.length; i++) {
@@ -205,12 +263,22 @@ if(say_dt_img) {
 	};
 };
 
+
+
+
+
+
 // 缩略图删除延迟加载
 const swiper_img = document.querySelectorAll('.swiper .swiper-slide img');
 $(swiper_img).each(function(i){
     swiper_img[i].setAttribute('src',swiper_img[i].getAttribute('data-original'));
     swiper_img[i].removeAttribute('data-original');
 });
+
+
+
+
+
 
 // 夜间模式按钮
 function getCookie(name){
@@ -287,6 +355,10 @@ function nightBtn() {
     };
 };
 
+
+
+
+
 // 侧边功能按钮
 $(window).scroll(function() {
     let scrollTop = $(this).scrollTop();
@@ -333,10 +405,14 @@ $(window).resize(function() {
 })
 
 
+
+
+
 // 折叠菜单
 const menu_m = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children'); // 一级
 const menu_m_a = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a'); // 一级a标签
 const menu_m_a_i = document.querySelectorAll('.nav-mb .nav-menu-mb > .menu-item-has-children > a > i');
+
 // 设置高度并添加点击事件
 $(menu_m).each(function(i) {
     const menu_m_height = [];
