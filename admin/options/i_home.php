@@ -7,12 +7,12 @@
 @$i_notice = stripslashes($_POST["i_notice"]);
 
 if(@stripslashes($_POST["i_opt"])){
-    update_option("i_swiper",$i_swiper);
-    update_option("i_swiper_effect",$i_swiper_effect);
-    update_option("i_recommend",$i_recommend);
-    update_option("i_wrapper_text",$i_wrapper_text);
-    update_option("i_wrapper_name",$i_wrapper_name);
-    update_option("i_notice",$i_notice);
+    update_option("i_swiper", $i_swiper);
+    update_option("i_swiper_effect", $i_swiper_effect);
+    update_option("i_recommend", $i_recommend);
+    update_option("i_wrapper_text", $i_wrapper_text);
+    update_option("i_wrapper_name", $i_wrapper_name);
+    update_option("i_notice", $i_notice);
 }
 ?>
 
@@ -29,23 +29,23 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_swiper" type="text" value="<?php echo get_option("i_swiper"); ?>" class="regular-text">
                         <p class="description">填写文章编号，以英文逗号隔开，如1,2,3。</p>
-                        <p class="description-primary">包含置顶文章时将会提前显示</p>
+                        <p class="description-primary">包含置顶文章时将会提前显示，最多10篇。</p>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="i_swiper_effect">轮播图切换效果</label></th>
                     <td>
-                        <input name="i_swiper_effect" type="text" value="<?php echo get_option("i_swiper_effect"); ?>" class="regular-text">
-                        <p class="description">请填入对应的英文字符，不填即默认。</p>
-                        <p class="description-primary">slide：普通位移切换（默认）</p>
-                        <p class="description">fade：淡入</p>
-                        <p class="description">cube：方块</p>
-                        <p class="description">cards：卡片式</p>
-                        <p class="description">coverflow：3D流</p>
+                        <select name="i_swiper_effect">
+                            <option value="" <?php echo get_option("i_swiper_effect") == '' ? 'selected' : ''; ?>>普通位移</option>
+                            <option value="fade" <?php echo get_option("i_swiper_effect") == 'fade' ? 'selected' : ''; ?>>淡入</option>
+                            <option value="cube" <?php echo get_option("i_swiper_effect") == 'cube' ? 'selected' : ''; ?>>方块</option>
+                            <option value="cards" <?php echo get_option("i_swiper_effect") == 'cards' ? 'selected' : ''; ?>>卡片式</option>
+                            <option value="coverflow" <?php echo get_option("i_swiper_effect") == 'coverflow' ? 'selected' : ''; ?>>3D流</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_recommend">推荐文章（必须填写2篇）</label></th>
+                    <th scope="row"><label for="i_recommend">推荐文章（建议2篇或不填）</label></th>
                     <td>
                         <input name="i_recommend" type="text" value="<?php echo get_option("i_recommend"); ?>" class="regular-text">
                         <p class="description">填写文章编号，以英文逗号隔开，如1,2。</p>
@@ -61,7 +61,7 @@ if(@stripslashes($_POST["i_opt"])){
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="i_wrapper_name">标语作者</label></th>
+                    <th scope="row"><label for="i_wrapper_name">副标语</label></th>
                     <td>
                         <input name="i_wrapper_name" type="text" value="<?php echo get_option("i_wrapper_name"); ?>" class="regular-text">
                         <p class="description">轮播图无内容时显示。</p>

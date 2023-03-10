@@ -71,6 +71,7 @@ section {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 li {
   list-style: none;

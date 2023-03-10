@@ -1,6 +1,7 @@
 <script src="<?php echo i_static(); ?>/js/jquery.lazyload.js"></script>
 <script src="<?php echo i_static(); ?>/iconfont/iconfont.js"></script>
 <script src="<?php echo i_static(); ?>/js/theme.js"></script>
+<script src="<?php echo i_static(); ?>/js/SmoothScroll.js"></script>
 <script><?php if(get_option("i_custom_js_footer")){echo get_option("i_custom_js_footer");}; ?></script>
 <?php if(get_option("i_custom_html_tongji")){echo get_option("i_custom_html_tongji");}; ?>
 

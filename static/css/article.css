@@ -246,6 +246,9 @@
     width: 100%;
     height: auto;
 }
+#article-toc ul li:last-child {
+    margin-bottom: 0;
+}
 #article-toc ul li a {
     font-size: 14px;
     display: block;
@@ -299,7 +302,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: 1;
 }
 #article-toc #article-toc-ul .heading-level-1 a:hover,
@@ -324,7 +327,7 @@
     color: var(--text-keep);
     position: absolute;
     left: -14px;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #article-toc #article-toc-ul .heading-level-1 a:hover::before,
 #article-toc #article-toc-ul .heading-level-2 a:hover::before,
@@ -348,7 +351,7 @@
     height: 100%;
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     opacity: 0;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: -1;
 }
 #article-toc #article-toc-ul .heading-level-1 a:hover::after,
@@ -388,7 +391,7 @@
     background: var(--theme-1);
     border-radius: var(--radius-sub);
     white-space: nowrap;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: 1;
 }
 .single-main .left .the-tag span a::before {
@@ -406,7 +409,7 @@
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     opacity: 0;
     border-radius: var(--radius-sub);
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: -1;
 }
 .single-main .left .the-tag span a:hover::after {
@@ -670,7 +673,7 @@
     color: var(--text);
     word-break: break-all;
     word-wrap: break-word;
-    text-align: justify;
+    /* text-align: justify; */
     transition: var(--tr3);
 }
 .post-comments .comment-body p a {
@@ -700,7 +703,7 @@
     padding: 4px 8px;
     margin-bottom: 5px;
     border-radius: var(--radius-sub);
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: 1;
 }
 .post-comments .comment-body .reply a:hover {
@@ -725,7 +728,7 @@
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     opacity: 0;
     border-radius: var(--radius-sub);
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: -1;
 }
 .post-comments .comment-body:hover .reply a:hover::after {

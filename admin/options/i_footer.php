@@ -6,11 +6,11 @@
 @$i_build_date = stripslashes($_POST["i_build_date"]);
 
 if(@stripslashes($_POST["i_opt"])){
-    update_option("i_copyright",$i_copyright);
-    update_option("i_icp",$i_icp);
-    update_option("i_icp_gov",$i_icp_gov);
-    update_option("i_upyun",$i_upyun);
-    update_option("i_build_date",$i_build_date);
+    update_option("i_copyright", $i_copyright);
+    update_option("i_icp", $i_icp);
+    update_option("i_icp_gov", $i_icp_gov);
+    update_option("i_upyun", $i_upyun);
+    update_option("i_build_date", $i_build_date);
 }
 ?>
 
@@ -27,7 +27,7 @@ if(@stripslashes($_POST["i_opt"])){
                     <td>
                         <input name="i_copyright" type="number" value="<?php echo get_option("i_copyright"); ?>" class="regular-text">
                         <p class="description">填写年份（数字）即可。</p>
-                        <p class="description-primary">默认：Copyright © <?php echo date("Y"); ?></p>
+                        <p class="description-primary">默认：Copyright © <?php echo date("Y"); ?> <?php bloginfo('name'); ?></p>
                     </td>
                 </tr>
                 <tr>
@@ -47,8 +47,8 @@ if(@stripslashes($_POST["i_opt"])){
                 <tr>
                     <th scope="row"><label for="i_upyun">又拍云联盟</label></th>
                     <td>
-                        <input name="i_upyun" type="text" value="<?php echo get_option("i_upyun"); ?>" class="regular-text">
-                        <p class="description">数字1为开启。开启后页脚显示又拍云联盟链接。</p>
+                        <label><input type="checkbox" name="i_upyun" value="1" <?=get_option("i_upyun") == '1' ? 'checked' : ''?>>开启</label>
+                        <p class="description">开启后页脚显示又拍云联盟链接。</p>
                     </td>
                 </tr>
                 <tr>
