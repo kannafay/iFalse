@@ -84,13 +84,13 @@ function i_static() {
   } else {
     switch (get_option("i_cdn")) {
       case 1:
-        return 'https://cdn.acg.ltd/@1.5.3'; // baidu-sola
+        return 'https://cdn.acg.ltd/@1.5.4'; // baidu-sola
         break;
       case 2:
-        return 'https://fastly.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.3'; // jsdelivr
+        return 'https://fastly.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.4'; // jsdelivr
         break;
       case 3:
-        return 'https://ifalse-static.netlify.app/@1.5.3'; // netlify
+        return 'https://ifalse-static.netlify.app/@1.5.4'; // netlify
         break;
       default:
         return get_template_directory_uri().'/static'; // local
