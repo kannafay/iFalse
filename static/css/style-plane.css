@@ -272,12 +272,14 @@ body {
 }
 
 /* right-button button */
+#article-toc,
 #article-toc-mb,
 .post-menu-btn div,
 .change-night,
 .progress-wrap {
     border: 0;
 }
+#article-toc:hover,
 #article-toc-mb:hover,
 .post-menu-btn div:hover,
 .change-night:hover,

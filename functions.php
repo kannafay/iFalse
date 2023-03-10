@@ -412,40 +412,70 @@ register_nav_menus( array(
     'menu' => 'PC端菜单 (最高4级)',
     'menu-mb' => '移动端菜单 (最高6级)'
 ));
-// 获取当前url
-function getpageurl() {
-  $pageURL = 'http';
-  if(isset($_SERVER['HTTPS']) && $_SERVER["HTTPS"] == "on"){
-      $pageURL .= "s";
-  }
-  $pageURL .= "://";
-  if ($_SERVER["SERVER_PORT"] != "80") {
-      $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
-  }else{
-      $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-  }
-  return $pageURL;
-}
 // 菜单未定义时提示
 function nav_fallback(){
   if(is_user_logged_in()) {
-    echo '<div class="nav"><ul class="nav-menu"><li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li></ul></div>';
-  } else {
-    if(getpageurl() == home_url().'/') {
-      echo '<div class="nav"><ul class="nav-menu"><li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li></ul></div>';
+    if(is_home()) {
+      echo '<div class="nav">
+        <ul class="nav-menu">
+          <li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li>
+          <li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li>
+        </ul>
+      </div>';
     } else {
-      echo '<div class="nav"><ul class="nav-menu"><li><a href="'.home_url().'">网站首页</a></li></ul></div>';
+      echo '<div class="nav">
+        <ul class="nav-menu">
+          <li><a href="'.home_url().'">网站首页</a></li>
+          <li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li>
+        </ul>
+      </div>';
+    }
+  } else {
+    if(is_home()) {
+      echo '<div class="nav">
+        <ul class="nav-menu">
+          <li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li>
+        </ul>
+      </div>';
+    } else {
+      echo '<div class="nav">
+        <ul class="nav-menu">
+          <li><a href="'.home_url().'">网站首页</a></li>
+        </ul>
+      </div>';
     }
   }
 }
 function nav_fallback_mb(){
   if(is_user_logged_in()) {
-	  echo '<div class="nav-mb"><ul class="nav-menu-mb"><li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li></ul></div>';
-  } else {
-    if(getpageurl() == home_url().'/') {
-      echo '<div class="nav-mb"><ul class="nav-menu-mb"><li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li></ul></div>';
+    if(is_home()) {
+      echo '<div class="nav-mb">
+        <ul class="nav-menu-mb">
+          <li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li>
+          <li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li>
+        </ul>
+      </div>';
     } else {
-      echo '<div class="nav-mb"><ul class="nav-menu-mb"><li><a href="'.home_url().'">网站首页</a></li></ul></div>';
+      echo '<div class="nav-mb">
+        <ul class="nav-menu-mb">
+          <li><a href="'.home_url().'">网站首页</a></li>
+          <li><a href="'.home_url().'/wp-admin/nav-menus.php">点击添加菜单</a></li>
+        </ul>
+      </div>';
+    }
+  } else {
+    if(is_home()) {
+      echo '<div class="nav-mb">
+        <ul class="nav-menu-mb">
+          <li class="current-menu-item"><a href="'.home_url().'">网站首页</a></li>
+        </ul>
+      </div>';
+    } else {
+      echo '<div class="nav-mb">
+        <ul class="nav-menu-mb">
+          <li><a href="'.home_url().'">网站首页</a></li>
+        </ul>
+      </div>';
     }
   }
 }

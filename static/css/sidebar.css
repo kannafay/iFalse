@@ -252,7 +252,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: 1;
 }
 #primary-sidebar .widget_tag_cloud a::before {
@@ -272,7 +272,7 @@
     height: 100%;
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     opacity: 0;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: -1;
 }
 #primary-sidebar .widget_tag_cloud a:hover::after {
@@ -485,7 +485,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: 1;
 }
 #primary-sidebar .widget_recent_entries li a:hover,
@@ -510,7 +510,7 @@
     top: 50%;
     transform: translateY(-50%);
     left: -14px;
-    transition: var(--tr1);
+    transition: var(--tr2);
 }
 #primary-sidebar .widget_recent_entries li a:hover::before,
 #primary-sidebar .wp-block-categories li a:hover::before,
@@ -535,7 +535,7 @@
     height: 100%;
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     opacity: 0;
-    transition: var(--tr1);
+    transition: var(--tr2);
     z-index: -1;
 }
 #primary-sidebar .widget_recent_entries li a:hover::after,

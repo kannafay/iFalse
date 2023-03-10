@@ -81,7 +81,7 @@
     bottom: 0;
     left: 0;
     background: var(--mask-3);
-    background: linear-gradient(to top, var(--mask-3), var(--bgc-0));
+    background: linear-gradient(to top, var(--mask-3), rgba(0 0 0 / .05));
     border-radius: var(--radius);
 }
 .wrapper-home .swiper-slide .title {
@@ -151,7 +151,7 @@
     bottom: 0;
     left: 0;
     background: var(--mask-3);
-    background: linear-gradient(to top, var(--mask-3), var(--bgc-0));
+    background: linear-gradient(to top, var(--mask-3), rgba(0 0 0 / .05));
     border-radius: var(--radius);
     z-index: 1;
 }
@@ -159,20 +159,20 @@
 .wrapper-recommend .recommend .box .recommend-text {
     position: absolute;
     left: 0;
-    top: 5px;
+    top: 10px;
     transform: translateX(-105%);
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-keep);
-    padding: 2px 8px;
+    padding: 2px 12px;
     background: var(--theme-sub);
     background: linear-gradient(120deg, var(--theme), var(--theme-sub));
     animation: hueRotate 3s infinite alternate;
     border-radius: var(--radius-sub);
-    box-shadow: var(--box);
+    box-shadow: var(--box-l);
     transition: transform var(--tr2-c);
 }
 .wrapper-recommend .recommend a:hover ~ .recommend-text {
-    transform: translateX(5px);
+    transform: translateX(10px);
 }
 
 
@@ -871,6 +871,12 @@
     .wrapper-recommend .recommend a .title {
         padding: 10px;
     }
+    .wrapper-recommend .recommend {
+        display: none;
+    }
+    .wrapper-recommend .swiper {
+        width: 100%;
+    }
     /* swiper-end */
 
     .content-wrapper .text-wrapper {
@@ -940,7 +946,7 @@
         width: 100%;
     }
     .wrapper-recommend .swiper-slide {
-        padding-bottom: 40%;
+        /* padding-bottom: 40%; */
     }
     .wrapper-recommend .recommend {
         width: 100%;

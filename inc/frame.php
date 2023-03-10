@@ -8,9 +8,14 @@
     <meta name="renderer" content="webkit" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <?php if(is_home()) { ?><meta name="keywords" content="<?php if(get_option("i_keywords")){echo get_option("i_keywords");}else{echo 'iFalse, iFalse主题, WordPress开源主题';} ?>" />
-    <meta name="description" content="<?php bloginfo('description'); ?>" />
-    <?php } ?><title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
+    <?php if(is_home()) { ?>
+            <meta name="keywords" content="<?=get_option("i_keywords") ? get_option("i_keywords") : 'iFalse主题'?>" />
+            <meta name="description" content="<?php bloginfo('description'); ?>" />
+        <?php } else { ?>
+            <meta name="keywords" content="<?=the_title()?>" />
+        <?php }
+    ?>
+    <title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />
     <link rel="stylesheet" href="<?php echo i_static(); ?>/css/_init.css">
     <link rel="stylesheet" href="<?php echo i_static(); ?>/css/404.css">
