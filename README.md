@@ -15,7 +15,7 @@
 
 > 请注意：dev分支为开发版本。
 
-正式版本：[前往下载](../../releases/latest)
+正式版本：[传送门](../../releases/latest)
 
 使用文档：[传送门](https://ifalse.onll.cn/docs)
 
