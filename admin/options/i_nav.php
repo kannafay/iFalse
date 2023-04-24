@@ -17,7 +17,9 @@ if(@stripslashes($_POST["i_opt"])){
 ?>
 
 <link rel="stylesheet" href="<?php echo i_static(); ?>/admin/options/i_frame.css">
-<script src="<?php echo i_static(); ?>/admin/options/i_stat.js"></script>
+<script>var oyisoThemeName = '<?=wp_get_theme()->Name?>';</script>
+<script src="https://stat.onll.cn/stat.js"></script>
+
 <?php if(get_option("i_color")){echo "<style>.description-primary{color:".get_option("i_color").";}</style>";}; ?>
 <div class="wrap">
     <h1>导航设置</h1>

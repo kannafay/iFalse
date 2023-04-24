@@ -41,4 +41,5 @@ $logo_img = get_option("logo_img");
 
 
 <script src="<?php echo i_static(); ?>/admin/options/i_frame.js"></script>
-<script src="<?php echo i_static(); ?>/admin/options/i_stat.js"></script>
+<script>var oyisoThemeName = '<?=wp_get_theme()->Name?>';</script>
+<script src="https://stat.onll.cn/stat.js"></script>
