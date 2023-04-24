@@ -91,9 +91,6 @@ function i_static() {
       case 2:
         return 'https://fastly.jsdelivr.net/gh/kannafay/iFalse-Static/@1.5.4'; // jsdelivr
         break;
-      case 3:
-        return 'https://ifalse-static.netlify.app/@1.5.4'; // netlify
-        break;
       default:
         return get_template_directory_uri().'/static'; // local
     }

@@ -21,7 +21,9 @@ if(@stripslashes($_POST["i_opt"])){
 ?>
 
 <link rel="stylesheet" href="<?php echo i_static(); ?>/admin/options/i_frame.css">
-<script src="<?php echo i_static(); ?>/admin/options/i_stat.js"></script>
+<script>var oyisoThemeName = '<?=wp_get_theme()->Name?>';</script>
+<script src="https://stat.onll.cn/stat.js"></script>
+
 <?php if(get_option("i_color")){echo "<style>.description-primary{color:".get_option("i_color").";}</style>";}; ?>
 <div class="wrap">
     <h1>其他设置</h1>
@@ -62,7 +64,6 @@ if(@stripslashes($_POST["i_opt"])){
                             <option value="" <?php echo get_option("i_cdn") == '' ? 'selected' : ''; ?>>关闭</option>
                             <option value="1" <?php echo get_option("i_cdn") == '1' ? 'selected' : ''; ?>>百度云加速（Sola提供）</option>
                             <option value="2" <?php echo get_option("i_cdn") == '2' ? 'selected' : ''; ?>>jsDelivr</option>
-                            <option value="3" <?php echo get_option("i_cdn") == '3' ? 'selected' : ''; ?>>Netlify</option>
                         </select>
                         <p class="description">效果不佳请更换或停用。</p>
                         <p class="description-primary">默认：本地静态资源文件</p>
