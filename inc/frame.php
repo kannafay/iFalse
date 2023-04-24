@@ -17,23 +17,11 @@
     ?>
     <title><?php if(function_exists('show_wp_title')){show_wp_title();} ?></title>
     <link rel="shortcut icon" href="<?php site_icon_url(); ?>" type="image/x-icon" />
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/_init.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/404.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/article.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/article-style.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/footer.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/header.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/home.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/links.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/login.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/page-template.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/say.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/searchform.css">
-    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/sidebar.css">
+    <link rel="stylesheet" href="<?php echo i_static(); ?>/css/theme.min.css">
     <link rel="stylesheet" href="<?php echo i_static(); ?>/iconfont/iconfont.css">
     <?php if(get_option("i_custom_html_head")){echo get_option("i_custom_html_head");}; ?>
     <style><?php if(get_option("i_custom_css_head")){echo get_option("i_custom_css_head");}; ?></style>
-    <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo i_static(); ?>/css/style-plane.css">
+    <?php if(get_option("i_plane") == 1) { ?><link rel="stylesheet" href="<?php echo i_static(); ?>/css/style-plane.min.css">
     <?php } ?>
     <?php if(get_option("i_color")) { ?>
         <style>
