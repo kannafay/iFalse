@@ -229,7 +229,7 @@ if(sidebar_search_btn) {
 
 // 图片预览
 const content_p_img = document.querySelectorAll('.post-content img');
-if(content_p_img) {
+if(content_p_img && !document.querySelector('.container').classList.contains('page-link')) {
 	const content_p_a = [];
 	for(let i=0; i<content_p_img.length; i++) {
 		content_p_a[i] = document.createElement('a');
